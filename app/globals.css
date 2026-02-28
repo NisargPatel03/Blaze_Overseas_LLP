@@ -1,0 +1,69 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-neutral-100: #F8F5F0;
+  --color-neutral-900: #111111;
+  --color-accent: #C17A4E;
+
+  --font-sans: var(--font-inter);
+  --font-display: var(--font-playfair);
+}
+
+@layer base {
+  :root {
+    --background: var(--color-neutral-100);
+    --foreground: var(--color-neutral-900);
+  }
+
+  .dark {
+    --background: var(--color-neutral-900);
+    --foreground: var(--color-neutral-100);
+  }
+
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-sans);
+    overflow-x: hidden;
+    /* Lenis smooth scrolling requirement */
+    overscroll-behavior: none;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .magnetic-area {
+    position: absolute;
+    top: -20px;
+    bottom: -20px;
+    left: -20px;
+    right: -20px;
+    z-index: 10;
+  }
+}
+
+/* Base resets & GSAP helper styles */
+html.lenis {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-smooth iframe {
+  pointer-events: none;
+}
