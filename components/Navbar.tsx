@@ -91,8 +91,8 @@ export default function Navbar() {
                         <div className="w-10 h-10 md:w-12 md:h-12 relative overflow-hidden bg-white rounded-md p-1 shadow-sm shrink-0">
                             <Image src="/logo.jpg" alt="Blaze Logo" fill className="object-contain" sizes="48px" />
                         </div>
-                        <span className="font-display text-2xl md:text-3xl font-bold tracking-tight uppercase group-hover:text-[var(--color-accent)] transition-colors duration-300 hidden sm:block">
-                            Blaze
+                        <span className="font-display text-xl md:text-2xl font-bold tracking-tight uppercase group-hover:text-[var(--color-accent)] transition-colors duration-300 hidden sm:block whitespace-nowrap">
+                            Blaze Overseas
                         </span>
                     </Link>
 
