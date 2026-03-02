@@ -112,14 +112,43 @@ export default function About() {
                     </div>
                 </div>
 
-                {/* Right Image/Parallax */}
-                <div className="relative h-[600px] rounded-sm overflow-hidden bg-neutral-200 dark:bg-neutral-800">
-                    <img
-                        src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&q=80&w=2000"
-                        alt="Interior design showcasing premium tiles"
-                        className="about-image absolute top-[-10%] w-full h-[120%] object-cover object-center"
-                    />
-                    <div className="absolute inset-0 bg-black/10 mix-blend-overlay"></div>
+                {/* Right Image/Parallax with 3D Depth */}
+                <div
+                    className="about-image-wrapper relative h-[600px] rounded-sm overflow-hidden bg-neutral-200 dark:bg-neutral-800 perspective-1000"
+                    style={{ transformStyle: "preserve-3d" }}
+                    onMouseMove={(e) => {
+                        const rect = e.currentTarget.getBoundingClientRect();
+                        const x = e.clientX - rect.left;
+                        const y = e.clientY - rect.top;
+                        const centerX = rect.width / 2;
+                        const centerY = rect.height / 2;
+                        const rotateX = ((y - centerY) / centerY) * -5;
+                        const rotateY = ((x - centerX) / centerX) * 5;
+
+                        gsap.to(e.currentTarget.querySelector('.about-image-inner'), {
+                            rotateX,
+                            rotateY,
+                            duration: 0.5,
+                            ease: "power2.out"
+                        });
+                    }}
+                    onMouseLeave={(e) => {
+                        gsap.to(e.currentTarget.querySelector('.about-image-inner'), {
+                            rotateX: 0,
+                            rotateY: 0,
+                            duration: 1,
+                            ease: "power3.out"
+                        });
+                    }}
+                >
+                    <div className="about-image-inner w-full h-full relative" style={{ transformStyle: "preserve-3d" }}>
+                        <img
+                            src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&q=80&w=2000"
+                            alt="Interior design showcasing premium tiles"
+                            className="about-image absolute top-[-10%] w-full h-[120%] object-cover object-center translate-z-[50px]"
+                        />
+                        <div className="absolute inset-0 bg-black/10 mix-blend-overlay translate-z-[100px]"></div>
+                    </div>
                 </div>
             </div>
         </section>

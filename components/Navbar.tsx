@@ -3,24 +3,41 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 import { Menu, X, Moon, Sun } from "lucide-react";
 import { cn } from "@/lib/utils";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 
 const navLinks = [
-    { name: "Home", href: "#home" },
-    { name: "About", href: "#about" },
-    { name: "Collections", href: "#collections" },
-    { name: "Services", href: "#services" },
-    { name: "Projects", href: "#projects" },
-    { name: "Contact", href: "#contact" },
+    { name: "Home", href: "/#home" },
+    { name: "About Us", href: "/#about" },
+    {
+        name: "Products",
+        href: "/#products",
+        subLinks: [
+            {
+                title: "Premium Collections",
+                items: [
+                    { name: "Exotic Spices", href: "/products/spices" },
+                    { name: "Ceramic & Tiles", href: "/products/tiles" }
+                ]
+            }
+        ]
+    },
+    { name: "Strength", href: "/#strength" },
+    { name: "Mission", href: "/#mission" },
+    { name: "Certifications", href: "/#certifications" },
+    { name: "Contact Us", href: "/#contact" },
+    { name: "Enquiry", href: "/#enquiry" },
 ];
 
 export default function Navbar() {
     const [isScrolled, setIsScrolled] = useState(false);
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [isDarkMode, setIsDarkMode] = useState(false);
+    const pathname = usePathname();
+    const isHomePage = pathname === "/";
 
     useEffect(() => {
         // Check initial dark mode from OS or localStorage (simplified for now)
@@ -82,8 +99,8 @@ export default function Navbar() {
                 className={cn(
                     "fixed top-0 left-0 w-full z-50 transition-all duration-500 ease-in-out px-6 md:px-12",
                     isScrolled
-                        ? "py-4 bg-white/70 dark:bg-[#111]/70 backdrop-blur-md shadow-sm"
-                        : "py-6 bg-transparent"
+                        ? "py-4 bg-white/70 dark:bg-[#111]/70 backdrop-blur-md shadow-sm text-black dark:text-white"
+                        : cn("py-6 bg-transparent", isHomePage ? "text-black dark:text-white" : "text-white")
                 )}
             >
                 <div className="max-w-[1400px] mx-auto flex items-center justify-between">
@@ -98,18 +115,44 @@ export default function Navbar() {
 
                     <nav className="hidden md:flex items-center gap-8">
                         {navLinks.map((link) => (
-                            <Link
-                                key={link.name}
-                                href={link.href}
-                                className="text-sm font-medium uppercase tracking-widest relative overflow-hidden group py-2"
-                            >
-                                <span className="inline-block transition-transform duration-300 group-hover:-translate-y-full">
+                            link.subLinks ? (
+                                <div key={link.name} className="relative group py-2">
+                                    <span className="text-[13px] font-medium uppercase tracking-widest cursor-pointer flex items-center gap-1 transition-colors duration-300 group-hover:text-[var(--color-accent)]">
+                                        {link.name}
+                                        <svg className="w-3 h-3 transition-transform group-hover:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                                        </svg>
+                                    </span>
+                                    <div className="absolute top-full left-1/2 -translate-x-1/2 pt-4 opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-all duration-300 text-black dark:text-white">
+                                        <div className="bg-white dark:bg-[#1A1A1A] p-3 rounded-sm shadow-xl border border-black/5 dark:border-white/10 flex flex-col min-w-[160px]">
+                                            {link.subLinks.map((subGroup: any) => (
+                                                <div key={subGroup.title} className="mb-2 last:mb-0">
+                                                    <span className="text-[10px] uppercase tracking-widest text-[#C17A4E] font-bold px-3 block mb-1">
+                                                        {subGroup.title}
+                                                    </span>
+                                                    {subGroup.items.map((subItem: any) => (
+                                                        <Link
+                                                            key={subItem.name}
+                                                            href={subItem.href}
+                                                            className="block px-3 py-2 text-sm font-medium hover:bg-black/5 dark:hover:bg-white/5 rounded-sm transition-colors whitespace-nowrap text-black dark:text-white hover:text-[var(--color-accent)]"
+                                                        >
+                                                            {subItem.name}
+                                                        </Link>
+                                                    ))}
+                                                </div>
+                                            ))}
+                                        </div>
+                                    </div>
+                                </div>
+                            ) : (
+                                <Link
+                                    key={link.name}
+                                    href={link.href}
+                                    className="text-sm font-medium uppercase tracking-widest py-2 transition-colors duration-300 hover:text-[var(--color-accent)]"
+                                >
                                     {link.name}
-                                </span>
-                                <span className="absolute top-0 left-0 inline-block transition-transform duration-300 translate-y-full text-[var(--color-accent)] group-hover:translate-y-0">
-                                    {link.name}
-                                </span>
-                            </Link>
+                                </Link>
+                            )
                         ))}
                     </nav>
 

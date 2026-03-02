@@ -1,11 +1,11 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
-import Services from "@/components/Services";
-import Collections from "@/components/Collections";
-import Showroom from "@/components/Showroom";
-import Projects from "@/components/Projects";
-import Testimonials from "@/components/Testimonials";
+import Products from "@/components/Products";
+import Strength from "@/components/Strength";
+import Mission from "@/components/Mission";
+import Certifications from "@/components/Certifications";
+import Contact from "@/components/Contact";
 import CtaBanner from "@/components/CtaBanner";
 import Footer from "@/components/Footer";
 
@@ -15,11 +15,11 @@ export default function Home() {
       <Navbar />
       <Hero />
       <About />
-      <Services />
-      <Collections />
-      <Showroom />
-      <Projects />
-      <Testimonials />
+      <Products />
+      <Strength />
+      <Mission />
+      <Certifications />
+      <Contact />
       <CtaBanner />
       <Footer />
     </main>

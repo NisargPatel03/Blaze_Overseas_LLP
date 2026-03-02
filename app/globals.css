@@ -3,23 +3,34 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
-  --color-neutral-100: #F8F5F0;
-  --color-neutral-900: #111111;
-  --color-accent: #C17A4E;
+  /* Site Defaults */
+  --font-sans: var(--font-dm-sans);
+  --font-display: var(--font-cormorant);
 
-  --font-sans: var(--font-inter);
-  --font-display: var(--font-playfair);
+  /* Spices Palette */
+  --color-saffron: #E8850A;
+  --color-turmeric: #D4A017;
+  --color-crimson: #8B1A1A;
+  --color-cream: #FAF5EC;
+  --color-dark: #1A0F06;
+  --color-mid: #3D2B1F;
+  --color-light-brown: #B8860B;
+
+  /* Tiles Palette */
+  --color-obsidian: #0A0A0A;
+  --color-charcoal: #1A1A1A;
+  --color-marble: #F2EFE9;
+  --color-stone: #C8C0B4;
+  --color-gold: #C9922A;
+  --color-ivory: #FAF8F3;
+  --color-ink: #1C1917;
 }
 
 @layer base {
   :root {
-    --background: var(--color-neutral-100);
-    --foreground: var(--color-neutral-900);
-  }
-
-  .dark {
-    --background: var(--color-neutral-900);
-    --foreground: var(--color-neutral-100);
+    --background: var(--color-cream);
+    --foreground: var(--color-dark);
+    --color-accent: var(--color-saffron);
   }
 
   body {
@@ -29,6 +40,77 @@
     overflow-x: hidden;
     /* Lenis smooth scrolling requirement */
     overscroll-behavior: none;
+    cursor: none;
+    /* Hide default cursor */
+  }
+
+  /* Utility aliases for use in classNames */
+  .bg-saffron {
+    background-color: var(--color-saffron);
+  }
+
+  .text-saffron {
+    color: var(--color-saffron);
+  }
+
+  .bg-turmeric {
+    background-color: var(--color-turmeric);
+  }
+
+  .text-turmeric {
+    color: var(--color-turmeric);
+  }
+
+  .border-saffron {
+    border-color: var(--color-saffron);
+  }
+
+  .bg-crimson {
+    background-color: var(--color-crimson);
+  }
+
+  .bg-cream {
+    background-color: var(--color-cream);
+  }
+
+  .text-cream {
+    color: var(--color-cream);
+  }
+
+  .bg-dark {
+    background-color: var(--color-dark);
+  }
+
+  .text-dark {
+    color: var(--color-dark);
+  }
+
+  .bg-obsidian {
+    background-color: var(--color-obsidian);
+  }
+
+  .bg-charcoal {
+    background-color: var(--color-charcoal);
+  }
+
+  .bg-ivory {
+    background-color: var(--color-ivory);
+  }
+
+  .bg-marble {
+    background-color: var(--color-marble);
+  }
+
+  .text-ivory {
+    color: var(--color-ivory);
+  }
+
+  .text-stone {
+    color: var(--color-stone);
+  }
+
+  .text-gold {
+    color: var(--color-gold);
   }
 }
 
@@ -37,13 +119,32 @@
     text-wrap: balance;
   }
 
-  .magnetic-area {
-    position: absolute;
-    top: -20px;
-    bottom: -20px;
-    left: -20px;
-    right: -20px;
-    z-index: 10;
+  /* Scroll Reveal System */
+  .reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .delay-1 {
+    transition-delay: 150ms;
+  }
+
+  .delay-2 {
+    transition-delay: 300ms;
+  }
+
+  .delay-3 {
+    transition-delay: 450ms;
+  }
+
+  .delay-4 {
+    transition-delay: 600ms;
   }
 }
 

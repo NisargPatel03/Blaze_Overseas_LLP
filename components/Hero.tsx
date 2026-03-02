@@ -8,32 +8,76 @@ import { useGSAP } from "@gsap/react";
 import { ArrowDown } from "lucide-react";
 import * as THREE from "three";
 
-function AbstractShape() {
+import { useMemo } from "react";
+
+function FluidWave() {
     const meshRef = useRef<THREE.Mesh>(null);
+    const materialRef = useRef<any>(null);
 
     useFrame((state) => {
         if (meshRef.current) {
-            meshRef.current.rotation.x = state.clock.elapsedTime * 0.2;
-            meshRef.current.rotation.y = state.clock.elapsedTime * 0.3;
+            meshRef.current.rotation.x = Math.sin(state.clock.elapsedTime * 0.1) * 0.2;
+            meshRef.current.rotation.y = state.clock.elapsedTime * 0.05;
         }
     });
 
     return (
-        <Float speed={2} rotationIntensity={1} floatIntensity={2}>
-            <mesh ref={meshRef} scale={1.5}>
-                <torusKnotGeometry args={[1, 0.3, 128, 32]} />
+        <Float speed={1.5} rotationIntensity={0.5} floatIntensity={1}>
+            <mesh ref={meshRef} position={[0, -2, -5]} scale={2}>
+                <planeGeometry args={[20, 10, 64, 64]} />
                 <MeshDistortMaterial
+                    ref={materialRef}
                     color="#C17A4E"
-                    envMapIntensity={1.5}
-                    clearcoat={0.8}
+                    envMapIntensity={2}
+                    clearcoat={1}
                     clearcoatRoughness={0.1}
-                    metalness={0.2}
-                    roughness={0.3}
-                    distort={0.2}
-                    speed={2}
+                    metalness={0.8}
+                    roughness={0.2}
+                    distort={0.4}
+                    speed={1.5}
                 />
             </mesh>
         </Float>
+    );
+}
+
+function ParticleCloud({ count = 500 }) {
+    const pointsRef = useRef<THREE.Points>(null);
+
+    const { positions } = useMemo(() => {
+        const positions = new Float32Array(count * 3);
+        for (let i = 0; i < count; i++) {
+            positions[i * 3] = (Math.random() - 0.5) * 20; // x
+            positions[i * 3 + 1] = (Math.random() - 0.5) * 15; // y
+            positions[i * 3 + 2] = (Math.random() - 0.5) * 10 - 5; // z
+        }
+        return { positions };
+    }, [count]);
+
+    useFrame((state) => {
+        if (pointsRef.current) {
+            pointsRef.current.rotation.y = state.clock.elapsedTime * 0.05;
+            pointsRef.current.position.y = Math.sin(state.clock.elapsedTime * 0.2) * 0.5;
+        }
+    });
+
+    return (
+        <points ref={pointsRef}>
+            <bufferGeometry>
+                <bufferAttribute
+                    attach="attributes-position"
+                    count={count}
+                    args={[positions, 3]}
+                />
+            </bufferGeometry>
+            <pointsMaterial
+                size={0.05}
+                color="#e5e5e5"
+                transparent
+                opacity={0.6}
+                sizeAttenuation
+            />
+        </points>
     );
 }
 
@@ -102,7 +146,8 @@ export default function Hero() {
                     <ambientLight intensity={0.8} />
                     <directionalLight position={[10, 10, 5]} intensity={1.5} />
                     <Environment preset="city" />
-                    <AbstractShape />
+                    <ParticleCloud />
+                    <FluidWave />
                 </Canvas>
             </div>
 
