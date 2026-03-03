@@ -9,7 +9,7 @@ export default function Footer() {
             <div className="max-w-[1400px] mx-auto">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8 mb-24">
 
-                    <div className="md:col-span-1 border-r border-black/10 dark:border-white/10 pr-8 md:pr-12">
+                    <div className="lg:col-span-4 flex flex-col justify-between">
                         <Link href="/" className="inline-block">
                             <h3 className="text-2xl md:text-3xl font-display font-bold uppercase tracking-tight mb-6">Blazze Overseas</h3>
                         </Link>

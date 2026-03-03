@@ -27,7 +27,7 @@ export default function TilesPage() {
     }, []);
 
     return (
-        <main className="w-full relative min-h-screen bg-obsidian text-ivory selection:bg-stone selection:text-obsidian pb-32">
+        <main className="w-full relative min-h-screen bg-obsidian text-ivory selection:bg-stone selection:text-obsidian">
             <TilesPreloader />
             <Navbar />
 

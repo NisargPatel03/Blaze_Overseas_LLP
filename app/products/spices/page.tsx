@@ -32,7 +32,7 @@ export default function SpicesPage() {
     }, []);
 
     return (
-        <main className="w-full relative min-h-screen bg-cream selection:bg-saffron selection:text-white pb-32">
+        <main className="w-full relative min-h-screen bg-cream selection:bg-saffron selection:text-white">
             <SpicesPreloader />
             <Navbar />
 
