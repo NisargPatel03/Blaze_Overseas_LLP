@@ -8,7 +8,7 @@ import { Quote } from "lucide-react";
 const testimonials = [
     {
         id: 1,
-        text: "Blaze Overseas completely transformed our hotel lobby. The ceramic slabs are breathtaking and incredibly durable.",
+        text: "Blazze Overseas completely transformed our hotel lobby. The ceramic slabs are breathtaking and incredibly durable.",
         author: "Elena Rossi",
         role: "Architect, Milan",
     },
@@ -26,7 +26,7 @@ const testimonials = [
     },
     {
         id: 4,
-        text: "Unparalleled quality. The textures and finishes provided by Blaze set a new standard in high-end residential projects.",
+        text: "Unparalleled quality. The textures and finishes provided by Blazze set a new standard in high-end residential projects.",
         author: "Marcus Thorne",
         role: "Developer, London",
     },

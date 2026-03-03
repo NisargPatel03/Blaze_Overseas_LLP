@@ -58,7 +58,7 @@ export function TilesPreloader() {
                             className="flex flex-col items-center"
                         >
                             <span className="font-sans text-[12px] uppercase tracking-[0.3em] text-stone mb-4">
-                                Blaze Overseas
+                                Blazze Overseas
                             </span>
                             <h1 className="font-display text-4xl md:text-6xl tracking-widest uppercase">
                                 Spaces redefined

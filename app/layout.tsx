@@ -3,6 +3,7 @@ import { Cormorant_Garamond, DM_Sans } from "next/font/google";
 import "./globals.css";
 import LenisProvider from "@/components/LenisProvider";
 import CustomCursor from "@/components/CustomCursor";
+import { Preloader } from "@/components/Preloader";
 
 const cormorant = Cormorant_Garamond({
   weight: ['300', '400', '500', '600', '700'],
@@ -16,9 +17,9 @@ const dmsans = DM_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Blaze Overseas LLP | Premium Tiles & Interiors",
-  description: "Crafting Timeless Spaces. Multi-purpose premium ceramic, tiles, and interior solutions.",
-  keywords: ["tiles", "interior", "ceramics", "Blaze Overseas LLP", "premium tiles"],
+  title: "Blazze Overseas LLP | Premium Tiles & Interiors",
+  description: "Experience the pinnacle of luxury with Blazze Overseas LLP. We offer a curated collection of premium tiles and interior solutions for the most discerning clients.",
+  keywords: ["tiles", "interior", "ceramics", "Blazze Overseas LLP", "premium tiles"],
 };
 
 export default function RootLayout({
@@ -30,6 +31,7 @@ export default function RootLayout({
     <html lang="en" className={`${cormorant.variable} ${dmsans.variable} antialiased`} suppressHydrationWarning>
       <body className="font-sans bg-[var(--background)] text-[var(--foreground)] antialiased min-h-screen selection:bg-[var(--color-accent)] selection:text-white cursor-none">
         <CustomCursor />
+        <Preloader />
         <LenisProvider>
           {children}
         </LenisProvider>

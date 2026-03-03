@@ -68,11 +68,9 @@ export default function About() {
                     <h2 className="about-text text-4xl md:text-5xl lg:text-6xl font-display font-medium leading-tight text-balance">
                         A legacy of crafting timeless, high-dimensional spaces.
                     </h2>
-                    <p className="about-text text-lg text-foreground/70 text-balance leading-relaxed">
-                        For over two decades, Blaze Overseas LLP has redefined interior
-                        architecture. We merge premium materials with avant-garde design
-                        philosophies to create spaces that evoke emotion, prestige, and
-                        unparalleled luxury.
+                    <p className="text-lg md:text-xl text-[var(--foreground)] opacity-80 max-w-2xl mx-auto leading-relaxed font-light mb-8 md:mb-12">
+                        For over two decades, Blazze Overseas LLP has redefined interior
+                        spaces globally.
                     </p>
 
                     <div className="about-stats mt-8 grid grid-cols-2 sm:grid-cols-3 gap-8 pt-8 border-t border-foreground/10">

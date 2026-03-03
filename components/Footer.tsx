@@ -9,8 +9,10 @@ export default function Footer() {
             <div className="max-w-[1400px] mx-auto">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8 mb-24">
 
-                    <div className="lg:col-span-4 flex flex-col justify-between">
-                        <h3 className="text-2xl md:text-3xl font-display font-bold uppercase tracking-tight mb-6">Blaze Overseas</h3>
+                    <div className="md:col-span-1 border-r border-black/10 dark:border-white/10 pr-8 md:pr-12">
+                        <Link href="/" className="inline-block">
+                            <h3 className="text-2xl md:text-3xl font-display font-bold uppercase tracking-tight mb-6">Blazze Overseas</h3>
+                        </Link>
                         <p className="text-white/60 text-lg max-w-sm text-balance">
                             Premium ceramics, natural stone, and visionary interior architecture.
                         </p>
@@ -26,7 +28,7 @@ export default function Footer() {
 
                     <div className="lg:col-span-2 flex flex-col gap-4">
                         <h4 className="text-sm uppercase tracking-widest text-white/40 mb-2">Contact</h4>
-                        <a href="mailto:hello@blazeoverseas.com" className="hover:text-[var(--color-accent)] transition-colors w-fit">hello@blazeoverseas.com</a>
+                        <a href="mailto:hello@blazzeoverseas.com" className="hover:text-[var(--color-accent)] transition-colors w-fit">hello@blazzeoverseas.com</a>
                         <p className="text-white/80">+1 (800) 123-4567</p>
                         <p className="text-white/80 mt-4">1200 Architecture Blvd<br />New York, NY 10012</p>
                     </div>
@@ -50,9 +52,9 @@ export default function Footer() {
 
                 </div>
 
-                <div className="flex flex-col md:flex-row justify-between items-center gap-6 pt-8 border-t border-white/10">
-                    <p className="text-sm text-white/40 uppercase tracking-widest">
-                        © {new Date().getFullYear()} Blaze Overseas LLP. All rights reserved.
+                <div className="border-t border-black/10 dark:border-white/10 pt-8 mt-16 md:mt-24 flex flex-col md:flex-row items-center justify-between gap-4">
+                    <p className="text-sm opacity-60">
+                        © {new Date().getFullYear()} Blazze Overseas LLP. All rights reserved.
                     </p>
 
                     <div className="flex items-center gap-6 text-white/40">
