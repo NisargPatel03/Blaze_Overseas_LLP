@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { Menu, X, Moon, Sun } from "lucide-react";
+import { Menu, X, ChevronDown } from "lucide-react";
 import { cn } from "@/lib/utils";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
@@ -35,15 +35,11 @@ const navLinks = [
 export default function Navbar() {
     const [isScrolled, setIsScrolled] = useState(false);
     const [isMenuOpen, setIsMenuOpen] = useState(false);
-    const [isDarkMode, setIsDarkMode] = useState(false);
+    const [activeMobileSubmenu, setActiveMobileSubmenu] = useState<string | null>(null);
     const pathname = usePathname();
     const isHomePage = pathname === "/";
 
     useEffect(() => {
-        // Check initial dark mode from OS or localStorage (simplified for now)
-        if (document.documentElement.classList.contains("dark")) {
-            setIsDarkMode(true);
-        }
 
         const handleScroll = () => {
             setIsScrolled(window.scrollY > 50);
@@ -53,16 +49,21 @@ export default function Navbar() {
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
 
-    const toggleDarkMode = () => {
-        setIsDarkMode((prev) => {
-            const newMode = !prev;
-            if (newMode) {
-                document.documentElement.classList.add("dark");
-            } else {
-                document.documentElement.classList.remove("dark");
+    const handleMenuClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+        if (href.startsWith('/#') && pathname === '/') {
+            e.preventDefault();
+            const targetId = href.replace('/#', '');
+            const targetElement = document.getElementById(targetId);
+            if (targetElement) {
+                targetElement.scrollIntoView({ behavior: 'smooth' });
             }
-            return newMode;
-        });
+        }
+        setIsMenuOpen(false);
+        setActiveMobileSubmenu(null);
+    };
+
+    const toggleMobileSubmenu = (menuName: string) => {
+        setActiveMobileSubmenu(prev => prev === menuName ? null : menuName);
     };
 
     useGSAP(() => {
@@ -100,8 +101,8 @@ export default function Navbar() {
                 className={cn(
                     "fixed top-0 left-0 w-full z-50 transition-all duration-500 ease-in-out px-6 md:px-12",
                     isScrolled
-                        ? "py-4 bg-white/70 dark:bg-[#111]/70 backdrop-blur-md shadow-sm text-black dark:text-white"
-                        : cn("py-6 bg-transparent", isHomePage ? "text-black dark:text-white" : "text-white")
+                        ? "py-4 bg-[var(--background)]/70 backdrop-blur-md shadow-sm text-[var(--foreground)]"
+                        : cn("py-6 bg-transparent", isHomePage ? "text-[var(--foreground)]" : "text-white")
                 )}
             >
                 <div className="max-w-[1400px] mx-auto flex items-center justify-between">
@@ -124,8 +125,8 @@ export default function Navbar() {
                                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                                         </svg>
                                     </span>
-                                    <div className="absolute top-full left-1/2 -translate-x-1/2 pt-4 opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-all duration-300 text-black dark:text-white">
-                                        <div className="bg-white dark:bg-[#1A1A1A] p-3 rounded-sm shadow-xl border border-black/5 dark:border-white/10 flex flex-col min-w-[160px]">
+                                    <div className="absolute top-full left-1/2 -translate-x-1/2 pt-4 opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-all duration-300 text-[var(--foreground)]">
+                                        <div className="bg-[var(--background)] p-3 rounded-sm shadow-xl border border-[var(--foreground)]/10 flex flex-col min-w-[160px]">
                                             {link.subLinks.map((subGroup: any) => (
                                                 <div key={subGroup.title} className="mb-2 last:mb-0">
                                                     <span className="text-[10px] uppercase tracking-widest text-[#C17A4E] font-bold px-3 block mb-1">
@@ -135,7 +136,8 @@ export default function Navbar() {
                                                         <Link
                                                             key={subItem.name}
                                                             href={subItem.href}
-                                                            className="block px-3 py-2 text-sm font-medium hover:bg-black/5 dark:hover:bg-white/5 rounded-sm transition-colors whitespace-nowrap text-black dark:text-white hover:text-[var(--color-accent)]"
+                                                            onClick={(e) => handleMenuClick(e, subItem.href)}
+                                                            className="block px-3 py-2 text-sm font-medium hover:bg-[var(--foreground)]/5 rounded-sm transition-colors whitespace-nowrap text-[var(--foreground)] hover:text-[var(--color-accent)]"
                                                         >
                                                             {subItem.name}
                                                         </Link>
@@ -149,6 +151,7 @@ export default function Navbar() {
                                 <Link
                                     key={link.name}
                                     href={link.href}
+                                    onClick={(e) => handleMenuClick(e, link.href)}
                                     className="text-sm font-medium uppercase tracking-widest py-2 transition-colors duration-300 hover:text-[var(--color-accent)]"
                                 >
                                     {link.name}
@@ -157,14 +160,7 @@ export default function Navbar() {
                         ))}
                     </nav>
 
-                    <div className="flex items-center gap-4 z-50">
-                        <button
-                            onClick={toggleDarkMode}
-                            className="p-2 rounded-full hover:bg-black/5 dark:hover:bg-white/10 transition-colors"
-                            aria-label="Toggle dark mode"
-                        >
-                            {isDarkMode ? <Sun size={20} /> : <Moon size={20} />}
-                        </button>
+                    <div className="flex items-center gap-4 z-50 text-[var(--foreground)]">
                         <button
                             className="md:hidden p-2"
                             onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -177,17 +173,51 @@ export default function Navbar() {
             </header>
 
             {/* Mobile Menu Overlay */}
-            <div className="mobile-menu fixed inset-0 z-40 bg-[var(--background)] flex flex-col justify-center translate-x-full px-8 pt-20">
-                <nav className="flex flex-col gap-6">
+            <div className="mobile-menu fixed inset-0 z-40 bg-[var(--background)] text-[var(--foreground)] flex flex-col justify-center translate-x-full px-8 pt-20">
+                <nav className="flex flex-col gap-6 overflow-y-auto pb-8">
                     {navLinks.map((link) => (
-                        <Link
-                            key={link.name}
-                            href={link.href}
-                            onClick={() => setIsMenuOpen(false)}
-                            className="mobile-link text-4xl font-display uppercase font-light"
-                        >
-                            {link.name}
-                        </Link>
+                        link.subLinks ? (
+                            <div key={link.name} className="flex flex-col gap-4">
+                                <div
+                                    className="flex items-center justify-between cursor-pointer mobile-link text-4xl font-display uppercase font-light"
+                                    onClick={() => toggleMobileSubmenu(link.name)}
+                                >
+                                    <span>{link.name}</span>
+                                    <ChevronDown size={32} className={cn("transition-transform duration-300", activeMobileSubmenu === link.name && "rotate-180")} />
+                                </div>
+                                <div className={cn(
+                                    "flex-col gap-4 pl-4 overflow-hidden transition-all duration-300",
+                                    activeMobileSubmenu === link.name ? "flex max-h-[500px] opacity-100" : "max-h-0 opacity-0 pointer-events-none"
+                                )}>
+                                    {link.subLinks.map((subGroup: any) => (
+                                        <div key={subGroup.title} className="flex flex-col gap-3">
+                                            <span className="text-sm uppercase tracking-widest text-[#C17A4E] font-bold">
+                                                {subGroup.title}
+                                            </span>
+                                            {subGroup.items.map((subItem: any) => (
+                                                <Link
+                                                    key={subItem.name}
+                                                    href={subItem.href}
+                                                    onClick={(e) => handleMenuClick(e, subItem.href)}
+                                                    className="text-2xl font-display uppercase font-light text-[var(--foreground)]/70 hover:text-[var(--color-accent)] transition-colors"
+                                                >
+                                                    {subItem.name}
+                                                </Link>
+                                            ))}
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+                        ) : (
+                            <Link
+                                key={link.name}
+                                href={link.href}
+                                onClick={(e) => handleMenuClick(e, link.href)}
+                                className="mobile-link text-4xl font-display uppercase font-light"
+                            >
+                                {link.name}
+                            </Link>
+                        )
                     ))}
                 </nav>
                 <div className="mt-12 mobile-link">
