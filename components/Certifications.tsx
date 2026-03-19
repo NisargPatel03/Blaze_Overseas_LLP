@@ -7,9 +7,9 @@ import { Award, CheckCircle } from "lucide-react";
 
 const certifications = [
     "ISO 9001:2015 Quality Management",
-    "FSSAI Certified Spices",
-    "CE Marked Ceramics",
-    "Export Inspection Council Approved"
+    "FSSAI Certified Products",
+    "APEDA Registered Exporter",
+    "Spice Board of India Certified"
 ];
 
 export default function Certifications() {
@@ -58,7 +58,7 @@ export default function Certifications() {
                         Accreditations that speak for our standard.
                     </h2>
                     <p className="cert-header text-lg text-foreground/70 mb-10 text-balance leading-relaxed">
-                        We adhere to the strictest international standards. Our globally recognized certifications are a testament to our commitment to delivering only the finest quality products.
+                        At Blazze, quality is our top priority. We follow strict international standards at every stage, from sourcing to final packaging. Our products undergo rigorous quality checks to ensure purity, hygiene, and consistency. We are committed to delivering only the finest quality that meets global expectations.
                     </p>
 
                     <div className="cert-list flex flex-col gap-5">

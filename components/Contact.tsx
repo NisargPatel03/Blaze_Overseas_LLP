@@ -63,7 +63,7 @@ export default function Contact() {
                                 <p className="text-foreground/70 leading-relaxed max-w-sm">
                                     123 Global Business Hub,<br />
                                     Export Avenue, District 9,<br />
-                                    Gujarat, India 380001
+                                    Gujarat, India
                                 </p>
                             </div>
                         </div>
@@ -75,8 +75,7 @@ export default function Contact() {
                             <div>
                                 <h4 className="text-xl font-display font-medium mb-2">Contact Numbers</h4>
                                 <p className="text-foreground/70 leading-relaxed">
-                                    +91 98765 43210 <br />
-                                    +91 87654 32109
+                                    +91 77779 84018
                                 </p>
                             </div>
                         </div>
@@ -88,8 +87,7 @@ export default function Contact() {
                             <div>
                                 <h4 className="text-xl font-display font-medium mb-2">Email Address</h4>
                                 <p className="text-foreground/70 leading-relaxed">
-                                    inquiry@blazeoverseas.com <br />
-                                    export@blazeoverseas.com
+                                    blazzeoverseasllp@gmail.com
                                 </p>
                             </div>
                         </div>
@@ -111,6 +109,16 @@ export default function Contact() {
                             <div className="flex flex-col gap-2">
                                 <label className="text-sm font-medium uppercase tracking-widest opacity-70">Email Address</label>
                                 <input type="email" className="w-full bg-transparent border-b border-foreground/20 py-3 focus:outline-none focus:border-[var(--color-accent)] transition-colors" placeholder="john@example.com" />
+                            </div>
+                            <div className="flex flex-col gap-2">
+                                <label className="text-sm font-medium uppercase tracking-widest opacity-70">Product Interest</label>
+                                <select defaultValue="" className="w-full bg-transparent border-b border-foreground/20 py-3 focus:outline-none focus:border-[var(--color-accent)] transition-colors appearance-none cursor-pointer">
+                                    <option value="" disabled className="bg-background text-foreground">Select a category</option>
+                                    <option value="whole-spices" className="bg-background text-foreground">Whole Spices</option>
+                                    <option value="blended-masala" className="bg-background text-foreground">Blended Masala</option>
+                                    <option value="grains" className="bg-background text-foreground">Grains</option>
+                                    <option value="pulses" className="bg-background text-foreground">Pulses</option>
+                                </select>
                             </div>
                             <div className="flex flex-col gap-2">
                                 <label className="text-sm font-medium uppercase tracking-widest opacity-70">Message</label>

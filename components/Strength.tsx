@@ -3,29 +3,21 @@
 import { useRef } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
-import { ShieldCheck, Globe, Factory } from "lucide-react";
-import { Canvas } from "@react-three/fiber";
-import { EarthGroup } from "./EarthGroup";
+import { CheckCircle2 } from "lucide-react";
+import dynamic from "next/dynamic";
+
+const ExportGlobe3D = dynamic(() => import("@/components/3d/ExportGlobe3D"), {
+  ssr: false,
+  loading: () => <div className="w-full h-full flex items-center justify-center text-[var(--color-accent)] animate-pulse">Loading Globe...</div>
+});
 
 const strengths = [
-    {
-        id: 1,
-        title: "Global Reach",
-        desc: "A sprawling network of international partners and clients across 30+ countries, delivering excellence worldwide.",
-        icon: Globe,
-    },
-    {
-        id: 2,
-        title: "Manufacturing Excellence",
-        desc: "State-of-the-art facilities equipped with advanced technology ensuring precision, scalability, and premium output.",
-        icon: Factory,
-    },
-    {
-        id: 3,
-        title: "Uncompromising Quality",
-        desc: "Rigorous multi-stage quality control guaranteeing the highest standard of purity for spices and durability for tiles.",
-        icon: ShieldCheck,
-    },
+    "Premium Quality Products",
+    "Competitive Pricing",
+    "Timely Delivery",
+    "Global Export Expertise",
+    "Strong Supplier Network",
+    "Customer Satisfaction Focus"
 ];
 
 export default function Strength() {
@@ -44,17 +36,22 @@ export default function Strength() {
                 stagger: 0.1,
             });
 
-            gsap.from(".strength-item", {
-                scrollTrigger: {
-                    trigger: ".strength-grid",
-                    start: "top 75%",
-                },
-                scale: 0.9,
-                opacity: 0,
-                duration: 0.8,
-                stagger: 0.15,
-                ease: "back.out(1.7)",
-            });
+            gsap.fromTo(".strength-item", 
+                { opacity: 0, y: 30, x: 0 },
+                {
+                    scrollTrigger: {
+                        trigger: containerRef.current,
+                        start: "top 80%",
+                    },
+                    opacity: 1,
+                    y: 0,
+                    x: 0,
+                    duration: 0.6,
+                    stagger: 0.1,
+                    ease: "power2.out",
+                    clearProps: "all"
+                }
+            );
         },
         { scope: containerRef }
     );
@@ -70,44 +67,38 @@ export default function Strength() {
                 <div className="w-full lg:w-1/2 relative z-10">
                     <div className="mb-12">
                         <span className="strength-header text-[var(--color-accent)] font-medium uppercase tracking-widest text-sm block mb-4">
-                            Why Choose Us
+                            Our Strength
                         </span>
-                        <h2 className="strength-header text-4xl md:text-5xl lg:text-6xl font-display font-medium text-balance">
-                            Our Core Strengths
+                        <h2 className="strength-header text-4xl md:text-5xl lg:text-6xl font-display font-medium text-balance mb-6">
+                            Why Blazze
                         </h2>
+                        <p className="strength-header text-white/70 max-w-xl text-lg leading-relaxed mb-6">
+                            Our core strength is our ability to supply high-quality rice and spices with precision and reliability. With efficient logistics and strong supplier partnerships, we meet global demand seamlessly. We focus on maintaining international standards and customer satisfaction at every step.
+                        </p>
                     </div>
 
-                    <div className="strength-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-6">
-                        {strengths.map((item) => (
+                    <div className="strength-grid grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-5 mb-8">
+                        {strengths.map((item, idx) => (
                             <div
-                                key={item.id}
-                                className="strength-item group flex flex-col sm:flex-row items-start sm:items-center gap-6 p-6 md:p-8 rounded-sm bg-white/5 border border-white/10 hover:bg-white/10 transition-colors duration-300 backdrop-blur-sm"
+                                key={idx}
+                                className="strength-item group flex items-center gap-4 p-5 md:p-6 rounded-sm bg-white/5 border border-white/10 hover:bg-white/10 hover:border-[var(--color-accent)] transition-all duration-300 backdrop-blur-sm"
                             >
-                                <div className="w-16 h-16 shrink-0 rounded-full bg-white/10 flex items-center justify-center text-[var(--color-accent)] group-hover:scale-110 group-hover:bg-[var(--color-accent)] group-hover:text-white transition-all duration-500">
-                                    <item.icon size={28} strokeWidth={1.5} />
+                                <div className="w-12 h-12 shrink-0 rounded-full bg-black/20 flex items-center justify-center text-[var(--color-accent)] group-hover:scale-110 group-hover:bg-[var(--color-accent)] group-hover:text-white shadow-sm transition-all duration-500">
+                                    <CheckCircle2 size={24} strokeWidth={2} />
                                 </div>
-                                <div>
-                                    <h3 className="text-xl md:text-2xl font-display font-medium mb-2">{item.title}</h3>
-                                    <p className="text-white/60 leading-relaxed text-sm md:text-base">
-                                        {item.desc}
-                                    </p>
-                                </div>
+                                <span className="font-display font-medium text-lg tracking-wide text-white/90 group-hover:text-white transition-colors duration-300">{item}</span>
                             </div>
                         ))}
                     </div>
+                    
+                    <h3 className="strength-header text-2xl font-display font-medium text-[var(--color-accent)]">Blazze – Taste of Purity</h3>
                 </div>
 
                 {/* Right Side: 3D Globe */}
                 <div className="w-full lg:w-1/2 h-[500px] lg:h-[700px] relative z-0">
-                    {/* Fallback glow */}
                     <div className="absolute inset-0 bg-gradient-to-tr from-[var(--color-accent)]/20 to-transparent blur-3xl opacity-50 rounded-full mix-blend-screen pointer-events-none" />
 
-                    <Canvas camera={{ position: [0, 0, 5], fov: 45 }}>
-                        <ambientLight intensity={0.5} />
-                        <directionalLight position={[10, 10, 5]} intensity={1} />
-                        <pointLight position={[-10, -10, -10]} color="#C17A4E" intensity={2} />
-                        <EarthGroup />
-                    </Canvas>
+                    <ExportGlobe3D height="100%" />
                 </div>
             </div>
         </section>

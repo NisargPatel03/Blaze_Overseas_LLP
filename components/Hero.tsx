@@ -6,6 +6,7 @@ import { Environment, Float, MeshDistortMaterial } from "@react-three/drei";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ArrowDown } from "lucide-react";
+import Link from "next/link";
 import * as THREE from "three";
 
 import { useMemo } from "react";
@@ -136,7 +137,7 @@ export default function Hero() {
         });
     }, []);
 
-    const titleText = "Crafting Timeless Spaces";
+    const titleText = "Taste of Purity";
 
     return (
         <section id="home" className="relative w-full h-screen overflow-hidden bg-[var(--background)]">
@@ -163,23 +164,23 @@ export default function Hero() {
                 </div>
 
                 <p className="hero-desc mt-6 text-lg md:text-xl text-foreground/70 max-w-2xl text-balance">
-                    Premium ceramics, multi-purpose tiles, and interior solutions designed
-                    to elevate your modern lifestyle.
+                    Premium exporter of authentic spices, pure grains, and nutritious pulses, 
+                    delivering the world's finest agricultural products.
                 </p>
 
                 <div className="mt-10 flex flex-col sm:flex-row gap-6">
-                    <button className="hero-cta group relative px-8 py-4 bg-foreground text-background overflow-hidden rounded-sm transition-transform hover:scale-105 duration-300">
+                    <Link href="/products" className="hero-cta group relative px-8 py-4 bg-foreground text-background overflow-hidden rounded-sm transition-transform hover:scale-105 duration-300">
                         <span className="relative z-10 font-medium uppercase tracking-widest text-sm">
-                            Explore Collections
+                            Explore Products
                         </span>
                         <div className="absolute inset-0 bg-[var(--color-accent)] transform scale-x-0 origin-left transition-transform duration-500 group-hover:scale-x-100" />
-                    </button>
+                    </Link>
 
-                    <button className="hero-cta group px-8 py-4 border border-foreground/20 hover:border-foreground transition-all duration-300 rounded-sm">
+                    <Link href="/#certifications" className="hero-cta group px-8 py-4 border border-foreground/20 hover:border-foreground transition-all duration-300 rounded-sm">
                         <span className="font-medium uppercase tracking-widest text-sm">
-                            Our Services
+                            Quality Assurance
                         </span>
-                    </button>
+                    </Link>
                 </div>
             </div>
 

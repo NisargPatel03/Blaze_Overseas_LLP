@@ -14,13 +14,15 @@ const navLinks = [
     { name: "About Us", href: "/#about" },
     {
         name: "Products",
-        href: "/#products",
+        href: "/products",
         subLinks: [
             {
-                title: "Premium Collections",
+                title: "Categories",
                 items: [
-                    { name: "Exotic Spices", href: "/products/spices" },
-                    { name: "Ceramic & Tiles", href: "/products/tiles" }
+                    { name: "Whole Spices", href: "/products/whole-spices" },
+                    { name: "Blended Masala", href: "/products/blended-masala" },
+                    { name: "Grains", href: "/products/grains" },
+                    { name: "Pulses", href: "/products/pulses" }
                 ]
             }
         ]

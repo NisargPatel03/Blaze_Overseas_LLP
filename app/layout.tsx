@@ -4,6 +4,9 @@ import "./globals.css";
 import LenisProvider from "@/components/LenisProvider";
 import CustomCursor from "@/components/CustomCursor";
 import { Preloader } from "@/components/Preloader";
+import { WhatsAppButton } from "@/components/ui/WhatsAppButton";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 const cormorant = Cormorant_Garamond({
   weight: ['300', '400', '500', '600', '700'],
@@ -32,8 +35,11 @@ export default function RootLayout({
       <body className="font-sans bg-[var(--background)] text-[var(--foreground)] antialiased min-h-screen selection:bg-[var(--color-accent)] selection:text-white cursor-none">
         <CustomCursor />
         <Preloader />
+        <WhatsAppButton />
         <LenisProvider>
+          <Navbar />
           {children}
+          <Footer />
         </LenisProvider>
       </body>
     </html>

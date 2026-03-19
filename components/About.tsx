@@ -66,11 +66,10 @@ export default function About() {
                         Our Story
                     </span>
                     <h2 className="about-text text-4xl md:text-5xl lg:text-6xl font-display font-medium leading-tight text-balance">
-                        A legacy of crafting timeless, high-dimensional spaces.
+                        A legacy of delivering authentic taste and world-class standards.
                     </h2>
                     <p className="text-lg md:text-xl text-[var(--foreground)] opacity-80 max-w-2xl mx-auto leading-relaxed font-light mb-8 md:mb-12">
-                        For over two decades, Blazze Overseas LLP has redefined interior
-                        spaces globally.
+                        Blazze is an emerging global exporter of high-quality rice and spices, known for purity and consistency. We source directly from the best regions and ensure strict quality control at every step. Our goal is to deliver authentic taste with world-class standards. With Blazze, you experience quality you can trust.
                     </p>
 
                     <div className="about-stats mt-8 grid grid-cols-2 sm:grid-cols-3 gap-8 pt-8 border-t border-foreground/10">

@@ -73,7 +73,7 @@ export default function CtaBanner() {
                     Ready to Partner with Us?
                 </h2>
                 <p className="text-xl md:text-2xl text-white/80 max-w-2xl mb-12">
-                    Submit an enquiry for bulk orders or download our comprehensive product catalogue.
+                    Submit an enquiry for bulk orders or download our comprehensive export catalogue.
                 </p>
 
                 <div className="flex flex-col sm:flex-row gap-6">
