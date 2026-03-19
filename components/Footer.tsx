@@ -37,11 +37,12 @@ export default function Footer() {
                         <h4 className="text-sm uppercase tracking-widest text-white/40 mb-6">Newsletter</h4>
                         <div className="relative border-b border-white/20 pb-4 flex items-center group">
                             <input
+                                suppressHydrationWarning
                                 type="email"
                                 placeholder="Enter your email"
                                 className="bg-transparent border-none outline-none w-full text-white placeholder:text-white/40 placeholder:uppercase placeholder:tracking-widest placeholder:text-sm"
                             />
-                            <button aria-label="Subscribe" className="text-white/40 group-hover:text-[var(--color-accent)] transition-colors">
+                            <button suppressHydrationWarning aria-label="Subscribe" className="text-white/40 group-hover:text-[var(--color-accent)] transition-colors">
                                 <ArrowRight size={20} />
                             </button>
                         </div>

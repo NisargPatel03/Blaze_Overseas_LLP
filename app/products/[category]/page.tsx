@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { RevealText } from "@/components/ui/RevealText";
+import { SplitReveal } from "@/components/ui/SplitReveal";
+import { MagneticButton } from "@/components/ui/MagneticButton";
 import { StaggerGrid } from "@/components/ui/StaggerGrid";
 import { TiltCard } from "@/components/ui/TiltCard";
 import { products } from "@/lib/products";
@@ -51,20 +52,24 @@ export default async function CategoryPage({ params }: { params: Promise<{ categ
               <span className="text-[#F5A623] ml-1">{meta.name}</span>
             </div>
 
-            <RevealText text={meta.name} tag="h1" className="text-5xl md:text-[56px] font-display font-semibold text-white leading-tight" />
-            <RevealText text={meta.desc} tag="p" delay={0.5} className="text-lg text-white/60 max-w-lg leading-relaxed" />
+            <SplitReveal text={meta.name} tag="h1" className="text-5xl md:text-[56px] font-display font-semibold text-white leading-tight" />
+            <SplitReveal text={meta.desc} tag="p" delay={0.5} className="text-lg text-white/60 max-w-lg leading-relaxed" />
             
             <div className="animate-[slideInLeft_0.4s_ease-out_0.8s_both] mt-2 border border-[#F5A623]/30 text-[#F5A623]/80 bg-[#F5A623]/5 px-4 py-1.5 rounded-full text-[12px] font-medium tracking-wide">
               {categoryProducts.length} Products Available
             </div>
 
             <div className="flex flex-wrap gap-4 mt-6 animate-[fadeIn_0.5s_ease-out_1s_both]">
-              <a href="#product-grid" className="h-12 px-6 border border-[#F5A623] text-[#F5A623] hover:bg-[#F5A623]/10 flex items-center justify-center rounded-sm text-sm font-medium transition-colors">
-                View All Products
-              </a>
-              <a href={`https://wa.me/${waNumber.replace('+', '')}?text=Hi Blazze, I am interested in ${meta.name} products`} target="_blank" rel="noreferrer" className="h-12 px-6 bg-[#25D366] hover:bg-[#20b958] text-white flex items-center justify-center rounded-sm text-sm font-medium transition-colors gap-2">
-                <MessageCircle size={18} /> WhatsApp Inquiry
-              </a>
+              <MagneticButton>
+                <a href="#product-grid" className="h-12 px-6 border border-[#F5A623] text-[#F5A623] hover:bg-[#F5A623]/10 flex items-center justify-center rounded-sm text-sm font-medium transition-colors">
+                  View All Products
+                </a>
+              </MagneticButton>
+              <MagneticButton intensity={0.15}>
+                <a href={`https://wa.me/${waNumber.replace('+', '')}?text=Hi Blazze, I am interested in ${meta.name} products`} target="_blank" rel="noreferrer" className="h-12 px-6 bg-[#25D366] hover:bg-[#20b958] text-white flex items-center justify-center rounded-sm text-sm font-medium transition-colors gap-2">
+                  <MessageCircle size={18} /> WhatsApp Inquiry
+                </a>
+              </MagneticButton>
             </div>
           </div>
 
@@ -147,9 +152,11 @@ export default async function CategoryPage({ params }: { params: Promise<{ categ
             <h3 className="text-xl md:text-2xl font-display font-medium text-[#F5A623] mb-2">Need a custom quantity or bulk order?</h3>
             <p className="text-sm text-white/60">Contact our export team for pricing, logistics, and supply availability.</p>
           </div>
-          <Link href="/contact" className="h-[52px] px-8 bg-[#F5A623] hover:bg-[#e09500] text-black font-medium transition-transform duration-300 hover:scale-105 rounded-sm flex items-center justify-center whitespace-nowrap">
-            Get a Quote <ArrowRight size={18} className="ml-2" />
-          </Link>
+          <MagneticButton>
+            <Link href="/contact" className="h-[52px] px-8 bg-[#F5A623] hover:bg-[#e09500] text-black font-medium transition-transform duration-300 hover:scale-105 rounded-sm flex items-center justify-center whitespace-nowrap">
+              Get a Quote <ArrowRight size={18} className="ml-2" />
+            </Link>
+          </MagneticButton>
         </div>
       </section>
 

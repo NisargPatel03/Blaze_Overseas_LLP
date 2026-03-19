@@ -99,20 +99,20 @@ export default function Contact() {
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                 <div className="flex flex-col gap-2">
                                     <label className="text-sm font-medium uppercase tracking-widest opacity-70">First Name</label>
-                                    <input type="text" className="w-full bg-transparent border-b border-foreground/20 py-3 focus:outline-none focus:border-[var(--color-accent)] transition-colors" placeholder="John" />
+                                    <input suppressHydrationWarning type="text" className="w-full bg-transparent border-b border-foreground/20 py-3 focus:outline-none focus:border-[var(--color-accent)] transition-colors" placeholder="John" />
                                 </div>
                                 <div className="flex flex-col gap-2">
                                     <label className="text-sm font-medium uppercase tracking-widest opacity-70">Last Name</label>
-                                    <input type="text" className="w-full bg-transparent border-b border-foreground/20 py-3 focus:outline-none focus:border-[var(--color-accent)] transition-colors" placeholder="Doe" />
+                                    <input suppressHydrationWarning type="text" className="w-full bg-transparent border-b border-foreground/20 py-3 focus:outline-none focus:border-[var(--color-accent)] transition-colors" placeholder="Doe" />
                                 </div>
                             </div>
                             <div className="flex flex-col gap-2">
                                 <label className="text-sm font-medium uppercase tracking-widest opacity-70">Email Address</label>
-                                <input type="email" className="w-full bg-transparent border-b border-foreground/20 py-3 focus:outline-none focus:border-[var(--color-accent)] transition-colors" placeholder="john@example.com" />
+                                <input suppressHydrationWarning type="email" className="w-full bg-transparent border-b border-foreground/20 py-3 focus:outline-none focus:border-[var(--color-accent)] transition-colors" placeholder="john@example.com" />
                             </div>
                             <div className="flex flex-col gap-2">
                                 <label className="text-sm font-medium uppercase tracking-widest opacity-70">Product Interest</label>
-                                <select defaultValue="" className="w-full bg-transparent border-b border-foreground/20 py-3 focus:outline-none focus:border-[var(--color-accent)] transition-colors appearance-none cursor-pointer">
+                                <select suppressHydrationWarning defaultValue="" className="w-full bg-transparent border-b border-foreground/20 py-3 focus:outline-none focus:border-[var(--color-accent)] transition-colors appearance-none cursor-pointer">
                                     <option value="" disabled className="bg-background text-foreground">Select a category</option>
                                     <option value="whole-spices" className="bg-background text-foreground">Whole Spices</option>
                                     <option value="blended-masala" className="bg-background text-foreground">Blended Masala</option>
@@ -124,7 +124,7 @@ export default function Contact() {
                                 <label className="text-sm font-medium uppercase tracking-widest opacity-70">Message</label>
                                 <textarea rows={4} className="w-full bg-transparent border-b border-foreground/20 py-3 focus:outline-none focus:border-[var(--color-accent)] transition-colors resize-none" placeholder="How can we help you?"></textarea>
                             </div>
-                            <button className="flex items-center justify-center gap-3 w-full py-4 mt-4 bg-foreground text-background font-bold uppercase tracking-widest text-sm hover:bg-[var(--color-accent)] hover:text-white transition-colors duration-300">
+                            <button suppressHydrationWarning className="flex items-center justify-center gap-3 w-full py-4 mt-4 bg-foreground text-background font-bold uppercase tracking-widest text-sm hover:bg-[var(--color-accent)] hover:text-white transition-colors duration-300">
                                 Send Message <MoveRight size={18} />
                             </button>
                         </form>
