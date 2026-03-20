@@ -1044,71 +1044,130 @@ export const products: Product[] = [
   },
   {
     "id": 15,
-    "name": "Basmati Rice",
+    "name": "Rice (Basmati / Non-Basmati)",
     "slug": "basmati-rice",
     "category": "grains",
     "categoryName": "Grains",
     "categorySlug": "grains",
-    "origin": "Punjab, India",
-    "grade": "1121 Premium Long Grain",
+    "origin": "Punjab, Haryana & Andhra Pradesh, India",
+    "grade": "Premium Export Grade",
     "varieties": [
-      "1121 Sella",
-      "1121 Steam",
-      "Pusa Basmati"
+      "1121 Basmati",
+      "1509 Basmati",
+      "1401 Basmati",
+      "1718 Basmati",
+      "IR64 (Non-Basmati)",
+      "Sona Masoori",
+      "PR11",
+      "Swarna Rice"
     ],
-    "description": "The king of rice. Our 1121 Basmati variant guarantees extra-long grains, brilliant white luster, non-sticky cooking, and an unforgettable natural aroma.",
+    "description": "We export premium quality Basmati and Non-Basmati rice varieties sourced from the finest rice-growing regions of India. Our Basmati rice (1121, 1509, 1401, 1718) is known for its extra-long grains (6.5–8.5mm+), natural aroma, 2x elongation on cooking, and fluffy non-sticky texture. Non-Basmati varieties include IR64, Sona Masoori, PR11, and Swarna Rice for diverse global markets.",
     "packagingSizes": [
-      {
-        "label": "5kg",
-        "type": "retail"
-      },
-      {
-        "label": "25kg PP Bag",
-        "type": "bulk"
-      }
+      { "label": "1kg", "type": "retail" },
+      { "label": "5kg", "type": "retail" },
+      { "label": "10kg", "type": "retail" },
+      { "label": "20kg Export Bag", "type": "bulk" },
+      { "label": "25kg Export Bag", "type": "bulk" },
+      { "label": "50kg Export Bag", "type": "bulk" }
     ],
     "color": "#fdfdfa",
     "moq": "1x20ft Container",
-    "shelfLife": "24+ Months (Aged)",
-    "moisture": "Max 12%",
-    "purity": "95% Pure Grain",
+    "shelfLife": "12–24 Months (stored properly)",
+    "moisture": "≤ 12–14%",
+    "purity": "Sortex Cleaned",
     "hsCode": "10063020",
-    "unsplashId": "photo-1586201375761-83865001e31c",
-    "whatsappText": "Hi Blazze, I am interested in Basmati Rice imports."
+    "unsplashId": "/Photos/Coverpage grains.jpeg",
+    "whatsappText": "Hi Blazze, I am interested in Basmati / Non-Basmati Rice imports.",
+    "ingredients": "100% Natural Rice Grain (Raw / Steam / Parboiled) — No additives or preservatives",
+    "processingDetails": [
+      "Sortex cleaned using advanced color sorting machines",
+      "Silky / Double Polished finish available on request",
+      "Hygienically processed under strict quality control",
+      "Available as Raw, Steam, or Parboiled variants",
+      "Private labeling supported with PP, Non-Woven, or BOPP bags"
+    ],
+    "detailedSpecs": [
+      { "label": "Product Name", "value": "Basmati / Non-Basmati Rice" },
+      { "label": "Brand", "value": "Blazze / Kit Bit" },
+      { "label": "Type", "value": "Raw / Steam / Parboiled" },
+      { "label": "Color", "value": "White / Creamy White / Golden (as per type)" },
+      { "label": "Grain Type", "value": "Long Grain / Medium Grain / Short Grain" },
+      { "label": "Crop Year", "value": "Latest Crop / As per availability" },
+      { "label": "Moisture Content", "value": "≤ 12–14%" },
+      { "label": "Broken Grains", "value": "1% / 5% / 10% / 25% (as per requirement)" },
+      { "label": "Foreign Matter", "value": "Nil / ≤ 0.5%" },
+      { "label": "Damaged / Discolored Grains", "value": "≤ 1–2%" },
+      { "label": "Chalky Grains", "value": "As per grade" },
+      { "label": "Paddy Grains", "value": "Nil" },
+      { "label": "Admixture", "value": "As per buyer requirement" },
+      { "label": "Average Grain Length (Basmati)", "value": "6.5 mm – 8.5 mm+" },
+      { "label": "Length After Cooking", "value": "2x elongation" },
+      { "label": "Aroma", "value": "Natural Basmati Aroma (for basmati varieties)" },
+      { "label": "Texture", "value": "Non-sticky, fluffy after cooking" },
+      { "label": "Shelf Life", "value": "12–24 Months (if stored properly)" },
+      { "label": "HS Code", "value": "<span class='font-mono text-[#F5A623]'>10063020</span>" }
+    ]
   },
   {
     "id": 16,
-    "name": "Premium Wheat",
+    "name": "Wheat",
     "slug": "wheat",
     "category": "grains",
     "categoryName": "Grains",
     "categorySlug": "grains",
-    "origin": "Madhya Pradesh, India",
+    "origin": "Madhya Pradesh, Punjab & Rajasthan, India",
     "grade": "Milling Grade 1",
     "varieties": [
-      "Sharbati",
-      "Lokwan"
+      "Sharbati Wheat",
+      "Lokwan Wheat",
+      "MP Wheat",
+      "Durum Wheat"
     ],
-    "description": "Sourced from the heartlands of India, our premium hard wheat ensures high protein content and excellent milling quality for bakeries and pasta manufacturing.",
+    "description": "Our export-grade wheat is sourced from premium wheat-growing belts of India. We supply Hard and Soft wheat varieties (Sharbati, Lokwan, MP Wheat, Durum) suited for flour milling, semolina production, and industrial food processing. Protein content 10–13%, moisture ≤12%, with consistent quality and zero weevilled grains guaranteed.",
     "packagingSizes": [
-      {
-        "label": "10kg",
-        "type": "retail"
-      },
-      {
-        "label": "50kg Jute Bag",
-        "type": "bulk"
-      }
+      { "label": "5kg", "type": "retail" },
+      { "label": "10kg", "type": "retail" },
+      { "label": "25kg Retail Bag", "type": "retail" },
+      { "label": "25kg Bulk Bag", "type": "bulk" },
+      { "label": "50kg Bulk Bag (PP / Jute)", "type": "bulk" }
     ],
     "color": "#e8cf94",
     "moq": "1x20ft Container",
-    "shelfLife": "12 Months",
-    "moisture": "Max 11%",
+    "shelfLife": "12 Months (under proper storage conditions)",
+    "moisture": "≤ 12%",
     "purity": "99% Min",
     "hsCode": "10019910",
-    "unsplashId": "photo-1574323347407-f5e1ad6d020b",
-    "whatsappText": "Hi Blazze, I am interested in bulk Wheat imports."
+    "unsplashId": "/Photos/Coverpage grains.jpeg",
+    "whatsappText": "Hi Blazze, I am interested in bulk Wheat imports.",
+    "ingredients": "100% Natural Wheat Grain — Machine cleaned, no additives or chemicals",
+    "processingDetails": [
+      "Machine cleaned and size-graded for uniformity",
+      "Dust and impurities removed at every processing stage",
+      "Hygienically processed under quality control",
+      "Available in Hard Wheat and Soft Wheat (Durum) variants",
+      "Private labeling available with PP, Jute, or Export-grade bags"
+    ],
+    "detailedSpecs": [
+      { "label": "Product Name", "value": "Wheat" },
+      { "label": "Brand", "value": "Blazze / Kit Bit" },
+      { "label": "Type", "value": "Hard Wheat / Soft Wheat" },
+      { "label": "Color", "value": "Golden Brown" },
+      { "label": "Grain Type", "value": "Medium to Hard Texture" },
+      { "label": "Crop Year", "value": "Latest Crop / As per availability" },
+      { "label": "Moisture Content", "value": "≤ 12%" },
+      { "label": "Protein Content", "value": "10% – 13% (depending on variety)" },
+      { "label": "Foreign Matter", "value": "≤ 1%" },
+      { "label": "Damaged Grains", "value": "≤ 2%" },
+      { "label": "Broken Grains", "value": "≤ 2%" },
+      { "label": "Shriveled Grains", "value": "≤ 3%" },
+      { "label": "Weevilled Grains", "value": "Nil / Minimal" },
+      { "label": "Grain Hardness", "value": "Medium to Hard (for better flour yield)" },
+      { "label": "Texture", "value": "Firm and free-flowing" },
+      { "label": "Shelf Life", "value": "12 Months (under proper storage)" },
+      { "label": "HS Code", "value": "<span class='font-mono text-[#F5A623]'>10019910</span>" }
+    ]
   },
+
   {
     "id": 17,
     "name": "Chana Dal",

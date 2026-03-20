@@ -226,6 +226,10 @@ export default function ProductSplash({ productSlug, autoPlay = true, replay = 0
     // Respect reduced motion
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
+    // Skip effect on touch/mobile — canvas animation breaks and overlaps image
+    const isMobile = window.innerWidth < 768 || ('ontouchstart' in window);
+    if (isMobile) return;
+
     const canvas = canvasRef.current;
     if (!canvas) return;
     const ctx = canvas.getContext('2d');
@@ -361,8 +365,8 @@ export default function ProductSplash({ productSlug, autoPlay = true, replay = 0
       const W = w();
       const H = h();
 
-      ctx.fillStyle = cfg.bgColor;
-      ctx.fillRect(0, 0, W, H);
+      // Clear to transparent — never paint an opaque bg over the image
+      ctx.clearRect(0, 0, W, H);
 
       let aliveCount = 0;
       let peakLife = 0;
@@ -456,8 +460,8 @@ export default function ProductSplash({ productSlug, autoPlay = true, replay = 0
         animationFrameId = requestAnimationFrame(drawLoop);
       } else {
         isRunning = false;
-        ctx.fillStyle = cfg.bgColor;
-        ctx.fillRect(0, 0, W, H);
+        // Clear canvas and fade it out cleanly — don't paint an opaque block
+        ctx.clearRect(0, 0, W, H);
         if (canvas) {
           canvas.style.transition = 'opacity 2500ms ease-in-out';
           canvas.style.opacity = '0';
