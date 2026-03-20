@@ -1177,25 +1177,42 @@ export const products: Product[] = [
     "categorySlug": "pulses",
     "origin": "Maharashtra, India",
     "grade": "Sortex Cleaned",
-    "description": "Split baby chickpeas characterized by a nutty flavor and high protein density. Machine sorted and highly polished for premium retail markets.",
+    "description": "Split baby chickpeas (Bengal Gram) characterized by a mild, nutty flavor and high protein density. Machine sorted and highly polished for premium retail markets.",
     "packagingSizes": [
-      {
-        "label": "1kg",
-        "type": "retail"
-      },
-      {
-        "label": "25kg Bag",
-        "type": "bulk"
-      }
+      { "label": "1kg / 5kg / 10kg", "type": "retail" },
+      { "label": "25kg / 50kg (PP Bags / Jute / Export-grade)", "type": "bulk" }
     ],
     "color": "#ffd966",
     "moq": "5 Metric Tons",
-    "shelfLife": "12 Months",
-    "moisture": "Max 10%",
-    "purity": "99% Min",
+    "shelfLife": "12 Months (under proper storage conditions)",
+    "moisture": "≤ 12%",
+    "purity": "≥ 99%",
     "hsCode": "07132000",
     "unsplashId": "/Photos/Chana Dal.jpeg",
-    "whatsappText": "Hi Blazze, I am interested in Chana Dal."
+    "whatsappText": "Hi Blazze, I am interested in Chana Dal.",
+    "ingredients": "100% Split Bengal Gram (Chana Dal)",
+    "processingDetails": [
+      "Machine cleaned & sorted",
+      "Properly dehusked and split",
+      "Polished (if required)",
+      "Hygienically processed under strict quality control"
+    ],
+    "detailedSpecs": [
+      { "label": "Product Name", "value": "Chana Dal (Split Bengal Gram)" },
+      { "label": "Brand", "value": "Blazze / Kit Bit" },
+      { "label": "Type", "value": "Split & Polished / Unpolished" },
+      { "label": "Color", "value": "Bright Yellow" },
+      { "label": "Taste & Aroma", "value": "Mild, Nutty, Fresh & Clean" },
+      { "label": "Moisture Content", "value": "≤ 12%" },
+      { "label": "Purity", "value": "≥ 99%" },
+      { "label": "Broken/Fragments", "value": "≤ 2–3%" },
+      { "label": "Foreign Matter", "value": "≤ 0.5%" },
+      { "label": "Damaged / Discolored Content", "value": "≤ 1–2%" },
+      { "label": "Weevilled Grains", "value": "Nil / Minimal" },
+      { "label": "Grain Size", "value": "Uniform & Well-Split" },
+      { "label": "Shelf Life", "value": "12 Months" },
+      { "label": "HS Code", "value": "<span class='font-mono text-[#F5A623]'>07132000</span>" }
+    ]
   },
   {
     "id": 18,
@@ -1208,23 +1225,40 @@ export const products: Product[] = [
     "grade": "Premium Sortex",
     "description": "Dehusked and split mung beans delivering a sweet, soft, and easy-to-digest protein source. An essential pulse for global health food brands.",
     "packagingSizes": [
-      {
-        "label": "1kg",
-        "type": "retail"
-      },
-      {
-        "label": "25kg Bag",
-        "type": "bulk"
-      }
+      { "label": "1kg / 5kg / 10kg", "type": "retail" },
+      { "label": "25kg / 50kg (PP Bags / Jute / Export-grade)", "type": "bulk" }
     ],
     "color": "#eeb422",
     "moq": "5 Metric Tons",
-    "shelfLife": "12 Months",
-    "moisture": "Max 10%",
-    "purity": "99.5% Min",
+    "shelfLife": "12 Months (under proper storage conditions)",
+    "moisture": "≤ 12%",
+    "purity": "≥ 99%",
     "hsCode": "07133100",
     "unsplashId": "/Photos/mung dal.jpeg",
-    "whatsappText": "Hi Blazze, I am interested in Mung Dal."
+    "whatsappText": "Hi Blazze, I am interested in Mung Dal.",
+    "ingredients": "100% Split Green Gram (Moong Dal)",
+    "processingDetails": [
+      "Machine cleaned & graded",
+      "Dehusked and split properly",
+      "Polished (if required)",
+      "Hygienically processed under strict quality control"
+    ],
+    "detailedSpecs": [
+      { "label": "Product Name", "value": "Moong Dal (Split Green Gram)" },
+      { "label": "Brand", "value": "Blazze / Kit Bit" },
+      { "label": "Type", "value": "Split Washed / Split Chilka (with skin)" },
+      { "label": "Color", "value": "Yellow (Washed) / Green & Yellow (Chilka)" },
+      { "label": "Taste & Aroma", "value": "Mild, Light, Slightly Sweet & Natural" },
+      { "label": "Moisture Content", "value": "≤ 12%" },
+      { "label": "Purity", "value": "≥ 99%" },
+      { "label": "Broken/Fragments", "value": "≤ 2–3%" },
+      { "label": "Foreign Matter", "value": "≤ 0.5%" },
+      { "label": "Damaged/Discolored", "value": "≤ 1–2%" },
+      { "label": "Grain Size", "value": "Uniform & Well-Split" },
+      { "label": "Texture", "value": "Smooth & Firm" },
+      { "label": "Shelf Life", "value": "12 Months" },
+      { "label": "HS Code", "value": "<span class='font-mono text-[#F5A623]'>07133100</span>" }
+    ]
   },
   {
     "id": 19,
@@ -1237,23 +1271,39 @@ export const products: Product[] = [
     "grade": "Bold Size (12mm)",
     "description": "Premium large, light-colored chickpeas. Perfect for Middle Eastern hummus, salads, and canning industries demanding uniform grain size.",
     "packagingSizes": [
-      {
-        "label": "1kg",
-        "type": "retail"
-      },
-      {
-        "label": "25kg PP Bag",
-        "type": "bulk"
-      }
+      { "label": "1kg / 5kg / 10kg", "type": "retail" },
+      { "label": "25kg / 50kg (PP Bags / Jute / Export-grade)", "type": "bulk" }
     ],
     "color": "#f5deb3",
     "moq": "1x20ft Container",
-    "shelfLife": "12 Months",
-    "moisture": "Max 12%",
-    "purity": "99% Min",
+    "shelfLife": "12–24 Months (under proper storage conditions)",
+    "moisture": "≤ 12%",
+    "purity": "≥ 99%",
     "hsCode": "07132000",
     "unsplashId": "/Photos/Kabuli chana.jpeg",
-    "whatsappText": "Hi Blazze, I am interested in Kabuli Chana (Chickpeas)."
+    "whatsappText": "Hi Blazze, I am interested in Kabuli Chana (Chickpeas).",
+    "ingredients": "100% Whole White Chickpeas",
+    "processingDetails": [
+      "Machine cleaned & graded",
+      "Size sorted for uniformity",
+      "Hygienically processed under strict quality control"
+    ],
+    "detailedSpecs": [
+      { "label": "Product Name", "value": "Kabuli Chana (White Chickpeas)" },
+      { "label": "Brand", "value": "Blazze / Kit Bit" },
+      { "label": "Type", "value": "Whole Chickpeas" },
+      { "label": "Color", "value": "Creamy White" },
+      { "label": "Taste & Aroma", "value": "Mild, Nutty, Rich & Natural" },
+      { "label": "Count per Ounce (OZ)", "value": "40/42, 42/44, 44/46, 58/60, 60/62" },
+      { "label": "Moisture Content", "value": "≤ 12%" },
+      { "label": "Purity", "value": "≥ 99%" },
+      { "label": "Foreign Matter", "value": "≤ 0.5%" },
+      { "label": "Broken/Split", "value": "≤ 1%" },
+      { "label": "Damaged/Discolored", "value": "≤ 1–2%" },
+      { "label": "Size & Shape", "value": "Large & Uniform, Round & Smooth" },
+      { "label": "Shelf Life", "value": "12–24 Months" },
+      { "label": "HS Code", "value": "<span class='font-mono text-[#F5A623]'>07132000</span>" }
+    ]
   },
   {
     "id": 20,
@@ -1266,23 +1316,39 @@ export const products: Product[] = [
     "grade": "Sortex Cleaned",
     "description": "Split and skinned black gram. High in fiber and famously used to produce the smooth batters required for traditional South Indian cuisines.",
     "packagingSizes": [
-      {
-        "label": "1kg",
-        "type": "retail"
-      },
-      {
-        "label": "25kg Bag",
-        "type": "bulk"
-      }
+      { "label": "1kg / 5kg / 10kg", "type": "retail" },
+      { "label": "25kg / 50kg (PP Bags / Jute / Export-grade)", "type": "bulk" }
     ],
     "color": "#f2f2e8",
     "moq": "5 Metric Tons",
-    "shelfLife": "12 Months",
-    "moisture": "Max 10%",
-    "purity": "99% Min",
+    "shelfLife": "12 Months (under proper storage conditions)",
+    "moisture": "≤ 12%",
+    "purity": "≥ 99%",
     "hsCode": "07133100",
     "unsplashId": "/Photos/Urad dal.jpeg",
-    "whatsappText": "Hi Blazze, I am interested in Urad Dal."
+    "whatsappText": "Hi Blazze, I am interested in Urad Dal.",
+    "ingredients": "100% Split Black Gram (Urad Dal)",
+    "processingDetails": [
+      "Machine cleaned & graded",
+      "Dehusked and properly split",
+      "Polished (if required)",
+      "Hygienically processed under strict quality control"
+    ],
+    "detailedSpecs": [
+      { "label": "Product Name", "value": "Urad Dal (Black Gram Split)" },
+      { "label": "Brand", "value": "Blazze / Kit Bit" },
+      { "label": "Type", "value": "Split Washed / Split Chilka (with skin)" },
+      { "label": "Color", "value": "White (Washed) / Black & White (Chilka)" },
+      { "label": "Taste & Aroma", "value": "Rich, Creamy, Nutty & Natural" },
+      { "label": "Moisture Content", "value": "≤ 12%" },
+      { "label": "Purity", "value": "≥ 99%" },
+      { "label": "Broken/Fragments", "value": "≤ 2–3%" },
+      { "label": "Foreign Matter", "value": "≤ 0.5%" },
+      { "label": "Damaged/Discolored", "value": "≤ 1–2%" },
+      { "label": "Grain Size", "value": "Uniform & Well-Split" },
+      { "label": "Shelf Life", "value": "12 Months" },
+      { "label": "HS Code", "value": "<span class='font-mono text-[#F5A623]'>07133100</span>" }
+    ]
   },
   {
     "id": 21,
@@ -1295,23 +1361,40 @@ export const products: Product[] = [
     "grade": "Kashmiri Red / Chitra",
     "description": "Vivid red or speckled kidney beans renowned for their rich, meaty texture. A staple ingredient in both traditional Indian and Latin American dishes.",
     "packagingSizes": [
-      {
-        "label": "1kg",
-        "type": "retail"
-      },
-      {
-        "label": "25kg Box",
-        "type": "bulk"
-      }
+      { "label": "1kg / 5kg / 10kg", "type": "retail" },
+      { "label": "25kg / 50kg (PP Bags / Jute / Export-grade)", "type": "bulk" }
     ],
     "color": "#6c2828",
     "moq": "1x20ft Container",
-    "shelfLife": "18 Months",
-    "moisture": "Max 12%",
-    "purity": "99% Min",
+    "shelfLife": "12–24 Months (under proper storage conditions)",
+    "moisture": "≤ 12%",
+    "purity": "≥ 99%",
     "hsCode": "07133300",
     "unsplashId": "/Photos/RedWhite Rajma.jpeg",
-    "whatsappText": "Hi Blazze, I am interested in Rajma (Kidney Beans)."
+    "whatsappText": "Hi Blazze, I am interested in Rajma (Kidney Beans).",
+    "ingredients": "100% Whole Kidney Beans",
+    "processingDetails": [
+      "Machine cleaned & graded",
+      "Size sorted for uniformity",
+      "Hygienically processed under strict quality control"
+    ],
+    "detailedSpecs": [
+      { "label": "Product Name", "value": "Red Rajma (Kidney Beans)" },
+      { "label": "Brand", "value": "Blazze / Kit Bit" },
+      { "label": "Type", "value": "Whole Beans" },
+      { "label": "Color", "value": "Deep Red to Dark Red" },
+      { "label": "Taste & Aroma", "value": "Rich, Creamy, Slightly Sweet & Natural" },
+      { "label": "Size", "value": "Small / Medium / Large (Even size & shape)" },
+      { "label": "Grading", "value": "As per buyer requirement" },
+      { "label": "Moisture Content", "value": "≤ 12%" },
+      { "label": "Purity", "value": "≥ 99%" },
+      { "label": "Foreign Matter", "value": "≤ 0.5%" },
+      { "label": "Broken/Split", "value": "≤ 1–2%" },
+      { "label": "Damaged/Discolored", "value": "≤ 1–2%" },
+      { "label": "Shape", "value": "Kidney-shaped, clean & shiny" },
+      { "label": "Shelf Life", "value": "12–24 Months" },
+      { "label": "HS Code", "value": "<span class='font-mono text-[#F5A623]'>07133300</span>" }
+    ]
   },
   {
     "id": 22,
@@ -1324,23 +1407,39 @@ export const products: Product[] = [
     "grade": "Sortex Red Lentils",
     "description": "Split red lentils that cook incredibly fast into a soft, earthy puree. An export favorite due to its versatility and high global demand.",
     "packagingSizes": [
-      {
-        "label": "1kg",
-        "type": "retail"
-      },
-      {
-        "label": "25kg Bag",
-        "type": "bulk"
-      }
+      { "label": "1kg / 5kg / 10kg", "type": "retail" },
+      { "label": "25kg / 50kg (PP Bags / Jute / Export-grade)", "type": "bulk" }
     ],
     "color": "#d95c25",
     "moq": "5 Metric Tons",
-    "shelfLife": "12 Months",
-    "moisture": "Max 10%",
-    "purity": "99.5% Min",
+    "shelfLife": "12 Months (under proper storage conditions)",
+    "moisture": "≤ 12%",
+    "purity": "≥ 99%",
     "hsCode": "07134000",
     "unsplashId": "/Photos/Masoor Dal.jpeg",
-    "whatsappText": "Hi Blazze, I am interested in Masoor Dal."
+    "whatsappText": "Hi Blazze, I am interested in Masoor Dal.",
+    "ingredients": "100% Red Lentils",
+    "processingDetails": [
+      "Machine cleaned & graded",
+      "Dehusked and properly split",
+      "Polished (if required)",
+      "Hygienically processed under strict quality control"
+    ],
+    "detailedSpecs": [
+      { "label": "Product Name", "value": "Masoor Dal (Red Lentils)" },
+      { "label": "Brand", "value": "Blazze / Kit Bit" },
+      { "label": "Type", "value": "Split Washed / Whole (Sabut Masoor)" },
+      { "label": "Color", "value": "Orange-Red (Split) / Brown (Whole)" },
+      { "label": "Taste & Aroma", "value": "Mild, Earthy, Slightly Sweet & Natural" },
+      { "label": "Moisture Content", "value": "≤ 12%" },
+      { "label": "Purity", "value": "≥ 99%" },
+      { "label": "Broken/Fragments", "value": "≤ 2–3%" },
+      { "label": "Foreign Matter", "value": "≤ 0.5%" },
+      { "label": "Damaged/Discolored", "value": "≤ 1–2%" },
+      { "label": "Grain Size", "value": "Uniform & Well-Split" },
+      { "label": "Shelf Life", "value": "12 Months" },
+      { "label": "HS Code", "value": "<span class='font-mono text-[#F5A623]'>07134000</span>" }
+    ]
   },
   {
     "id": 23,
@@ -1353,23 +1452,38 @@ export const products: Product[] = [
     "grade": "Non-GMO Export Grade",
     "description": "Nutritionally dense soybeans perfect for tofu manufacturing, soy milk extraction, and global animal feed formulations. Guaranteed Non-GMO.",
     "packagingSizes": [
-      {
-        "label": "5kg",
-        "type": "retail"
-      },
-      {
-        "label": "50kg Sack",
-        "type": "bulk"
-      }
+      { "label": "25kg / 50kg (PP Bags / Jute / Export-grade)", "type": "bulk" }
     ],
     "color": "#e8d394",
     "moq": "1x20ft Container",
-    "shelfLife": "12 Months",
-    "moisture": "Max 11%",
-    "purity": "99% Min",
+    "shelfLife": "12 Months (under proper storage conditions)",
+    "moisture": "≤ 12%",
+    "purity": "≥ 99%",
     "hsCode": "12019000",
     "unsplashId": "/Photos/Soyabean.jpeg",
-    "whatsappText": "Hi Blazze, I am interested in Non-GMO Soyabean."
+    "whatsappText": "Hi Blazze, I am interested in Non-GMO Soyabean.",
+    "ingredients": "100% Whole Soybeans",
+    "processingDetails": [
+      "Machine cleaned & graded",
+      "Sorted to remove impurities",
+      "Hygienically processed under strict quality control"
+    ],
+    "detailedSpecs": [
+      { "label": "Product Name", "value": "Soyabean" },
+      { "label": "Brand", "value": "Blazze / Kit Bit" },
+      { "label": "Type", "value": "Whole Soybeans" },
+      { "label": "Color", "value": "Yellow" },
+      { "label": "Taste & Aroma", "value": "Mild, Nutty & Natural" },
+      { "label": "Protein Content", "value": "36% – 40%" },
+      { "label": "Oil Content", "value": "18% – 20%" },
+      { "label": "Moisture Content", "value": "≤ 12%" },
+      { "label": "Purity", "value": "≥ 99%" },
+      { "label": "Foreign Matter", "value": "≤ 0.5%" },
+      { "label": "Broken Grains", "value": "≤ 1–2%" },
+      { "label": "Shape & Size", "value": "Round, Smooth, Uniform & Well-Filled" },
+      { "label": "Shelf Life", "value": "12 Months" },
+      { "label": "HS Code", "value": "<span class='font-mono text-[#F5A623]'>12019000</span>" }
+    ]
   },
   {
     "id": 24,
@@ -1382,22 +1496,38 @@ export const products: Product[] = [
     "grade": "Premium Sortex",
     "description": "Split pigeon peas boasting a slightly sweet, nutty flavor. Processed using advanced milling techniques to ensure quick cooking times and high yield.",
     "packagingSizes": [
-      {
-        "label": "1kg",
-        "type": "retail"
-      },
-      {
-        "label": "25kg Bag",
-        "type": "bulk"
-      }
+      { "label": "1kg / 5kg / 10kg", "type": "retail" },
+      { "label": "25kg / 50kg (PP Bags / Jute / Export-grade)", "type": "bulk" }
     ],
     "color": "#f5c342",
     "moq": "5 Metric Tons",
-    "shelfLife": "12 Months",
-    "moisture": "Max 10%",
-    "purity": "99.5% Min",
+    "shelfLife": "12 Months (under proper storage conditions)",
+    "moisture": "≤ 12%",
+    "purity": "≥ 99%",
     "hsCode": "07136000",
     "unsplashId": "/Photos/Toor Dal.jpeg",
-    "whatsappText": "Hi Blazze, I am interested in Toor Dal."
+    "whatsappText": "Hi Blazze, I am interested in Toor Dal.",
+    "ingredients": "100% Split Pigeon Peas (Arhar Dal)",
+    "processingDetails": [
+      "Machine cleaned & graded",
+      "Dehusked and properly split",
+      "Polished (if required)",
+      "Hygienically processed under strict quality control"
+    ],
+    "detailedSpecs": [
+      { "label": "Product Name", "value": "Toor Dal (Arhar Dal)" },
+      { "label": "Brand", "value": "Blazze / Kit Bit" },
+      { "label": "Type", "value": "Split & Polished / Unpolished" },
+      { "label": "Color", "value": "Yellow" },
+      { "label": "Taste & Aroma", "value": "Mild, Nutty, Rich & Natural" },
+      { "label": "Moisture Content", "value": "≤ 12%" },
+      { "label": "Purity", "value": "≥ 99%" },
+      { "label": "Broken/Fragments", "value": "≤ 2–3%" },
+      { "label": "Foreign Matter", "value": "≤ 0.5%" },
+      { "label": "Damaged/Discolored", "value": "≤ 1–2%" },
+      { "label": "Grain Size", "value": "Uniform & Well-Split" },
+      { "label": "Shelf Life", "value": "12 Months" },
+      { "label": "HS Code", "value": "<span class='font-mono text-[#F5A623]'>07136000</span>" }
+    ]
   }
 ];

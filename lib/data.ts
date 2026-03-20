@@ -218,10 +218,10 @@ export const products = [
         img: "https://images.unsplash.com/photo-1585640209677-4ae31cbf0ffc?auto=format&fit=crop&q=80&w=800"
     },
     {
-        name: "Red / White Rajma (Kidney Beans)",
+        name: "Red Rajma (Kidney Beans)",
         slug: "rajma",
         categorySlug: "pulses",
-        desc: "Our Rajma (Kidney Beans) are available in Red and White varieties, known for their robust flavor, firm texture after cooking, and high protein content. A popular export commodity for global grocery and food service markets.",
+        desc: "Our Red Rajma (Kidney Beans) are known for their robust flavor, firm texture after cooking, and high protein content. A popular export commodity for global grocery and food service markets.",
         packaging: "500g, 1kg, 5kg retail | 25kg, 50kg export bags",
         origin: "Himachal Pradesh, Uttarakhand & imported varieties",
         img: "https://images.unsplash.com/photo-1515543904379-3d757afe72e6?auto=format&fit=crop&q=80&w=800"
