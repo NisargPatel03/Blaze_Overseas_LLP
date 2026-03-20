@@ -16,7 +16,7 @@ export function Preloader() {
             { val: displayProgress },
             {
                 val: progress,
-                duration: 0.5,
+                duration: 2.5,
                 ease: "power2.out",
                 onUpdate: function () {
                     setDisplayProgress(this.targets()[0].val);
@@ -91,7 +91,7 @@ export function Preloader() {
                 </div>
 
                 <p className="mt-8 text-[10px] md:text-xs tracking-[0.5em] text-white/50 uppercase font-light">
-                    Premium Surfaces
+                    Premium Spices & Grains
                 </p>
 
                 <div className="mt-6 flex flex-col items-center">

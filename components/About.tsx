@@ -140,8 +140,8 @@ export default function About() {
                 >
                     <div className="about-image-inner w-full h-full relative" style={{ transformStyle: "preserve-3d" }}>
                         <img
-                            src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&q=80&w=2000"
-                            alt="Interior design showcasing premium tiles"
+                            src="/Photos/HOMESCREEN IMAGE.png"
+                            alt="Blazze Overseas Legacy"
                             className="about-image absolute top-[-10%] w-full h-[120%] object-cover object-center translate-z-[50px]"
                         />
                         <div className="absolute inset-0 bg-black/10 mix-blend-overlay translate-z-[100px]"></div>
