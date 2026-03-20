@@ -77,13 +77,13 @@ export function Preloader() {
                 {/* Outline Text filling up visually */}
                 <div className="relative flex justify-center items-center px-4 w-full">
                     <span
-                        className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl w-full text-center font-display font-light text-transparent uppercase tracking-widest leading-none"
+                        className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl w-full text-center font-display font-medium text-transparent uppercase tracking-widest leading-none"
                         style={{ WebkitTextStroke: '1px rgba(255,255,255,0.1)' }}
                     >
                         Blazze Overseas
                     </span>
                     <span
-                        className="absolute left-0 top-0 w-full text-center text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-display font-medium text-[var(--color-accent)] uppercase tracking-widest whitespace-nowrap overflow-hidden transition-all duration-75 leading-none"
+                        className="absolute left-0 top-0 w-full text-center text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-display font-medium text-[var(--color-accent)] uppercase tracking-widest overflow-hidden transition-all duration-75 leading-none"
                         style={{ clipPath: `inset(0 ${100 - displayProgress}% 0 0)` }}
                     >
                         Blazze Overseas

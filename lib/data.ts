@@ -182,7 +182,7 @@ export const products = [
 
     // PULSES
     {
-        name: "Chana Dal",
+        name: "Chana Dal / Split Chickpea",
         slug: "chana-dal",
         categorySlug: "pulses",
         desc: "Chana Dal (split Bengal gram) is one of India's most widely consumed pulses. Our export-quality Chana Dal is machine-cleaned, properly sorted, and packed to retain natural color and nutrition. Rich in protein and fiber.",
@@ -191,7 +191,7 @@ export const products = [
         img: "https://images.unsplash.com/photo-1515543904379-3d757afe72e6?auto=format&fit=crop&q=80&w=800"
     },
     {
-        name: "Mung Dal",
+        name: "Mung Dal / Mung Beans",
         slug: "mung-dal",
         categorySlug: "pulses",
         desc: "Our Mung Dal (split green gram) is light, highly digestible, and rich in protein and vitamins. It is a staple in South Asian cooking and is also used in health food manufacturing globally. Available whole or split, with or without skin.",
@@ -200,7 +200,7 @@ export const products = [
         img: "https://images.unsplash.com/photo-1585640209677-4ae31cbf0ffc?auto=format&fit=crop&q=80&w=800"
     },
     {
-        name: "Kabuli Chana (Chickpeas)",
+        name: "Kabuli Chana / Chickpeas",
         slug: "kabuli-chana",
         categorySlug: "pulses",
         desc: "Our Kabuli Chana (White Chickpeas) are large, creamy white, and machine-sorted for size consistency. In high demand globally for hummus, curries, salads, and canned food manufacturing. Available in 42/44, 44/46, 56/58 counts.",
@@ -209,7 +209,7 @@ export const products = [
         img: "https://images.unsplash.com/photo-1515543904379-3d757afe72e6?auto=format&fit=crop&q=80&w=800"
     },
     {
-        name: "Urad Dal",
+        name: "Urad Dal / Black Gram",
         slug: "urad-dal",
         categorySlug: "pulses",
         desc: "Urad Dal (Black Gram) is an essential pulse in Indian cooking used for dal makhani, idli, dosa batter, and papad. We supply both whole black urad and split white urad (dhuli). High protein content and natural taste.",
@@ -218,7 +218,7 @@ export const products = [
         img: "https://images.unsplash.com/photo-1585640209677-4ae31cbf0ffc?auto=format&fit=crop&q=80&w=800"
     },
     {
-        name: "Red Rajma (Kidney Beans)",
+        name: "Red Rajma / Kidney Beans",
         slug: "rajma",
         categorySlug: "pulses",
         desc: "Our Red Rajma (Kidney Beans) are known for their robust flavor, firm texture after cooking, and high protein content. A popular export commodity for global grocery and food service markets.",
@@ -227,7 +227,7 @@ export const products = [
         img: "https://images.unsplash.com/photo-1515543904379-3d757afe72e6?auto=format&fit=crop&q=80&w=800"
     },
     {
-        name: "Masoor Dal (Red Lentils)",
+        name: "Masoor Dal / Red Lentils",
         slug: "masoor-dal",
         categorySlug: "pulses",
         desc: "Masoor Dal (Red Lentils) are quick-cooking, mild-flavored lentils widely consumed across South Asia, the Middle East, and Europe. Our export-quality Masoor Dal is clean, uniform in color, and free from foreign matter.",
@@ -236,7 +236,7 @@ export const products = [
         img: "https://images.unsplash.com/photo-1585640209677-4ae31cbf0ffc?auto=format&fit=crop&q=80&w=800"
     },
     {
-        name: "Soyabean",
+        name: "Soyabean / Glycine Max",
         slug: "soyabean",
         categorySlug: "pulses",
         desc: "Our Soyabean is sourced from non-GMO varieties grown in India's soybean belt. Used in oil extraction, animal feed, tofu production, and soy flour manufacturing. High protein (38–42%) and oil content (18–22%).",
@@ -245,7 +245,7 @@ export const products = [
         img: "https://images.unsplash.com/photo-1515543904379-3d757afe72e6?auto=format&fit=crop&q=80&w=800"
     },
     {
-        name: "Toor Dal (Pigeon Peas)",
+        name: "Toor Dal / Pigeon Peas",
         slug: "toor-dal",
         categorySlug: "pulses",
         desc: "Toor Dal is one of the most consumed pulses in India and globally. Our export-grade Toor Dal is available in oily and dry varieties, machine-cleaned, and properly sorted. Essential for dal, sambar, and numerous regional recipes.",

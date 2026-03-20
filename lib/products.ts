@@ -1170,7 +1170,7 @@ export const products: Product[] = [
 
   {
     "id": 17,
-    "name": "Chana Dal",
+    "name": "Chana Dal / Split Chickpea",
     "slug": "chana-dal",
     "category": "pulses",
     "categoryName": "Pulses",
@@ -1216,7 +1216,7 @@ export const products: Product[] = [
   },
   {
     "id": 18,
-    "name": "Mung Dal",
+    "name": "Mung Dal / Mung Beans",
     "slug": "mung-dal",
     "category": "pulses",
     "categoryName": "Pulses",
@@ -1262,7 +1262,7 @@ export const products: Product[] = [
   },
   {
     "id": 19,
-    "name": "Kabuli Chana",
+    "name": "Kabuli Chana / Chickpeas",
     "slug": "kabuli-chana",
     "category": "pulses",
     "categoryName": "Pulses",
@@ -1307,7 +1307,7 @@ export const products: Product[] = [
   },
   {
     "id": 20,
-    "name": "Urad Dal",
+    "name": "Urad Dal / Black Gram",
     "slug": "urad-dal",
     "category": "pulses",
     "categoryName": "Pulses",
@@ -1352,7 +1352,7 @@ export const products: Product[] = [
   },
   {
     "id": 21,
-    "name": "Rajma (Kidney Beans)",
+    "name": "Rajma / Kidney Beans",
     "slug": "rajma",
     "category": "pulses",
     "categoryName": "Pulses",
@@ -1398,7 +1398,7 @@ export const products: Product[] = [
   },
   {
     "id": 22,
-    "name": "Masoor Dal",
+    "name": "Masoor Dal / Red Lentils",
     "slug": "masoor-dal",
     "category": "pulses",
     "categoryName": "Pulses",
@@ -1443,7 +1443,7 @@ export const products: Product[] = [
   },
   {
     "id": 23,
-    "name": "Soyabean",
+    "name": "Soyabean / Glycine Max",
     "slug": "soyabean",
     "category": "pulses",
     "categoryName": "Pulses",
@@ -1487,7 +1487,7 @@ export const products: Product[] = [
   },
   {
     "id": 24,
-    "name": "Toor Dal",
+    "name": "Toor Dal / Pigeon Peas",
     "slug": "toor-dal",
     "category": "pulses",
     "categoryName": "Pulses",
