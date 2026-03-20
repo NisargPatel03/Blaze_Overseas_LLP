@@ -1,509 +1,1344 @@
 export interface Product {
-  id: number
-  name: string
-  slug: string
-  category: 'blended-masala' | 'whole-spices' | 'grains' | 'pulses'
-  categoryName: string
-  categorySlug: string
-  origin: string
-  grade: string
-  description: string
-  packagingSizes: { label: string; type: 'retail' | 'bulk' }[]
-  varieties?: string[]
-  color: string
-  moq: string
-  shelfLife: string
-  moisture: string
-  purity: string
-  hsCode: string
-  unsplashId: string
-  whatsappText: string
+  id: number;
+  name: string;
+  slug: string;
+  category: 'blended-masala' | 'whole-spices' | 'grains' | 'pulses';
+  categoryName: string;
+  categorySlug: string;
+  origin: string;
+  grade: string;
+  description: string;
+  packagingSizes: { label: string; type: 'retail' | 'bulk' }[];
+  varieties?: string[];
+  color: string;
+  moq: string;
+  shelfLife: string;
+  moisture: string;
+  purity: string;
+  hsCode: string;
+  unsplashId: string;
+  whatsappText: string;
+  ingredients?: string;
+  processingDetails?: string[];
+  detailedSpecs?: { label: string; value: string }[];
 }
 
 export const products: Product[] = [
   {
-    id: 1,
-    name: "Red Chilli Powder",
-    slug: "red-chilli-powder",
-    category: "blended-masala",
-    categoryName: "Blended Masala",
-    categorySlug: "blended-masala",
-    origin: "Guntur, Andhra Pradesh",
-    grade: "Export Grade A",
-    description: "Vibrant and intensely spicy, our Guntur Red Chilli Powder is ground from sun-dried premium chillies to deliver exceptional color and heat. Essential for rich curries.",
-    packagingSizes: [{ label: "500g", type: "retail" }, { label: "25kg Bag", type: "bulk" }],
-    color: "#d9381e",
-    moq: "1 Metric Ton",
-    shelfLife: "18 Months",
-    moisture: "Max 10%",
-    purity: "99% Min",
-    hsCode: "09042211",
-    unsplashId: "/Photos/Red Chilli Powder.jpeg",
-    whatsappText: "Hi Blazze, I am interested in Red Chilli Powder. Please share price and availability."
+    "id": 1,
+    "name": "Red Chilli Powder",
+    "slug": "red-chilli-powder",
+    "category": "blended-masala",
+    "categoryName": "Blended Masala",
+    "categorySlug": "blended-masala",
+    "origin": "Guntur, Andhra Pradesh",
+    "grade": "Export Grade A",
+    "description": "Vibrant and intensely spicy, our Guntur Red Chilli Powder is ground from sun-dried premium chillies to deliver exceptional color and heat.",
+    "packagingSizes": [
+      {
+        "label": "100g / 200g / 500g / 1kg",
+        "type": "retail"
+      },
+      {
+        "label": "5kg / 10kg / 25kg (Pouch/Jar/Export Bags)",
+        "type": "bulk"
+      }
+    ],
+    "color": "#d9381e",
+    "moq": "1 Metric Ton",
+    "shelfLife": "12–18 Months",
+    "moisture": "≤ 10%",
+    "purity": "100% Pure",
+    "hsCode": "09042211",
+    "unsplashId": "/Photos/Red Chilli Powder.jpeg",
+    "whatsappText": "Hi Blazze, I am interested in Red Chilli Powder.",
+    "ingredients": "100% Dried Red Chillies (No additives)",
+    "processingDetails": [
+      "Hygienically cleaned & processed",
+      "Machine ground for uniform texture",
+      "No artificial color or preservatives added"
+    ],
+    "detailedSpecs": [
+      {
+        "label": "Purity",
+        "value": "100% Pure (No Adulteration)"
+      },
+      {
+        "label": "Moisture Content",
+        "value": "≤ 10%"
+      },
+      {
+        "label": "Mesh Size (Fineness)",
+        "value": "40–60 Mesh (or as required)"
+      },
+      {
+        "label": "ASTA Color Value",
+        "value": "80–120 (depending on quality)"
+      },
+      {
+        "label": "Pungency Level",
+        "value": "As per customer requirement (mild / medium / hot)"
+      },
+      {
+        "label": "Taste Level",
+        "value": "Medium to Hot (customizable)"
+      },
+      {
+        "label": "Aroma",
+        "value": "Strong & Natural"
+      },
+      {
+        "label": "HS Code",
+        "value": "<span class='font-mono text-[#F5A623]'>09042211</span>"
+      }
+    ]
   },
   {
-    id: 2,
-    name: "Turmeric Powder",
-    slug: "turmeric-powder",
-    category: "blended-masala",
-    categoryName: "Blended Masala",
-    categorySlug: "blended-masala",
-    origin: "Salem, Tamil Nadu",
-    grade: "High Curcumin",
-    description: "A bright yellow, earthy spice with high curcumin content. Our turmeric powder is finely milled to ensure a robust flavor and maximum health benefits.",
-    packagingSizes: [{ label: "1kg", type: "retail" }, { label: "25kg Bag", type: "bulk" }],
-    color: "#f5a623",
-    moq: "1 Metric Ton",
-    shelfLife: "24 Months",
-    moisture: "Max 10%",
-    purity: "99.5% Min",
-    hsCode: "09103030",
-    unsplashId: "/Photos/Turmeric Powder.jpeg",
-    whatsappText: "Hi Blazze, I am interested in Turmeric Powder. Please share details."
+    "id": 2,
+    "name": "Turmeric Powder",
+    "slug": "turmeric-powder",
+    "category": "blended-masala",
+    "categoryName": "Blended Masala",
+    "categorySlug": "blended-masala",
+    "origin": "Salem, Tamil Nadu",
+    "grade": "High Curcumin",
+    "description": "A bright yellow, earthy spice with high curcumin content. Our turmeric powder is finely milled to ensure a robust flavor and maximum health benefits.",
+    "packagingSizes": [
+      {
+        "label": "100g / 200g / 500g / 1kg",
+        "type": "retail"
+      },
+      {
+        "label": "5kg / 10kg / 25kg (Pouch/Jar/Export Bags)",
+        "type": "bulk"
+      }
+    ],
+    "color": "#f5a623",
+    "moq": "1 Metric Ton",
+    "shelfLife": "12–18 Months",
+    "moisture": "≤ 10%",
+    "purity": "100% Pure",
+    "hsCode": "09103030",
+    "unsplashId": "/Photos/Turmeric Powder.jpeg",
+    "whatsappText": "Hi Blazze, I am interested in Turmeric Powder.",
+    "ingredients": "100% Dried Turmeric Fingers (No additives)",
+    "processingDetails": [
+      "Carefully selected turmeric roots",
+      "Hygienically cleaned & sun-dried",
+      "Machine ground for uniform texture",
+      "No artificial color or preservatives"
+    ],
+    "detailedSpecs": [
+      {
+        "label": "Purity",
+        "value": "100% Pure (No Adulteration)"
+      },
+      {
+        "label": "Curcumin Content",
+        "value": "2% – 5% (or higher if premium quality)"
+      },
+      {
+        "label": "Moisture Content",
+        "value": "≤ 10%"
+      },
+      {
+        "label": "Mesh Size (Fineness)",
+        "value": "40–60 Mesh (or as required)"
+      },
+      {
+        "label": "Ash Content",
+        "value": "≤ 9%"
+      },
+      {
+        "label": "Acid Insoluble Ash",
+        "value": "≤ 1.5%"
+      },
+      {
+        "label": "Taste",
+        "value": "Warm, Slightly Bitter"
+      },
+      {
+        "label": "Aroma",
+        "value": "Earthy & Natural"
+      },
+      {
+        "label": "HS Code",
+        "value": "<span class='font-mono text-[#F5A623]'>09103030</span>"
+      }
+    ]
   },
   {
-    id: 3,
-    name: "Kashmiri Red Chilli Powder",
-    slug: "kashmiri-red-chilli",
-    category: "blended-masala",
-    categoryName: "Blended Masala",
-    categorySlug: "blended-masala",
-    origin: "Kashmir, India",
-    grade: "Premium Color Grade",
-    description: "Known for its deep wine-red color and mild heat, authentic Kashmiri Chilli Powder elevates the visual appeal of any dish without overpowering the palate.",
-    packagingSizes: [{ label: "500g", type: "retail" }, { label: "25kg Bag", type: "bulk" }],
-    color: "#b91d1d",
-    moq: "500 KG",
-    shelfLife: "18 Months",
-    moisture: "Max 10%",
-    purity: "99% Min",
-    hsCode: "09042211",
-    unsplashId: "/Photos/Kashmiri Red Chilli Powder.jpeg",
-    whatsappText: "Hi Blazze, I am interested in Kashmiri Red Chilli Powder."
+    "id": 3,
+    "name": "Kashmiri Red Chilli Powder",
+    "slug": "kashmiri-red-chilli",
+    "category": "blended-masala",
+    "categoryName": "Blended Masala",
+    "categorySlug": "blended-masala",
+    "origin": "Kashmir, India",
+    "grade": "Premium Color Grade",
+    "description": "Known for its deep wine-red color and mild heat, authentic Kashmiri Chilli Powder elevates the visual appeal of any dish without overpowering the palate.",
+    "packagingSizes": [
+      {
+        "label": "500g",
+        "type": "retail"
+      },
+      {
+        "label": "25kg Bag",
+        "type": "bulk"
+      }
+    ],
+    "color": "#b91d1d",
+    "moq": "500 KG",
+    "shelfLife": "18 Months",
+    "moisture": "Max 10%",
+    "purity": "99% Min",
+    "hsCode": "09042211",
+    "unsplashId": "/Photos/Kashmiri Red Chilli Powder.jpeg",
+    "whatsappText": "Hi Blazze, I am interested in Kashmiri Red Chilli Powder."
   },
   {
-    id: 4,
-    name: "Cumin Powder",
-    slug: "cumin-powder",
-    category: "blended-masala",
-    categoryName: "Blended Masala",
-    categorySlug: "blended-masala",
-    origin: "Gujarat, India",
-    grade: "Export Grade",
-    description: "Freshly roasted and ground cumin seeds delivering a warm, earthy aroma. An indispensable spice across Mexican, Indian, and Middle Eastern cuisines.",
-    packagingSizes: [{ label: "500g", type: "retail" }, { label: "25kg Bag", type: "bulk" }],
-    color: "#8B5E1A",
-    moq: "1 Metric Ton",
-    shelfLife: "18 Months",
-    moisture: "Max 9%",
-    purity: "99% Min",
-    hsCode: "09093200",
-    unsplashId: "/Photos/Cumin Powder.jpeg",
-    whatsappText: "Hi Blazze, I am interested in Cumin Powder."
+    "id": 4,
+    "name": "Cumin Powder",
+    "slug": "cumin-powder",
+    "category": "blended-masala",
+    "categoryName": "Blended Masala",
+    "categorySlug": "blended-masala",
+    "origin": "Gujarat, India",
+    "grade": "Export Grade",
+    "description": "Freshly roasted and ground cumin seeds delivering a warm, earthy aroma. An indispensable spice across Mexican, Indian, and Middle Eastern cuisines.",
+    "packagingSizes": [
+      {
+        "label": "100g / 200g / 500g / 1kg",
+        "type": "retail"
+      },
+      {
+        "label": "5kg / 10kg / 25kg (Pouch/Jar/Export Bags)",
+        "type": "bulk"
+      }
+    ],
+    "color": "#8B5E1A",
+    "moq": "1 Metric Ton",
+    "shelfLife": "12–18 Months",
+    "moisture": "≤ 10%",
+    "purity": "100% Pure",
+    "hsCode": "09093200",
+    "unsplashId": "/Photos/Cumin Powder.jpeg",
+    "whatsappText": "Hi Blazze, I am interested in Cumin Powder.",
+    "ingredients": "100% Premium Cumin Seeds (Jeera)",
+    "processingDetails": [
+      "Sourced from high-quality farms",
+      "Machine cleaned to remove impurities",
+      "Hygienically ground for uniform texture",
+      "No artificial colors or preservatives"
+    ],
+    "detailedSpecs": [
+      {
+        "label": "Purity",
+        "value": "100% Pure (No Adulteration)"
+      },
+      {
+        "label": "Moisture Content",
+        "value": "≤ 10%"
+      },
+      {
+        "label": "Mesh Size (Fineness)",
+        "value": "40–60 Mesh (or as required)"
+      },
+      {
+        "label": "Total Ash",
+        "value": "≤ 9.5%"
+      },
+      {
+        "label": "Acid Insoluble Ash",
+        "value": "≤ 1.5%"
+      },
+      {
+        "label": "Volatile Oil Content",
+        "value": "2% – 4% (key quality factor)"
+      },
+      {
+        "label": "Taste",
+        "value": "Warm, Earthy & Slightly Bitter"
+      },
+      {
+        "label": "Aroma",
+        "value": "Strong & Distinctive"
+      },
+      {
+        "label": "HS Code",
+        "value": "<span class='font-mono text-[#F5A623]'>09093200</span>"
+      }
+    ]
   },
   {
-    id: 5,
-    name: "Garam Masala",
-    slug: "garam-masala",
-    category: "blended-masala",
-    categoryName: "Blended Masala",
-    categorySlug: "blended-masala",
-    origin: "Gujarat, India",
-    grade: "Restaurant Grade",
-    description: "A highly aromatic signature blend of premium roasted whole spices. Formulated to bring warmth, complexity, and finishing notes to rich curries and marinades.",
-    packagingSizes: [{ label: "250g", type: "retail" }, { label: "20kg Box", type: "bulk" }],
-    color: "#6b4423",
-    moq: "500 KG",
-    shelfLife: "12 Months",
-    moisture: "Max 10%",
-    purity: "100% Blended Spice",
-    hsCode: "09109100",
-    unsplashId: "/Photos/Garam Masala.jpeg",
-    whatsappText: "Hi Blazze, I am interested in bulk Garam Masala."
+    "id": 5,
+    "name": "Garam Masala",
+    "slug": "garam-masala",
+    "category": "blended-masala",
+    "categoryName": "Blended Masala",
+    "categorySlug": "blended-masala",
+    "origin": "Gujarat, India",
+    "grade": "Restaurant Grade",
+    "description": "A highly aromatic signature blend of premium roasted whole spices. Formulated to bring warmth, complexity, and finishing notes to rich curries and marinades.",
+    "packagingSizes": [
+      {
+        "label": "100g / 200g / 500g / 1kg",
+        "type": "retail"
+      },
+      {
+        "label": "5kg / 10kg / 25kg (Pouch/Jar/Export Bags)",
+        "type": "bulk"
+      }
+    ],
+    "color": "#6b4423",
+    "moq": "500 KG",
+    "shelfLife": "12 Months",
+    "moisture": "≤ 10%",
+    "purity": "100% Pure",
+    "hsCode": "09109100",
+    "unsplashId": "/Photos/Garam Masala.jpeg",
+    "whatsappText": "Hi Blazze, I am interested in bulk Garam Masala.",
+    "ingredients": "Coriander, Cumin, Black Pepper, Cloves, Cardamom, Cinnamon, Bay Leaf (Customizable)",
+    "processingDetails": [
+      "Premium whole spices sourced from trusted farms",
+      "Machine cleaned & carefully blended",
+      "Hygienically ground for consistent texture",
+      "No artificial colors or preservatives"
+    ],
+    "detailedSpecs": [
+      {
+        "label": "Purity",
+        "value": "100% Pure (No Adulteration)"
+      },
+      {
+        "label": "Moisture Content",
+        "value": "≤ 10%"
+      },
+      {
+        "label": "Mesh Size (Fineness)",
+        "value": "40–60 Mesh (or customizable)"
+      },
+      {
+        "label": "Total Ash",
+        "value": "≤ 8–10%"
+      },
+      {
+        "label": "Acid Insoluble Ash",
+        "value": "≤ 1.5%"
+      },
+      {
+        "label": "Volatile Oil Content",
+        "value": "As per blend (ensures strong aroma)"
+      },
+      {
+        "label": "Taste",
+        "value": "Rich, Warm & Spicy"
+      },
+      {
+        "label": "Aroma",
+        "value": "Strong, Aromatic & Balanced"
+      },
+      {
+        "label": "HS Code",
+        "value": "<span class='font-mono text-[#F5A623]'>09109100</span>"
+      }
+    ]
   },
   {
-    id: 6,
-    name: "Coriander Powder",
-    slug: "coriander-powder",
-    category: "blended-masala",
-    categoryName: "Blended Masala",
-    categorySlug: "blended-masala",
-    origin: "Rajasthan, India",
-    grade: "Export Quality",
-    description: "Milled from sun-dried green coriander seeds. It offers a fresh, citrusy, and mild flavor that forms the base of numerous traditional spice blends.",
-    packagingSizes: [{ label: "1kg", type: "retail" }, { label: "25kg Bag", type: "bulk" }],
-    color: "#c2a878",
-    moq: "1 Metric Ton",
-    shelfLife: "18 Months",
-    moisture: "Max 9%",
-    purity: "99% Min",
-    hsCode: "09092200",
-    unsplashId: "/Photos/Coriander Powder.jpeg",
-    whatsappText: "Hi Blazze, I am interested in Coriander Powder."
+    "id": 6,
+    "name": "Coriander Powder",
+    "slug": "coriander-powder",
+    "category": "blended-masala",
+    "categoryName": "Blended Masala",
+    "categorySlug": "blended-masala",
+    "origin": "Rajasthan, India",
+    "grade": "Export Quality",
+    "description": "Milled from sun-dried green coriander seeds. It offers a fresh, citrusy, and mild flavor that forms the base of numerous traditional spice blends.",
+    "packagingSizes": [
+      {
+        "label": "100g / 200g / 500g / 1kg",
+        "type": "retail"
+      },
+      {
+        "label": "5kg / 10kg / 25kg (Pouch/Jar/Export Bags)",
+        "type": "bulk"
+      }
+    ],
+    "color": "#c2a878",
+    "moq": "1 Metric Ton",
+    "shelfLife": "12 Months",
+    "moisture": "≤ 10%",
+    "purity": "100% Pure",
+    "hsCode": "09092200",
+    "unsplashId": "/Photos/Coriander Powder.jpeg",
+    "whatsappText": "Hi Blazze, I am interested in Coriander Powder.",
+    "ingredients": "100% Premium Coriander Seeds",
+    "processingDetails": [
+      "Sourced from high-quality farms",
+      "Machine cleaned to remove dust & impurities",
+      "Hygienically ground for uniform texture",
+      "No artificial color or preservatives"
+    ],
+    "detailedSpecs": [
+      {
+        "label": "Purity",
+        "value": "100% Pure (No Adulteration)"
+      },
+      {
+        "label": "Moisture Content",
+        "value": "≤ 10%"
+      },
+      {
+        "label": "Mesh Size (Fineness)",
+        "value": "40–60 Mesh (or customizable)"
+      },
+      {
+        "label": "Total Ash",
+        "value": "≤ 9%"
+      },
+      {
+        "label": "Acid Insoluble Ash",
+        "value": "≤ 1.5%"
+      },
+      {
+        "label": "Volatile Oil Content",
+        "value": "0.3% – 1.0%"
+      },
+      {
+        "label": "Taste",
+        "value": "Mild, Slightly Sweet & Citrusy"
+      },
+      {
+        "label": "Aroma",
+        "value": "Fresh, Pleasant & Aromatic"
+      },
+      {
+        "label": "HS Code",
+        "value": "<span class='font-mono text-[#F5A623]'>09092200</span>"
+      }
+    ]
   },
   {
-    id: 7,
-    name: "Cumin Coriander Powder",
-    slug: "cumin-coriander",
-    category: "blended-masala",
-    categoryName: "Blended Masala",
-    categorySlug: "blended-masala",
-    origin: "Gujarat, India",
-    grade: "Premium Blend",
-    description: "The classic 'Dhana Jeera' mix, perfectly balancing the earthy depth of cumin with the citrusy lightness of coriander. A staple in Indian coastal cooking.",
-    packagingSizes: [{ label: "1kg", type: "retail" }, { label: "25kg Bag", type: "bulk" }],
-    color: "#a47c43",
-    moq: "1 Metric Ton",
-    shelfLife: "18 Months",
-    moisture: "Max 10%",
-    purity: "100% Blend",
-    hsCode: "09109100",
-    unsplashId: "/Photos/Cumin Coriander Powder.jpeg",
-    whatsappText: "Hi Blazze, I am interested in Cumin Coriander Powder."
+    "id": 7,
+    "name": "Cumin Coriander Powder",
+    "slug": "cumin-coriander",
+    "category": "blended-masala",
+    "categoryName": "Blended Masala",
+    "categorySlug": "blended-masala",
+    "origin": "Gujarat, India",
+    "grade": "Premium Blend",
+    "description": "The classic 'Dhana Jeera' mix, perfectly balancing the earthy depth of cumin with the citrusy lightness of coriander. A staple in Indian coastal cooking.",
+    "packagingSizes": [
+      {
+        "label": "100g / 200g / 500g / 1kg",
+        "type": "retail"
+      },
+      {
+        "label": "5kg / 10kg / 25kg (Pouch/Jar/Export Bags)",
+        "type": "bulk"
+      }
+    ],
+    "color": "#a47c43",
+    "moq": "1 Metric Ton",
+    "shelfLife": "12 Months",
+    "moisture": "≤ 10%",
+    "purity": "100% Pure",
+    "hsCode": "09109100",
+    "unsplashId": "/Photos/Cumin Coriander Powder.jpeg",
+    "whatsappText": "Hi Blazze, I am interested in Cumin Coriander Powder.",
+    "ingredients": "Coriander Seeds (60% – 70%), Cumin Seeds: (30% – 40%) (Customizable)",
+    "processingDetails": [
+      "Premium quality seeds sourced from trusted farms",
+      "Machine cleaned & sorted",
+      "Carefully blended for consistent taste",
+      "Hygienically ground for uniform texture",
+      "No artificial colors or preservatives"
+    ],
+    "detailedSpecs": [
+      {
+        "label": "Purity",
+        "value": "100% Pure (No Adulteration)"
+      },
+      {
+        "label": "Moisture Content",
+        "value": "≤ 10%"
+      },
+      {
+        "label": "Mesh Size (Fineness)",
+        "value": "40–60 Mesh (or customizable)"
+      },
+      {
+        "label": "Total Ash",
+        "value": "≤ 9–10%"
+      },
+      {
+        "label": "Acid Insoluble Ash",
+        "value": "≤ 1.5%"
+      },
+      {
+        "label": "Volatile Oil Content",
+        "value": "As per blend ratio"
+      },
+      {
+        "label": "Taste",
+        "value": "Mild, Warm & Balanced"
+      },
+      {
+        "label": "Aroma",
+        "value": "Fresh, Earthy & Aromatic"
+      },
+      {
+        "label": "HS Code",
+        "value": "<span class='font-mono text-[#F5A623]'>09109100</span>"
+      }
+    ]
   },
   {
-    id: 8,
-    name: "Garlic Powder",
-    slug: "garlic-powder",
-    category: "blended-masala",
-    categoryName: "Blended Masala",
-    categorySlug: "blended-masala",
-    origin: "Madhya Pradesh, India",
-    grade: "A Grade Dehydrated",
-    description: "Intensely pungent and savory, our pure dehydrated garlic powder dissolves instantly to deliver robust garlic flavor to sauces, rubs, and baked goods.",
-    packagingSizes: [{ label: "500g", type: "retail" }, { label: "20kg Carton", type: "bulk" }],
-    color: "#f4f0cb",
-    moq: "500 KG",
-    shelfLife: "24 Months",
-    moisture: "Max 6%",
-    purity: "100% Pure",
-    hsCode: "07129030",
-    unsplashId: "/Photos/Garlic Powder.jpeg",
-    whatsappText: "Hi Blazze, I am interested in Garlic Powder."
+    "id": 8,
+    "name": "Garlic Powder",
+    "slug": "garlic-powder",
+    "category": "blended-masala",
+    "categoryName": "Blended Masala",
+    "categorySlug": "blended-masala",
+    "origin": "Madhya Pradesh, India",
+    "grade": "A Grade Dehydrated",
+    "description": "Intensely pungent and savory, our pure dehydrated garlic powder dissolves instantly to deliver robust garlic flavor to sauces, rubs, and baked goods.",
+    "packagingSizes": [
+      {
+        "label": "100g / 200g / 500g / 1kg",
+        "type": "retail"
+      },
+      {
+        "label": "5kg / 10kg / 25kg (Pouch/Jar/Export Bags)",
+        "type": "bulk"
+      }
+    ],
+    "color": "#f4f0cb",
+    "moq": "500 KG",
+    "shelfLife": "12–18 Months",
+    "moisture": "≤ 6%",
+    "purity": "100% Pure",
+    "hsCode": "07129030",
+    "unsplashId": "/Photos/Garlic Powder.jpeg",
+    "whatsappText": "Hi Blazze, I am interested in Garlic Powder.",
+    "ingredients": "100% Dehydrated Garlic",
+    "processingDetails": [
+      "Fresh garlic cloves carefully selected",
+      "Peeled, washed & dehydrated",
+      "Hygienically processed and finely ground",
+      "No artificial colors, flavors, or preservatives"
+    ],
+    "detailedSpecs": [
+      {
+        "label": "Purity",
+        "value": "100% Pure (No Adulteration)"
+      },
+      {
+        "label": "Moisture Content",
+        "value": "≤ 6% (important for shelf life)"
+      },
+      {
+        "label": "Mesh Size (Fineness)",
+        "value": "80–100 Mesh (fine powder)"
+      },
+      {
+        "label": "Total Ash",
+        "value": "≤ 5%"
+      },
+      {
+        "label": "Acid Insoluble Ash",
+        "value": "≤ 0.5%"
+      },
+      {
+        "label": "Bulk Density",
+        "value": "0.5 – 0.7 g/ml"
+      },
+      {
+        "label": "Taste",
+        "value": "Strong, Pungent & Savory"
+      },
+      {
+        "label": "Aroma",
+        "value": "Sharp & Characteristic Garlic Aroma"
+      },
+      {
+        "label": "HS Code",
+        "value": "<span class='font-mono text-[#F5A623]'>07129030</span>"
+      }
+    ]
   },
   {
-    id: 9,
-    name: "Ginger Powder",
-    slug: "ginger-powder",
-    category: "blended-masala",
-    categoryName: "Blended Masala",
-    categorySlug: "blended-masala",
-    origin: "Kerala, India",
-    grade: "Export Grade",
-    description: "Finely ground dried ginger root that brings a sharp, warm, and spicy bite. Perfect for both savory Asian dishes and sweet baked confectioneries.",
-    packagingSizes: [{ label: "500g", type: "retail" }, { label: "25kg Bag", type: "bulk" }],
-    color: "#e2c08d",
-    moq: "500 KG",
-    shelfLife: "24 Months",
-    moisture: "Max 8%",
-    purity: "100% Pure",
-    hsCode: "09101210",
-    unsplashId: "/Photos/Ginger Powder.jpeg",
-    whatsappText: "Hi Blazze, I am interested in Ginger Powder."
+    "id": 9,
+    "name": "Ginger Powder",
+    "slug": "ginger-powder",
+    "category": "blended-masala",
+    "categoryName": "Blended Masala",
+    "categorySlug": "blended-masala",
+    "origin": "Kerala, India",
+    "grade": "Export Grade",
+    "description": "Finely ground dried ginger root that brings a sharp, warm, and spicy bite. Perfect for both savory Asian dishes and sweet baked confectioneries.",
+    "packagingSizes": [
+      {
+        "label": "100g / 200g / 500g / 1kg",
+        "type": "retail"
+      },
+      {
+        "label": "5kg / 10kg / 25kg (Pouch/Jar/Export Bags)",
+        "type": "bulk"
+      }
+    ],
+    "color": "#e2c08d",
+    "moq": "500 KG",
+    "shelfLife": "12–18 Months",
+    "moisture": "≤ 8%",
+    "purity": "100% Pure",
+    "hsCode": "09101210",
+    "unsplashId": "/Photos/Ginger Powder.jpeg",
+    "whatsappText": "Hi Blazze, I am interested in Ginger Powder.",
+    "ingredients": "100% Dried Ginger",
+    "processingDetails": [
+      "High-quality fresh ginger roots selected",
+      "Cleaned, sliced & properly dried",
+      "Hygienically processed and finely ground",
+      "No artificial colors or preservatives"
+    ],
+    "detailedSpecs": [
+      {
+        "label": "Purity",
+        "value": "100% Pure (No Adulteration)"
+      },
+      {
+        "label": "Moisture Content",
+        "value": "≤ 8%"
+      },
+      {
+        "label": "Mesh Size (Fineness)",
+        "value": "60–80 Mesh (or as required)"
+      },
+      {
+        "label": "Total Ash",
+        "value": "≤ 6%"
+      },
+      {
+        "label": "Acid Insoluble Ash",
+        "value": "≤ 1.5%"
+      },
+      {
+        "label": "Crude Fiber",
+        "value": "≤ 5–6%"
+      },
+      {
+        "label": "Taste",
+        "value": "Warm, Spicy & Slightly Sweet"
+      },
+      {
+        "label": "Aroma",
+        "value": "Strong, Fresh & Characteristic"
+      },
+      {
+        "label": "HS Code",
+        "value": "<span class='font-mono text-[#F5A623]'>09101210</span>"
+      }
+    ]
   },
   {
-    id: 10,
-    name: "Onion Powder",
-    slug: "onion-powder",
-    category: "blended-masala",
-    categoryName: "Blended Masala",
-    categorySlug: "blended-masala",
-    origin: "Maharashtra, India",
-    grade: "A Grade Dehydrated",
-    description: "A sweet and savory necessity for any pantry. Our dehydrated white onion powder mixes effortlessly into soups, dressings, and dry seasoning rubs.",
-    packagingSizes: [{ label: "500g", type: "retail" }, { label: "20kg Carton", type: "bulk" }],
-    color: "#f5edd6",
-    moq: "1 Metric Ton",
-    shelfLife: "24 Months",
-    moisture: "Max 6%",
-    purity: "100% Pure",
-    hsCode: "07122000",
-    unsplashId: "/Photos/Onion Powder.jpeg",
-    whatsappText: "Hi Blazze, I am interested in Onion Powder."
+    "id": 10,
+    "name": "Onion Powder",
+    "slug": "onion-powder",
+    "category": "blended-masala",
+    "categoryName": "Blended Masala",
+    "categorySlug": "blended-masala",
+    "origin": "Maharashtra, India",
+    "grade": "A Grade Dehydrated",
+    "description": "A sweet and savory necessity for any pantry. Our dehydrated white onion powder mixes effortlessly into soups, dressings, and dry seasoning rubs.",
+    "packagingSizes": [
+      {
+        "label": "100g / 200g / 500g / 1kg",
+        "type": "retail"
+      },
+      {
+        "label": "5kg / 10kg / 25kg (Pouch/Jar/Export Bags)",
+        "type": "bulk"
+      }
+    ],
+    "color": "#f5edd6",
+    "moq": "1 Metric Ton",
+    "shelfLife": "12–18 Months",
+    "moisture": "≤ 6%",
+    "purity": "100% Pure",
+    "hsCode": "07122000",
+    "unsplashId": "/Photos/Onion Powder.jpeg",
+    "whatsappText": "Hi Blazze, I am interested in Onion Powder.",
+    "ingredients": "100% Dehydrated Onion",
+    "processingDetails": [
+      "Fresh onions carefully selected",
+      "Peeled, sliced & dehydrated",
+      "Hygienically processed and finely ground",
+      "No artificial colors, flavors, or preservatives"
+    ],
+    "detailedSpecs": [
+      {
+        "label": "Purity",
+        "value": "100% Pure (No Adulteration)"
+      },
+      {
+        "label": "Moisture Content",
+        "value": "≤ 6% (important for shelf life)"
+      },
+      {
+        "label": "Mesh Size (Fineness)",
+        "value": "80–100 Mesh (fine powder)"
+      },
+      {
+        "label": "Total Ash",
+        "value": "≤ 5%"
+      },
+      {
+        "label": "Acid Insoluble Ash",
+        "value": "≤ 0.5%"
+      },
+      {
+        "label": "Bulk Density",
+        "value": "0.4 – 0.7 g/ml"
+      },
+      {
+        "label": "Taste",
+        "value": "Mildly Sweet & Savory"
+      },
+      {
+        "label": "Aroma",
+        "value": "Fresh, Strong & Characteristic Onion Aroma"
+      },
+      {
+        "label": "HS Code",
+        "value": "<span class='font-mono text-[#F5A623]'>07122000</span>"
+      }
+    ]
   },
   {
-    id: 11,
-    name: "Onion Flakes",
-    slug: "onion-flakes",
-    category: "blended-masala",
-    categoryName: "Blended Masala",
-    categorySlug: "blended-masala",
-    origin: "Maharashtra, India",
-    grade: "Premium Kibbled",
-    description: "Crispy, dehydrated onion flakes that retain their sharp aroma and natural sweetness. Ideal for bulk food manufacturing, instant soups, and garnishes.",
-    packagingSizes: [{ label: "1kg", type: "retail" }, { label: "15kg Carton", type: "bulk" }],
-    color: "#e8dcbe",
-    moq: "1 Metric Ton",
-    shelfLife: "24 Months",
-    moisture: "Max 6%",
-    purity: "99% Min",
-    hsCode: "07122000",
-    unsplashId: "/Photos/Onion Flakes.jpeg",
-    whatsappText: "Hi Blazze, I am interested in Onion Flakes."
-  },
-  // WHOLE SPICES
-  {
-    id: 12,
-    name: "Red Chilli Whole",
-    slug: "red-chilli-whole",
-    category: "whole-spices",
-    categoryName: "Whole Spices",
-    categorySlug: "whole-spices",
-    origin: "Guntur, Andhra Pradesh",
-    grade: "Stemless Export Quality",
-    description: "Premium dried whole red chillies with bold pungency and rich color. Hand-sorted and stemless to guarantee the finest visual and taste profile.",
-    packagingSizes: [{ label: "1kg", type: "retail" }, { label: "10kg Bag", type: "bulk" }],
-    color: "#b22222",
-    moq: "1 Metric Ton",
-    shelfLife: "24 Months",
-    moisture: "Max 12%",
-    purity: "99% Min",
-    hsCode: "09042110",
-    unsplashId: "/Photos/Red Chilli Whole.jpeg",
-    whatsappText: "Hi Blazze, I am interested in Whole Red Chilli."
-  },
-  {
-    id: 13,
-    name: "Kashmiri Chilli Whole",
-    slug: "kashmiri-chilli-whole",
-    category: "whole-spices",
-    categoryName: "Whole Spices",
-    categorySlug: "whole-spices",
-    origin: "Kashmir, India",
-    grade: "Premium Wrinkled",
-    description: "The celebrated wrinkled red chilli famous for its lack of extreme heat and its ability to impart a stunning crimson red hue to traditional Indian gravies.",
-    packagingSizes: [{ label: "500g", type: "retail" }, { label: "10kg Bag", type: "bulk" }],
-    color: "#800000",
-    moq: "500 KG",
-    shelfLife: "24 Months",
-    moisture: "Max 12%",
-    purity: "99% Min",
-    hsCode: "09042110",
-    unsplashId: "/Photos/Kashmiri Chilli Whole.jpeg",
-    whatsappText: "Hi Blazze, I am interested in Whole Kashmiri Chillies."
-  },
-  {
-    id: 14,
-    name: "Turmeric Whole (Fingers)",
-    slug: "turmeric-whole",
-    category: "whole-spices",
-    categoryName: "Whole Spices",
-    categorySlug: "whole-spices",
-    origin: "Erode, Tamil Nadu",
-    grade: "Polished Fingers",
-    description: "Carefully harvested and polished turmeric fingers boasting a rich curcumin content. Used extensively in medicinal extracts and global food processing.",
-    packagingSizes: [{ label: "1kg", type: "retail" }, { label: "25kg Bag", type: "bulk" }],
-    color: "#d4af37",
-    moq: "2 Metric Tons",
-    shelfLife: "36 Months",
-    moisture: "Max 10%",
-    purity: "99.5% Min",
-    hsCode: "09103020",
-    unsplashId: "/Photos/Turmeric Whole (Fingers).jpeg",
-    whatsappText: "Hi Blazze, I am interested in Turmeric Fingers."
-  },
-  // GRAINS
-  {
-    id: 15,
-    name: "Basmati Rice",
-    slug: "basmati-rice",
-    category: "grains",
-    categoryName: "Grains",
-    categorySlug: "grains",
-    origin: "Punjab, India",
-    grade: "1121 Premium Long Grain",
-    varieties: ["1121 Sella", "1121 Steam", "Pusa Basmati"],
-    description: "The king of rice. Our 1121 Basmati variant guarantees extra-long grains, brilliant white luster, non-sticky cooking, and an unforgettable natural aroma.",
-    packagingSizes: [{ label: "5kg", type: "retail" }, { label: "25kg PP Bag", type: "bulk" }],
-    color: "#fdfdfa",
-    moq: "1x20ft Container",
-    shelfLife: "24+ Months (Aged)",
-    moisture: "Max 12%",
-    purity: "95% Pure Grain",
-    hsCode: "10063020",
-    unsplashId: "photo-1586201375761-83865001e31c",
-    whatsappText: "Hi Blazze, I am interested in Basmati Rice imports."
+    "id": 11,
+    "name": "Onion Flakes",
+    "slug": "onion-flakes",
+    "category": "blended-masala",
+    "categoryName": "Blended Masala",
+    "categorySlug": "blended-masala",
+    "origin": "Maharashtra, India",
+    "grade": "Premium Kibbled",
+    "description": "Crispy, dehydrated onion flakes that retain their sharp aroma and natural sweetness. Ideal for bulk food manufacturing, instant soups, and garnishes.",
+    "packagingSizes": [
+      {
+        "label": "100g / 250g / 500g / 1kg",
+        "type": "retail"
+      },
+      {
+        "label": "5kg / 10kg / 25kg (Food-grade/Export cartons)",
+        "type": "bulk"
+      }
+    ],
+    "color": "#e8dcbe",
+    "moq": "1 Metric Ton",
+    "shelfLife": "18–24 Months",
+    "moisture": "≤ 6%",
+    "purity": "100% Pure",
+    "hsCode": "07122000",
+    "unsplashId": "/Photos/Onion Flakes.jpeg",
+    "whatsappText": "Hi Blazze, I am interested in Onion Flakes.",
+    "ingredients": "100% Dehydrated Onion",
+    "processingDetails": [
+      "Fresh onions carefully selected",
+      "Peeled, washed & sliced",
+      "Dehydrated under controlled conditions",
+      "Cleaned, sorted & graded for uniform size",
+      "No artificial colors or preservatives"
+    ],
+    "detailedSpecs": [
+      {
+        "label": "Purity",
+        "value": "100% Pure (No Adulteration)"
+      },
+      {
+        "label": "Moisture Content",
+        "value": "≤ 6%"
+      },
+      {
+        "label": "Flake Size",
+        "value": "8–25 mm (or as required)"
+      },
+      {
+        "label": "Total Ash",
+        "value": "≤ 5%"
+      },
+      {
+        "label": "Acid Insoluble Ash",
+        "value": "≤ 0.5%"
+      },
+      {
+        "label": "Foreign Matter",
+        "value": "Nil / Very Minimal"
+      },
+      {
+        "label": "Appearance",
+        "value": "Clean, Uniform Flakes"
+      },
+      {
+        "label": "Taste",
+        "value": "Mildly Sweet & Savory"
+      },
+      {
+        "label": "HS Code",
+        "value": "<span class='font-mono text-[#F5A623]'>07122000</span>"
+      }
+    ]
   },
   {
-    id: 16,
-    name: "Premium Wheat",
-    slug: "wheat",
-    category: "grains",
-    categoryName: "Grains",
-    categorySlug: "grains",
-    origin: "Madhya Pradesh, India",
-    grade: "Milling Grade 1",
-    varieties: ["Sharbati", "Lokwan"],
-    description: "Sourced from the heartlands of India, our premium hard wheat ensures high protein content and excellent milling quality for bakeries and pasta manufacturing.",
-    packagingSizes: [{ label: "10kg", type: "retail" }, { label: "50kg Jute Bag", type: "bulk" }],
-    color: "#e8cf94",
-    moq: "1x20ft Container",
-    shelfLife: "12 Months",
-    moisture: "Max 11%",
-    purity: "99% Min",
-    hsCode: "10019910",
-    unsplashId: "photo-1574323347407-f5e1ad6d020b",
-    whatsappText: "Hi Blazze, I am interested in bulk Wheat imports."
-  },
-  // PULSES
-  {
-    id: 17,
-    name: "Chana Dal",
-    slug: "chana-dal",
-    category: "pulses",
-    categoryName: "Pulses",
-    categorySlug: "pulses",
-    origin: "Maharashtra, India",
-    grade: "Sortex Cleaned",
-    description: "Split baby chickpeas characterized by a nutty flavor and high protein density. Machine sorted and highly polished for premium retail markets.",
-    packagingSizes: [{ label: "1kg", type: "retail" }, { label: "25kg Bag", type: "bulk" }],
-    color: "#ffd966",
-    moq: "5 Metric Tons",
-    shelfLife: "12 Months",
-    moisture: "Max 10%",
-    purity: "99% Min",
-    hsCode: "07132000",
-    unsplashId: "/Photos/Chana Dal.jpeg",
-    whatsappText: "Hi Blazze, I am interested in Chana Dal."
-  },
-  {
-    id: 18,
-    name: "Mung Dal",
-    slug: "mung-dal",
-    category: "pulses",
-    categoryName: "Pulses",
-    categorySlug: "pulses",
-    origin: "Rajasthan, India",
-    grade: "Premium Sortex",
-    description: "Dehusked and split mung beans delivering a sweet, soft, and easy-to-digest protein source. An essential pulse for global health food brands.",
-    packagingSizes: [{ label: "1kg", type: "retail" }, { label: "25kg Bag", type: "bulk" }],
-    color: "#eeb422",
-    moq: "5 Metric Tons",
-    shelfLife: "12 Months",
-    moisture: "Max 10%",
-    purity: "99.5% Min",
-    hsCode: "07133100",
-    unsplashId: "/Photos/mung dal.jpeg",
-    whatsappText: "Hi Blazze, I am interested in Mung Dal."
-  },
-  {
-    id: 19,
-    name: "Kabuli Chana",
-    slug: "kabuli-chana",
-    category: "pulses",
-    categoryName: "Pulses",
-    categorySlug: "pulses",
-    origin: "Madhya Pradesh, India",
-    grade: "Bold Size (12mm)",
-    description: "Premium large, light-colored chickpeas. Perfect for Middle Eastern hummus, salads, and canning industries demanding uniform grain size.",
-    packagingSizes: [{ label: "1kg", type: "retail" }, { label: "25kg PP Bag", type: "bulk" }],
-    color: "#f5deb3",
-    moq: "1x20ft Container",
-    shelfLife: "12 Months",
-    moisture: "Max 12%",
-    purity: "99% Min",
-    hsCode: "07132000",
-    unsplashId: "/Photos/Kabuli chana.jpeg",
-    whatsappText: "Hi Blazze, I am interested in Kabuli Chana (Chickpeas)."
-  },
-  {
-    id: 20,
-    name: "Urad Dal",
-    slug: "urad-dal",
-    category: "pulses",
-    categoryName: "Pulses",
-    categorySlug: "pulses",
-    origin: "Andhra Pradesh, India",
-    grade: "Sortex Cleaned",
-    description: "Split and skinned black gram. High in fiber and famously used to produce the smooth batters required for traditional South Indian cuisines.",
-    packagingSizes: [{ label: "1kg", type: "retail" }, { label: "25kg Bag", type: "bulk" }],
-    color: "#f2f2e8",
-    moq: "5 Metric Tons",
-    shelfLife: "12 Months",
-    moisture: "Max 10%",
-    purity: "99% Min",
-    hsCode: "07133100",
-    unsplashId: "/Photos/Urad dal.jpeg",
-    whatsappText: "Hi Blazze, I am interested in Urad Dal."
+    "id": 12,
+    "name": "Red Chilli Whole",
+    "slug": "red-chilli-whole",
+    "category": "whole-spices",
+    "categoryName": "Whole Spices",
+    "categorySlug": "whole-spices",
+    "origin": "Guntur, Andhra Pradesh",
+    "grade": "Stemless Export Quality",
+    "description": "Premium dried whole red chillies with bold pungency and rich color. Hand-sorted and stemless to guarantee the finest visual and taste profile.",
+    "packagingSizes": [
+      {
+        "label": "Vacuum Packing (Optional)",
+        "type": "retail"
+      },
+      {
+        "label": "25kg / 50kg PP Bags, Jute Bags",
+        "type": "bulk"
+      }
+    ],
+    "color": "#b22222",
+    "moq": "20FT / 40FT Containers",
+    "shelfLife": "12–18 Months",
+    "moisture": "Max 10–12%",
+    "purity": "99% Min",
+    "hsCode": "09042110",
+    "unsplashId": "/Photos/Red Chilli Whole.jpeg",
+    "whatsappText": "Hi Blazze, I am interested in Whole Red Chilli.",
+    "ingredients": "100% Whole Red Chilli",
+    "processingDetails": [
+      "Sun-Dried & Machine Cleaned",
+      "Sorted for consistency and color",
+      "FSSAI, ISO, HACCP Certifications As per requirement"
+    ],
+    "detailedSpecs": [
+      {
+        "label": "Varieties Available",
+        "value": "Teja, S17, Byadgi, Kashmiri"
+      },
+      {
+        "label": "Color",
+        "value": "Deep Red to Bright Red"
+      },
+      {
+        "label": "Taste",
+        "value": "Hot & Spicy (Pungency level as per variety)"
+      },
+      {
+        "label": "Moisture",
+        "value": "Max 10–12%"
+      },
+      {
+        "label": "Length",
+        "value": "5 cm – 12 cm (depending on variety)"
+      },
+      {
+        "label": "Stem",
+        "value": "With/Without stem (as per requirement)"
+      },
+      {
+        "label": "Foreign Matter",
+        "value": "Max 1%"
+      },
+      {
+        "label": "Broken Chillies",
+        "value": "2–5% Max"
+      },
+      {
+        "label": "Admixture",
+        "value": "Nil / As per buyer requirement"
+      },
+      {
+        "label": "Aflatoxin",
+        "value": "Within permissible limits"
+      },
+      {
+        "label": "HS Code",
+        "value": "<span class='font-mono text-[#F5A623]'>09042110</span>"
+      }
+    ]
   },
   {
-    id: 21,
-    name: "Rajma (Kidney Beans)",
-    slug: "rajma",
-    category: "pulses",
-    categoryName: "Pulses",
-    categorySlug: "pulses",
-    origin: "Jammu, India",
-    grade: "Kashmiri Red / Chitra",
-    description: "Vivid red or speckled kidney beans renowned for their rich, meaty texture. A staple ingredient in both traditional Indian and Latin American dishes.",
-    packagingSizes: [{ label: "1kg", type: "retail" }, { label: "25kg Box", type: "bulk" }],
-    color: "#6c2828",
-    moq: "1x20ft Container",
-    shelfLife: "18 Months",
-    moisture: "Max 12%",
-    purity: "99% Min",
-    hsCode: "07133300",
-    unsplashId: "/Photos/RedWhite Rajma.jpeg",
-    whatsappText: "Hi Blazze, I am interested in Rajma (Kidney Beans)."
+    "id": 13,
+    "name": "Kashmiri Chilli Whole",
+    "slug": "kashmiri-chilli-whole",
+    "category": "whole-spices",
+    "categoryName": "Whole Spices",
+    "categorySlug": "whole-spices",
+    "origin": "India",
+    "grade": "Premium Kashmiri Long / Mundi",
+    "description": "Premium Kashmiri Whole Red Chilli, distinguished by its bright deep red color and low pungency, perfect for authentic mild Indian cuisine.",
+    "packagingSizes": [
+      {
+        "label": "Vacuum Packing (Optional)",
+        "type": "retail"
+      },
+      {
+        "label": "25kg / 50kg PP Bags, Jute Bags",
+        "type": "bulk"
+      }
+    ],
+    "color": "#800000",
+    "moq": "20FT / 40FT Containers",
+    "shelfLife": "12–18 Months",
+    "moisture": "Max 10%",
+    "purity": "100% Pure",
+    "hsCode": "09042110",
+    "unsplashId": "/Photos/Kashmiri Chilli Whole.jpeg",
+    "whatsappText": "Hi Blazze, I am interested in Whole Kashmiri Chillies.",
+    "ingredients": "100% Premium Kashmiri Whole Red Chilli",
+    "processingDetails": [
+      "Sun-Dried",
+      "Machine Cleaned & Sortex Cleaned",
+      "FSSAI, ISO, HACCP Certifications As per requirement"
+    ],
+    "detailedSpecs": [
+      {
+        "label": "Type",
+        "value": "Kashmiri Long / Kashmiri Mundi"
+      },
+      {
+        "label": "Color",
+        "value": "Bright Deep Red (High ASTA Color Value)"
+      },
+      {
+        "label": "Pungency (SHU)",
+        "value": "Low to Medium"
+      },
+      {
+        "label": "Moisture",
+        "value": "Max 10%"
+      },
+      {
+        "label": "Total Ash",
+        "value": "Max 7%"
+      },
+      {
+        "label": "Acid Insoluble Ash",
+        "value": "Max 1.3%"
+      },
+      {
+        "label": "Foreign Matter",
+        "value": "Max 0.5%"
+      },
+      {
+        "label": "Broken",
+        "value": "Max 2%"
+      },
+      {
+        "label": "Admixture",
+        "value": "Nil"
+      },
+      {
+        "label": "Aflatoxin",
+        "value": "Within international permissible limits"
+      },
+      {
+        "label": "Pesticide Residue",
+        "value": "As per EU/ASTA standards"
+      },
+      {
+        "label": "HS Code",
+        "value": "<span class='font-mono text-[#F5A623]'>09042110</span>"
+      }
+    ]
   },
   {
-    id: 22,
-    name: "Masoor Dal",
-    slug: "masoor-dal",
-    category: "pulses",
-    categoryName: "Pulses",
-    categorySlug: "pulses",
-    origin: "Uttar Pradesh, India",
-    grade: "Sortex Red Lentils",
-    description: "Split red lentils that cook incredibly fast into a soft, earthy puree. An export favorite due to its versatility and high global demand.",
-    packagingSizes: [{ label: "1kg", type: "retail" }, { label: "25kg Bag", type: "bulk" }],
-    color: "#d95c25",
-    moq: "5 Metric Tons",
-    shelfLife: "12 Months",
-    moisture: "Max 10%",
-    purity: "99.5% Min",
-    hsCode: "07134000",
-    unsplashId: "/Photos/Masoor Dal.jpeg",
-    whatsappText: "Hi Blazze, I am interested in Masoor Dal."
+    "id": 14,
+    "name": "Turmeric Whole (Fingers)",
+    "slug": "turmeric-whole",
+    "category": "whole-spices",
+    "categoryName": "Whole Spices",
+    "categorySlug": "whole-spices",
+    "origin": "India",
+    "grade": "Premium Whole Turmeric Fingers",
+    "description": "Carefully harvested and polished turmeric fingers boasting a rich curcumin content. Used extensively in medicinal extracts and global food processing.",
+    "packagingSizes": [
+      {
+        "label": "Custom Retail",
+        "type": "retail"
+      },
+      {
+        "label": "25kg / 50kg PP Bags, Jute Bags",
+        "type": "bulk"
+      }
+    ],
+    "color": "#d4af37",
+    "moq": "20FT / 40FT Containers",
+    "shelfLife": "18–24 Months",
+    "moisture": "Max 10%",
+    "purity": "100% Pure",
+    "hsCode": "09103020",
+    "unsplashId": "/Photos/Turmeric Whole (Fingers).jpeg",
+    "whatsappText": "Hi Blazze, I am interested in Turmeric Fingers.",
+    "ingredients": "100% Premium Whole Turmeric Fingers",
+    "processingDetails": [
+      "Boiled, Sun-Dried",
+      "Polished (Double / Single Polished as required)",
+      "Machine Cleaned",
+      "FSSAI, ISO, HACCP Certifications As per requirement"
+    ],
+    "detailedSpecs": [
+      {
+        "label": "Varieties",
+        "value": "Salem / Rajapuri / Erode"
+      },
+      {
+        "label": "Color",
+        "value": "Bright Yellow to Deep Golden"
+      },
+      {
+        "label": "Curcumin Content",
+        "value": "2% – 5% (as per variety)"
+      },
+      {
+        "label": "Moisture",
+        "value": "Max 10%"
+      },
+      {
+        "label": "Total Ash",
+        "value": "Max 8%"
+      },
+      {
+        "label": "Acid Insoluble Ash",
+        "value": "Max 1.5%"
+      },
+      {
+        "label": "Foreign Matter",
+        "value": "Max 0.5%"
+      },
+      {
+        "label": "Polish",
+        "value": "Double / Single Polished (as required)"
+      },
+      {
+        "label": "Admixture",
+        "value": "Nil"
+      },
+      {
+        "label": "Aflatoxin",
+        "value": "Within permissible limits"
+      },
+      {
+        "label": "Pesticide Residue",
+        "value": "As per EU/ASTA standards"
+      },
+      {
+        "label": "HS Code",
+        "value": "<span class='font-mono text-[#F5A623]'>09103020</span>"
+      }
+    ]
   },
   {
-    id: 23,
-    name: "Soyabean",
-    slug: "soyabean",
-    category: "pulses",
-    categoryName: "Pulses",
-    categorySlug: "pulses",
-    origin: "Madhya Pradesh, India",
-    grade: "Non-GMO Export Grade",
-    description: "Nutritionally dense soybeans perfect for tofu manufacturing, soy milk extraction, and global animal feed formulations. Guaranteed Non-GMO.",
-    packagingSizes: [{ label: "5kg", type: "retail" }, { label: "50kg Sack", type: "bulk" }],
-    color: "#e8d394",
-    moq: "1x20ft Container",
-    shelfLife: "12 Months",
-    moisture: "Max 11%",
-    purity: "99% Min",
-    hsCode: "12019000",
-    unsplashId: "/Photos/Soyabean.jpeg",
-    whatsappText: "Hi Blazze, I am interested in Non-GMO Soyabean."
+    "id": 15,
+    "name": "Basmati Rice",
+    "slug": "basmati-rice",
+    "category": "grains",
+    "categoryName": "Grains",
+    "categorySlug": "grains",
+    "origin": "Punjab, India",
+    "grade": "1121 Premium Long Grain",
+    "varieties": [
+      "1121 Sella",
+      "1121 Steam",
+      "Pusa Basmati"
+    ],
+    "description": "The king of rice. Our 1121 Basmati variant guarantees extra-long grains, brilliant white luster, non-sticky cooking, and an unforgettable natural aroma.",
+    "packagingSizes": [
+      {
+        "label": "5kg",
+        "type": "retail"
+      },
+      {
+        "label": "25kg PP Bag",
+        "type": "bulk"
+      }
+    ],
+    "color": "#fdfdfa",
+    "moq": "1x20ft Container",
+    "shelfLife": "24+ Months (Aged)",
+    "moisture": "Max 12%",
+    "purity": "95% Pure Grain",
+    "hsCode": "10063020",
+    "unsplashId": "photo-1586201375761-83865001e31c",
+    "whatsappText": "Hi Blazze, I am interested in Basmati Rice imports."
   },
   {
-    id: 24,
-    name: "Toor Dal",
-    slug: "toor-dal",
-    category: "pulses",
-    categoryName: "Pulses",
-    categorySlug: "pulses",
-    origin: "Maharashtra, India",
-    grade: "Premium Sortex",
-    description: "Split pigeon peas boasting a slightly sweet, nutty flavor. Processed using advanced milling techniques to ensure quick cooking times and high yield.",
-    packagingSizes: [{ label: "1kg", type: "retail" }, { label: "25kg Bag", type: "bulk" }],
-    color: "#f5c342",
-    moq: "5 Metric Tons",
-    shelfLife: "12 Months",
-    moisture: "Max 10%",
-    purity: "99.5% Min",
-    hsCode: "07136000",
-    unsplashId: "/Photos/Toor Dal.jpeg",
-    whatsappText: "Hi Blazze, I am interested in Toor Dal."
+    "id": 16,
+    "name": "Premium Wheat",
+    "slug": "wheat",
+    "category": "grains",
+    "categoryName": "Grains",
+    "categorySlug": "grains",
+    "origin": "Madhya Pradesh, India",
+    "grade": "Milling Grade 1",
+    "varieties": [
+      "Sharbati",
+      "Lokwan"
+    ],
+    "description": "Sourced from the heartlands of India, our premium hard wheat ensures high protein content and excellent milling quality for bakeries and pasta manufacturing.",
+    "packagingSizes": [
+      {
+        "label": "10kg",
+        "type": "retail"
+      },
+      {
+        "label": "50kg Jute Bag",
+        "type": "bulk"
+      }
+    ],
+    "color": "#e8cf94",
+    "moq": "1x20ft Container",
+    "shelfLife": "12 Months",
+    "moisture": "Max 11%",
+    "purity": "99% Min",
+    "hsCode": "10019910",
+    "unsplashId": "photo-1574323347407-f5e1ad6d020b",
+    "whatsappText": "Hi Blazze, I am interested in bulk Wheat imports."
+  },
+  {
+    "id": 17,
+    "name": "Chana Dal",
+    "slug": "chana-dal",
+    "category": "pulses",
+    "categoryName": "Pulses",
+    "categorySlug": "pulses",
+    "origin": "Maharashtra, India",
+    "grade": "Sortex Cleaned",
+    "description": "Split baby chickpeas characterized by a nutty flavor and high protein density. Machine sorted and highly polished for premium retail markets.",
+    "packagingSizes": [
+      {
+        "label": "1kg",
+        "type": "retail"
+      },
+      {
+        "label": "25kg Bag",
+        "type": "bulk"
+      }
+    ],
+    "color": "#ffd966",
+    "moq": "5 Metric Tons",
+    "shelfLife": "12 Months",
+    "moisture": "Max 10%",
+    "purity": "99% Min",
+    "hsCode": "07132000",
+    "unsplashId": "/Photos/Chana Dal.jpeg",
+    "whatsappText": "Hi Blazze, I am interested in Chana Dal."
+  },
+  {
+    "id": 18,
+    "name": "Mung Dal",
+    "slug": "mung-dal",
+    "category": "pulses",
+    "categoryName": "Pulses",
+    "categorySlug": "pulses",
+    "origin": "Rajasthan, India",
+    "grade": "Premium Sortex",
+    "description": "Dehusked and split mung beans delivering a sweet, soft, and easy-to-digest protein source. An essential pulse for global health food brands.",
+    "packagingSizes": [
+      {
+        "label": "1kg",
+        "type": "retail"
+      },
+      {
+        "label": "25kg Bag",
+        "type": "bulk"
+      }
+    ],
+    "color": "#eeb422",
+    "moq": "5 Metric Tons",
+    "shelfLife": "12 Months",
+    "moisture": "Max 10%",
+    "purity": "99.5% Min",
+    "hsCode": "07133100",
+    "unsplashId": "/Photos/mung dal.jpeg",
+    "whatsappText": "Hi Blazze, I am interested in Mung Dal."
+  },
+  {
+    "id": 19,
+    "name": "Kabuli Chana",
+    "slug": "kabuli-chana",
+    "category": "pulses",
+    "categoryName": "Pulses",
+    "categorySlug": "pulses",
+    "origin": "Madhya Pradesh, India",
+    "grade": "Bold Size (12mm)",
+    "description": "Premium large, light-colored chickpeas. Perfect for Middle Eastern hummus, salads, and canning industries demanding uniform grain size.",
+    "packagingSizes": [
+      {
+        "label": "1kg",
+        "type": "retail"
+      },
+      {
+        "label": "25kg PP Bag",
+        "type": "bulk"
+      }
+    ],
+    "color": "#f5deb3",
+    "moq": "1x20ft Container",
+    "shelfLife": "12 Months",
+    "moisture": "Max 12%",
+    "purity": "99% Min",
+    "hsCode": "07132000",
+    "unsplashId": "/Photos/Kabuli chana.jpeg",
+    "whatsappText": "Hi Blazze, I am interested in Kabuli Chana (Chickpeas)."
+  },
+  {
+    "id": 20,
+    "name": "Urad Dal",
+    "slug": "urad-dal",
+    "category": "pulses",
+    "categoryName": "Pulses",
+    "categorySlug": "pulses",
+    "origin": "Andhra Pradesh, India",
+    "grade": "Sortex Cleaned",
+    "description": "Split and skinned black gram. High in fiber and famously used to produce the smooth batters required for traditional South Indian cuisines.",
+    "packagingSizes": [
+      {
+        "label": "1kg",
+        "type": "retail"
+      },
+      {
+        "label": "25kg Bag",
+        "type": "bulk"
+      }
+    ],
+    "color": "#f2f2e8",
+    "moq": "5 Metric Tons",
+    "shelfLife": "12 Months",
+    "moisture": "Max 10%",
+    "purity": "99% Min",
+    "hsCode": "07133100",
+    "unsplashId": "/Photos/Urad dal.jpeg",
+    "whatsappText": "Hi Blazze, I am interested in Urad Dal."
+  },
+  {
+    "id": 21,
+    "name": "Rajma (Kidney Beans)",
+    "slug": "rajma",
+    "category": "pulses",
+    "categoryName": "Pulses",
+    "categorySlug": "pulses",
+    "origin": "Jammu, India",
+    "grade": "Kashmiri Red / Chitra",
+    "description": "Vivid red or speckled kidney beans renowned for their rich, meaty texture. A staple ingredient in both traditional Indian and Latin American dishes.",
+    "packagingSizes": [
+      {
+        "label": "1kg",
+        "type": "retail"
+      },
+      {
+        "label": "25kg Box",
+        "type": "bulk"
+      }
+    ],
+    "color": "#6c2828",
+    "moq": "1x20ft Container",
+    "shelfLife": "18 Months",
+    "moisture": "Max 12%",
+    "purity": "99% Min",
+    "hsCode": "07133300",
+    "unsplashId": "/Photos/RedWhite Rajma.jpeg",
+    "whatsappText": "Hi Blazze, I am interested in Rajma (Kidney Beans)."
+  },
+  {
+    "id": 22,
+    "name": "Masoor Dal",
+    "slug": "masoor-dal",
+    "category": "pulses",
+    "categoryName": "Pulses",
+    "categorySlug": "pulses",
+    "origin": "Uttar Pradesh, India",
+    "grade": "Sortex Red Lentils",
+    "description": "Split red lentils that cook incredibly fast into a soft, earthy puree. An export favorite due to its versatility and high global demand.",
+    "packagingSizes": [
+      {
+        "label": "1kg",
+        "type": "retail"
+      },
+      {
+        "label": "25kg Bag",
+        "type": "bulk"
+      }
+    ],
+    "color": "#d95c25",
+    "moq": "5 Metric Tons",
+    "shelfLife": "12 Months",
+    "moisture": "Max 10%",
+    "purity": "99.5% Min",
+    "hsCode": "07134000",
+    "unsplashId": "/Photos/Masoor Dal.jpeg",
+    "whatsappText": "Hi Blazze, I am interested in Masoor Dal."
+  },
+  {
+    "id": 23,
+    "name": "Soyabean",
+    "slug": "soyabean",
+    "category": "pulses",
+    "categoryName": "Pulses",
+    "categorySlug": "pulses",
+    "origin": "Madhya Pradesh, India",
+    "grade": "Non-GMO Export Grade",
+    "description": "Nutritionally dense soybeans perfect for tofu manufacturing, soy milk extraction, and global animal feed formulations. Guaranteed Non-GMO.",
+    "packagingSizes": [
+      {
+        "label": "5kg",
+        "type": "retail"
+      },
+      {
+        "label": "50kg Sack",
+        "type": "bulk"
+      }
+    ],
+    "color": "#e8d394",
+    "moq": "1x20ft Container",
+    "shelfLife": "12 Months",
+    "moisture": "Max 11%",
+    "purity": "99% Min",
+    "hsCode": "12019000",
+    "unsplashId": "/Photos/Soyabean.jpeg",
+    "whatsappText": "Hi Blazze, I am interested in Non-GMO Soyabean."
+  },
+  {
+    "id": 24,
+    "name": "Toor Dal",
+    "slug": "toor-dal",
+    "category": "pulses",
+    "categoryName": "Pulses",
+    "categorySlug": "pulses",
+    "origin": "Maharashtra, India",
+    "grade": "Premium Sortex",
+    "description": "Split pigeon peas boasting a slightly sweet, nutty flavor. Processed using advanced milling techniques to ensure quick cooking times and high yield.",
+    "packagingSizes": [
+      {
+        "label": "1kg",
+        "type": "retail"
+      },
+      {
+        "label": "25kg Bag",
+        "type": "bulk"
+      }
+    ],
+    "color": "#f5c342",
+    "moq": "5 Metric Tons",
+    "shelfLife": "12 Months",
+    "moisture": "Max 10%",
+    "purity": "99.5% Min",
+    "hsCode": "07136000",
+    "unsplashId": "/Photos/Toor Dal.jpeg",
+    "whatsappText": "Hi Blazze, I am interested in Toor Dal."
   }
 ];

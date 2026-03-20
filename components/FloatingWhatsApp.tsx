@@ -40,7 +40,7 @@ export default function FloatingWhatsApp() {
                     <MessageCircle size={32} />
                 </Link>
                 {/* Tooltip */}
-                <span className="absolute right-full mr-4 top-1/2 -translate-y-1/2 px-3 py-1.5 bg-black/80 dark:bg-white/90 text-white dark:text-black text-xs font-semibold uppercase tracking-wider rounded-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none whitespace-nowrap shadow-lg">
+                <span className="absolute right-full mr-4 top-1/2 -translate-y-1/2 px-3 py-1.5 bg-black/80 dark:bg-white/90 text-white dark:text-[#E8DDD4] text-xs font-semibold uppercase tracking-wider rounded-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none whitespace-nowrap shadow-lg">
                     Chat with us on WhatsApp
                 </span>
             </div>

@@ -163,7 +163,7 @@ export default function Hero() {
                     </h1>
                 </div>
 
-                <p className="hero-desc mt-6 text-lg md:text-xl text-foreground/70 max-w-2xl text-balance">
+                <p className="hero-desc mt-6 text-lg md:text-xl text-[#E8DDD4]/70 max-w-2xl text-balance">
                     Premium exporter of authentic spices, pure grains, and nutritious pulses, 
                     delivering the world's finest agricultural products.
                 </p>
@@ -184,7 +184,7 @@ export default function Hero() {
                 </div>
             </div>
 
-            <div className="scroll-indicator absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-foreground/50 z-10">
+            <div className="scroll-indicator absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-[#E8DDD4]/50 z-10">
                 <span className="text-xs uppercase tracking-[0.3em]">Scroll</span>
                 <ArrowDown className="scroll-arrow opacity-80" size={20} />
             </div>

@@ -85,7 +85,7 @@ export default function Testimonials() {
                     {[...testimonials, ...testimonials].map((item, idx) => (
                         <div
                             key={`${item.id}-${idx}`}
-                            className="flex-shrink-0 w-[85vw] md:w-[500px] bg-white dark:bg-[#1a1a1a] p-10 md:p-14 rounded-sm border border-black/5 dark:border-white/5"
+                            className="flex-shrink-0 w-[85vw] md:w-[500px] bg-rustic-card p-10 md:p-14 rounded-sm border border-[#382415]"
                         >
                             <Quote className="text-[var(--color-accent)]/20 mb-6" size={48} />
                             <p className="text-xl md:text-2xl font-display font-medium leading-relaxed mb-10 text-balance">
@@ -95,7 +95,7 @@ export default function Testimonials() {
                                 <p className="font-medium uppercase tracking-widest text-sm">
                                     {item.author}
                                 </p>
-                                <p className="text-foreground/50 text-sm mt-1">{item.role}</p>
+                                <p className="text-[#E8DDD4]/50 text-sm mt-1">{item.role}</p>
                             </div>
                         </div>
                     ))}

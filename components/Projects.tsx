@@ -70,7 +70,7 @@ export default function Projects() {
         <section
             id="projects"
             ref={containerRef}
-            className="py-24 md:py-32 px-6 md:px-12 bg-white dark:bg-[#0a0a0a]"
+            className="py-24 md:py-32 px-6 md:px-12 bg-rustic-section-1"
         >
             <div className="max-w-[1400px] mx-auto">
                 <div className="mb-16 text-center flex flex-col items-center">
@@ -113,7 +113,7 @@ export default function Projects() {
                 </div>
 
                 <div className="mt-20 flex justify-center projects-header">
-                    <button className="group relative px-8 py-4 bg-transparent border border-foreground text-foreground overflow-hidden rounded-sm hover:-translate-y-1 transition-transform duration-300">
+                    <button className="group relative px-8 py-4 bg-transparent border border-foreground text-[#E8DDD4] overflow-hidden rounded-sm hover:-translate-y-1 transition-transform duration-300">
                         <span className="relative z-10 font-medium uppercase tracking-widest text-sm">
                             View All Projects
                         </span>

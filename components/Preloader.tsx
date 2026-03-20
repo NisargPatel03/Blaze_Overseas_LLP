@@ -66,10 +66,10 @@ export function Preloader() {
     return (
         <div className="fixed inset-0 z-[999] pointer-events-none flex flex-col items-center justify-center overflow-hidden">
             {/* Top Door */}
-            <div className="preloader-half-top absolute top-0 left-0 w-full h-[50vh] bg-[#050505] transform-gpu" />
+            <div className="preloader-half-top absolute top-0 left-0 w-full h-[50vh] bg-rustic-section-2 transform-gpu" />
 
             {/* Bottom Door */}
-            <div className="preloader-half-bottom absolute bottom-0 left-0 w-full h-[50vh] bg-[#050505] transform-gpu" />
+            <div className="preloader-half-bottom absolute bottom-0 left-0 w-full h-[50vh] bg-rustic-section-2 transform-gpu" />
 
             {/* Center Content */}
             <div className="preloader-brand relative z-10 flex flex-col items-center justify-center">

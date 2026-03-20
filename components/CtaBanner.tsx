@@ -77,15 +77,15 @@ export default function CtaBanner() {
                 </p>
 
                 <div className="flex flex-col sm:flex-row gap-6">
-                    <button suppressHydrationWarning className="group relative px-10 py-5 bg-white text-black overflow-hidden rounded-sm hover:-translate-y-1 transition-transform duration-300">
-                        <span className="relative z-10 font-bold uppercase tracking-widest text-sm text-[var(--color-accent)] group-hover:text-black transition-colors duration-300">
+                    <button suppressHydrationWarning className="group relative px-10 py-5 bg-white text-[#E8DDD4] overflow-hidden rounded-sm hover:-translate-y-1 transition-transform duration-300">
+                        <span className="relative z-10 font-bold uppercase tracking-widest text-sm text-[var(--color-accent)] group-hover:text-[#E8DDD4] transition-colors duration-300">
                             Enquiry Now
                         </span>
                         <div className="absolute inset-0 bg-neutral-200 transform scale-x-0 origin-left transition-transform duration-500 group-hover:scale-x-100" />
                     </button>
 
                     <button suppressHydrationWarning className="group relative px-10 py-5 bg-transparent border border-white text-white overflow-hidden rounded-sm hover:-translate-y-1 transition-transform duration-300">
-                        <span className="relative z-10 font-bold uppercase tracking-widest text-sm text-white group-hover:text-black transition-colors duration-300">
+                        <span className="relative z-10 font-bold uppercase tracking-widest text-sm text-white group-hover:text-[#E8DDD4] transition-colors duration-300">
                             Get Catalogue
                         </span>
                         <div className="absolute inset-0 bg-white transform scale-x-0 origin-left transition-transform duration-500 group-hover:scale-x-100" />

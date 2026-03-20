@@ -47,32 +47,32 @@ export default function Certifications() {
         <section
             id="certifications"
             ref={containerRef}
-            className="py-24 md:py-32 px-6 md:px-12 bg-neutral-100 dark:bg-[#111]"
+            className="py-24 md:py-32 px-6 md:px-12 bg-rustic-section-1"
         >
             <div className="max-w-[1400px] mx-auto flex flex-col lg:flex-row gap-16 items-center">
                 <div className="w-full lg:w-1/2">
                     <span className="cert-header text-[var(--color-accent)] font-medium uppercase tracking-widest text-sm block mb-4">
                         Quality Assurance
                     </span>
-                    <h2 className="cert-header text-4xl md:text-5xl font-display font-medium mb-6 text-balance">
+                    <h2 className="cert-header text-4xl md:text-5xl font-display font-medium mb-6 text-balance text-[#F0E8DE]">
                         Accreditations that speak for our standard.
                     </h2>
-                    <p className="cert-header text-lg text-foreground/70 mb-10 text-balance leading-relaxed">
+                    <p className="cert-header text-lg text-[#E8DDD4]/70 mb-10 text-balance leading-relaxed">
                         At Blazze, quality is our top priority. We follow strict international standards at every stage, from sourcing to final packaging. Our products undergo rigorous quality checks to ensure purity, hygiene, and consistency. We are committed to delivering only the finest quality that meets global expectations.
                     </p>
 
                     <div className="cert-list flex flex-col gap-5">
                         {certifications.map((cert, i) => (
-                            <div key={i} className="cert-item flex items-center gap-4 p-4 rounded-sm bg-white dark:bg-[#1a1a1a] border border-black/5 dark:border-white/5 shadow-sm">
+                            <div key={i} className="cert-item flex items-center gap-4 p-4 rounded-sm bg-rustic-card border border-[#382415] shadow-sm">
                                 <CheckCircle className="text-[var(--color-accent)]" size={24} />
-                                <span className="font-medium text-lg">{cert}</span>
+                                <span className="font-medium text-lg text-[#F0E8DE]">{cert}</span>
                             </div>
                         ))}
                     </div>
                 </div>
 
                 <div
-                    className="w-full lg:w-1/2 relative h-[500px] rounded-sm overflow-hidden flex items-center justify-center bg-white dark:bg-[#1a1a1a] border border-black/5 dark:border-white/5 perspective-1000"
+                    className="w-full lg:w-1/2 relative h-[500px] rounded-sm overflow-hidden flex items-center justify-center bg-rustic-card border border-[#382415] perspective-1000"
                     style={{ transformStyle: "preserve-3d" }}
                     onMouseMove={(e) => {
                         const rect = e.currentTarget.getBoundingClientRect();
@@ -101,12 +101,12 @@ export default function Certifications() {
                     <Award size={200} strokeWidth={0.5} className="text-[var(--color-accent)]/20 absolute" />
 
                     <div
-                        className="cert-badge-inner relative z-10 text-center bg-white dark:bg-[#1a1a1a] p-12 rounded-full shadow-2xl border border-black/5 dark:border-white/5"
+                        className="cert-badge-inner relative z-10 text-center bg-rustic-card p-12 rounded-full shadow-2xl border border-[#382415]"
                         style={{ transformStyle: "preserve-3d", transform: "translateZ(50px)" }}
                     >
                         <Award size={80} className="text-[var(--color-accent)] mx-auto mb-6 drop-shadow-lg" />
-                        <h3 className="text-3xl font-display font-bold">100% Certified</h3>
-                        <p className="text-foreground/60 uppercase tracking-widest text-sm mt-2">Export Quality</p>
+                        <h3 className="text-3xl font-display font-bold text-[#F0E8DE]">100% Certified</h3>
+                        <p className="text-[#E8DDD4]/60 uppercase tracking-widest text-sm mt-2">Export Quality</p>
                     </div>
                 </div>
             </div>

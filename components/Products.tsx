@@ -42,7 +42,7 @@ export default function Products() {
         <section
             id="products"
             ref={containerRef}
-            className="py-24 md:py-32 px-6 md:px-12 bg-neutral-50 dark:bg-[#0a0a0a]"
+            className="py-24 md:py-32 px-6 md:px-12 bg-rustic-section-2"
         >
             <div className="max-w-[1400px] mx-auto">
                 <div className="flex flex-col md:flex-row justify-between items-end gap-6 mb-16">
@@ -50,7 +50,7 @@ export default function Products() {
                         <span className="products-header text-[var(--color-accent)] font-medium uppercase tracking-widest text-sm block mb-4">
                             Our Products
                         </span>
-                        <h2 className="products-header text-4xl md:text-5xl lg:text-6xl font-display font-medium text-balance">
+                        <h2 className="products-header text-4xl md:text-5xl lg:text-6xl font-display font-medium text-balance text-[#F0E8DE]">
                             Premium agricultural exports sourced directly from origin.
                         </h2>
                     </div>

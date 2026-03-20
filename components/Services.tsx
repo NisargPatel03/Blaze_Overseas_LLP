@@ -136,7 +136,7 @@ function ServiceCard({ service, index }: { service: any; index: number }) {
             onMouseMove={handleMouseMove}
             onMouseEnter={() => setHovered(true)}
             onMouseLeave={handleMouseLeave}
-            className="service-card relative bg-white dark:bg-[#1a1a1a] p-10 md:p-14 rounded-sm border border-black/5 dark:border-white/5 transition-colors overflow-hidden group perspective-1000"
+            className="service-card relative bg-rustic-card p-10 md:p-14 rounded-sm border border-[#382415] transition-colors overflow-hidden group perspective-1000"
             style={{ transformStyle: "preserve-3d" }}
         >
             <div className="relative z-10 pointer-events-none translate-z-[50px]">
@@ -144,7 +144,7 @@ function ServiceCard({ service, index }: { service: any; index: number }) {
                     <service.icon size={28} />
                 </div>
                 <h3 className="text-2xl font-display font-medium mb-4">{service.title}</h3>
-                <p className="text-foreground/60 text-lg leading-relaxed max-w-sm">
+                <p className="text-[#E8DDD4]/60 text-lg leading-relaxed max-w-sm">
                     {service.desc}
                 </p>
 

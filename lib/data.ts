@@ -4,28 +4,28 @@ export const categories = [
         slug: "whole-spices",
         desc: "Authentic whole spices sourced from the finest origins.",
         tagline: "Unadulterated Purity & Aroma",
-        img: "/Photos/Coverpage Whole Species.jpeg",
+        img: "/Photos/Final WHOLE SPICES IMAGE.png",
     },
     {
         name: "Blended Masala",
         slug: "blended-masala",
         desc: "Perfectly balanced spice blends for global cuisines.",
         tagline: "The Perfect Balance of Flavors",
-        img: "/Photos/Coverpage blended Species.jpeg",
+        img: "/Photos/Final BLENDED MASALA IMAGE.png",
     },
     {
         name: "Grains",
         slug: "grains",
         desc: "Premium quality basmati and non-basmati rice, and wheat.",
         tagline: "Nourishing the World",
-        img: "/Photos/Coverpage grains.jpeg",
+        img: "/Photos/Final GRAINS IMAGE.png",
     },
     {
         name: "Pulses",
         slug: "pulses",
         desc: "Protein-rich, export-quality pulses and lentils.",
         tagline: "Wholesome & Nutritious",
-        img: "/Photos/Coverpage pluses.jpeg",
+        img: "/Photos/Final PULSES IMAGE.png",
     }
 ];
 

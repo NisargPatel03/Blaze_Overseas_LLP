@@ -60,7 +60,7 @@ export default function Strength() {
         <section
             id="strength"
             ref={containerRef}
-            className="py-24 md:py-32 px-6 md:px-12 bg-neutral-900 text-white relative overflow-hidden"
+            className="py-24 md:py-32 px-6 md:px-12 bg-rustic-section-1 text-white relative overflow-hidden"
         >
             <div className="max-w-[1400px] mx-auto flex flex-col lg:flex-row gap-16 items-center">
                 {/* Left Side: Text and Grid */}
@@ -69,7 +69,7 @@ export default function Strength() {
                         <span className="strength-header text-[var(--color-accent)] font-medium uppercase tracking-widest text-sm block mb-4">
                             Our Strength
                         </span>
-                        <h2 className="strength-header text-4xl md:text-5xl lg:text-6xl font-display font-medium text-balance mb-6">
+                        <h2 className="strength-header text-4xl md:text-5xl lg:text-6xl font-display font-medium text-balance mb-6 text-[#F0E8DE]">
                             Why Blazze
                         </h2>
                         <p className="strength-header text-white/70 max-w-xl text-lg leading-relaxed mb-6">
