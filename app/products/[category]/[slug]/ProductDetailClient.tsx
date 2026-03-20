@@ -11,6 +11,35 @@ import { MagneticButton } from "@/components/ui/MagneticButton";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import FloatingParticles from "@/components/FloatingParticles";
+
+const getEmojis = (category: string, slug: string) => {
+  if (slug.includes("garlic")) return ["🧄", "✨", "⭐", "🤍"];
+  if (slug.includes("onion")) return ["🧅", "✨", "⭐", "🤍"];
+  if (slug.includes("ginger")) return ["🫚", "✨", "⭐", "💛"];
+  if (slug.includes("turmeric")) return ["🟡", "✨", "🌿", "💛", "⭐"];
+  if (slug.includes("chilli") && slug.includes("kashmiri")) return ["🌶️", "❄️", "✨", "🌸", "⭐"];
+  if (slug.includes("chilli")) return ["🌶️", "🔥", "✨", "🌿", "⭐"];
+  if (slug.includes("cumin") || slug.includes("coriander")) return ["🌿", "🍂", "✨", "⭐", "🤎"];
+  if (slug.includes("garam-masala")) return ["🫙", "🍛", "✨", "⭐", "🌿"];
+  
+  if (slug.includes("basmati-rice") || slug === "rice") return ["🌾", "🍚", "✨", "⭐", "🌿"];
+  if (slug.includes("non-basmati")) return ["🌾", "🍚", "✨", "⭐", "🌱"];
+  if (slug.includes("wheat")) return ["🌾", "🌽", "✨", "⭐", "🍞"];
+  
+  if (category === "pulses") {
+    if (slug.includes("rajma")) return ["🫘", "❤️", "✨", "⭐"];
+    if (slug.includes("mung")) return ["🫘", "🟢", "✨", "⭐"];
+    if (slug.includes("chana")) return ["🫘", "🟡", "✨", "⭐"];
+    if (slug.includes("kabuli")) return ["🫘", "🤍", "✨", "⭐"];
+    if (slug.includes("masoor")) return ["🫘", "🟠", "✨", "⭐"];
+    return ["🫘", "🌱", "✨", "⭐", "🌿", "💚"];
+  }
+
+  if (category === "whole-spices") return ["🌿", "✨", "⭐", "🍂", "🪵"];
+  if (category === "blended-masala") return ["🫙", "🌶️", "🌿", "✨", "🍛", "⭐"];
+  return ["✨", "⭐"];
+};
 
 const ProductSplash = dynamic(() => import('@/components/effects/ProductSplash'), { ssr: false });
 
@@ -67,7 +96,10 @@ export default function ProductDetailClient({ product, relatedProducts }: Props)
         <section className="relative w-full h-[60vh] lg:h-screen lg:sticky top-0 bg-[#1F1A17] flex flex-col items-center justify-center overflow-hidden border-b lg:border-b-0 lg:border-r border-[#F5A623]/10">
           
           <div className="absolute inset-0 z-0 opacity-80 hover:opacity-100 transition-all duration-1000 animate-[fadeIn_1s_ease-out_both] scale-100 group">
-             <VolumetricPhoto src={product.unsplashId.startsWith('/') || product.unsplashId.startsWith('http') ? product.unsplashId : `https://images.unsplash.com/${product.unsplashId}?auto=format&fit=crop&q=80&w=1200`} />
+             <div className="relative overflow-hidden rounded-xl w-full h-full">
+               <VolumetricPhoto src={product.unsplashId.startsWith('/') || product.unsplashId.startsWith('http') ? product.unsplashId : `https://images.unsplash.com/${product.unsplashId}?auto=format&fit=crop&q=80&w=1200`} />
+               <FloatingParticles emojis={getEmojis(product.categorySlug, product.slug)} count={18} />
+             </div>
           </div>
           <div className="absolute inset-0 bg-gradient-to-t from-[#1B1714] via-[#1B1714]/40 to-transparent pointer-events-none z-[1]" />
 

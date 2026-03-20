@@ -47,16 +47,16 @@ export default function CustomCursor() {
             });
         };
 
+        const xTo = gsap.quickTo(cursor, "x", { duration: 0, ease: "none" });
+        const yTo = gsap.quickTo(cursor, "y", { duration: 0, ease: "none" });
+
         const onMouseMove = (e: MouseEvent) => {
             mouseX = e.clientX;
             mouseY = e.clientY;
 
-            // Move the dot instantly
-            gsap.to(cursor, {
-                x: mouseX,
-                y: mouseY,
-                duration: 0,
-            });
+            // Move the dot instantly using optimized quickTo
+            xTo(mouseX);
+            yTo(mouseY);
 
             // Dynamic event delegation to fix links that appear after animations
             const target = e.target as HTMLElement;
@@ -70,6 +70,7 @@ export default function CustomCursor() {
             }
         };
 
+        let animationFrameId: number;
         // Smooth follow loop for the outer ring
         const loop = () => {
             followerX += (mouseX - followerX) * 0.15; // smoothness factor
@@ -80,7 +81,7 @@ export default function CustomCursor() {
                 y: followerY - 20,
             });
 
-            requestAnimationFrame(loop);
+            animationFrameId = requestAnimationFrame(loop);
         };
 
         const onMouseDown = () => {
@@ -96,12 +97,13 @@ export default function CustomCursor() {
         window.addEventListener("mouseup", onMouseUp);
 
         // Start animation loop
-        requestAnimationFrame(loop);
+        animationFrameId = requestAnimationFrame(loop);
 
         return () => {
             window.removeEventListener("mousemove", onMouseMove);
             window.removeEventListener("mousedown", onMouseDown);
             window.removeEventListener("mouseup", onMouseUp);
+            cancelAnimationFrame(animationFrameId);
         };
     }, []);
 

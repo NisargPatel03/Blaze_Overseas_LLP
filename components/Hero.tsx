@@ -8,6 +8,7 @@ import { useGSAP } from "@gsap/react";
 import { ArrowDown } from "lucide-react";
 import Link from "next/link";
 import * as THREE from "three";
+import SpiceNinjaCanvas from "./SpiceNinjaCanvas";
 
 import { useMemo } from "react";
 
@@ -152,9 +153,12 @@ export default function Hero() {
                 </Canvas>
             </div>
 
-            <div className="relative z-10 w-full h-full flex flex-col justify-center items-center text-center px-4 pt-20">
-                <div className="overflow-hidden pb-4 max-w-5xl">
-                    <h1 className="text-5xl md:text-7xl lg:text-8xl font-display font-medium leading-tight flex flex-wrap justify-center gap-x-4">
+            {/* Spice Ninja Animation */}
+            <SpiceNinjaCanvas />
+
+            <div className="relative z-10 w-full h-full flex flex-col justify-center items-center text-center px-4 pt-20 pointer-events-none">
+                <div className="overflow-hidden pb-4 max-w-5xl pointer-events-auto">
+                    <h1 className="text-5xl md:text-7xl lg:text-8xl font-display font-medium leading-tight flex flex-wrap justify-center gap-x-4 select-none">
                         {titleText.split(" ").map((word, i) => (
                             <span key={i} className="hero-title-word inline-block origin-bottom-left">
                                 {word}
@@ -163,12 +167,12 @@ export default function Hero() {
                     </h1>
                 </div>
 
-                <p className="hero-desc mt-6 text-lg md:text-xl text-[#E8DDD4]/70 max-w-2xl text-balance">
+                <p className="hero-desc mt-6 text-lg md:text-xl text-[#E8DDD4]/70 max-w-2xl text-balance select-none pointer-events-auto">
                     Premium exporter of authentic spices, pure grains, and nutritious pulses, 
                     delivering the world's finest agricultural products.
                 </p>
 
-                <div className="mt-10 flex flex-col sm:flex-row gap-6">
+                <div className="mt-10 flex flex-col sm:flex-row gap-6 pointer-events-auto">
                     <Link href="/products" className="hero-cta group relative px-8 py-4 bg-foreground text-background overflow-hidden rounded-sm transition-transform hover:scale-105 duration-300">
                         <span className="relative z-10 font-medium uppercase tracking-widest text-sm">
                             Explore Products

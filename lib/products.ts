@@ -1076,7 +1076,7 @@ export const products: Product[] = [
     "moisture": "≤ 12–14%",
     "purity": "Sortex Cleaned",
     "hsCode": "10063020",
-    "unsplashId": "/Photos/Coverpage grains.jpeg",
+    "unsplashId": "/Photos/RICE.jpg",
     "whatsappText": "Hi Blazze, I am interested in Basmati / Non-Basmati Rice imports.",
     "ingredients": "100% Natural Rice Grain (Raw / Steam / Parboiled) — No additives or preservatives",
     "processingDetails": [
@@ -1137,7 +1137,7 @@ export const products: Product[] = [
     "moisture": "≤ 12%",
     "purity": "99% Min",
     "hsCode": "10019910",
-    "unsplashId": "/Photos/Coverpage grains.jpeg",
+    "unsplashId": "/Photos/WHEAT%20IMAGE.jpg",
     "whatsappText": "Hi Blazze, I am interested in bulk Wheat imports.",
     "ingredients": "100% Natural Wheat Grain — Machine cleaned, no additives or chemicals",
     "processingDetails": [

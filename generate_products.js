@@ -539,7 +539,7 @@ const products = [
     moisture: "Max 12%",
     purity: "95% Pure Grain",
     hsCode: "10063020",
-    unsplashId: "photo-1586201375761-83865001e31c",
+    unsplashId: "/Photos/RICE.jpg",
     whatsappText: "Hi Blazze, I am interested in Basmati Rice imports."
   },
   {
@@ -560,7 +560,7 @@ const products = [
     moisture: "Max 11%",
     purity: "99% Min",
     hsCode: "10019910",
-    unsplashId: "photo-1574323347407-f5e1ad6d020b",
+    unsplashId: "/Photos/WHEAT%20IMAGE.jpg",
     whatsappText: "Hi Blazze, I am interested in bulk Wheat imports."
   },
   {

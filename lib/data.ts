@@ -168,7 +168,7 @@ export const products = [
         desc: "We export premium quality Basmati and Non-Basmati rice varieties sourced from the finest rice-growing regions of India. Our Basmati rice (1121, 1509, 1401, 1718) is known for its extra-long grains (6.5–8.5mm+), natural aroma, 2x elongation on cooking, and fluffy non-sticky texture. Non-Basmati varieties include IR64, Sona Masoori, PR11, and Swarna Rice, catering to diverse global markets.",
         packaging: "1kg / 5kg / 10kg retail packs | 20kg / 25kg / 50kg export bags (PP / Non-Woven / BOPP)",
         origin: "Punjab, Haryana & Andhra Pradesh, India",
-        img: "/Photos/Coverpage grains.jpeg"
+        img: "/Photos/RICE.jpg"
     },
     {
         name: "Wheat",
@@ -177,7 +177,7 @@ export const products = [
         desc: "Our export-grade wheat is sourced from premium wheat-growing belts of India. We supply Hard and Soft wheat varieties (Sharbati, Lokwan, MP Wheat, Durum) suited for flour milling, semolina production, and industrial food processing. Protein content 10–13%, moisture ≤12%, with consistent quality and zero weevilled grains guaranteed.",
         packaging: "5kg / 10kg / 25kg retail packs | 25kg / 50kg bulk bags (PP / Jute / Export-grade)",
         origin: "Madhya Pradesh, Punjab & Rajasthan, India",
-        img: "/Photos/Coverpage grains.jpeg"
+        img: "/Photos/WHEAT IMAGE.jpg"
     },
 
     // PULSES
