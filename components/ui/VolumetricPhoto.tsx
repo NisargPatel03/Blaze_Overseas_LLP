@@ -99,7 +99,7 @@ function PhotoMesh({ url, isHovered }: { url: string; isHovered: boolean }) {
       
       materialRef.current.uHover = THREE.MathUtils.lerp(
           materialRef.current.uHover,
-          isHovered ? 1 : 0,
+          isHovered ? 1 : 0.3, // Provide a baseline so animation runs permanently on mobile
           0.08
       );
     }

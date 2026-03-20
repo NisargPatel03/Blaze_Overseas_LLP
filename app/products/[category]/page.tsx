@@ -32,7 +32,7 @@ export default async function CategoryPage({ params }: { params: Promise<{ categ
   return (
     <main className="w-full bg-[#1B1714] min-h-screen text-[#E8E1D9] font-sans selection:bg-[#F5A623] selection:text-[#1B1714]">
       {/* D1. Category Hero */}
-      <section className="relative w-full min-h-[400px] h-[55vh] flex items-center px-6 md:px-16 pt-20 overflow-hidden">
+      <section className="relative w-full min-h-[500px] md:min-h-[400px] h-[65vh] md:h-[55vh] flex items-center px-6 md:px-16 pt-32 md:pt-20 overflow-hidden">
         
         {/* Photographic Background */}
         <div className="absolute inset-0 z-0 overflow-hidden">

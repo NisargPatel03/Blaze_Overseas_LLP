@@ -65,10 +65,15 @@ export default function SpiceNinjaCanvas() {
 
     // Spawner
     const spawnItem = () => {
-      if (items.filter(i => !i.sliced).length >= 40) return; // max 40 active items
+      if (items.filter(i => !i.sliced).length >= 15) return; // reduced max to 15
       
       const itemDef = ITEMS[Math.floor(Math.random() * ITEMS.length)];
-      const size = Math.random() * 30 + 60; // 60 to 90 px (Larger products)
+      
+      // Responsive sizing: smaller sizes
+      const isMobile = window.innerWidth < 768;
+      const minSize = isMobile ? 25 : 45;
+      const maxSize = isMobile ? 40 : 65;
+      const size = Math.random() * (maxSize - minSize) + minSize;
       
       // Edge: 0=top, 1=right, 2=bottom, 3=left
       const edge = Math.floor(Math.random() * 4);
@@ -149,8 +154,8 @@ export default function SpiceNinjaCanvas() {
       
       score++;
       
-      // Massive powder particles burst
-      for(let i=0; i<45; i++) {
+      // Reduced memory powder particles burst
+      for(let i=0; i<15; i++) {
         particles.push({
           x: item.x,
           y: item.y,
@@ -245,12 +250,12 @@ export default function SpiceNinjaCanvas() {
       // Spawn in bursts
       spawnTimer += dt;
       if (spawnTimer > nextSpawnDelay) {
-        const burstCount = Math.floor(Math.random() * 4) + 3; // Spawn 3 to 6 products at once
+        const burstCount = Math.floor(Math.random() * 2) + 1; // Spawn 1 to 2
         for(let i=0; i<burstCount; i++) {
           spawnItem();
         }
         spawnTimer = 0;
-        nextSpawnDelay = Math.random() * 500 + 400; // Wait 400-900ms before next group
+        nextSpawnDelay = Math.random() * 600 + 400; // Wait 400-1000ms
       }
 
       // Update & Draw Trail
@@ -298,9 +303,7 @@ export default function SpiceNinjaCanvas() {
           ctx.font = `${p.size}px Arial`;
           ctx.textAlign = "center";
           ctx.textBaseline = "middle";
-          // Shadow for pop out effect
-          ctx.shadowColor = "rgba(0,0,0,0.5)";
-          ctx.shadowBlur = 10;
+          // Shadow removed to massively improve Canvas 2D performance and fix lag!
           ctx.fillText(p.char, 0, 0);
           ctx.restore();
 
