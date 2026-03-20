@@ -26,7 +26,7 @@ export default function SpicesBlog() {
     ];
 
     return (
-        <section className="w-full bg-cream py-[100px] px-6 md:px-[60px]">
+        <section className="w-full bg-white py-[100px] px-6 md:px-[60px]">
             <div className="max-w-[1400px] mx-auto">
 
                 {/* Header */}
@@ -37,7 +37,7 @@ export default function SpicesBlog() {
                         viewport={{ once: true }}
                     >
                         <span className="text-saffron uppercase font-medium tracking-widest text-xs mb-4 block">Insights</span>
-                        <h2 className="font-display text-4xl md:text-[52px] leading-tight text-dark">
+                        <h2 className="font-display text-4xl md:text-[52px] leading-tight text-gray-900">
                             From Our Journal
                         </h2>
                     </motion.div>
@@ -47,7 +47,7 @@ export default function SpicesBlog() {
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                         href="#"
-                        className="group flex items-center gap-2 text-dark font-medium uppercase tracking-widest text-xs hover:text-saffron transition-colors"
+                        className="group flex items-center gap-2 text-gray-900 font-medium uppercase tracking-widest text-xs hover:text-saffron transition-colors"
                     >
                         <span>All Articles</span>
                         <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
@@ -63,10 +63,10 @@ export default function SpicesBlog() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true, margin: "-50px" }}
                             transition={{ duration: 0.8, delay: idx * 0.15 }}
-                            className="group cursor-none"
+                            className="group cursor-default"
                         >
                             {/* Image Container */}
-                            <div className="w-full aspect-[3/2] overflow-hidden rounded-sm mb-6 bg-dark">
+                            <div className="w-full aspect-[3/2] overflow-hidden rounded-sm mb-6 bg-gray-100">
                                 <img
                                     src={article.img}
                                     alt={article.title}
@@ -78,15 +78,15 @@ export default function SpicesBlog() {
                                 {article.date}
                             </span>
 
-                            <h3 className="font-display text-2xl text-dark leading-tight mb-4 group-hover:text-saffron transition-colors">
+                            <h3 className="font-display text-2xl text-gray-900 leading-tight mb-4 group-hover:text-saffron transition-colors">
                                 {article.title}
                             </h3>
 
-                            <p className="text-mid/80 text-sm leading-relaxed mb-6">
+                            <p className="text-gray-600 text-sm leading-relaxed mb-6">
                                 {article.desc}
                             </p>
 
-                            <a href="#" className="inline-flex items-center gap-2 font-medium uppercase tracking-widest text-[11px] text-dark border-b border-dark/20 pb-1 group-hover:border-saffron group-hover:text-saffron transition-colors">
+                            <a href="#" className="inline-flex items-center gap-2 font-medium uppercase tracking-widest text-[11px] text-gray-900 border-b border-gray-200 pb-1 group-hover:border-saffron group-hover:text-saffron transition-colors">
                                 Read Article
                                 <ArrowRight size={12} className="-rotate-45 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
                             </a>

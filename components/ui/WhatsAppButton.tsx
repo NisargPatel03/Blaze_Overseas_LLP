@@ -8,7 +8,7 @@ export function WhatsAppButton() {
   return (
     <div className="fixed bottom-6 right-6 z-[9999] flex items-center group">
       {/* Tooltip */}
-      <div className="mr-4 px-3 py-1.5 bg-white text-[#E8DDD4] text-[12px] font-medium rounded-full shadow-lg opacity-0 translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 pointer-events-none">
+      <div className="mr-4 px-3 py-1.5 bg-white text-gray-600 text-[12px] font-medium rounded-full shadow-lg opacity-0 translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 pointer-events-none">
         Chat with us
       </div>
 

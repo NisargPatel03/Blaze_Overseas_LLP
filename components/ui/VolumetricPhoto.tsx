@@ -61,9 +61,9 @@ const VolumetricShaderMaterial = shaderMaterial(
 
       vec3 finalColor = vec3(texColorR.r, texColorG.g, texColorB.b);
       
-      // Add subtle lighting based on mouse
+      // Add subtle lighting based on mouse - lightened for light theme
       vec2 mouseNorm = uMouse * 0.5 + 0.5;
-      float light = smoothstep(0.0, 1.0, 1.0 - distance(uv, mouseNorm) * 1.5) * 0.2 * uHover;
+      float light = smoothstep(0.0, 1.0, 1.0 - distance(uv, mouseNorm) * 2.0) * 0.15 * uHover;
       finalColor += light;
 
       gl_FragColor = vec4(finalColor, texColorG.a);

@@ -27,22 +27,22 @@ export default function SpicesQuality() {
     const [openIdx, setOpenIdx] = useState<number | null>(0);
 
     return (
-        <section className="w-full bg-cream py-[100px] px-6 md:px-[60px]">
+        <section className="w-full bg-white py-[100px] px-6 md:px-[60px]">
             <div className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-8">
 
                 {/* Left: Sticky Image Col */}
                 <div className="lg:col-span-5 relative">
-                    <div className="sticky top-32 w-full aspect-[4/5] rounded-sm overflow-hidden bg-dark">
+                    <div className="sticky top-32 w-full aspect-[4/5] rounded-sm overflow-hidden bg-gray-100">
                         <img
                             src="https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&q=80&w=800"
                             alt="Quality testing of spices"
-                            className="w-full h-full object-cover opacity-80"
+                            className="w-full h-full object-cover opacity-90"
                         />
-                        <div className="absolute inset-0 bg-saffron/10 mix-blend-multiply" />
+                        <div className="absolute inset-0 bg-saffron/5 mix-blend-multiply" />
 
                         {/* Overlay Badge */}
-                        <div className="absolute top-8 left-8 bg-cream/90 backdrop-blur-sm p-6 border border-saffron/20 max-w-[200px]">
-                            <h4 className="font-display text-2xl text-dark leading-tight mb-2">
+                        <div className="absolute top-8 left-8 bg-white/95 backdrop-blur-sm p-6 border border-saffron/20 max-w-[200px] shadow-xl">
+                            <h4 className="font-display text-2xl text-gray-900 leading-tight mb-2">
                                 Uncompromised Standard
                             </h4>
                             <p className="text-[11px] uppercase tracking-widest text-saffron font-medium">
@@ -58,25 +58,25 @@ export default function SpicesQuality() {
                         <span className="text-saffron uppercase font-medium tracking-widest text-sm inline-block mb-4">
                             The Zafran Difference
                         </span>
-                        <h2 className="font-display text-4xl md:text-[52px] leading-[1.1] text-dark">
+                        <h2 className="font-display text-4xl md:text-[52px] leading-[1.1] text-gray-900">
                             Why Top Chefs <br />
-                            <span className="italic font-normal">Choose Us</span>
+                            <span className="italic font-normal text-saffron">Choose Us</span>
                         </h2>
                     </div>
 
-                    <div className="border-t border-dark/10">
+                    <div className="border-t border-gray-100">
                         {ACCORDION_ITEMS.map((item, idx) => {
                             const isOpen = openIdx === idx;
                             return (
-                                <div key={idx} className="border-b border-dark/10">
+                                <div key={idx} className="border-b border-gray-100">
                                     <button
                                         onClick={() => setOpenIdx(isOpen ? null : idx)}
                                         className="w-full flex items-center justify-between py-6 group text-left"
                                     >
-                                        <h3 className={`font-display text-2xl md:text-[28px] transition-colors duration-300 ${isOpen ? 'text-saffron' : 'text-dark group-hover:text-saffron'}`}>
+                                        <h3 className={`font-display text-2xl md:text-[28px] transition-colors duration-300 ${isOpen ? 'text-saffron' : 'text-gray-900 group-hover:text-saffron'}`}>
                                             {item.title}
                                         </h3>
-                                        <span className={`w-10 h-10 flex items-center justify-center rounded-full border transition-colors duration-300 ${isOpen ? 'bg-saffron text-white border-saffron' : 'border-dark/20 text-dark/40 group-hover:border-saffron group-hover:text-saffron'}`}>
+                                        <span className={`w-10 h-10 flex items-center justify-center rounded-full border transition-colors duration-300 ${isOpen ? 'bg-saffron text-white border-saffron shadow-lg shadow-amber-100' : 'border-gray-200 text-gray-400 group-hover:border-saffron group-hover:text-saffron'}`}>
                                             {isOpen ? <Minus size={18} /> : <Plus size={18} />}
                                         </span>
                                     </button>
@@ -89,7 +89,7 @@ export default function SpicesQuality() {
                                                 exit={{ height: 0, opacity: 0 }}
                                                 transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
                                             >
-                                                <p className="pb-8 pr-12 text-mid leading-relaxed text-[15px]">
+                                                <p className="pb-8 pr-12 text-gray-600 leading-relaxed text-[15px]">
                                                     {item.content}
                                                 </p>
                                             </motion.div>

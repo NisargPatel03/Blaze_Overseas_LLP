@@ -32,11 +32,11 @@ const COLLECTIONS = [
 
 export default function TilesCollections() {
     return (
-        <section className="w-full bg-obsidian py-[100px] px-6 md:px-[60px]">
+        <section className="w-full bg-white py-[100px] px-6 md:px-[60px]">
             <div className="max-w-[1400px] mx-auto">
                 <div className="flex flex-col items-center text-center mb-16">
-                    <span className="text-stone uppercase text-xs tracking-widest font-medium mb-4">Select Offerings</span>
-                    <h2 className="font-display text-4xl md:text-[52px] leading-[1.1] text-ivory">
+                    <span className="text-gray-500 uppercase text-xs tracking-widest font-medium mb-4">Select Offerings</span>
+                    <h2 className="font-display text-4xl md:text-[52px] leading-[1.1] text-gray-900">
                         Signature <span className="text-gold italic">Collections</span>
                     </h2>
                 </div>
@@ -93,7 +93,7 @@ function TileCard({ collection, index }: { collection: any, index: number }) {
                 onMouseLeave={handleMouseLeave}
                 animate={{ rotateX, rotateY }}
                 transition={{ type: "spring", stiffness: 300, damping: 30, mass: 0.5 }}
-                className="group relative aspect-[3/4] overflow-hidden rounded-sm cursor-none bg-charcoal"
+                className="group relative aspect-[3/4] overflow-hidden rounded-sm cursor-default bg-gray-100"
                 style={{ transformStyle: "preserve-3d" }}
             >
                 {/* Image layer */}
@@ -104,8 +104,8 @@ function TileCard({ collection, index }: { collection: any, index: number }) {
                     style={{ transform: "translateZ(-50px)" }} // Push back slightly
                 />
 
-                {/* Dark Gradient Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-obsidian via-obsidian/20 to-transparent opacity-90 transition-opacity duration-500 group-hover:opacity-100" />
+                {/* Improved Gradient Overlay for light theme */}
+                <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 via-gray-900/20 to-transparent opacity-80 transition-opacity duration-500 group-hover:opacity-100" />
 
                 {/* Content Block (Pops out in 3D) */}
                 <div
@@ -115,12 +115,12 @@ function TileCard({ collection, index }: { collection: any, index: number }) {
                     <span className="text-gold font-medium text-xs tracking-[0.2em] mb-3">
                         {collection.id} — {collection.category}
                     </span>
-                    <h3 className="font-display text-[28px] text-ivory leading-tight mb-4">
+                    <h3 className="font-display text-[28px] text-white leading-tight mb-4">
                         {collection.title}
                     </h3>
 
                     {/* Faux Button Line */}
-                    <div className="w-12 h-[1px] bg-stone group-hover:bg-gold group-hover:w-full transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]" />
+                    <div className="w-12 h-[1px] bg-gray-400 group-hover:bg-gold group-hover:w-full transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]" />
                 </div>
             </motion.div>
         </motion.div>

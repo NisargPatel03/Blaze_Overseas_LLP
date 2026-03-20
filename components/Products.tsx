@@ -50,7 +50,7 @@ export default function Products() {
                         <span className="products-header text-[var(--color-accent)] font-medium uppercase tracking-widest text-sm block mb-4">
                             Our Products
                         </span>
-                        <h2 className="products-header text-4xl md:text-5xl lg:text-6xl font-display font-medium text-balance text-[#F0E8DE]">
+                        <h2 className="products-header text-4xl md:text-5xl lg:text-6xl font-display font-medium text-balance text-gray-900">
                             Premium agricultural exports sourced directly from origin.
                         </h2>
                     </div>
@@ -61,29 +61,29 @@ export default function Products() {
                         <Link 
                             href={`/products/${category.slug}`} 
                             key={category.slug}
-                            className="product-card group relative overflow-hidden rounded-sm h-[400px] md:h-[500px] block"
+                            className="product-card group relative overflow-hidden rounded-sm h-[400px] md:h-[500px] block border border-gray-100 bg-white"
                         >
-                            <div className="absolute inset-0 bg-black/40 mix-blend-overlay z-10 transition-opacity duration-500 group-hover:bg-black/60" />
+                            <div className="absolute inset-0 bg-gray-900/10 z-10 transition-opacity duration-500 group-hover:bg-gray-900/20" />
                             <img
                                 src={category.img}
                                 alt={category.name}
-                                className="w-full h-full object-cover object-center transition-transform duration-1000 group-hover:scale-110"
+                                className="w-full h-full object-cover object-center transition-transform duration-1000 group-hover:scale-105 opacity-90 group-hover:opacity-100"
                             />
                             
                             {/* Content overlay */}
-                            <div className="absolute inset-0 z-20 p-8 md:p-12 flex flex-col justify-end text-white">
-                                <span className="transform translate-y-8 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 text-[var(--color-accent)] font-medium uppercase tracking-widest text-sm mb-2">
+                            <div className="absolute inset-x-0 bottom-0 z-20 p-8 md:p-12 bg-gradient-to-t from-white via-white/80 to-transparent flex flex-col justify-end">
+                                <span className="text-[var(--color-accent)] font-medium uppercase tracking-widest text-sm mb-2">
                                     {category.tagline}
                                 </span>
-                                <h3 className="text-3xl md:text-4xl font-display font-medium mb-3">
+                                <h3 className="text-3xl md:text-4xl font-display font-medium mb-3 text-gray-900">
                                     {category.name}
-                               </h3>
-                                <p className="text-white/80 line-clamp-2 max-w-md mb-6 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                                </h3>
+                                <p className="text-gray-600 line-clamp-2 max-w-md mb-6">
                                     {category.desc}
                                 </p>
 
-                                <div className="flex items-center gap-2 uppercase tracking-widest text-sm font-bold text-[var(--color-accent)] group-hover:text-white transition-colors">
-                                    Explore <MoveRight size={18} className="transform group-hover:translate-x-2 transition-transform" />
+                                <div className="flex items-center gap-2 uppercase tracking-widest text-sm font-bold text-[var(--color-accent)] group-hover:translate-x-2 transition-transform">
+                                    Explore <MoveRight size={18} />
                                 </div>
                             </div>
                         </Link>

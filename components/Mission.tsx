@@ -45,38 +45,38 @@ export default function Mission() {
                 <span className="mission-title text-[var(--color-accent)] font-medium uppercase tracking-widest text-sm block mb-4">
                     Our Purpose
                 </span>
-                <h2 className="mission-title text-4xl md:text-5xl font-display font-medium max-w-3xl mx-auto text-balance text-[#F0E8DE]">
+                <h2 className="mission-title text-4xl md:text-5xl font-display font-medium max-w-3xl mx-auto text-balance text-gray-900">
                     Driven by quality, inspired by innovation, dedicated to excellence.
                 </h2>
             </div>
 
             <div className="mission-grid grid grid-cols-1 md:grid-cols-3 gap-8 max-w-[1200px] mx-auto">
-                <div className="mission-card bg-rustic-card p-10 rounded-sm border border-[#382415] flex flex-col items-center text-center group">
-                    <div className="w-16 h-16 bg-[#2B170C] rounded-full flex items-center justify-center mb-6 shadow-sm group-hover:scale-110 transition-transform duration-500">
+                <div className="mission-card bg-rustic-card p-10 rounded-sm border border-gray-200 flex flex-col items-center text-center group transition-shadow hover:shadow-lg">
+                    <div className="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mb-6 shadow-sm group-hover:scale-110 transition-transform duration-500">
                         <Target className="text-[var(--color-accent)]" size={30} />
                     </div>
-                    <h3 className="text-2xl font-display font-medium mb-4 text-[#F0E8DE]">Our Mission</h3>
-                    <p className="text-[#E8DDD4]/70 leading-relaxed">
+                    <h3 className="text-2xl font-display font-medium mb-4 text-gray-900">Our Mission</h3>
+                    <p className="text-gray-600 leading-relaxed">
                         To deliver unparalleled quality in every product we export, consistently exceeding global standards and forging long-term partnerships built on trust and reliability.
                     </p>
                 </div>
 
-                <div className="mission-card bg-rustic-card p-10 rounded-sm border border-[#382415] flex flex-col items-center text-center group">
-                    <div className="w-16 h-16 bg-[#2B170C] rounded-full flex items-center justify-center mb-6 shadow-sm group-hover:scale-110 transition-transform duration-500">
+                <div className="mission-card bg-rustic-card p-10 rounded-sm border border-gray-200 flex flex-col items-center text-center group transition-shadow hover:shadow-lg">
+                    <div className="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mb-6 shadow-sm group-hover:scale-110 transition-transform duration-500">
                         <Lightbulb className="text-[var(--color-accent)]" size={30} />
                     </div>
-                    <h3 className="text-2xl font-display font-medium mb-4 text-[#F0E8DE]">Our Vision</h3>
-                    <p className="text-[#E8DDD4]/70 leading-relaxed">
+                    <h3 className="text-2xl font-display font-medium mb-4 text-gray-900">Our Vision</h3>
+                    <p className="text-gray-600 leading-relaxed">
                         To be the world's most trusted name in premium exports, setting industry benchmarks for sustainability, ethical sourcing, and uncompromising quality control.
                     </p>
                 </div>
 
-                <div className="mission-card bg-rustic-card p-10 rounded-sm border border-[#382415] flex flex-col items-center text-center group">
-                    <div className="w-16 h-16 bg-[#2B170C] rounded-full flex items-center justify-center mb-6 shadow-sm group-hover:scale-110 transition-transform duration-500">
+                <div className="mission-card bg-rustic-card p-10 rounded-sm border border-gray-200 flex flex-col items-center text-center group transition-shadow hover:shadow-lg">
+                    <div className="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mb-6 shadow-sm group-hover:scale-110 transition-transform duration-500">
                         <Users className="text-[var(--color-accent)]" size={30} />
                     </div>
-                    <h3 className="text-2xl font-display font-medium mb-4 text-[#F0E8DE]">Our Values</h3>
-                    <p className="text-[#E8DDD4]/70 leading-relaxed">
+                    <h3 className="text-2xl font-display font-medium mb-4 text-gray-900">Our Values</h3>
+                    <p className="text-gray-600 leading-relaxed">
                         Integrity in our dealings, transparency in our processes, passion for perfection, and a deep-rooted commitment to the communities and environments we operate within.
                     </p>
                 </div>

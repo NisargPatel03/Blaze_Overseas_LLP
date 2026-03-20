@@ -20,14 +20,14 @@ function TilePlatform() {
                     depthScale={1.2}
                     minDepthThreshold={0.4}
                     maxDepthThreshold={1.4}
-                    color="#050505"
+                    color="#F2EFE9"
                     metalness={0.5}
                     mirror={0.5}
                 />
             </mesh>
 
-            {/* Subtle light grid on floor */}
-            <gridHelper args={[50, 50, '#1c1917', '#0a0a0a']} position={[0, 0, 0]} />
+            {/* Subtle light grid on floor - lightened for light theme */}
+            <gridHelper args={[50, 50, '#E5E7EB', '#F3F4F6']} position={[0, 0, 0]} />
         </group>
     );
 }
@@ -60,7 +60,7 @@ function FloatingTiles() {
             <Float speed={2} rotationIntensity={0.5} floatIntensity={1}>
                 <mesh position={[-2.5, 1, -1]} rotation={[0, 0, 0]} castShadow>
                     <boxGeometry args={[1.5, 2, 0.15]} />
-                    <meshStandardMaterial color="#1a1a1a" roughness={0.1} metalness={0.8} />
+                    <meshStandardMaterial color="#1C1917" roughness={0.1} metalness={0.8} />
                 </mesh>
             </Float>
 
@@ -77,14 +77,14 @@ function FloatingTiles() {
 
 export default function TilesScene() {
     return (
-        <div className="absolute inset-0 z-0 bg-obsidian pointer-events-auto">
+        <div className="absolute inset-0 z-0 bg-white pointer-events-auto">
             <Canvas camera={{ position: [0, 0, 8], fov: 45 }} dpr={[1, 2]}>
-                <color attach="background" args={['#0a0a0a']} />
-                <fog attach="fog" args={['#0a0a0a', 5, 20]} />
+                <color attach="background" args={['#FFFFFF']} />
+                <fog attach="fog" args={['#FFFFFF', 5, 20]} />
 
-                <ambientLight intensity={0.2} />
-                <directionalLight position={[10, 10, 5]} intensity={1.5} color="#FAF8F3" castShadow />
-                <directionalLight position={[-10, -10, -5]} intensity={0.5} color="#C9922A" />
+                <ambientLight intensity={1.0} />
+                <directionalLight position={[10, 10, 5]} intensity={1.8} color="#FAF8F3" castShadow />
+                <directionalLight position={[-10, -10, -5]} intensity={0.8} color="#C9922A" />
 
                 <PresentationControls
                     global

@@ -74,9 +74,9 @@ function ParticleCloud({ count = 500 }) {
             </bufferGeometry>
             <pointsMaterial
                 size={0.05}
-                color="#e5e5e5"
+                color="#666666"
                 transparent
-                opacity={0.6}
+                opacity={0.15}
                 sizeAttenuation
             />
         </points>
@@ -141,14 +141,14 @@ export default function Hero() {
     const titleText = "Taste of Purity";
 
     return (
-        <section id="home" className="relative w-full h-screen overflow-hidden bg-[var(--background)]">
+        <section id="home" className="relative w-full h-screen overflow-hidden bg-white">
             {/* 3D Background */}
-            <div className="absolute inset-0 z-0 opacity-80">
+            <div className="absolute inset-0 z-0 opacity-40">
                 <Canvas camera={{ position: [0, 0, 8], fov: 45 }}>
                     <ambientLight intensity={0.8} />
                     <directionalLight position={[10, 10, 5]} intensity={1.5} />
                     <Environment preset="city" />
-                    <ParticleCloud />
+                    <ParticleCloud count={300} />
                     <FluidWave />
                 </Canvas>
             </div>
@@ -158,7 +158,7 @@ export default function Hero() {
 
             <div className="relative z-10 w-full h-full flex flex-col justify-center items-center text-center px-4 pt-20 pointer-events-none">
                 <div className="overflow-hidden pb-4 max-w-5xl pointer-events-auto">
-                    <h1 className="text-5xl md:text-7xl lg:text-8xl font-display font-medium leading-tight flex flex-wrap justify-center gap-x-4 select-none">
+                    <h1 className="text-5xl md:text-7xl lg:text-8xl font-display font-medium leading-tight flex flex-wrap justify-center gap-x-4 select-none text-gray-900">
                         {titleText.split(" ").map((word, i) => (
                             <span key={i} className="hero-title-word inline-block origin-bottom-left">
                                 {word}
@@ -167,20 +167,20 @@ export default function Hero() {
                     </h1>
                 </div>
 
-                <p className="hero-desc mt-6 text-lg md:text-xl text-[#E8DDD4]/70 max-w-2xl text-balance select-none pointer-events-auto">
+                <p className="hero-desc mt-6 text-lg md:text-xl text-gray-600 max-w-2xl text-balance select-none pointer-events-auto">
                     Premium exporter of authentic spices, pure grains, and nutritious pulses, 
                     delivering the world's finest agricultural products.
                 </p>
 
                 <div className="mt-10 flex flex-col sm:flex-row gap-6 pointer-events-auto">
-                    <Link href="/products" className="hero-cta group relative px-8 py-4 bg-foreground text-background overflow-hidden rounded-sm transition-transform hover:scale-105 duration-300">
+                    <Link href="/products" className="hero-cta group relative px-8 py-4 bg-gray-900 text-white overflow-hidden rounded-sm transition-transform hover:scale-105 duration-300">
                         <span className="relative z-10 font-medium uppercase tracking-widest text-sm">
                             Explore Products
                         </span>
                         <div className="absolute inset-0 bg-[var(--color-accent)] transform scale-x-0 origin-left transition-transform duration-500 group-hover:scale-x-100" />
                     </Link>
 
-                    <Link href="/#certifications" className="hero-cta group px-8 py-4 border border-foreground/20 hover:border-foreground transition-all duration-300 rounded-sm">
+                    <Link href="/#certifications" className="hero-cta group px-8 py-4 border border-gray-200 text-gray-800 hover:border-gray-900 transition-all duration-300 rounded-sm">
                         <span className="font-medium uppercase tracking-widest text-sm">
                             Quality Assurance
                         </span>
@@ -188,7 +188,7 @@ export default function Hero() {
                 </div>
             </div>
 
-            <div className="scroll-indicator absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-[#E8DDD4]/50 z-10">
+            <div className="scroll-indicator absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-gray-400 z-10">
                 <span className="text-xs uppercase tracking-[0.3em]">Scroll</span>
                 <ArrowDown className="scroll-arrow opacity-80" size={20} />
             </div>

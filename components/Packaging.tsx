@@ -46,41 +46,41 @@ export default function Packaging() {
                 <span className="pack-header text-[var(--color-accent)] font-medium uppercase tracking-widest text-sm block mb-4">
                     Reliability & Transit
                 </span>
-                <h2 className="pack-header text-4xl md:text-5xl lg:text-6xl font-display font-medium max-w-4xl mx-auto text-balance mb-8 text-[#F0E8DE]">
+                <h2 className="pack-header text-4xl md:text-5xl lg:text-6xl font-display font-medium max-w-4xl mx-auto text-balance mb-8 text-gray-900">
                     Packaging & Delivery
                 </h2>
-                <p className="pack-header text-lg md:text-xl max-w-3xl mx-auto text-[#E8DDD4]/70 leading-relaxed">
+                <p className="pack-header text-lg md:text-xl max-w-3xl mx-auto text-gray-600 leading-relaxed">
                     We offer durable and export-grade packaging designed to maintain freshness and quality during transit. Customized packaging solutions are available to meet specific client requirements. With our efficient logistics network, we ensure safe and timely delivery across global markets. At Blazze, reliability in delivery is as important as product quality.
                 </p>
             </div>
 
             <div className="pack-grid grid grid-cols-1 md:grid-cols-3 gap-8 max-w-[1200px] mx-auto">
-                 <div className="pack-card bg-rustic-card p-10 rounded-sm border border-[#382415] flex flex-col items-center text-center group transition-colors hover:border-[var(--color-accent)]">
-                    <div className="w-16 h-16 bg-rustic-card rounded-full flex items-center justify-center mb-6 shadow-sm group-hover:scale-110 transition-transform duration-500">
+                 <div className="pack-card bg-white p-10 rounded-sm border border-gray-200 flex flex-col items-center text-center group transition-all hover:border-[var(--color-accent)] hover:shadow-lg">
+                    <div className="w-16 h-16 bg-gray-50 rounded-full flex items-center justify-center mb-6 shadow-sm group-hover:scale-110 transition-transform duration-500">
                         <PackageOpen className="text-[var(--color-accent)]" size={30} />
                     </div>
-                    <h3 className="text-2xl font-display font-medium mb-4 text-[#F0E8DE]">Export Grade Packaging</h3>
-                    <p className="text-[#E8DDD4]/70 leading-relaxed">
+                    <h3 className="text-2xl font-display font-medium mb-4 text-gray-900">Export Grade Packaging</h3>
+                    <p className="text-gray-600 leading-relaxed">
                         Bulk and retail packaging designed to withstand long ocean transits and protect against moisture and contamination.
                     </p>
                 </div>
 
-                <div className="pack-card bg-rustic-card p-10 rounded-sm border border-[#382415] flex flex-col items-center text-center group transition-colors hover:border-[var(--color-accent)]">
-                    <div className="w-16 h-16 bg-rustic-card rounded-full flex items-center justify-center mb-6 shadow-sm group-hover:scale-110 transition-transform duration-500">
+                <div className="pack-card bg-white p-10 rounded-sm border border-gray-200 flex flex-col items-center text-center group transition-all hover:border-[var(--color-accent)] hover:shadow-lg">
+                    <div className="w-16 h-16 bg-gray-50 rounded-full flex items-center justify-center mb-6 shadow-sm group-hover:scale-110 transition-transform duration-500">
                         <Truck className="text-[var(--color-accent)]" size={30} />
                     </div>
-                    <h3 className="text-2xl font-display font-medium mb-4 text-[#F0E8DE]">Timely Delivery</h3>
-                    <p className="text-[#E8DDD4]/70 leading-relaxed">
+                    <h3 className="text-2xl font-display font-medium mb-4 text-gray-900">Timely Delivery</h3>
+                    <p className="text-gray-600 leading-relaxed">
                         Strong logistics partnerships ensure vessels are booked accurately and goods reach their destination on schedule.
                     </p>
                 </div>
 
-                <div className="pack-card bg-rustic-card p-10 rounded-sm border border-[#382415] flex flex-col items-center text-center group transition-colors hover:border-[var(--color-accent)]">
-                    <div className="w-16 h-16 bg-rustic-card rounded-full flex items-center justify-center mb-6 shadow-sm group-hover:scale-110 transition-transform duration-500">
+                <div className="pack-card bg-white p-10 rounded-sm border border-gray-200 flex flex-col items-center text-center group transition-all hover:border-[var(--color-accent)] hover:shadow-lg">
+                    <div className="w-16 h-16 bg-gray-50 rounded-full flex items-center justify-center mb-6 shadow-sm group-hover:scale-110 transition-transform duration-500">
                         <ShieldCheck className="text-[var(--color-accent)]" size={30} />
                     </div>
-                    <h3 className="text-2xl font-display font-medium mb-4 text-[#F0E8DE]">Custom Solutions</h3>
-                    <p className="text-[#E8DDD4]/70 leading-relaxed">
+                    <h3 className="text-2xl font-display font-medium mb-4 text-gray-900">Custom Solutions</h3>
+                    <p className="text-gray-600 leading-relaxed">
                         Private labeling and specialized packing sizes supported to meet diverse buyer requirements globally.
                     </p>
                 </div>

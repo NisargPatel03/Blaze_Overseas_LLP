@@ -87,8 +87,8 @@ function GlobeWithArcs() {
   const { positions, colors } = useMemo(() => {
     const positions = new Float32Array(particlesCount * 3);
     const colors = new Float32Array(particlesCount * 3);
-    const colorAccent = new THREE.Color("#C17A4E");
-    const colorBase = new THREE.Color("#1a1a1a");
+    const colorAccent = new THREE.Color("#F5A623");
+    const colorBase = new THREE.Color("#E5E7EB");
 
     for (let i = 0; i < particlesCount; i++) {
       const v = new THREE.Vector3(
@@ -111,16 +111,16 @@ function GlobeWithArcs() {
 
   return (
     <group ref={groupRef} rotation={[0.2, 0, 0]}>
-      {/* Abstract Glowing Core */}
+      {/* Abstract Glowing Core - Lightened for light theme */}
       <mesh>
         <sphereGeometry args={[globeRadius * 0.98, 64, 64]} />
-        <meshStandardMaterial color="#020202" emissive="#0a0500" roughness={0.7} metalness={0.8} />
+        <meshStandardMaterial color="#FFFFFF" emissive="#F3F4F6" roughness={0.7} metalness={0.2} />
       </mesh>
 
-      {/* Inner Atmosphere Glow */}
+      {/* Inner Atmosphere Glow - Adjusted for light theme */}
       <mesh>
         <sphereGeometry args={[globeRadius * 1.05, 32, 32]} />
-        <meshBasicMaterial color="#F5A623" transparent opacity={0.03} side={THREE.BackSide} blending={THREE.AdditiveBlending} depthWrite={false} />
+        <meshBasicMaterial color="#F5A623" transparent opacity={0.05} side={THREE.BackSide} depthWrite={false} />
       </mesh>
 
       {/* Surrounding Point Cloud */}
@@ -129,18 +129,18 @@ function GlobeWithArcs() {
           <bufferAttribute attach="attributes-position" count={particlesCount} args={[positions, 3]} />
           <bufferAttribute attach="attributes-color" count={particlesCount} args={[colors, 3]} />
         </bufferGeometry>
-        <pointsMaterial size={0.02} vertexColors transparent opacity={0.6} sizeAttenuation blending={THREE.AdditiveBlending} depthWrite={false} />
+        <pointsMaterial size={0.02} vertexColors transparent opacity={0.4} sizeAttenuation depthWrite={false} />
       </points>
 
       {/* Node Points */}
       {nodes.map((pos, i) => (
         <mesh key={i} position={pos}>
           <sphereGeometry args={[0.03, 16, 16]} />
-          <meshBasicMaterial color={i === 0 ? "#ffffff" : "#F5A623"} />
+          <meshBasicMaterial color={i === 0 ? "#E8850A" : "#F5A623"} />
           {/* Glow Halo around nodes */}
           <mesh>
             <sphereGeometry args={[0.07, 16, 16]} />
-            <meshBasicMaterial color={i === 0 ? "#ffffff" : "#F5A623"} transparent opacity={0.5} blending={THREE.AdditiveBlending} depthWrite={false} />
+            <meshBasicMaterial color={i === 0 ? "#E8850A" : "#F5A623"} transparent opacity={0.3} depthWrite={false} />
           </mesh>
         </mesh>
       ))}
@@ -155,13 +155,12 @@ export function ExportGlobe({ className = "" }: { className?: string }) {
   return (
     <div className={`relative w-full h-full cursor-grab active:cursor-grabbing ${className}`}>
       <Canvas camera={{ position: [0, 0, 6.5], fov: 45 }} dpr={[1, 2]}>
-        <ambientLight intensity={0.2} />
+        <ambientLight intensity={1.2} />
         <pointLight position={[10, 10, 10]} intensity={1.5} color="#F5A623" />
         <Float speed={1.5} rotationIntensity={0.1} floatIntensity={0.1}>
           <GlobeWithArcs />
         </Float>
         <OrbitControls enableZoom={false} enablePan={false} rotateSpeed={0.6} autoRotate autoRotateSpeed={0.8} />
-        <Stars radius={100} depth={50} count={3000} factor={4} saturation={0} fade speed={1} />
       </Canvas>
     </div>
   );

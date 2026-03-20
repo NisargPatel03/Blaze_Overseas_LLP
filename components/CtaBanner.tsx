@@ -60,7 +60,7 @@ export default function CtaBanner() {
             ref={containerRef}
             className="relative w-full py-32 md:py-48 overflow-hidden bg-[var(--color-accent)] text-white"
         >
-            <div className="absolute inset-0 z-0 opacity-40 mix-blend-multiply">
+            <div className="absolute inset-0 z-0 opacity-40 mix-blend-soft-light">
                 <Canvas camera={{ position: [0, 0, 5], fov: 45 }}>
                     <ambientLight intensity={1} />
                     <directionalLight position={[5, 5, 5]} intensity={2} />
@@ -72,20 +72,20 @@ export default function CtaBanner() {
                 <h2 className="text-5xl md:text-7xl lg:text-8xl font-display font-medium max-w-4xl leading-tight text-balance mb-8">
                     Ready to Partner with Us?
                 </h2>
-                <p className="text-xl md:text-2xl text-white/80 max-w-2xl mb-12">
+                <p className="text-xl md:text-2xl text-white/90 max-w-2xl mb-12">
                     Submit an enquiry for bulk orders or download our comprehensive export catalogue.
                 </p>
 
                 <div className="flex flex-col sm:flex-row gap-6">
-                    <button suppressHydrationWarning className="group relative px-10 py-5 bg-white text-[#E8DDD4] overflow-hidden rounded-sm hover:-translate-y-1 transition-transform duration-300">
-                        <span className="relative z-10 font-bold uppercase tracking-widest text-sm text-[var(--color-accent)] group-hover:text-[#E8DDD4] transition-colors duration-300">
+                    <button suppressHydrationWarning className="group relative px-10 py-5 bg-white text-gray-900 overflow-hidden rounded-sm hover:-translate-y-1 transition-transform duration-300">
+                        <span className="relative z-10 font-bold uppercase tracking-widest text-sm text-[var(--color-accent)] group-hover:text-white transition-colors duration-300">
                             Enquiry Now
                         </span>
-                        <div className="absolute inset-0 bg-neutral-200 transform scale-x-0 origin-left transition-transform duration-500 group-hover:scale-x-100" />
+                        <div className="absolute inset-0 bg-gray-900 transform scale-x-0 origin-left transition-transform duration-500 group-hover:scale-x-100" />
                     </button>
 
                     <button suppressHydrationWarning className="group relative px-10 py-5 bg-transparent border border-white text-white overflow-hidden rounded-sm hover:-translate-y-1 transition-transform duration-300">
-                        <span className="relative z-10 font-bold uppercase tracking-widest text-sm text-white group-hover:text-[#E8DDD4] transition-colors duration-300">
+                        <span className="relative z-10 font-bold uppercase tracking-widest text-sm text-white group-hover:text-gray-900 transition-colors duration-300">
                             Get Catalogue
                         </span>
                         <div className="absolute inset-0 bg-white transform scale-x-0 origin-left transition-transform duration-500 group-hover:scale-x-100" />

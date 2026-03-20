@@ -5,7 +5,7 @@ import Link from "next/link";
 
 export default function Footer() {
     return (
-        <footer className="bg-rustic-section-2 text-white pt-24 pb-12 px-6 md:px-12" id="contact">
+        <footer className="bg-[#111827] text-white pt-24 pb-12 px-6 md:px-12" id="contact">
             <div className="max-w-[1400px] mx-auto">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8 mb-24">
 
@@ -53,7 +53,7 @@ export default function Footer() {
 
                 </div>
 
-                <div className="border-t border-black/10 dark:border-white/10 pt-8 mt-16 md:mt-24 flex flex-col md:flex-row items-center justify-between gap-4">
+                <div className="border-t border-white/5 pt-8 mt-16 md:mt-24 flex flex-col md:flex-row items-center justify-between gap-4">
                     <p className="text-sm opacity-60">
                         Blazze – Taste of Purity | © {new Date().getFullYear()} Blazze Overseas LLP
                     </p>

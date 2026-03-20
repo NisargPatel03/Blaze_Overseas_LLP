@@ -59,10 +59,10 @@ export function TiltCard({
     >
       {!isMobile && (
         <div
-          className="absolute inset-0 pointer-events-none transition-opacity duration-300 z-50 mix-blend-screen"
+          className="absolute inset-0 pointer-events-none transition-opacity duration-300 z-50 mix-blend-soft-light"
           style={{
             opacity: isHovered ? 1 : 0,
-            background: `radial-gradient(circle at ${glowPos.x}px ${glowPos.y}px, rgba(245,166,35,0.15), transparent 60%)`,
+            background: `radial-gradient(circle at ${glowPos.x}px ${glowPos.y}px, rgba(245,166,35,0.1), transparent 70%)`,
             borderRadius: "inherit"
           }}
         />

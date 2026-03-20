@@ -103,35 +103,35 @@ export default function Navbar() {
                 className={cn(
                     "fixed top-0 left-0 w-full z-50 transition-all duration-500 ease-in-out px-6 md:px-12",
                     isScrolled
-                        ? "py-4 bg-[var(--background)]/70 backdrop-blur-md shadow-sm text-[var(--foreground)]"
-                        : cn("py-6 bg-transparent", isHomePage ? "text-[var(--foreground)]" : "text-white")
+                        ? "py-4 bg-white/80 backdrop-blur-md shadow-sm text-gray-900"
+                        : "py-6 bg-transparent text-gray-900"
                 )}
             >
                 <div className="max-w-[1400px] mx-auto flex items-center justify-between">
                     <Link href="/" className="group relative z-50 flex items-center gap-3">
-                        <div className="w-10 h-10 md:w-12 md:h-12 relative overflow-hidden bg-white rounded-md p-1 shadow-sm shrink-0">
+                        <div className="w-10 h-10 md:w-12 md:h-12 relative overflow-hidden bg-white rounded-md p-1 shadow-sm shrink-0 border border-gray-100">
                             <Image src="/logo.jpg" alt="Blazze Logo" fill className="object-contain" sizes="48px" priority />
                         </div>
-                        <span className="font-display text-xl md:text-2xl font-bold tracking-tight uppercase group-hover:text-[var(--color-accent)] transition-colors duration-300 hidden sm:block whitespace-nowrap">
+                        <span className="font-display text-xl md:text-2xl font-bold tracking-tight uppercase group-hover:text-[var(--color-accent)] transition-colors duration-300 hidden sm:block whitespace-nowrap text-gray-900">
                             Blazze Overseas
                         </span>
                     </Link>
-
+ 
                     <nav className="hidden md:flex items-center gap-8">
                         {navLinks.map((link) => (
                             link.subLinks ? (
                                 <div key={link.name} className="relative group py-2">
-                                    <span className="text-[13px] font-medium uppercase tracking-widest cursor-pointer flex items-center gap-1 transition-colors duration-300 group-hover:text-[var(--color-accent)]">
+                                    <span className="text-[13px] font-medium uppercase tracking-widest cursor-pointer flex items-center gap-1 transition-colors duration-300 group-hover:text-[var(--color-accent)] text-gray-800">
                                         {link.name}
                                         <svg className="w-3 h-3 transition-transform group-hover:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                                         </svg>
                                     </span>
-                                    <div className="absolute top-full left-1/2 -translate-x-1/2 pt-4 opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-all duration-300 text-[var(--foreground)]">
-                                        <div className="bg-[var(--background)] p-3 rounded-sm shadow-xl border border-[var(--foreground)]/10 flex flex-col min-w-[160px]">
+                                    <div className="absolute top-full left-1/2 -translate-x-1/2 pt-4 opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-all duration-300 text-gray-900">
+                                        <div className="bg-white p-3 rounded-sm shadow-xl border border-gray-200 flex flex-col min-w-[160px]">
                                             {link.subLinks.map((subGroup: any) => (
                                                 <div key={subGroup.title} className="mb-2 last:mb-0">
-                                                    <span className="text-[10px] uppercase tracking-widest text-[#C17A4E] font-bold px-3 block mb-1">
+                                                    <span className="text-[10px] uppercase tracking-widest text-[#A34E0D] font-bold px-3 block mb-1">
                                                         {subGroup.title}
                                                     </span>
                                                     {subGroup.items.map((subItem: any) => (
@@ -139,7 +139,7 @@ export default function Navbar() {
                                                             key={subItem.name}
                                                             href={subItem.href}
                                                             onClick={(e) => handleMenuClick(e, subItem.href)}
-                                                            className="block px-3 py-2 text-sm font-medium hover:bg-[var(--foreground)]/5 rounded-sm transition-colors whitespace-nowrap text-[var(--foreground)] hover:text-[var(--color-accent)]"
+                                                            className="block px-3 py-2 text-sm font-medium hover:bg-gray-50 rounded-sm transition-colors whitespace-nowrap text-gray-700 hover:text-[var(--color-accent)]"
                                                         >
                                                             {subItem.name}
                                                         </Link>
@@ -193,7 +193,7 @@ export default function Navbar() {
                                 )}>
                                     {link.subLinks.map((subGroup: any) => (
                                         <div key={subGroup.title} className="flex flex-col gap-3">
-                                            <span className="text-sm uppercase tracking-widest text-[#C17A4E] font-bold">
+                                            <span className="text-sm uppercase tracking-widest text-[#A34E0D] font-bold">
                                                 {subGroup.title}
                                             </span>
                                             {subGroup.items.map((subItem: any) => (

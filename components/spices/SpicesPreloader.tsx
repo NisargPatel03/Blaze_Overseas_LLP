@@ -20,13 +20,13 @@ export function SpicesPreloader() {
                     initial={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
                     transition={{ duration: 0.8, ease: "easeInOut" }}
-                    className="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-dark text-cream"
+                    className="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-white text-gray-900"
                 >
                     <h1 className="font-display text-4xl md:text-6xl text-saffron tracking-wide italic font-light mb-8">
                         Blazze Overseas
                     </h1>
 
-                    <div className="w-48 md:w-64 h-[2px] bg-white/10 overflow-hidden relative">
+                    <div className="w-48 md:w-64 h-[2px] bg-gray-100 overflow-hidden relative">
                         <motion.div
                             initial={{ width: "0%" }}
                             animate={{ width: "100%" }}

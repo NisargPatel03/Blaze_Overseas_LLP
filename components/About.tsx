@@ -57,7 +57,7 @@ export default function About() {
         <section
             id="about"
             ref={containerRef}
-            className="py-24 md:py-32 px-6 md:px-12 bg-rustic-section-1 text-[#E8DDD4]"
+            className="py-24 md:py-32 px-6 md:px-12 bg-rustic-section-1 text-gray-800"
         >
             <div className="max-w-[1400px] mx-auto about-container grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                 {/* Left Text Content */}
@@ -65,14 +65,14 @@ export default function About() {
                     <span className="about-text text-[var(--color-accent)] font-medium uppercase tracking-widest text-sm">
                         Our Story
                     </span>
-                    <h2 className="about-text text-4xl md:text-5xl lg:text-6xl font-display font-medium leading-tight text-balance text-[#F0E8DE]">
+                    <h2 className="about-text text-4xl md:text-5xl lg:text-6xl font-display font-medium leading-tight text-balance text-gray-900">
                         A legacy of delivering authentic taste and world-class standards.
                     </h2>
-                    <p className="text-lg md:text-xl text-[#E8DDD4]/80 max-w-2xl mx-auto leading-relaxed font-light mb-8 md:mb-12">
+                    <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed font-light mb-8 md:mb-12">
                         Blazze is an emerging global exporter of high-quality rice and spices, known for purity and consistency. We source directly from the best regions and ensure strict quality control at every step. Our goal is to deliver authentic taste with world-class standards. With Blazze, you experience quality you can trust.
                     </p>
 
-                    <div className="about-stats mt-8 grid grid-cols-2 sm:grid-cols-3 gap-8 pt-8 border-t border-[#E8DDD4]/10">
+                    <div className="about-stats mt-8 grid grid-cols-2 sm:grid-cols-3 gap-8 pt-8 border-t border-gray-200">
                         <div>
                             <p className="text-4xl md:text-5xl font-display text-[var(--color-accent)]">
                                 <span className="counter-val" data-target="25">
@@ -80,7 +80,7 @@ export default function About() {
                                 </span>
                                 +
                             </p>
-                            <p className="text-sm uppercase tracking-widest text-[#E8DDD4]/60 mt-2">
+                            <p className="text-sm uppercase tracking-widest text-gray-500 mt-2">
                                 Years Experience
                             </p>
                         </div>
@@ -91,7 +91,7 @@ export default function About() {
                                 </span>
                                 +
                             </p>
-                            <p className="text-sm uppercase tracking-widest text-[#E8DDD4]/60 mt-2">
+                            <p className="text-sm uppercase tracking-widest text-gray-500 mt-2">
                                 Global Projects
                             </p>
                         </div>
@@ -102,7 +102,7 @@ export default function About() {
                                 </span>
                                 +
                             </p>
-                            <p className="text-sm uppercase tracking-widest text-[#E8DDD4]/60 mt-2">
+                            <p className="text-sm uppercase tracking-widest text-gray-500 mt-2">
                                 Design Awards
                             </p>
                         </div>
@@ -111,7 +111,7 @@ export default function About() {
 
                 {/* Right Image/Parallax with 3D Depth */}
                 <div
-                    className="about-image-wrapper relative h-[600px] rounded-sm overflow-hidden bg-[#2B170C] perspective-1000"
+                    className="about-image-wrapper relative h-[600px] rounded-sm overflow-hidden bg-gray-100 perspective-1000"
                     style={{ transformStyle: "preserve-3d" }}
                     onMouseMove={(e) => {
                         const rect = e.currentTarget.getBoundingClientRect();
@@ -144,7 +144,7 @@ export default function About() {
                             alt="Blazze Overseas Legacy"
                             className="about-image absolute top-[-10%] w-full h-[120%] object-cover object-center translate-z-[50px]"
                         />
-                        <div className="absolute inset-0 bg-black/10 mix-blend-overlay translate-z-[100px]"></div>
+                        <div className="absolute inset-0 bg-white/5 mix-blend-overlay translate-z-[100px]"></div>
                     </div>
                 </div>
             </div>

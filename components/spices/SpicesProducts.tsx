@@ -29,7 +29,7 @@ const PRODUCTS = [
 
 export default function SpicesProducts() {
     return (
-        <section className="w-full bg-cream py-[100px] px-6 md:px-[60px]">
+        <section className="w-full bg-white py-[100px] px-6 md:px-[60px]">
             <div className="max-w-[1400px] mx-auto">
 
                 {/* Header Row */}
@@ -39,13 +39,13 @@ export default function SpicesProducts() {
                             <span className="text-saffron uppercase font-medium tracking-widest text-sm">Our Products</span>
                             <div className="w-12 h-[1px] bg-saffron" />
                         </div>
-                        <h2 className="font-display text-4xl md:text-[52px] leading-[1.1] text-dark">
+                        <h2 className="font-display text-4xl md:text-[52px] leading-[1.1] text-gray-900">
                             Explore Our Spice Collection
                         </h2>
                     </div>
-                    <a href="#" className="group inline-flex items-center gap-3 text-dark font-medium uppercase tracking-widest text-[13px] border-b border-dark/20 pb-1 hover:border-saffron transition-colors">
+                    <a href="#" className="group inline-flex items-center gap-3 text-gray-900 font-medium uppercase tracking-widest text-[13px] border-b border-gray-200 pb-1 hover:border-saffron transition-colors">
                         View All Products
-                        <ArrowRight size={16} className="text-dark/40 group-hover:text-saffron group-hover:translate-x-1 transition-all" />
+                        <ArrowRight size={16} className="text-gray-400 group-hover:text-saffron group-hover:translate-x-1 transition-all" />
                     </a>
                 </div>
 
@@ -58,15 +58,15 @@ export default function SpicesProducts() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true, margin: "-100px" }}
                             transition={{ duration: 0.8, delay: idx * 0.15, ease: [0.16, 1, 0.3, 1] }}
-                            className="group relative aspect-[3/4] overflow-hidden rounded-sm cursor-none"
+                            className="group relative aspect-[3/4] overflow-hidden rounded-sm cursor-default"
                         >
                             <img
                                 src={prod.img}
                                 alt={prod.title}
                                 className="absolute inset-0 w-full h-full object-cover transition-transform duration-[700ms] ease-[cubic-bezier(0.25,0.46,0.45,0.94)] group-hover:scale-[1.08]"
                             />
-                            {/* Dark Gradient Overlay */}
-                            <div className="absolute inset-0 bg-gradient-to-t from-dark/90 via-dark/40 to-transparent opacity-80 transition-opacity duration-500 group-hover:opacity-100" />
+                            {/* Improved Gradient Overlay for light theme */}
+                            <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 via-gray-900/20 to-transparent opacity-70 transition-opacity duration-500 group-hover:opacity-90" />
 
                             {/* Content Block */}
                             <div className="absolute inset-x-0 bottom-0 p-8 flex flex-col justify-end translate-y-6 transition-transform duration-500 ease-out group-hover:translate-y-0">

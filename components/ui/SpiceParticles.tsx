@@ -43,7 +43,7 @@ function Particles() {
   return (
     <Instances ref={ref} limit={PARTICLES_COUNT} range={PARTICLES_COUNT}>
       <dodecahedronGeometry args={[0.15, 0]} />
-      <meshStandardMaterial color="#F5A623" roughness={0.7} metalness={0.4} transparent opacity={0.4} envMapIntensity={1} />
+      <meshStandardMaterial color="#F5A623" roughness={0.7} metalness={0.4} transparent opacity={0.2} envMapIntensity={0.5} />
       {particles.map((data, i) => (
         <Float key={i} speed={data.speed} rotationIntensity={1.5} floatIntensity={1.5}>
           <Instance position={data.position} scale={data.scale} rotation={data.rotation} />
@@ -57,8 +57,8 @@ export function SpiceParticles({ className = "" }: { className?: string }) {
   return (
     <div className={`absolute inset-0 z-0 pointer-events-none ${className}`}>
       <Canvas camera={{ position: [0, 0, 10], fov: 45 }} dpr={[1, 1.5]}>
-        <ambientLight intensity={0.2} />
-        <spotLight position={[10, 10, 10]} penumbra={1} intensity={1} color="#F5A623" />
+        <ambientLight intensity={0.8} />
+        <spotLight position={[10, 10, 10]} penumbra={1} intensity={0.5} color="#F5A623" />
         <Particles />
       </Canvas>
     </div>

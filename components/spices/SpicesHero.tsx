@@ -31,12 +31,12 @@ export default function SpicesHero() {
     };
 
     return (
-        <section className="relative w-full min-h-[700px] h-screen overflow-hidden bg-dark">
-            {/* Background Gradients */}
-            <div className="absolute inset-0 bg-gradient-to-tl from-[#8B4513] via-[#3D1F0A] to-[#1A0F06]" />
-            <div className="absolute inset-0 opacity-40 mix-blend-screen"
+        <section className="relative w-full min-h-[700px] h-screen overflow-hidden bg-white">
+            {/* Background Gradients - Lightened for light theme */}
+            <div className="absolute inset-0 bg-[#FDFBF9]" />
+            <div className="absolute inset-0 opacity-10 mix-blend-multiply"
                 style={{ background: 'radial-gradient(circle at 80% 50%, var(--color-saffron) 0%, transparent 60%)' }} />
-            <div className="absolute inset-0 opacity-30 mix-blend-screen"
+            <div className="absolute inset-0 opacity-10 mix-blend-multiply"
                 style={{ background: 'radial-gradient(circle at 20% 90%, var(--color-crimson) 0%, transparent 50%)' }} />
 
             {/* Floating Particles */}
@@ -44,11 +44,11 @@ export default function SpicesHero() {
                 {particles.map((p) => (
                     <motion.div
                         key={p.id}
-                        className={`absolute bottom-[-10%] rounded-full opacity-60 ${p.color}`}
+                        className={`absolute bottom-[-10%] rounded-full opacity-40 ${p.color}`}
                         style={{ left: `${p.x}%`, width: p.size, height: p.size }}
                         animate={{
                             y: ['0vh', '-120vh'], // float up
-                            opacity: [0, 0.6, 0.6, 0] // fade in and out
+                            opacity: [0, 0.4, 0.4, 0] // fade in and out
                         }}
                         transition={{
                             duration: p.duration,
@@ -62,14 +62,12 @@ export default function SpicesHero() {
 
             {/* LEFT CONTENT */}
             <div className="relative z-20 h-full max-w-[700px] px-6 md:px-[60px] flex flex-col justify-center">
-
-
                 <motion.h1
                     custom={0.5}
                     initial="hidden"
                     animate="visible"
                     variants={fadeUp}
-                    className="font-display text-[70px] md:text-[90px] lg:text-[110px] leading-[0.95] font-light text-cream tracking-tight mb-8"
+                    className="font-display text-[70px] md:text-[90px] lg:text-[110px] leading-[0.95] font-light text-gray-900 tracking-tight mb-8"
                 >
                     Nature's <br />
                     <span className="text-saffron italic font-normal">Finest</span> <br />
@@ -81,7 +79,7 @@ export default function SpicesHero() {
                     initial="hidden"
                     animate="visible"
                     variants={fadeUp}
-                    className="text-cream/70 text-base font-light max-w-[420px] leading-relaxed mb-12"
+                    className="text-gray-600 text-base font-light max-w-[420px] leading-relaxed mb-12"
                 >
                     Harvested from the most fertile organic farms across India. We bring centuries of authentic flavor and uncompromised purity to modern culinary experiences.
                 </motion.p>
@@ -93,11 +91,11 @@ export default function SpicesHero() {
                     variants={fadeUp}
                     className="flex flex-col sm:flex-row gap-4"
                 >
-                    <button className="group relative overflow-hidden bg-saffron text-white px-8 py-4 text-sm uppercase tracking-widest font-medium transition-colors">
+                    <button className="group relative overflow-hidden bg-saffron text-white px-8 py-4 text-sm uppercase tracking-widest font-bold transition-all shadow-lg shadow-saffron/20 active:scale-[0.98]">
                         <span className="relative z-10">Explore Products</span>
-                        <div className="absolute inset-0 bg-crimson -translate-x-full transition-transform duration-500 ease-out group-hover:translate-x-0" />
+                        <div className="absolute inset-0 bg-[#7c2d12] -translate-x-full transition-transform duration-500 ease-out group-hover:translate-x-0" />
                     </button>
-                    <button className="px-8 py-4 border border-saffron/30 text-cream text-sm uppercase tracking-widest font-medium hover:border-saffron transition-colors duration-300">
+                    <button className="px-8 py-4 border border-saffron text-saffron text-sm uppercase tracking-widest font-bold hover:bg-saffron hover:text-white transition-all duration-300 shadow-sm">
                         Our Story
                     </button>
                 </motion.div>
@@ -116,31 +114,31 @@ export default function SpicesHero() {
                     alt="Spices"
                     className="w-full h-full object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-r from-dark via-dark/40 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-r from-white via-white/40 to-transparent" />
             </motion.div>
 
             {/* SCROLL INDICATOR */}
             <div className="absolute bottom-12 left-6 md:left-[60px] flex items-center gap-4 z-20">
-                <div className="w-[60px] h-[1px] bg-white/20 relative overflow-hidden">
+                <div className="w-[60px] h-[1px] bg-gray-200 relative overflow-hidden">
                     <motion.div
                         className="absolute top-0 left-0 w-full h-full bg-saffron"
                         animate={{ x: ['-100%', '100%'] }}
                         transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
                     />
                 </div>
-                <span className="text-[11px] uppercase tracking-[0.15em] text-cream/50">Scroll to explore</span>
+                <span className="text-[11px] uppercase tracking-[0.15em] text-gray-400">Scroll to explore</span>
             </div>
 
             {/* ROTATING BADGE */}
-            <div className="absolute bottom-12 right-12 z-30 hidden md:flex items-center justify-center w-[120px] h-[120px] rounded-full bg-saffron text-white shadow-2xl">
+            <div className="absolute bottom-12 right-12 z-30 hidden md:flex items-center justify-center w-[120px] h-[120px] rounded-full bg-saffron text-white shadow-2xl shadow-saffron/30 border border-white/20">
                 <motion.div
                     animate={{ rotate: 360 }}
                     transition={{ repeat: Infinity, duration: 20, ease: "linear" }}
                     className="absolute inset-2 border border-white/30 rounded-full border-dashed"
                 />
                 <div className="text-center">
-                    <span className="block font-display text-3xl italic leading-none">100%</span>
-                    <span className="block text-[8px] uppercase tracking-widest mt-1 opacity-90">Organic<br />Certified</span>
+                    <span className="block font-display text-3xl italic leading-none font-bold">100%</span>
+                    <span className="block text-[8px] uppercase tracking-widest mt-1 font-bold opacity-100">Organic<br />Certified</span>
                 </div>
             </div>
         </section>

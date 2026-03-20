@@ -47,17 +47,17 @@ export default function SpicesStats() {
     ];
 
     return (
-        <section className="w-full bg-dark relative overflow-hidden border-y border-white/10">
-            {/* Subtle center glow */}
-            <div className="absolute inset-0 flex items-center justify-center pointer-events-none opacity-30">
-                <div className="w-[800px] h-[300px] bg-saffron/20 blur-[100px] rounded-full" />
+        <section className="w-full bg-white relative overflow-hidden border-y border-gray-100">
+            {/* Subtle center glow - lightened for light theme */}
+            <div className="absolute inset-0 flex items-center justify-center pointer-events-none opacity-20">
+                <div className="w-[800px] h-[300px] bg-saffron/10 blur-[100px] rounded-full" />
             </div>
 
             <div className="max-w-[1400px] mx-auto grid grid-cols-2 md:grid-cols-5 relative z-10">
                 {stats.map((stat, idx) => (
                     <motion.div
                         key={idx}
-                        className="group flex flex-col items-center justify-center py-16 px-6 border-r border-b md:border-b-0 border-white/5 last:border-r-0 hover:bg-saffron/5 transition-colors duration-500"
+                        className="group flex flex-col items-center justify-center py-16 px-6 border-r border-b md:border-b-0 border-gray-100 last:border-r-0 hover:bg-saffron/5 transition-colors duration-500"
                         initial={{ opacity: 0, y: 30 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
@@ -68,7 +68,7 @@ export default function SpicesStats() {
                             {stat.plus && <span>+</span>}
                             {stat.suffix && <span>{stat.suffix}</span>}
                         </div>
-                        <span className="text-[11px] uppercase tracking-widest text-cream/45 text-center font-medium">
+                        <span className="text-[11px] uppercase tracking-widest text-gray-500 text-center font-medium">
                             {stat.label}
                         </span>
                     </motion.div>

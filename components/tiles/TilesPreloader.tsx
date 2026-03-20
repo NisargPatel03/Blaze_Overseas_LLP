@@ -37,14 +37,14 @@ export function TilesPreloader() {
                     variants={containerVariants}
                     initial="initial"
                     exit="exit"
-                    className="fixed inset-0 z-[100] flex w-full h-full text-ivory"
+                    className="fixed inset-0 z-[100] flex w-full h-full text-gray-900"
                 >
-                    {/* Architectural Wiping Blocks */}
+                    {/* Architectural Wiping Blocks - White for light theme */}
                     {Array.from({ length: 5 }).map((_, i) => (
                         <motion.div
                             key={i}
                             variants={blockVariants}
-                            className="h-full flex-1 bg-obsidian origin-top"
+                            className="h-full flex-1 bg-white origin-top shadow-sm"
                         />
                     ))}
 
@@ -57,13 +57,13 @@ export function TilesPreloader() {
                             transition={{ duration: 0.8, ease: "easeOut" }}
                             className="flex flex-col items-center"
                         >
-                            <span className="font-sans text-[12px] uppercase tracking-[0.3em] text-stone mb-4">
+                            <span className="font-sans text-[12px] uppercase tracking-[0.3em] text-gray-400 mb-4">
                                 Blazze Overseas
                             </span>
-                            <h1 className="font-display text-4xl md:text-6xl tracking-widest uppercase">
+                            <h1 className="font-display text-4xl md:text-6xl tracking-widest uppercase text-gray-900">
                                 Spaces redefined
                             </h1>
-                            <div className="w-[1px] h-16 bg-gradient-to-b from-stone to-transparent mt-8" />
+                            <div className="w-[1px] h-16 bg-gradient-to-b from-gray-300 to-transparent mt-8" />
                         </motion.div>
                     </div>
                 </motion.div>

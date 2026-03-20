@@ -115,7 +115,7 @@ export default function ProductsLandingPage() {
   }, []);
 
   return (
-    <main className="w-full relative bg-[#1B1714] text-[#E8E1D9] min-h-screen font-sans selection:bg-[#F5A623] selection:text-[#1B1714]">
+    <main className="w-full relative bg-white text-gray-900 min-h-screen font-sans selection:bg-[#F5A623] selection:text-white">
 
       {/* C1. Hero Section */}
       <section 
@@ -123,23 +123,23 @@ export default function ProductsLandingPage() {
         className="relative w-full h-screen overflow-hidden flex items-center justify-center p-6"
       >
         <div className="absolute inset-0 pointer-events-none" style={{
-          background: "radial-gradient(ellipse at 50% 60%, rgba(245,166,35,0.06) 0%, transparent 65%)"
+          background: "radial-gradient(ellipse at 50% 60%, rgba(245,166,35,0.08) 0%, transparent 70%)"
         }}>
           {/* 3D Spice/Grain Particles */}
           <SpiceParticles />
         </div>
 
-        {/* Parallax Layers */}
+        {/* Parallax Layers - Subtle dark text for light theme */}
         <div ref={l1Ref} className="absolute flex items-center justify-center pointer-events-none w-full h-full font-display font-medium select-none z-0" style={{
             fontSize: "clamp(80px, 15vw, 180px)",
-            color: "rgba(245,166,35,0.04)",
+            color: "rgba(0,0,0,0.02)",
             letterSpacing: "0.3em"
         }}>
             BLAZZE
         </div>
         <div ref={l2Ref} className="absolute flex items-center justify-center pointer-events-none w-full h-full font-display font-medium select-none z-0 mt-32" style={{
             fontSize: "clamp(40px, 8vw, 100px)",
-            color: "rgba(245,166,35,0.035)",
+            color: "rgba(0,0,0,0.015)",
             letterSpacing: "0.15em"
         }}>
             OVERSEAS
@@ -150,13 +150,13 @@ export default function ProductsLandingPage() {
             <div className="animate-[fadeSlideUp_0.4s_ease-out_0.2s_both] border border-[#F5A623] text-[#F5A623] text-[11px] uppercase tracking-[0.2em] px-4 py-1.5 rounded-full mb-8 backdrop-blur-sm bg-[#F5A623]/5">
                 Premium Export Quality
             </div>
-            <SplitReveal text="Our Products" tag="h1" className="text-5xl md:text-7xl font-display font-medium mb-6" delay={0.4} />
-            <SplitReveal text="Sourced from the finest farms. Delivered to 30+ countries." tag="p" className="text-lg md:text-xl text-[#E8E1D9]/60" delay={0.8} />
+            <SplitReveal text="Our Products" tag="h1" className="text-5xl md:text-7xl font-display font-medium mb-6 text-gray-900" delay={0.4} />
+            <SplitReveal text="Sourced from the finest farms. Delivered to 30+ countries." tag="p" className="text-lg md:text-xl text-gray-600" delay={0.8} />
         </div>
 
         {/* Scroll Indicator */}
         <div className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3">
-            <div className="w-[1px] h-16 bg-[#E8E1D9]/10 relative overflow-hidden">
+            <div className="w-[1px] h-16 bg-gray-100 relative overflow-hidden">
                 <div className="w-full h-full bg-[#F5A623] absolute top-[-100%] animate-[scrollDown_2s_cubic-bezier(.19,1,.22,1)_infinite]" />
             </div>
             <span className="text-[11px] uppercase tracking-[0.2em] text-[#F5A623]">Scroll</span>
@@ -164,28 +164,28 @@ export default function ProductsLandingPage() {
       </section>
 
       {/* C3. Stats Strip with 3D Export Globe */}
-      <section className="w-full bg-[#1F1A17] border-y border-[#F5A623]/10 py-24 md:py-32 relative z-20 overflow-hidden">
+      <section className="w-full bg-gray-50 border-y border-gray-100 py-24 md:py-32 relative z-20 overflow-hidden">
         {/* Globe Background Container */}
         <div className="absolute inset-0 z-0">
             <ExportGlobe />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#1B1714] via-transparent to-[#1B1714] pointer-events-none" />
-            <div className="absolute inset-0 bg-gradient-to-r from-[#1B1714] via-transparent to-[#1B1714] pointer-events-none" />
+            <div className="absolute inset-0 bg-gradient-to-t from-gray-50 via-transparent to-gray-50 pointer-events-none" />
+            <div className="absolute inset-0 bg-gradient-to-r from-gray-50 via-transparent to-gray-50 pointer-events-none" />
         </div>
 
-        <div className="max-w-[1400px] mx-auto px-6 md:px-12 grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-4 text-center relative z-10 pointers-events-none mix-blend-screen text-shadow-glow mt-[300px]">
-            <div className="flex flex-col gap-2 bg-black/40 backdrop-blur-md p-6 rounded-2xl border border-[#E8E1D9]/5">
+        <div className="max-w-[1400px] mx-auto px-6 md:px-12 grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-4 text-center relative z-10 pointers-events-none mt-[300px]">
+            <div className="flex flex-col gap-2 bg-white/80 backdrop-blur-md p-6 rounded-2xl border border-gray-100 shadow-sm">
                 <AnimatedCounter target={24} duration={2000} />
                 <span className="text-sm uppercase tracking-widest text-[#F5A623]">Products In Catalogue</span>
             </div>
-            <div className="flex flex-col gap-2 bg-black/40 backdrop-blur-md p-6 rounded-2xl border border-[#E8E1D9]/5">
+            <div className="flex flex-col gap-2 bg-white/80 backdrop-blur-md p-6 rounded-2xl border border-gray-100 shadow-sm">
                 <AnimatedCounter target={4} duration={2000} />
                 <span className="text-sm uppercase tracking-widest text-[#F5A623]">Main Categories</span>
             </div>
-            <div className="flex flex-col gap-2 bg-black/40 backdrop-blur-md p-6 rounded-2xl border border-[#E8E1D9]/5">
+            <div className="flex flex-col gap-2 bg-white/80 backdrop-blur-md p-6 rounded-2xl border border-gray-100 shadow-sm">
                 <AnimatedCounter target={30} suffix="+" duration={2000} />
                 <span className="text-sm uppercase tracking-widest text-[#F5A623]">Export Destinations</span>
             </div>
-            <div className="flex flex-col gap-2 bg-black/40 backdrop-blur-md p-6 rounded-2xl border border-[#E8E1D9]/5">
+            <div className="flex flex-col gap-2 bg-white/80 backdrop-blur-md p-6 rounded-2xl border border-gray-100 shadow-sm">
                 <AnimatedCounter target={100} suffix="%" duration={2000} />
                 <span className="text-sm uppercase tracking-widest text-[#F5A623]">Pure & Certified</span>
             </div>
@@ -193,10 +193,10 @@ export default function ProductsLandingPage() {
       </section>
 
       {/* C2. 4 Category Cards Grid */}
-      <section className="py-32 px-6 md:px-12 relative z-20">
+      <section className="py-32 px-6 md:px-12 relative z-20 bg-white">
         <div className="max-w-[1100px] mx-auto">
             <div className="text-center mb-16 overflow-hidden">
-                <SplitReveal text="Explore Categories" tag="h2" className="text-4xl md:text-5xl font-display font-medium" />
+                <SplitReveal text="Explore Categories" tag="h2" className="text-4xl md:text-5xl font-display font-medium text-gray-900" />
             </div>
 
             <StaggerGrid className="grid grid-cols-1 md:grid-cols-2 gap-[20px]" staggerDelay={0.1}>
@@ -205,32 +205,32 @@ export default function ProductsLandingPage() {
 
                     return (
                         <Link href={`/products/${cat.slug}`} key={cat.slug} className="block group">
-                            <TiltCard className="h-[220px] md:h-[320px] rounded-2xl overflow-hidden border-[0.5px] border-[#F5A623]/15 transition-all duration-300 group-hover:border-[#F5A623]/45 bg-gradient-to-br from-[#2A231C] to-[#26201B]">
+                            <TiltCard className="h-[220px] md:h-[320px] rounded-2xl overflow-hidden border border-gray-100 transition-all duration-300 group-hover:border-[#F5A623]/30 bg-gray-50 shadow-sm">
                                 {/* BG Image Shatter */}
                                 <div className="absolute inset-0 z-0 overflow-hidden rounded-2xl pointer-events-auto">
-                                    <ImageShatter src={cat.img.startsWith('/') || cat.img.startsWith('http') ? cat.img : `https://images.unsplash.com/${cat.img}?auto=format&fit=crop&q=75&w=600`} className="opacity-70 group-hover:opacity-100 transition-opacity duration-700" />
-                                    <div className="absolute inset-0 bg-gradient-to-t from-[#26201B] via-[#0a0600]/60 to-transparent pointer-events-none" />
+                                    <ImageShatter src={cat.img.startsWith('/') || cat.img.startsWith('http') ? cat.img : `https://images.unsplash.com/${cat.img}?auto=format&fit=crop&q=75&w=600`} className="opacity-80 group-hover:opacity-100 transition-opacity duration-700" />
+                                    <div className="absolute inset-0 bg-gradient-to-t from-gray-900/60 via-transparent to-transparent pointer-events-none" />
                                 </div>
                                 <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-[#F5A623] transform scale-x-0 origin-left transition-transform duration-500 group-hover:scale-x-100 z-20" />
 
                                 <div className="relative z-10 p-8 flex flex-col justify-between h-full pointer-events-none">
                                     <div>
-                                        <div className="text-[11px] tracking-[0.15em] text-[#F5A623]/40 mb-2">
+                                        <div className="text-[11px] tracking-[0.15em] text-[#F5A623] mb-2 font-medium">
                                             {cat.num}
                                         </div>
-                                        <h3 className="text-3xl font-display font-semibold text-[#F5A623] mb-1.5">
+                                        <h3 className="text-3xl font-display font-semibold text-white mb-1.5 drop-shadow-md">
                                             {cat.name}
                                         </h3>
-                                        <p className="text-[14px] text-[#E8E1D9]/55">
+                                        <p className="text-[14px] text-white/90 drop-shadow-sm max-w-[80%]">
                                             {cat.desc}
                                         </p>
                                     </div>
 
                                     <div className="flex items-center justify-between">
-                                        <div className="border-[0.5px] border-[#F5A623]/25 text-[#F5A623]/70 text-[11px] uppercase tracking-wider px-3 py-1 rounded-full bg-black/20 backdrop-blur-sm">
+                                        <div className="border border-white/30 text-white text-[11px] uppercase tracking-wider px-3 py-1 rounded-full bg-black/20 backdrop-blur-sm">
                                             {prodCount} Products
                                         </div>
-                                        <div className="w-10 h-10 rounded-full bg-[#E8E1D9]/5 border border-[#E8E1D9]/5 flex items-center justify-center text-[#F5A623] transform transition-transform duration-300 group-hover:rotate-45 group-hover:bg-[#F5A623]/10">
+                                        <div className="w-10 h-10 rounded-full bg-white/10 border border-white/20 flex items-center justify-center text-white transform transition-transform duration-300 group-hover:rotate-45 group-hover:bg-white/20">
                                             <MoveRight size={18} strokeWidth={1.5} />
                                         </div>
                                     </div>

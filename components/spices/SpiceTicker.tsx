@@ -21,7 +21,7 @@ export default function SpiceTicker() {
     const duplicatedItems = [...SPICE_ITEMS, ...SPICE_ITEMS];
 
     return (
-        <section className="w-full bg-dark py-3 overflow-hidden border-y border-white/5">
+        <section className="w-full bg-gray-50 py-3 overflow-hidden border-y border-gray-100">
             <div className="flex whitespace-nowrap overflow-hidden">
                 <motion.div
                     className="flex items-center gap-8 min-w-max pr-8"
@@ -37,7 +37,7 @@ export default function SpiceTicker() {
                         return (
                             <div key={idx} className="flex items-center gap-8">
                                 <div className="w-1.5 h-1.5 rounded-full bg-saffron flex-shrink-0" />
-                                <span className={`text-[13px] md:text-[15px] uppercase tracking-widest font-medium ${isAlternate ? 'text-saffron' : 'text-cream/50'}`}>
+                                <span className={`text-[13px] md:text-[15px] uppercase tracking-widest font-medium ${isAlternate ? 'text-saffron' : 'text-gray-400'}`}>
                                     {item.name}
                                 </span>
                             </div>

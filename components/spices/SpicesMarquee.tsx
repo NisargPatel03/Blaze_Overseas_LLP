@@ -9,7 +9,7 @@ const SPICES = [
 
 export default function SpicesMarquee() {
     return (
-        <section className="w-full bg-[#F0E8D8] py-12 border-y border-saffron/15 overflow-hidden">
+        <section className="w-full bg-gray-50 py-12 border-y border-gray-100 overflow-hidden">
             <div className="relative flex whitespace-nowrap">
                 <motion.div
                     animate={{ x: ["0%", "-50%"] }}
@@ -22,10 +22,10 @@ export default function SpicesMarquee() {
                 >
                     {[...SPICES, ...SPICES, ...SPICES, ...SPICES].map((spice, idx) => (
                         <div key={idx} className="flex items-center">
-                            <span className="font-display italic text-[36px] font-light text-[#2C1810]/30 mx-8">
+                            <span className="font-display italic text-[36px] font-light text-gray-900/10 mx-8">
                                 {spice}
                             </span>
-                            <div className="w-2 h-2 rounded-full bg-saffron/70 mx-4" />
+                            <div className="w-2 h-2 rounded-full bg-saffron/40 mx-4" />
                         </div>
                     ))}
                 </motion.div>
