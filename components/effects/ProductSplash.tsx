@@ -226,10 +226,6 @@ export default function ProductSplash({ productSlug, autoPlay = true, replay = 0
     // Respect reduced motion
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
-    // Skip effect on touch/mobile — canvas animation breaks and overlaps image
-    const isMobile = window.innerWidth < 768 || ('ontouchstart' in window);
-    if (isMobile) return;
-
     const canvas = canvasRef.current;
     if (!canvas) return;
     const ctx = canvas.getContext('2d');

@@ -82,7 +82,9 @@ declare module "@react-three/fiber" {
 function PhotoMesh({ url, isHovered }: { url: string; isHovered: boolean }) {
   const texture = useMemo(() => {
      const loader = new THREE.TextureLoader();
-     loader.setCrossOrigin("anonymous");
+     if (url.startsWith('http')) {
+       loader.setCrossOrigin("anonymous");
+     }
      return loader.load(url);
   }, [url]);
 
@@ -123,8 +125,13 @@ export function VolumetricPhoto({ src, className = "" }: { src: string; classNam
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
     >
-      {/* Fallback blurred image for immediate load while WebGL fires up */}
-      <img src={src} crossOrigin="anonymous" className="absolute inset-0 w-full h-full object-cover blur-3xl opacity-30 transform scale-110" alt="" />
+      {/* Fallback image */}
+      <img 
+        src={src} 
+        crossOrigin={src.startsWith('http') ? "anonymous" : undefined} 
+        className="absolute inset-0 w-full h-full object-cover opacity-100" 
+        alt="Product View" 
+      />
       
       <div className="absolute inset-0 z-10 w-full h-full">
         <Canvas orthographic camera={{ position: [0, 0, 1], zoom: 1 }}>
