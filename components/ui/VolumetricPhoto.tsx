@@ -48,8 +48,8 @@ const VolumetricShaderMaterial = shaderMaterial(
     void main() {
       vec2 uv = vUv;
       
-      // RGB Shift based on mouse velocity/hover
-      float shift = 0.015 * uHover;
+      // RGB Shift based on mouse velocity/hover — kept very subtle
+      float shift = 0.004 * uHover;
       
       // Distortion wave
       float wave = sin(uv.y * 20.0 + uTime * 5.0) * 0.005 * uHover;
@@ -101,7 +101,7 @@ function PhotoMesh({ url, isHovered }: { url: string; isHovered: boolean }) {
       
       materialRef.current.uHover = THREE.MathUtils.lerp(
           materialRef.current.uHover,
-          isHovered ? 1 : 0.3, // Provide a baseline so animation runs permanently on mobile
+          isHovered ? 1 : 0, // 0 = no effect when not hovered — removes the permanent rainbow glitch
           0.08
       );
     }

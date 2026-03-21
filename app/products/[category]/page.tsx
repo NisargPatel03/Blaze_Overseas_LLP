@@ -33,7 +33,7 @@ export default async function CategoryPage({ params }: { params: Promise<{ categ
   return (
     <main className="w-full bg-white min-h-screen text-gray-900 font-sans selection:bg-[#F5A623] selection:text-white">
       {/* D1. Category Hero */}
-      <section className="relative w-full min-h-[500px] md:min-h-[400px] h-auto md:h-[60vh] flex items-center px-6 md:px-16 pt-32 pb-24 md:pt-20 md:pb-0 overflow-hidden">
+      <section className="relative w-full min-h-[480px] md:min-h-[400px] h-auto md:h-[55vh] flex items-center px-6 md:px-16 pt-16 pb-20 md:pt-12 md:pb-0 overflow-hidden">
         
         {/* Photographic Background */}
         <div className="absolute inset-0 z-0 overflow-hidden">

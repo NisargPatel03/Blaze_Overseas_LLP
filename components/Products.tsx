@@ -69,19 +69,20 @@ export default function Products() {
                         <Link 
                             href={`/products/${category.slug}`} 
                             key={category.slug}
-                            className="product-card group relative overflow-hidden rounded-sm h-[400px] md:h-[500px] block border border-gray-100 bg-white"
+                            className="product-card group relative overflow-hidden rounded-sm min-h-[320px] md:min-h-[380px] h-[420px] md:h-[520px] block border border-gray-100 bg-white"
                         >
-                            {/* Dark Overlay for Premium Look */}
-                            <div className="absolute inset-0 bg-black/40 z-10 transition-colors duration-500 group-hover:bg-black/50" />
-                            
                             <img
                                 src={category.img}
                                 alt={category.name}
-                                className="w-full h-full object-cover object-center transition-transform duration-1000 group-hover:scale-110"
+                                className="w-full h-full object-cover object-center transition-all duration-1000 group-hover:scale-110"
+                                style={{ filter: 'brightness(1.1) saturate(1.15)' }}
                             />
                             
+                            {/* Gradient overlay — clear at top, dark at bottom for text readability */}
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/25 to-transparent group-hover:from-black/55 group-hover:via-black/10 transition-all duration-500 z-10" />
+                            
                             {/* Content overlay */}
-                            <div className="absolute inset-0 z-20 p-8 md:p-12 flex flex-col justify-end bg-gradient-to-t from-black/80 via-black/20 to-transparent">
+                            <div className="absolute inset-0 z-20 p-8 md:p-12 flex flex-col justify-end">
                                 <span className="text-amber-400 font-bold uppercase tracking-[0.2em] text-xs mb-3 animate-in fade-in slide-in-from-bottom duration-500">
                                     {category.tagline}
                                 </span>

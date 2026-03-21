@@ -99,19 +99,19 @@ export default function Navbar() {
 
     return (
         <>
-            <div className="w-full bg-amber-700 text-white text-center py-2 px-4 text-[10px] md:text-xs font-semibold tracking-widest uppercase fixed top-0 left-0 z-[60] h-10 flex items-center justify-center">
+            <div className="w-full bg-amber-700 text-white text-center py-2 px-4 text-[10px] md:text-xs font-semibold tracking-widest uppercase sticky top-0 left-0 z-[60] h-10 flex items-center justify-center">
                 <span className="inline-flex items-center gap-2">
                     <span className="w-1.5 h-1.5 rounded-full bg-amber-300 animate-pulse"></span>
-                    Direct Manufacturer & Exporter from India
+                    Direct Manufacturer &amp; Exporter from India
                     <span className="w-1.5 h-1.5 rounded-full bg-amber-300 animate-pulse"></span>
                 </span>
             </div>
             <header
                 className={cn(
-                    "fixed left-0 w-full z-50 transition-all duration-500 ease-in-out px-6 md:px-12",
+                    "sticky top-10 left-0 w-full z-50 transition-all duration-300 ease-in-out px-6 md:px-12",
                     isScrolled
-                        ? "py-4 bg-white/80 backdrop-blur-md shadow-sm text-gray-900 top-0"
-                        : "py-6 bg-transparent text-gray-900 top-10"
+                        ? "py-3 bg-white shadow-md border-b border-amber-100 text-gray-900"
+                        : "py-4 bg-white/95 backdrop-blur-md border-b border-gray-100 text-gray-900"
                 )}
             >
                 <div className="max-w-[1400px] mx-auto flex items-center justify-between">
@@ -169,20 +169,20 @@ export default function Navbar() {
                         ))}
                     </nav>
 
-                    <div className="flex items-center gap-4 z-50 text-[var(--foreground)]">
+                    <div className="flex items-center gap-4 z-50 text-gray-900">
                         <button
-                            className="md:hidden p-2"
+                            className="md:hidden w-11 h-11 flex items-center justify-center rounded-lg hover:bg-gray-100 transition-colors"
                             onClick={() => setIsMenuOpen(!isMenuOpen)}
                             aria-label="Toggle menu"
                         >
-                            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+                            {isMenuOpen ? <X size={24} className="text-gray-900" /> : <Menu size={24} className="text-gray-900" />}
                         </button>
                     </div>
                 </div>
             </header>
 
             {/* Mobile Menu Overlay */}
-            <div className="mobile-menu fixed inset-0 z-40 bg-[var(--background)] text-[var(--foreground)] flex flex-col justify-center translate-x-full px-8 pt-20">
+            <div className="mobile-menu fixed inset-0 z-[55] bg-white text-gray-900 flex flex-col justify-center translate-x-full px-8 pt-20 shadow-2xl">
                 <nav className="flex flex-col gap-6 overflow-y-auto pb-8">
                     {navLinks.map((link) => (
                         link.subLinks ? (
