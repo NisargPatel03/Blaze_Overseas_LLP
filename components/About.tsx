@@ -22,22 +22,6 @@ export default function About() {
                 ease: "power3.out",
             });
 
-            // Number counter animation
-            const counters = document.querySelectorAll(".counter-val");
-            counters.forEach((counter) => {
-                const target = parseInt(counter.getAttribute("data-target") || "0", 10);
-                gsap.to(counter, {
-                    scrollTrigger: {
-                        trigger: ".about-stats",
-                        start: "top 80%",
-                    },
-                    innerHTML: target,
-                    duration: 2,
-                    snap: { innerHTML: 1 },
-                    ease: "power2.out",
-                });
-            });
-
             // Parallax image
             gsap.to(".about-image", {
                 scrollTrigger: {
@@ -57,13 +41,13 @@ export default function About() {
         <section
             id="about"
             ref={containerRef}
-            className="py-24 md:py-32 px-6 md:px-12 bg-rustic-section-1 text-gray-800"
+            className="py-24 md:pt-32 md:pb-16 px-6 md:px-12 bg-rustic-section-1 text-gray-800"
         >
             <div className="max-w-[1400px] mx-auto about-container grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                 {/* Left Text Content */}
                 <div className="flex flex-col gap-6">
-                    <span className="about-text text-[var(--color-accent)] font-medium uppercase tracking-widest text-sm">
-                        Our Story
+                    <span className="about-text flex items-center justify-center gap-3 text-amber-700 font-bold tracking-widest text-lg font-display uppercase mb-4">
+                        <span className="w-8 h-0.5 bg-amber-600 inline-block"></span> Our Story <span className="w-8 h-0.5 bg-amber-600 inline-block"></span>
                     </span>
                     <h2 className="about-text text-4xl md:text-5xl lg:text-6xl font-display font-medium leading-tight text-balance text-gray-900">
                         A legacy of delivering authentic taste and world-class standards.
@@ -71,42 +55,6 @@ export default function About() {
                     <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed font-light mb-8 md:mb-12">
                         Blazze is an emerging global exporter of high-quality rice and spices, known for purity and consistency. We source directly from the best regions and ensure strict quality control at every step. Our goal is to deliver authentic taste with world-class standards. With Blazze, you experience quality you can trust.
                     </p>
-
-                    <div className="about-stats mt-8 grid grid-cols-2 sm:grid-cols-3 gap-8 pt-8 border-t border-gray-200">
-                        <div>
-                            <p className="text-4xl md:text-5xl font-display text-[var(--color-accent)]">
-                                <span className="counter-val" data-target="25">
-                                    0
-                                </span>
-                                +
-                            </p>
-                            <p className="text-sm uppercase tracking-widest text-gray-500 mt-2">
-                                Years Experience
-                            </p>
-                        </div>
-                        <div>
-                            <p className="text-4xl md:text-5xl font-display text-[var(--color-accent)]">
-                                <span className="counter-val" data-target="150">
-                                    0
-                                </span>
-                                +
-                            </p>
-                            <p className="text-sm uppercase tracking-widest text-gray-500 mt-2">
-                                Global Projects
-                            </p>
-                        </div>
-                        <div>
-                            <p className="text-4xl md:text-5xl font-display text-[var(--color-accent)]">
-                                <span className="counter-val" data-target="40">
-                                    0
-                                </span>
-                                +
-                            </p>
-                            <p className="text-sm uppercase tracking-widest text-gray-500 mt-2">
-                                Design Awards
-                            </p>
-                        </div>
-                    </div>
                 </div>
 
                 {/* Right Image/Parallax with 3D Depth */}

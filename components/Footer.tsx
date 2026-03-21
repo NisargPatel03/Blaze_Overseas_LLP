@@ -29,7 +29,7 @@ export default function Footer() {
                     <div className="lg:col-span-2 flex flex-col gap-4">
                         <h4 className="text-sm uppercase tracking-widest text-white/40 mb-2">Contact</h4>
                         <a href="mailto:blazzeoverseasllp@gmail.com" className="hover:text-[var(--color-accent)] transition-colors w-fit">blazzeoverseasllp@gmail.com</a>
-                        <p className="text-white/80">+91 77779 84018</p>
+                        <p className="text-white/80">+91 77779 84018<br/>+91 77779 83019</p>
                         <p className="text-white/80 mt-4">Gujarat, India</p>
                     </div>
 

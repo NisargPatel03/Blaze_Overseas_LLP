@@ -33,6 +33,7 @@ export default function Products() {
                 duration: 0.8,
                 stagger: 0.15,
                 ease: "power2.out",
+                clearProps: "all"
             });
         },
         { scope: containerRef }
@@ -42,13 +43,13 @@ export default function Products() {
         <section
             id="products"
             ref={containerRef}
-            className="py-24 md:py-32 px-6 md:px-12 bg-rustic-section-2"
+            className="py-24 md:pt-16 md:pb-16 px-6 md:px-12 bg-rustic-section-2"
         >
             <div className="max-w-[1400px] mx-auto">
-                <div className="flex flex-col md:flex-row justify-between items-end gap-6 mb-16">
+                <div className="flex flex-col md:flex-row justify-between items-end gap-6 mb-12">
                     <div className="max-w-2xl">
-                        <span className="products-header text-[var(--color-accent)] font-medium uppercase tracking-widest text-sm block mb-4">
-                            Our Products
+                        <span className="products-header flex items-center justify-center md:justify-start gap-3 text-amber-700 font-bold tracking-widest text-lg font-display uppercase mb-4">
+                            <span className="w-8 h-0.5 bg-amber-600 inline-block"></span> Our Products <span className="w-8 h-0.5 bg-amber-600 inline-block"></span>
                         </span>
                         <h2 className="products-header text-4xl md:text-5xl lg:text-6xl font-display font-medium text-balance text-gray-900">
                             Premium agricultural exports sourced directly from origin.
@@ -72,10 +73,10 @@ export default function Products() {
                             
                             {/* Content overlay */}
                             <div className="absolute inset-x-0 bottom-0 z-20 p-8 md:p-12 bg-gradient-to-t from-white via-white/80 to-transparent flex flex-col justify-end">
-                                <span className="text-[var(--color-accent)] font-medium uppercase tracking-widest text-sm mb-2">
+                                <span className="text-amber-300 font-semibold uppercase tracking-widest text-sm mb-2" style={{ textShadow: "1px 1px 4px rgba(0,0,0,0.8)" }}>
                                     {category.tagline}
                                 </span>
-                                <h3 className="text-3xl md:text-4xl font-display font-medium mb-3 text-gray-900">
+                                <h3 className="text-4xl md:text-5xl font-display font-bold mb-3 text-white" style={{ textShadow: "2px 2px 8px rgba(0,0,0,0.8)" }}>
                                     {category.name}
                                 </h3>
                                 <p className="text-gray-600 line-clamp-2 max-w-md mb-6">

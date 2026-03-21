@@ -60,14 +60,14 @@ export default function Strength() {
         <section
             id="strength"
             ref={containerRef}
-            className="py-24 md:py-32 px-6 md:px-12 bg-rustic-section-1 text-gray-800 relative overflow-hidden"
+            className="py-24 md:pt-16 md:pb-16 px-6 md:px-12 bg-rustic-section-1 text-gray-800 relative overflow-hidden"
         >
             <div className="max-w-[1400px] mx-auto flex flex-col lg:flex-row gap-16 items-center">
                 {/* Left Side: Text and Grid */}
                 <div className="w-full lg:w-1/2 relative z-10">
                     <div className="mb-12">
-                        <span className="strength-header text-[var(--color-accent)] font-medium uppercase tracking-widest text-sm block mb-4">
-                            Our Strength
+                        <span className="strength-header flex items-center justify-center gap-3 text-amber-700 font-bold tracking-widest text-lg font-display uppercase mb-4">
+                            <span className="w-8 h-0.5 bg-amber-600 inline-block"></span> Our Strength <span className="w-8 h-0.5 bg-amber-600 inline-block"></span>
                         </span>
                         <h2 className="strength-header text-4xl md:text-5xl lg:text-6xl font-display font-medium text-balance mb-6 text-gray-900">
                             Why Blazze
@@ -91,12 +91,12 @@ export default function Strength() {
                         ))}
                     </div>
                     
-                    <h3 className="strength-header text-2xl font-display font-medium text-[var(--color-accent)]">Blazze – Taste of Purity</h3>
+                    <h3 className="strength-header text-3xl font-serif font-semibold text-[#B8860B] tracking-wide border-b border-[#B8860B]/30 pb-2 inline-block">Blazze – Taste of Purity</h3>
                 </div>
 
                 {/* Right Side: 3D Globe */}
                 <div className="w-full lg:w-1/2 h-[500px] lg:h-[700px] relative z-0">
-                    <div className="absolute inset-0 bg-gradient-to-tr from-[var(--color-accent)]/10 to-transparent blur-3xl opacity-30 rounded-full pointer-events-none" />
+                    {/* Background removed to match wrapper */}
 
                     <ExportGlobe3D height="100%" />
                 </div>

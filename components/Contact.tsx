@@ -30,6 +30,7 @@ export default function Contact() {
                 duration: 0.8,
                 stagger: 0.2,
                 ease: "power2.out",
+                clearProps: "all"
             });
         },
         { scope: containerRef }
@@ -39,12 +40,12 @@ export default function Contact() {
         <section
             id="contact"
             ref={containerRef}
-            className="py-24 md:py-32 px-6 md:px-12 bg-rustic-section-1"
+            className="py-24 md:pt-16 md:pb-32 px-6 md:px-12 bg-rustic-section-1"
         >
             <div className="max-w-[1400px] mx-auto">
-                <div className="text-center mb-16">
-                    <span className="contact-header text-[var(--color-accent)] font-medium uppercase tracking-widest text-sm block mb-4">
-                        Get In Touch
+                <div className="text-center mb-12">
+                    <span className="contact-header flex items-center justify-center gap-3 text-amber-700 font-bold tracking-widest text-lg font-display uppercase mb-4">
+                        <span className="w-8 h-0.5 bg-amber-600 inline-block"></span> Get In Touch <span className="w-8 h-0.5 bg-amber-600 inline-block"></span>
                     </span>
                     <h2 className="contact-header text-4xl md:text-5xl lg:text-6xl font-display font-medium text-balance text-gray-900">
                         Let's build something exceptional.
@@ -61,9 +62,9 @@ export default function Contact() {
                             <div>
                                 <h4 className="text-xl font-display font-medium mb-2 text-gray-900">Corporate Office</h4>
                                 <p className="text-gray-600 leading-relaxed max-w-sm">
-                                    123 Global Business Hub,<br />
-                                    Export Avenue, District 9,<br />
-                                    Gujarat, India
+                                    Shop No. 325, 3rd Floor, Empire Midway,<br />
+                                    GIDC, Near New Bus Stand,<br />
+                                    Sanala Road, Morbi, Gujarat, India
                                 </p>
                             </div>
                         </div>
@@ -75,7 +76,8 @@ export default function Contact() {
                             <div>
                                 <h4 className="text-xl font-display font-medium mb-2 text-gray-900">Contact Numbers</h4>
                                 <p className="text-gray-600 leading-relaxed">
-                                    +91 77779 84018
+                                    +91 77779 84018<br />
+                                    +91 77779 83019
                                 </p>
                             </div>
                         </div>

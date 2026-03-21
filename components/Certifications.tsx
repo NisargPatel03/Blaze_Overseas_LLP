@@ -38,6 +38,7 @@ export default function Certifications() {
                 duration: 0.6,
                 stagger: 0.15,
                 ease: "power2.out",
+                clearProps: "all"
             });
         },
         { scope: containerRef }
@@ -47,12 +48,12 @@ export default function Certifications() {
         <section
             id="certifications"
             ref={containerRef}
-            className="py-24 md:py-32 px-6 md:px-12 bg-rustic-section-1"
+            className="py-24 md:pt-16 md:pb-16 px-6 md:px-12 bg-rustic-section-1"
         >
             <div className="max-w-[1400px] mx-auto flex flex-col lg:flex-row gap-16 items-center">
                 <div className="w-full lg:w-1/2">
-                    <span className="cert-header text-[var(--color-accent)] font-medium uppercase tracking-widest text-sm block mb-4">
-                        Quality Assurance
+                    <span className="cert-header flex items-center justify-center gap-3 text-amber-700 font-bold tracking-widest text-lg font-display uppercase mb-4">
+                        <span className="w-8 h-0.5 bg-amber-600 inline-block"></span> Quality Assurance <span className="w-8 h-0.5 bg-amber-600 inline-block"></span>
                     </span>
                     <h2 className="cert-header text-4xl md:text-5xl font-display font-medium mb-6 text-balance text-gray-900">
                         Accreditations that speak for our standard.

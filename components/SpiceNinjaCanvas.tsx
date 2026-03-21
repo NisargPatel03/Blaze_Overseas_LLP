@@ -3,25 +3,37 @@
 import React, { useEffect, useRef } from "react";
 
 const ITEMS = [
+  // Blends & Powders
+  { char: "🌶️", color: "#d9381e" }, // 1. red chilli powder
+  { char: "🫚", color: "#f5a623" }, // 2. turmeric powder
+  { char: "🌶️", color: "#b91d1d" }, // 3. kashmiri red chilli powder
+  { char: "🌿", color: "#8B5E1A" }, // 4. cummin powder
+  { char: "🌿", color: "#6b4423" }, // 5. garam masala
+  { char: "🌿", color: "#c2a878" }, // 6. corrinder powder
+  { char: "🌿", color: "#a47c43" }, // 7. cummin corrinder powder
+  { char: "🧄", color: "#f4f0cb" }, // 8. garlic powder
+  { char: "🫚", color: "#e2c08d" }, // 9. ginger powder
+  { char: "🧅", color: "#f5edd6" }, // 10. onion powder
+  { char: "🧅", color: "#e8dcbe" }, // 11. onion flakes
+
   // Whole Spices
-  { char: "🌶️", color: "#ff3300" }, // Red Chilli
-  { char: "🫚", color: "#ffcc00" }, // Turmeric Root / Ginger
-  { char: "🧄", color: "#f0e6d2" }, // Garlic
-  { char: "🌿", color: "#2E8B57" }, // Herbs / Coriander Leaves
-  
-  // Blended Spices
-  { char: "🍛", color: "#cd853f" }, // Curry / Masala Mix
-  { char: "🥣", color: "#ff8c00" }, // Bowl of Turmeric/Spices
-  
+  { char: "🌶️", color: "#ff3300" }, // 1. red chilli
+  { char: "🌶️", color: "#990000" }, // 2. kashmiri red chilli
+  { char: "🫚", color: "#ffcc00" }, // 3. turmeric
+
   // Grains
-  { char: "🌾", color: "#ffd700" }, // Wheat / Rice Stalk
-  { char: "🍚", color: "#ffffff" }, // Basmati Rice
-  { char: "🥖", color: "#deb887" }, // Wheat / Bakery
-  
+  { char: "🍚", color: "#ffffff" }, // 1. rice(basmati/non basmati)
+  { char: "🌾", color: "#deb887" }, // 2. wheat
+
   // Pulses
-  { char: "🫘", color: "#5c4033" }, // Dal / Rajma / Chana
-  { char: "🫛", color: "#7cb342" }, // Moong Dal / Green Peas
-  { char: "🥜", color: "#d2b48c" }  // Groundnuts / Pulses
+  { char: "🫘", color: "#d2b48c" }, // 1. chana dal
+  { char: "🫛", color: "#7cb342" }, // 2. mung dal
+  { char: "🫘", color: "#e3c598" }, // 3. kabuli chana
+  { char: "🫘", color: "#2e2e2e" }, // 4. arad dal
+  { char: "🫘", color: "#8b3a3a" }, // 5. red/white rajma
+  { char: "🫘", color: "#e06b3c" }, // 6. masoor dal 
+  { char: "🫛", color: "#c1d07c" }, // 7. soyabean
+  { char: "🫘", color: "#e5b73b" }, // 8. toor dal
 ];
 
 export default function SpiceNinjaCanvas() {
