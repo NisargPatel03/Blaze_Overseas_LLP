@@ -6,6 +6,7 @@ import { Icosahedron, MeshDistortMaterial } from "@react-three/drei";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import * as THREE from "three";
+import { motion } from "framer-motion";
 
 function BackgroundBlob() {
     const meshRef = useRef<THREE.Mesh>(null);
@@ -68,7 +69,13 @@ export default function CtaBanner() {
                 </Canvas>
             </div>
 
-            <div className="cta-content relative z-10 max-w-[1400px] mx-auto px-6 md:px-12 flex flex-col items-center text-center">
+            <motion.div 
+                initial={{ opacity: 0, scale: 0.95 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8 }}
+                className="cta-content relative z-10 max-w-[1400px] mx-auto px-6 md:px-12 flex flex-col items-center text-center"
+            >
                 <h2 className="text-5xl md:text-7xl lg:text-8xl font-display font-medium max-w-4xl leading-tight text-balance mb-8">
                     Ready to Partner with Us?
                 </h2>
@@ -77,21 +84,20 @@ export default function CtaBanner() {
                 </p>
 
                 <div className="flex flex-col sm:flex-row gap-6">
-                    <button suppressHydrationWarning className="group relative px-10 py-5 bg-white text-gray-900 overflow-hidden rounded-sm hover:-translate-y-1 transition-transform duration-300">
-                        <span className="relative z-10 font-bold uppercase tracking-widest text-sm text-[var(--color-accent)] group-hover:text-white transition-colors duration-300">
+                    <button suppressHydrationWarning className="group relative px-12 py-5 bg-white text-gray-900 overflow-hidden rounded-xl hover:-translate-y-1 hover:shadow-[0_0_30px_rgba(255,255,255,0.4)] transition-all duration-300 active:scale-[0.98]">
+                        <span className="relative z-10 font-bold uppercase tracking-[0.2em] text-sm text-amber-700 group-hover:text-white transition-colors duration-300">
                             Enquiry Now
                         </span>
                         <div className="absolute inset-0 bg-gray-900 transform scale-x-0 origin-left transition-transform duration-500 group-hover:scale-x-100" />
                     </button>
 
-                    <button suppressHydrationWarning className="group relative px-10 py-5 bg-transparent border border-white text-white overflow-hidden rounded-sm hover:-translate-y-1 transition-transform duration-300">
-                        <span className="relative z-10 font-bold uppercase tracking-widest text-sm text-white group-hover:text-gray-900 transition-colors duration-300">
+                    <button suppressHydrationWarning className="group relative px-12 py-5 bg-transparent border-2 border-white text-white overflow-hidden rounded-xl hover:-translate-y-1 hover:bg-white/10 hover:shadow-[0_0_30px_rgba(255,255,255,0.2)] transition-all duration-300 active:scale-[0.98]">
+                        <span className="relative z-10 font-bold uppercase tracking-[0.2em] text-sm text-white group-hover:text-white transition-colors duration-300">
                             Get Catalogue
                         </span>
-                        <div className="absolute inset-0 bg-white transform scale-x-0 origin-left transition-transform duration-500 group-hover:scale-x-100" />
                     </button>
                 </div>
-            </div>
+            </motion.div>
         </section>
     );
 }

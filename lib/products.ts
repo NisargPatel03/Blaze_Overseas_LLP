@@ -816,7 +816,7 @@ export const products: Product[] = [
     "moisture": "Max 10–12%",
     "purity": "99% Min",
     "hsCode": "09042110",
-    "unsplashId": "/Photos/Red Chilli Whole.jpeg",
+    "unsplashId": "/Photos/RED CHILLI.jpg",
     "whatsappText": "Hi Blazze, I am interested in Whole Red Chilli.",
     "ingredients": "100% Whole Red Chilli",
     "processingDetails": [
@@ -897,7 +897,7 @@ export const products: Product[] = [
     "moisture": "Max 10%",
     "purity": "100% Pure",
     "hsCode": "09042110",
-    "unsplashId": "/Photos/Kashmiri Chilli Whole.jpeg",
+    "unsplashId": "/Photos/KASHMIRI RED.JPEG",
     "whatsappText": "Hi Blazze, I am interested in Whole Kashmiri Chillies.",
     "ingredients": "100% Premium Kashmiri Whole Red Chilli",
     "processingDetails": [
@@ -982,7 +982,7 @@ export const products: Product[] = [
     "moisture": "Max 10%",
     "purity": "100% Pure",
     "hsCode": "09103020",
-    "unsplashId": "/Photos/Turmeric Whole (Fingers).jpeg",
+    "unsplashId": "/Photos/TURMERIC.jpg",
     "whatsappText": "Hi Blazze, I am interested in Turmeric Fingers.",
     "ingredients": "100% Premium Whole Turmeric Fingers",
     "processingDetails": [
@@ -1137,7 +1137,7 @@ export const products: Product[] = [
     "moisture": "≤ 12%",
     "purity": "99% Min",
     "hsCode": "10019910",
-    "unsplashId": "/Photos/WHEAT%20IMAGE.jpg",
+    "unsplashId": "/Photos/WHEAT IMAGE.jpg",
     "whatsappText": "Hi Blazze, I am interested in bulk Wheat imports.",
     "ingredients": "100% Natural Wheat Grain — Machine cleaned, no additives or chemicals",
     "processingDetails": [

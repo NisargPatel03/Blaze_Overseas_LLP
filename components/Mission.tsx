@@ -4,6 +4,7 @@ import { useRef } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { Target, Earth, Star, ArrowRight } from "lucide-react";
+import { motion } from "framer-motion";
 
 export default function Mission() {
     const containerRef = useRef<HTMLElement>(null);
@@ -96,19 +97,25 @@ export default function Mission() {
                 </div>
             </div>
 
-            <div className="max-w-[1200px] mx-auto mt-12 px-6 md:px-12">
-                <div className="bg-gradient-to-r from-amber-700 to-amber-500 rounded-2xl py-16 px-8 text-center shadow-lg">
+            <motion.div 
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8 }}
+                className="max-w-[1200px] mx-auto mt-12 px-6 md:px-12"
+            >
+                <div className="bg-gradient-to-r from-amber-700 to-amber-500 rounded-2xl py-16 px-8 text-center shadow-lg hover:shadow-amber-500/20 transition-shadow">
                     <h3 className="text-3xl md:text-4xl font-bold text-white mb-4">
                         Trusted by Buyers Worldwide
                     </h3>
                     <p className="text-amber-50 text-lg md:text-xl mb-8 font-medium">
                         From farm to port — we handle everything with precision.
                     </p>
-                    <a href="#contact" className="inline-flex items-center gap-2 bg-white text-amber-700 font-semibold px-8 py-4 rounded-full hover:bg-amber-50 shadow-md transition-all hover:scale-105 duration-300">
-                        Start Exporting With Us <ArrowRight size={20} />
+                    <a href="#contact" className="inline-flex items-center gap-2 bg-white text-amber-700 font-bold px-10 py-5 rounded-xl hover:bg-amber-50 shadow-xl transition-all hover:scale-105 hover:shadow-white/20 duration-300 active:scale-[0.98]">
+                        Start Exporting With Us <ArrowRight size={22} />
                     </a>
                 </div>
-            </div>
+            </motion.div>
         </section>
     );
 }

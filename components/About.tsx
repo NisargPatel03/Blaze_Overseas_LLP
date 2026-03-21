@@ -1,6 +1,7 @@
 "use client";
 
-import { useRef } from "react";
+import { useState, useRef } from "react";
+import { motion } from "framer-motion";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 
@@ -43,7 +44,13 @@ export default function About() {
             ref={containerRef}
             className="py-24 md:pt-32 md:pb-16 px-6 md:px-12 bg-rustic-section-1 text-gray-800"
         >
-            <div className="max-w-[1400px] mx-auto about-container grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <motion.div 
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8 }}
+                className="max-w-[1400px] mx-auto about-container grid grid-cols-1 lg:grid-cols-2 gap-16 items-center"
+            >
                 {/* Left Text Content */}
                 <div className="flex flex-col gap-6">
                     <span className="about-text flex items-center justify-center gap-3 text-amber-700 font-bold tracking-widest text-lg font-display uppercase mb-4">
@@ -52,14 +59,14 @@ export default function About() {
                     <h2 className="about-text text-4xl md:text-5xl lg:text-6xl font-display font-medium leading-tight text-balance text-gray-900">
                         A legacy of delivering authentic taste and world-class standards.
                     </h2>
-                    <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed font-light mb-8 md:mb-12">
+                    <p className="about-text text-lg md:text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed font-light mb-8 md:mb-12">
                         Blazze is an emerging global exporter of high-quality rice and spices, known for purity and consistency. We source directly from the best regions and ensure strict quality control at every step. Our goal is to deliver authentic taste with world-class standards. With Blazze, you experience quality you can trust.
                     </p>
                 </div>
 
                 {/* Right Image/Parallax with 3D Depth */}
                 <div
-                    className="about-image-wrapper relative h-[600px] rounded-sm overflow-hidden bg-gray-100 perspective-1000"
+                    className="about-image-wrapper relative h-[600px] rounded-sm overflow-hidden bg-gray-100 perspective-1000 shadow-2xl"
                     style={{ transformStyle: "preserve-3d" }}
                     onMouseMove={(e) => {
                         const rect = e.currentTarget.getBoundingClientRect();
@@ -90,12 +97,12 @@ export default function About() {
                         <img
                             src="/Photos/HOMESCREEN IMAGE.png"
                             alt="Blazze Overseas Legacy"
-                            className="about-image absolute top-[-10%] w-full h-[120%] object-cover object-center translate-z-[50px]"
+                            className="about-image absolute top-[-10%] w-full h-[120%] object-cover object-center translate-z-[50px] transition-transform duration-700 group-hover:scale-110"
                         />
                         <div className="absolute inset-0 bg-white/5 mix-blend-overlay translate-z-[100px]"></div>
                     </div>
                 </div>
-            </div>
+            </motion.div>
         </section>
     );
 }

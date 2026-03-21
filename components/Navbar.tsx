@@ -99,12 +99,19 @@ export default function Navbar() {
 
     return (
         <>
+            <div className="w-full bg-amber-700 text-white text-center py-2 px-4 text-[10px] md:text-xs font-semibold tracking-widest uppercase fixed top-0 left-0 z-[60] h-10 flex items-center justify-center">
+                <span className="inline-flex items-center gap-2">
+                    <span className="w-1.5 h-1.5 rounded-full bg-amber-300 animate-pulse"></span>
+                    Direct Manufacturer & Exporter from India
+                    <span className="w-1.5 h-1.5 rounded-full bg-amber-300 animate-pulse"></span>
+                </span>
+            </div>
             <header
                 className={cn(
-                    "fixed top-0 left-0 w-full z-50 transition-all duration-500 ease-in-out px-6 md:px-12",
+                    "fixed left-0 w-full z-50 transition-all duration-500 ease-in-out px-6 md:px-12",
                     isScrolled
-                        ? "py-4 bg-white/80 backdrop-blur-md shadow-sm text-gray-900"
-                        : "py-6 bg-transparent text-gray-900"
+                        ? "py-4 bg-white/80 backdrop-blur-md shadow-sm text-gray-900 top-0"
+                        : "py-6 bg-transparent text-gray-900 top-10"
                 )}
             >
                 <div className="max-w-[1400px] mx-auto flex items-center justify-between">

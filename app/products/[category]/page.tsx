@@ -5,6 +5,7 @@ import { MagneticButton } from "@/components/ui/MagneticButton";
 import { StaggerGrid } from "@/components/ui/StaggerGrid";
 import { TiltCard } from "@/components/ui/TiltCard";
 import { products } from "@/lib/products";
+import { cn } from "@/lib/utils";
 import { MessageCircle, ArrowRight } from "lucide-react";
 
 const categoryMeta: Record<string, { num: string; name: string; desc: string; cover: string }> = {
@@ -32,16 +33,18 @@ export default async function CategoryPage({ params }: { params: Promise<{ categ
   return (
     <main className="w-full bg-white min-h-screen text-gray-900 font-sans selection:bg-[#F5A623] selection:text-white">
       {/* D1. Category Hero */}
-      <section className="relative w-full min-h-[500px] md:min-h-[400px] h-auto md:h-[55vh] flex items-center px-6 md:px-16 pt-32 pb-24 md:pt-20 md:pb-0 overflow-hidden">
+      <section className="relative w-full min-h-[500px] md:min-h-[400px] h-auto md:h-[60vh] flex items-center px-6 md:px-16 pt-32 pb-24 md:pt-20 md:pb-0 overflow-hidden">
         
         {/* Photographic Background */}
         <div className="absolute inset-0 z-0 overflow-hidden">
-          <img src={meta.cover} alt={meta.name} className="w-full h-full object-cover opacity-60 object-center" />
-          <div className="absolute inset-0 bg-gradient-to-r from-white via-white/80 to-transparent" />
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white/40 to-white" />
+          <img src={meta.cover} alt={meta.name} className="w-full h-full object-cover object-center scale-105 group-hover:scale-110 transition-transform duration-[20s]" />
+          {/* Change 3 & 10: Subtle light overlay */}
+          <div className="absolute inset-0 bg-white/10 backdrop-blur-[1px]" />
+          <div className="absolute inset-0 bg-gradient-to-r from-white/90 via-white/40 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white/20 to-white" />
         </div>
 
-        <div className="absolute inset-0 pointer-events-none z-0" style={{ background: "radial-gradient(ellipse at 50% 100%, rgba(245,166,35,0.08) 0%, transparent 70%)" }} />
+        <div className="absolute inset-0 pointer-events-none z-0" style={{ background: "radial-gradient(ellipse at 50% 100%, rgba(245,166,35,0.05) 0%, transparent 70%)" }} />
         
         <div className="max-w-[1240px] mx-auto w-full flex flex-col md:flex-row items-center justify-between relative z-10">
           
@@ -49,35 +52,46 @@ export default async function CategoryPage({ params }: { params: Promise<{ categ
             <div className="text-[11px] text-gray-400 uppercase tracking-widest animate-[fadeIn_0.3s_both]">
               <Link href="/" className="hover:text-gray-900 transition-colors">Home</Link> / 
               <Link href="/products" className="hover:text-gray-900 transition-colors mx-1">Products</Link> / 
-              <span className="text-[#F5A623] ml-1">{meta.name}</span>
+              <span className="text-amber-600 ml-1">{meta.name}</span>
             </div>
 
-            <SplitReveal text={meta.name} tag="h1" className="text-5xl md:text-[56px] font-display font-semibold text-gray-900 leading-tight" />
+            {/* Change 3 & 10: Black heading for specific categories */}
+            <SplitReveal 
+              text={meta.name} 
+              tag="h1" 
+              className={cn(
+                "text-5xl md:text-[64px] font-display font-semibold leading-tight",
+                (resolvedParams.category === 'whole-spices' || resolvedParams.category === 'grains') 
+                  ? "text-gray-900" 
+                  : "text-gray-900"
+              )} 
+            />
             <SplitReveal text={meta.desc} tag="p" delay={0.5} className="text-lg text-gray-600 max-w-lg leading-relaxed" />
             
-            <div className="animate-[slideInLeft_0.4s_ease-out_0.8s_both] mt-2 border border-[#F5A623]/30 text-[#F5A623] bg-[#F5A623]/10 px-4 py-1.5 rounded-full text-[12px] font-medium tracking-wide">
-              {categoryProducts.length} Products Available
+            <div className="animate-[slideInLeft_0.4s_ease-out_0.8s_both] mt-2 border border-amber-600/30 text-amber-700 bg-amber-50 px-4 py-1.5 rounded-full text-[12px] font-medium tracking-wide">
+              {categoryProducts.length} Premium Products available
             </div>
 
             <div className="flex flex-wrap gap-4 mt-6 animate-[fadeIn_0.5s_ease-out_1s_both]">
               <MagneticButton>
-                <a href="#product-grid" className="h-12 px-6 border border-[#F5A623] text-[#F5A623] hover:bg-[#F5A623]/10 flex items-center justify-center rounded-sm text-sm font-medium transition-colors">
-                  View All Products
+                <a href="#product-grid" className="h-12 px-8 bg-amber-700 hover:bg-amber-800 text-white flex items-center justify-center rounded-xl text-sm font-semibold transition-all hover:shadow-[0_0_20px_rgba(180,83,9,0.5)]">
+                  Explore Collection
                 </a>
               </MagneticButton>
               <MagneticButton intensity={0.15}>
-                <a href={`https://wa.me/${waNumber.replace('+', '')}?text=Hi Blazze, I am interested in ${meta.name} products`} target="_blank" rel="noreferrer" className="h-12 px-6 bg-[#25D366] hover:bg-[#20b958] text-white flex items-center justify-center rounded-sm text-sm font-medium transition-colors gap-2">
+                <a href={`https://wa.me/${waNumber.replace('+', '')}?text=Hi Blazze, I am interested in ${meta.name} products`} target="_blank" rel="noreferrer" className="h-12 px-6 border border-amber-700 text-amber-700 hover:bg-amber-50 flex items-center justify-center rounded-xl text-sm font-semibold transition-colors gap-2">
                   <MessageCircle size={18} /> WhatsApp Inquiry
                 </a>
               </MagneticButton>
             </div>
           </div>
 
+          {/* Change 3 & 10: Amber watermark */}
           <div className="hidden md:flex w-[40%] justify-end items-center relative h-full">
-            <div className="text-[70px] lg:text-[100px] xl:text-[120px] font-display font-bold leading-none select-none animate-[slideInRight_0.6s_ease-out_0.3s_both] opacity-[0.08] text-right" style={{ WebkitTextStroke: '2px #F5A623', color: 'transparent' }}>
-              {meta.name}
+            <div className="text-[80px] lg:text-[120px] xl:text-[150px] font-display font-bold leading-none select-none animate-[slideInRight_0.6s_ease-out_0.3s_both] opacity-20 text-right text-amber-500 drop-shadow-sm" style={{ WebkitTextStroke: '1px rgba(245,158,11,0.3)' }}>
+              {meta.name.split(' ')[0]}
             </div>
-            <div className="absolute top-1/2 -translate-y-1/2 right-0 w-[4px] bg-[#F5A623] animate-[growHeight_0.5s_ease-out_0.5s_both]" style={{ height: "100px" }} />
+            <div className="absolute top-1/2 -translate-y-1/2 right-0 w-[4px] bg-amber-600 animate-[growHeight_0.5s_ease-out_0.5s_both]" style={{ height: "120px" }} />
           </div>
 
         </div>

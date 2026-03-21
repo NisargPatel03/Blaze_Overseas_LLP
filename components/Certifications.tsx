@@ -3,7 +3,8 @@
 import { useRef } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
-import { Award, CheckCircle } from "lucide-react";
+import { CheckCircle, ShieldCheck } from "lucide-react";
+import { motion } from "framer-motion";
 
 const certifications = [
     "ISO 9001:2015 Quality Management",
@@ -45,72 +46,50 @@ export default function Certifications() {
     );
 
     return (
-        <section
-            id="certifications"
-            ref={containerRef}
-            className="py-24 md:pt-16 md:pb-16 px-6 md:px-12 bg-rustic-section-1"
-        >
-            <div className="max-w-[1400px] mx-auto flex flex-col lg:flex-row gap-16 items-center">
-                <div className="w-full lg:w-1/2">
-                    <span className="cert-header flex items-center justify-center gap-3 text-amber-700 font-bold tracking-widest text-lg font-display uppercase mb-4">
-                        <span className="w-8 h-0.5 bg-amber-600 inline-block"></span> Quality Assurance <span className="w-8 h-0.5 bg-amber-600 inline-block"></span>
-                    </span>
-                    <h2 className="cert-header text-4xl md:text-5xl font-display font-medium mb-6 text-balance text-gray-900">
-                        Accreditations that speak for our standard.
-                    </h2>
-                    <p className="cert-header text-lg text-gray-600 mb-10 text-balance leading-relaxed">
-                        At Blazze, quality is our top priority. We follow strict international standards at every stage, from sourcing to final packaging. Our products undergo rigorous quality checks to ensure purity, hygiene, and consistency. We are committed to delivering only the finest quality that meets global expectations.
-                    </p>
+        <section id="certifications" ref={containerRef} className="py-24 md:pt-16 md:pb-16 px-6 md:px-12 bg-white text-gray-900">
+            <motion.div 
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8 }}
+                className="max-w-[1400px] mx-auto"
+            >
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-20 gap-y-12 items-center">
+                    <div>
+                        <span className="cert-header flex items-center justify-center lg:justify-start gap-3 text-amber-700 font-bold tracking-widest text-lg font-display uppercase mb-4">
+                            <span className="w-8 h-0.5 bg-amber-600 inline-block"></span> Quality Assurance <span className="w-8 h-0.5 bg-amber-600 inline-block"></span>
+                        </span>
+                        <h2 className="cert-header text-4xl md:text-5xl lg:text-5xl font-display font-medium leading-tight mb-8">
+                            Certified Excellence You Can Depend On.
+                        </h2>
+                        
+                        <div className="cert-list flex flex-col gap-5">
+                            {certifications.map((cert, i) => (
+                                <div key={i} className="cert-item flex items-center gap-4 p-4 rounded-xl bg-[#3D2B1F] border border-[#5C3D2A] hover:bg-[#4A3728] transition-all duration-300 transition shadow-sm group">
+                                    <CheckCircle className="text-amber-400 group-hover:scale-110 transition-transform duration-300" size={24} />
+                                    <span className="font-medium text-lg text-[#F5E6D3] group-hover:text-white transition-colors">{cert}</span>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
 
-                    <div className="cert-list flex flex-col gap-5">
-                        {certifications.map((cert, i) => (
-                            <div key={i} className="cert-item flex items-center gap-4 p-4 rounded-sm bg-white border border-gray-200 shadow-sm">
-                                <CheckCircle className="text-[var(--color-accent)]" size={24} />
-                                <span className="font-medium text-lg text-gray-800">{cert}</span>
-                            </div>
-                        ))}
+                    <div className="cert-badge relative flex justify-center lg:justify-end">
+                        <div className="relative w-64 h-64 md:w-80 md:h-80 flex items-center justify-center border-4 border-amber-50 rounded-full animate-[spin_20s_linear_infinite]">
+                            <div className="absolute inset-0 bg-amber-50/20 rounded-full"></div>
+                        </div>
+                        <div className="absolute inset-x-0 inset-y-0 flex flex-col items-center justify-center text-center p-8 bg-white rounded-full border border-amber-100 shadow-2xl scale-95 md:scale-100">
+                            <ShieldCheck className="text-amber-600 w-16 h-16 md:w-20 md:h-20 mb-4" />
+                            <h3 className="text-xl md:text-2xl font-display font-bold text-gray-900 uppercase tracking-tighter">
+                                World Class Quality
+                            </h3>
+                            <div className="w-12 h-1 bg-amber-600 my-4"></div>
+                            <p className="text-sm font-medium text-gray-500 uppercase tracking-widest">
+                                Global Standards
+                            </p>
+                        </div>
                     </div>
                 </div>
-
-                <div
-                    className="w-full lg:w-1/2 relative h-[500px] rounded-sm overflow-hidden flex items-center justify-center bg-gray-50 border border-gray-200 perspective-1000"
-                    style={{ transformStyle: "preserve-3d" }}
-                    onMouseMove={(e) => {
-                        const rect = e.currentTarget.getBoundingClientRect();
-                        const x = e.clientX - rect.left;
-                        const y = e.clientY - rect.top;
-                        const centerX = rect.width / 2;
-                        const centerY = rect.height / 2;
-
-                        gsap.to(e.currentTarget.querySelector('.cert-badge-inner'), {
-                            rotateX: ((y - centerY) / centerY) * -10,
-                            rotateY: ((x - centerX) / centerX) * 10,
-                            duration: 0.5,
-                            ease: "power2.out"
-                        });
-                    }}
-                    onMouseLeave={(e) => {
-                        gsap.to(e.currentTarget.querySelector('.cert-badge-inner'), {
-                            rotateX: 0,
-                            rotateY: 0,
-                            duration: 1,
-                            ease: "power3.out"
-                        });
-                    }}
-                >
-                    <div className="absolute inset-0 bg-gradient-to-tr from-[var(--color-accent)]/5 to-transparent pointer-events-none" />
-                    <Award size={200} strokeWidth={0.5} className="text-[var(--color-accent)]/10 absolute" />
-
-                    <div
-                        className="cert-badge-inner relative z-10 text-center bg-white p-12 rounded-full shadow-2xl border border-gray-100"
-                        style={{ transformStyle: "preserve-3d", transform: "translateZ(50px)" }}
-                    >
-                        <Award size={80} className="text-[var(--color-accent)] mx-auto mb-6 drop-shadow-lg" />
-                        <h3 className="text-3xl font-display font-bold text-gray-900">100% Certified</h3>
-                        <p className="text-gray-500 uppercase tracking-widest text-sm mt-2">Export Quality</p>
-                    </div>
-                </div>
-            </div>
+            </motion.div>
         </section>
     );
 }

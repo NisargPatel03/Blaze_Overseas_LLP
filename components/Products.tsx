@@ -6,6 +6,7 @@ import { useGSAP } from "@gsap/react";
 import { MoveRight } from "lucide-react";
 import Link from "next/link";
 import { categories } from "@/lib/data";
+import { motion } from "framer-motion";
 
 export default function Products() {
     const containerRef = useRef<HTMLElement>(null);
@@ -45,7 +46,13 @@ export default function Products() {
             ref={containerRef}
             className="py-24 md:pt-16 md:pb-16 px-6 md:px-12 bg-rustic-section-2"
         >
-            <div className="max-w-[1400px] mx-auto">
+            <motion.div 
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8 }}
+                className="max-w-[1400px] mx-auto"
+            >
                 <div className="flex flex-col md:flex-row justify-between items-end gap-6 mb-12">
                     <div className="max-w-2xl">
                         <span className="products-header flex items-center justify-center md:justify-start gap-3 text-amber-700 font-bold tracking-widest text-lg font-display uppercase mb-4">
@@ -64,33 +71,35 @@ export default function Products() {
                             key={category.slug}
                             className="product-card group relative overflow-hidden rounded-sm h-[400px] md:h-[500px] block border border-gray-100 bg-white"
                         >
-                            <div className="absolute inset-0 bg-gray-900/10 z-10 transition-opacity duration-500 group-hover:bg-gray-900/20" />
+                            {/* Dark Overlay for Premium Look */}
+                            <div className="absolute inset-0 bg-black/40 z-10 transition-colors duration-500 group-hover:bg-black/50" />
+                            
                             <img
                                 src={category.img}
                                 alt={category.name}
-                                className="w-full h-full object-cover object-center transition-transform duration-1000 group-hover:scale-105 opacity-90 group-hover:opacity-100"
+                                className="w-full h-full object-cover object-center transition-transform duration-1000 group-hover:scale-110"
                             />
                             
                             {/* Content overlay */}
-                            <div className="absolute inset-x-0 bottom-0 z-20 p-8 md:p-12 bg-gradient-to-t from-white via-white/80 to-transparent flex flex-col justify-end">
-                                <span className="text-amber-300 font-semibold uppercase tracking-widest text-sm mb-2" style={{ textShadow: "1px 1px 4px rgba(0,0,0,0.8)" }}>
+                            <div className="absolute inset-0 z-20 p-8 md:p-12 flex flex-col justify-end bg-gradient-to-t from-black/80 via-black/20 to-transparent">
+                                <span className="text-amber-400 font-bold uppercase tracking-[0.2em] text-xs mb-3 animate-in fade-in slide-in-from-bottom duration-500">
                                     {category.tagline}
                                 </span>
-                                <h3 className="text-4xl md:text-5xl font-display font-bold mb-3 text-white" style={{ textShadow: "2px 2px 8px rgba(0,0,0,0.8)" }}>
+                                <h3 className="text-4xl md:text-5xl font-display font-bold mb-4 text-white leading-tight">
                                     {category.name}
                                 </h3>
-                                <p className="text-gray-600 line-clamp-2 max-w-md mb-6">
+                                <p className="text-gray-200 line-clamp-2 max-w-md mb-8 text-[15px] leading-relaxed group-hover:text-white transition-colors">
                                     {category.desc}
                                 </p>
 
-                                <div className="flex items-center gap-2 uppercase tracking-widest text-sm font-bold text-[var(--color-accent)] group-hover:translate-x-2 transition-transform">
-                                    Explore <MoveRight size={18} />
+                                <div className="flex items-center gap-3 uppercase tracking-widest text-[12px] font-bold text-amber-400 group-hover:gap-5 transition-all duration-300">
+                                    Explore Collection <MoveRight size={20} className="group-hover:scale-110" />
                                 </div>
                             </div>
                         </Link>
                     ))}
                 </div>
-            </div>
+            </motion.div>
         </section>
     );
 }

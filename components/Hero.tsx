@@ -11,6 +11,7 @@ import * as THREE from "three";
 import SpiceNinjaCanvas from "./SpiceNinjaCanvas";
 
 import { useMemo } from "react";
+import { motion } from "framer-motion";
 
 function FluidWave() {
     const meshRef = useRef<THREE.Mesh>(null);
@@ -107,17 +108,6 @@ export default function Hero() {
                 "-=0.8"
             )
             .from(
-                ".hero-cta",
-                {
-                    y: 20,
-                    opacity: 0,
-                    duration: 0.8,
-                    stagger: 0.1,
-                    ease: "power3.out",
-                },
-                "-=0.6"
-            )
-            .from(
                 ".scroll-indicator",
                 {
                     y: -20,
@@ -160,7 +150,7 @@ export default function Hero() {
                 <div className="overflow-hidden pb-4 max-w-5xl pointer-events-auto">
                     <h1 className="text-5xl md:text-7xl lg:text-8xl font-display font-medium leading-tight flex flex-wrap justify-center gap-x-4 select-none text-gray-900">
                         {titleText.split(" ").map((word, i) => (
-                            <span key={i} className="hero-title-word inline-block origin-bottom-left">
+                            <span key={`${word}-${i}`} className="hero-title-word inline-block origin-bottom-left">
                                 {word}
                             </span>
                         ))}
@@ -173,18 +163,41 @@ export default function Hero() {
                 </p>
 
                 <div className="mt-10 flex flex-col sm:flex-row gap-6 pointer-events-auto">
-                    <Link href="/products" className="hero-cta group relative px-8 py-4 bg-gray-900 text-white overflow-hidden rounded-sm transition-transform hover:scale-105 duration-300">
-                        <span className="relative z-10 font-medium uppercase tracking-widest text-sm">
+                    <motion.a 
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 1.2, duration: 0.8 }}
+                        suppressHydrationWarning
+                        href="#products" 
+                        onClick={(e) => {
+                            e.preventDefault();
+                            document.getElementById('products')?.scrollIntoView({ behavior: 'smooth' });
+                        }}
+                        className="hero-cta group relative px-10 py-4 bg-gray-900 text-white overflow-hidden rounded-xl transition-all hover:scale-105 hover:shadow-[0_0_20px_rgba(180,83,9,0.4)] duration-300 flex items-center justify-center cursor-pointer"
+                    >
+                        <span className="relative z-10 font-bold uppercase tracking-[0.2em] text-sm">
                             Explore Products
                         </span>
-                        <div className="absolute inset-0 bg-[var(--color-accent)] transform scale-x-0 origin-left transition-transform duration-500 group-hover:scale-x-100" />
-                    </Link>
+                        <div className="absolute inset-0 bg-amber-700 transform scale-x-0 origin-left transition-transform duration-500 group-hover:scale-x-100" />
+                    </motion.a>
 
-                    <Link href="/#certifications" className="hero-cta group px-8 py-4 border border-gray-200 text-gray-800 hover:border-gray-900 transition-all duration-300 rounded-sm">
-                        <span className="font-medium uppercase tracking-widest text-sm">
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 1.4, duration: 0.8 }}
+                    >
+                        <Link 
+                            href="#certifications" 
+                            suppressHydrationWarning
+                            onClick={(e) => {
+                                e.preventDefault();
+                                document.getElementById('certifications')?.scrollIntoView({ behavior: 'smooth' });
+                            }} 
+                            className="hero-cta group px-10 py-4 border-2 border-gray-200 text-gray-800 hover:border-amber-700 hover:text-amber-700 transition-all duration-300 rounded-xl font-bold uppercase tracking-[0.2em] text-sm flex items-center justify-center"
+                        >
                             Quality Assurance
-                        </span>
-                    </Link>
+                        </Link>
+                    </motion.div>
                 </div>
             </div>
 

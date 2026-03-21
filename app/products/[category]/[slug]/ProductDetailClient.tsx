@@ -5,13 +5,14 @@ import dynamic from "next/dynamic";
 import { SplitReveal } from "@/components/ui/SplitReveal";
 import { TiltCard } from "@/components/ui/TiltCard";
 import { Product } from "@/lib/products";
-import { MessageCircle, CheckCircle2, ChevronRight, ArrowRight, RefreshCcw } from "lucide-react";
+import { MessageCircle, CheckCircle2, ChevronRight, ArrowRight, RefreshCcw, MoveRight } from "lucide-react";
 import { VolumetricPhoto } from "@/components/ui/VolumetricPhoto";
 import { MagneticButton } from "@/components/ui/MagneticButton";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import FloatingParticles from "@/components/FloatingParticles";
+import RequestSampleModal from "@/components/RequestSampleModal";
 
 const getEmojis = (category: string, slug: string) => {
   if (slug.includes("garlic")) return ["🧄", "✨", "⭐", "🤍"];
@@ -52,6 +53,7 @@ export default function ProductDetailClient({ product, relatedProducts }: Props)
   const [activeSize, setActiveSize] = useState(product.packagingSizes[0]?.label || "1kg");
   const [replay, setReplay] = useState(0);
   const [isSpinning, setIsSpinning] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const waNumber = "+917777984018";
 
   // Quick extract functions for the 2x2 grid
@@ -95,7 +97,7 @@ export default function ProductDetailClient({ product, relatedProducts }: Props)
       <div className="w-full max-w-[1600px] mx-auto grid grid-cols-1 lg:grid-cols-[1.618fr_1fr] relative">
         
         {/* E2. Left Column — Product Photo Hero */}
-        <section className="relative w-full h-[60vh] lg:h-screen lg:sticky top-0 bg-gray-50 flex flex-col items-center justify-center overflow-hidden border-b lg:border-b-0 lg:border-r border-gray-100">
+        <section className="relative w-full h-[70vh] lg:h-screen lg:sticky top-0 bg-gray-50 flex flex-col items-center justify-center overflow-hidden border-b lg:border-b-0 lg:border-r border-gray-100">
           
           <div className="absolute inset-0 z-0 opacity-95 transition-all duration-1000 animate-[fadeIn_1s_ease-out_both] scale-100 group">
              <div className="relative overflow-hidden rounded-xl w-full h-full">
@@ -111,14 +113,14 @@ export default function ProductDetailClient({ product, relatedProducts }: Props)
           </div>
           <div className="absolute inset-0 z-[3] pointer-events-none" style={{ background: 'linear-gradient(135deg, rgba(255,255,255,0.0) 0%, rgba(255,255,255,0.1) 40%, rgba(255,255,255,0.3) 70%, rgba(255,255,255,0.6) 100%)' }} />
 
-          <div className="absolute top-24 left-6 md:left-12 md:top-28 z-[4] text-[11px] text-gray-600 uppercase tracking-widest bg-white/80 backdrop-blur-md px-4 py-2 rounded-full border border-gray-100 hidden sm:block shadow-sm">
+          <div className="absolute top-28 left-6 md:left-12 md:top-32 z-[4] text-[11px] text-gray-600 uppercase tracking-widest bg-white/80 backdrop-blur-md px-4 py-2 rounded-full border border-gray-100 hidden sm:block shadow-sm">
             <Link href="/products" className="hover:text-[#A34E0D] transition-colors">Products</Link> / 
             <Link href={`/products/${product.categorySlug}`} className="hover:text-[#A34E0D] transition-colors mx-2">{product.categoryName}</Link> / 
             <span className="text-[#A34E0D] ml-2 font-medium">{product.name}</span>
           </div>
 
-          <div className="absolute bottom-10 inset-x-6 md:inset-x-12 z-[4] flex flex-col items-center lg:items-start text-center lg:text-left">
-            <div className="flex flex-wrap shadow-xl items-center justify-center lg:justify-start gap-2 animate-[fadeSlideUp_0.5s_ease-out_0.5s_both] bg-white/80 backdrop-blur-xl p-2 rounded-xl border border-gray-100">
+          <div className="absolute bottom-6 inset-x-4 md:inset-x-8 z-[4] flex flex-col items-center lg:items-start text-center lg:text-left">
+            <div className="flex flex-wrap shadow-xl items-center justify-center lg:justify-start gap-2 animate-[fadeSlideUp_0.5s_ease-out_0.5s_both] bg-white/90 backdrop-blur-xl p-2 rounded-xl border border-gray-100 max-w-full overflow-x-auto">
               {product.packagingSizes.map((size) => (
                 <button suppressHydrationWarning
                   key={size.label}
@@ -146,7 +148,7 @@ export default function ProductDetailClient({ product, relatedProducts }: Props)
         </section>
 
         {/* E3. Right Column — Product Info Panel */}
-        <section className="px-6 py-12 lg:p-12 xl:p-16 lg:pt-32 relative bg-white">
+        <section className="px-6 py-10 lg:p-12 xl:p-16 lg:pt-36 relative bg-white">
           <div className="max-w-[600px] mx-auto lg:mx-0 flex flex-col items-start gap-6">
             
             <div className="inline-block bg-[#A34E0D] text-white text-[11px] font-bold uppercase tracking-widest px-3 py-1 rounded-full animate-[slideInRight_0.4s_both]">
@@ -191,6 +193,11 @@ export default function ProductDetailClient({ product, relatedProducts }: Props)
                   <div className="text-gray-900 text-[13px] font-medium">{product.moq}</div>
                 </div>
               </div>
+
+              {/* Change 6: Packaging Hygiene Line */}
+              <p className="text-sm text-gray-600 italic mt-4 border-l-4 border-amber-600 pl-4 bg-amber-50 py-3 rounded-r-lg shadow-sm animate-in fade-in slide-in-from-left duration-700">
+                "We ensure hygienic packaging using food-grade materials with strict quality checks at every stage."
+              </p>
             </div>
 
             {/* Quality Badges */}
@@ -204,11 +211,20 @@ export default function ProductDetailClient({ product, relatedProducts }: Props)
 
             {/* CTA Section */}
             <div className="w-full flex flex-col gap-3 mt-8">
-              <a href={`https://wa.me/${waNumber.replace('+', '')}?text=Hi Blazze, I am interested in ${encodeURIComponent(product.name)}. Please share price and availability for ${encodeURIComponent(activeSize)}.`} target="_blank" rel="noreferrer" className="w-full h-[52px] bg-[#25D366] hover:bg-[#20b958] active:scale-[0.98] transform transition-all text-white font-medium rounded-xl flex items-center justify-center gap-2 shadow-[0_4px_20px_rgba(37,211,102,0.15)]">
+              <a href={`https://wa.me/${waNumber.replace('+', '')}?text=Hi Blazze, I am interested in ${encodeURIComponent(product.name)}. Please share price and availability for ${encodeURIComponent(activeSize)}.`} target="_blank" rel="noreferrer" className="w-full h-[52px] bg-[#25D366] hover:bg-[#20b958] active:scale-[0.98] transform transition-all text-white font-medium rounded-xl flex items-center justify-center gap-2 shadow-[0_4px_20px_rgba(37,211,102,0.15)] group">
                 <MessageCircle size={20} /> Inquire on WhatsApp
               </a>
               <button suppressHydrationWarning onClick={handleScrollToForm} className="w-full h-[48px] bg-transparent border border-gray-200 text-gray-500 hover:bg-gray-50 text-[14px] font-medium rounded-xl transition-colors flex items-center justify-center gap-2">
                 Send Detailed Inquiry <ChevronRight size={16} />
+              </button>
+
+              {/* Change 8: Request Sample Button */}
+              <button 
+                  suppressHydrationWarning
+                  onClick={() => setIsModalOpen(true)}
+                  className="flex-1 px-8 py-4 border-2 border-amber-500 text-amber-700 font-bold rounded-xl hover:bg-amber-50 transition-colors duration-300 flex items-center justify-center gap-2 group shadow-sm active:scale-[0.98]"
+              >
+                  Request a Free Sample <MoveRight size={20} className="group-hover:translate-x-1 transition-transform" />
               </button>
             </div>
 
@@ -217,51 +233,60 @@ export default function ProductDetailClient({ product, relatedProducts }: Props)
 
       </div>
 
-      {/* E4a. Product Specifications Table */}
-      <section className="w-full bg-gray-50 border-y border-gray-100 py-20 px-6">
+      {/* E4a. Product Specifications Table - Redesign (Change 9) */}
+      <section className="w-full bg-white py-24 px-6 relative overflow-hidden">
+        <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-amber-200 to-transparent opacity-50" />
         <div className="max-w-[1000px] mx-auto">
-          <SplitReveal text="Product Specifications" tag="h2" className="text-3xl font-display font-medium text-gray-900 mb-10 text-center" />
           
-          <div className="w-full overflow-x-auto rounded-xl border border-gray-200 bg-white shadow-sm">
+          <div className="flex items-center gap-6 justify-center mb-12 animate-in fade-in slide-in-from-bottom duration-700">
+            <div className="h-[2px] w-20 bg-amber-600/60" />
+            <h2 className="text-3xl md:text-4xl font-display font-bold text-gray-900 text-center tracking-tight">Product Specifications</h2>
+            <div className="h-[2px] w-20 bg-amber-600/60" />
+          </div>
+          
+          <div className="w-full overflow-hidden rounded-2xl border border-amber-100 bg-white shadow-xl shadow-amber-900/5">
             <table className="w-full text-left border-collapse">
               <thead>
-                <tr className="bg-gray-50">
-                  <th className="px-6 py-4 text-gray-900 font-semibold text-[13px] uppercase tracking-widest border-b border-gray-200">Parameter</th>
-                  <th className="px-6 py-4 text-gray-900 font-semibold text-[13px] uppercase tracking-widest border-b border-gray-200">Specification</th>
+                <tr className="bg-amber-700 text-white">
+                  <th className="px-8 py-5 font-semibold text-[14px] uppercase tracking-[0.2em] border-b border-amber-800/10">Parameter</th>
+                  <th className="px-8 py-5 font-semibold text-[14px] uppercase tracking-[0.2em] border-b border-amber-800/10">Specification</th>
                 </tr>
               </thead>
-              <tbody className="text-[14px] text-gray-600">
+              <tbody className="text-[15px]">
                 {product.detailedSpecs ? (
                   product.detailedSpecs.map((spec, idx) => (
-                    <tr key={idx} className={`${idx % 2 === 0 ? 'bg-white' : 'bg-gray-50/50'} ${idx === product.detailedSpecs!.length - 1 ? '' : 'border-b border-gray-100'}`}>
-                      <td className="px-6 py-4 border-r border-gray-100 font-medium text-gray-900">{spec.label}</td>
-                      <td className="px-6 py-4" dangerouslySetInnerHTML={{ __html: spec.value }} />
+                    <tr 
+                      key={idx} 
+                      className={`${idx % 2 === 0 ? 'bg-white' : 'bg-amber-50/20'} border-b border-amber-100 hover:bg-amber-50 transition-colors duration-200 group`}
+                    >
+                      <td className="px-8 py-5 font-medium text-gray-700 border-r border-amber-50/50 w-1/3">{spec.label}</td>
+                      <td className="px-8 py-5 text-gray-900 leading-relaxed font-normal" dangerouslySetInnerHTML={{ __html: spec.value }} />
                     </tr>
                   ))
                 ) : (
                   <>
-                    <tr className="bg-white border-b border-gray-100">
-                      <td className="px-6 py-4 border-r border-gray-100 font-medium text-gray-900">Shelf Life</td>
-                      <td className="px-6 py-4">{product.shelfLife}</td>
+                    <tr className="bg-white border-b border-amber-100 hover:bg-amber-50 transition-colors duration-200 group">
+                      <td className="px-8 py-5 font-medium text-gray-700 border-r border-amber-50/50 w-1/3">Shelf Life</td>
+                      <td className="px-8 py-5 text-gray-900 font-normal">{product.shelfLife}</td>
                     </tr>
-                    <tr className="bg-gray-50/50 border-b border-gray-100">
-                      <td className="px-6 py-4 border-r border-gray-100 font-medium text-gray-900">Moisture Content</td>
-                      <td className="px-6 py-4">{product.moisture}</td>
+                    <tr className="bg-amber-50/20 border-b border-amber-100 hover:bg-amber-50 transition-colors duration-200 group">
+                      <td className="px-8 py-5 font-medium text-gray-700 border-r border-amber-50/50 w-1/3">Moisture Content</td>
+                      <td className="px-8 py-5 text-gray-900 font-normal">{product.moisture}</td>
                     </tr>
-                    <tr className="bg-white border-b border-gray-100">
-                      <td className="px-6 py-4 border-r border-gray-100 font-medium text-gray-900">Purity (Min)</td>
-                      <td className="px-6 py-4">{product.purity}</td>
+                    <tr className="bg-white border-b border-amber-100 hover:bg-amber-50 transition-colors duration-200 group">
+                      <td className="px-8 py-5 font-medium text-gray-700 border-r border-amber-50/50 w-1/3">Purity (Min)</td>
+                      <td className="px-8 py-5 text-gray-900 font-normal">{product.purity}</td>
                     </tr>
-                    <tr className="bg-gray-50/50 border-b border-gray-100">
-                      <td className="px-6 py-4 border-r border-gray-100 font-medium text-gray-900">Color Designation</td>
-                      <td className="px-6 py-4 flex items-center gap-2">
-                        <span className="w-3 h-3 block rounded-full shadow-sm" style={{ backgroundColor: product.color }} /> 
+                    <tr className="bg-amber-50/20 border-b border-amber-100 hover:bg-amber-50 transition-colors duration-200 group">
+                      <td className="px-8 py-5 font-medium text-gray-700 border-r border-amber-50/50 w-1/3">Color Designation</td>
+                      <td className="px-8 py-5 text-gray-900 flex items-center gap-3 font-normal">
+                        <span className="w-4 h-4 block rounded-full shadow-inner border border-black/5" style={{ backgroundColor: product.color }} /> 
                         {product.color}
                       </td>
                     </tr>
-                    <tr className="bg-white">
-                      <td className="px-6 py-4 border-r border-gray-100 font-medium text-gray-900">HS Code</td>
-                      <td className="px-6 py-4 font-mono text-[#A34E0D] font-bold">{product.hsCode}</td>
+                    <tr className="bg-white hover:bg-amber-50 transition-colors duration-200 group">
+                      <td className="px-8 py-5 font-medium text-gray-700 border-r border-amber-50/50 w-1/3">HS Code</td>
+                      <td className="px-8 py-5 font-semibold text-amber-600 tracking-wide">{product.hsCode}</td>
                     </tr>
                   </>
                 )}
@@ -368,6 +393,11 @@ export default function ProductDetailClient({ product, relatedProducts }: Props)
           to { opacity: 1; transform: translateY(0); }
         }
       `}} />
+      <RequestSampleModal 
+        isOpen={isModalOpen} 
+        onClose={() => setIsModalOpen(false)} 
+        productName={product.name} 
+      />
     </main>
   );
 }
