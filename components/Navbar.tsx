@@ -115,7 +115,7 @@ export default function Navbar() {
                 )}
             >
                 <div className="max-w-[1400px] mx-auto flex items-center justify-between">
-                    <Link href="/" className="group relative z-50 flex items-center gap-4">
+                    <a href="/" className="group relative z-50 flex items-center gap-4">
                         {/* Animated Gradient Border Wrapper */}
                         <div className="relative p-[3px] rounded-2xl overflow-hidden shadow-[0_8px_20px_rgba(0,0,0,0.08)] group-hover:shadow-[0_8px_30px_rgba(217,119,6,0.25)] transition-shadow duration-500 shrink-0">
                             {/* Spinning Gradient Background layer (High-contrast Amber/Orange) */}
@@ -138,7 +138,7 @@ export default function Navbar() {
                                 </span>
                             </div>
                         </div>
-                    </Link>
+                    </a>
  
                     <nav className="hidden md:flex items-center gap-8">
                         {navLinks.map((link) => (
