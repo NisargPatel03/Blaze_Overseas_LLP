@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Cormorant_Garamond, DM_Sans } from "next/font/google";
 import "./globals.css";
 import LenisProvider from "@/components/LenisProvider";
-import CustomCursor from "@/components/CustomCursor";
 import { Preloader } from "@/components/Preloader";
 import { WhatsAppButton } from "@/components/ui/WhatsAppButton";
 import Navbar from "@/components/Navbar";
@@ -32,8 +31,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${cormorant.variable} ${dmsans.variable} antialiased`} suppressHydrationWarning>
-      <body className="font-sans bg-[var(--background)] text-[var(--foreground)] antialiased min-h-screen selection:bg-[var(--color-accent)] selection:text-white cursor-none">
-        <CustomCursor />
+      <body className="font-sans bg-[var(--background)] text-[var(--foreground)] antialiased min-h-screen selection:bg-[var(--color-accent)] selection:text-white">
         <Preloader />
         <WhatsAppButton />
         <LenisProvider>
