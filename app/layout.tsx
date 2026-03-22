@@ -6,6 +6,8 @@ import { Preloader } from "@/components/Preloader";
 import { WhatsAppButton } from "@/components/ui/WhatsAppButton";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import CustomCursor from "@/components/CustomCursor";
+import InteractiveBackground from "@/components/InteractiveBackground";
 
 const cormorant = Cormorant_Garamond({
   weight: ['300', '400', '500', '600', '700'],
@@ -19,9 +21,9 @@ const dmsans = DM_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Blazze Overseas LLP | Premium Tiles & Interiors",
-  description: "Experience the pinnacle of luxury with Blazze Overseas LLP. We offer a curated collection of premium tiles and interior solutions for the most discerning clients.",
-  keywords: ["tiles", "interior", "ceramics", "Blazze Overseas LLP", "premium tiles"],
+  title: "Blazze Overseas LLP | Premium Spices, Grains & Pulses",
+  description: "Experience the pinnacle of quality with Blazze Overseas LLP. We export a curated collection of premium spices, grains, and pulses globally.",
+  keywords: ["spices", "grains", "pulses", "exporter", "Blazze Overseas LLP", "premium spices"],
 };
 
 export default function RootLayout({
@@ -34,6 +36,8 @@ export default function RootLayout({
       <body className="font-sans bg-[var(--background)] text-[var(--foreground)] antialiased min-h-screen selection:bg-[var(--color-accent)] selection:text-white">
         <Preloader />
         <WhatsAppButton />
+        <InteractiveBackground />
+        <CustomCursor />
         <LenisProvider>
           <Navbar />
           {children}

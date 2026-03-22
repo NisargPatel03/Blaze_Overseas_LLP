@@ -115,13 +115,29 @@ export default function Navbar() {
                 )}
             >
                 <div className="max-w-[1400px] mx-auto flex items-center justify-between">
-                    <Link href="/" className="group relative z-50 flex items-center gap-3">
-                        <div className="w-10 h-10 md:w-12 md:h-12 relative overflow-hidden bg-white rounded-md p-1 shadow-sm shrink-0 border border-gray-100">
-                            <Image src="/logo.jpg" alt="Blazze Logo" fill className="object-contain" sizes="48px" priority />
+                    <Link href="/" className="group relative z-50 flex items-center gap-4">
+                        {/* Animated Gradient Border Wrapper */}
+                        <div className="relative p-[3px] rounded-2xl overflow-hidden shadow-[0_8px_20px_rgba(0,0,0,0.08)] group-hover:shadow-[0_8px_30px_rgba(217,119,6,0.25)] transition-shadow duration-500 shrink-0">
+                            {/* Spinning Gradient Background layer (High-contrast Amber/Orange) */}
+                            <div className="absolute inset-[-150%] animate-[spin_4s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#FFFBEB_0%,#D97706_50%,#FFFBEB_100%)] opacity-80 group-hover:opacity-100 transition-opacity duration-500" />
+                            
+                            {/* Inner White Box holding the logo */}
+                            <div className="relative w-11 h-11 md:w-14 md:h-14 bg-white rounded-xl p-1 flex items-center justify-center transform group-hover:scale-[0.96] transition-transform duration-500 ease-[cubic-bezier(0.34,1.56,0.64,1)]">
+                                <Image src="/logo.jpg" alt="Blazze Logo" fill className="object-contain scale-105" sizes="56px" priority />
+                            </div>
                         </div>
-                        <span className="font-display text-xl md:text-2xl font-bold tracking-tight uppercase group-hover:text-[var(--color-accent)] transition-colors duration-300 hidden sm:block whitespace-nowrap text-gray-900">
-                            Blazze Overseas
-                        </span>
+                        
+                        {/* High-End Typography */}
+                        <div className="flex flex-col justify-center">
+                            <h1 className="font-display text-2xl md:text-[28px] font-bold tracking-tight uppercase bg-clip-text text-transparent bg-gradient-to-r from-gray-900 to-gray-700 group-hover:from-amber-700 group-hover:to-orange-500 transition-all duration-500 hidden sm:block whitespace-nowrap leading-[1.1] drop-shadow-sm">
+                                Blazze <span className="font-light">Overseas</span>
+                            </h1>
+                            <div className="flex items-center mt-1">
+                                <span className="text-[10px] md:text-[11px] uppercase tracking-[0.25em] font-bold text-gray-400 hidden sm:block transition-colors duration-500 group-hover:text-amber-600">
+                                    Quality Export Redefined
+                                </span>
+                            </div>
+                        </div>
                     </Link>
  
                     <nav className="hidden md:flex items-center gap-8">

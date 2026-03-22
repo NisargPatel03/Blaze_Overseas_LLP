@@ -113,6 +113,7 @@ export default function Packaging() {
                             Request a Quote →
                         </a>
                         <button 
+                            suppressHydrationWarning
                             onClick={() => setIsModalOpen(true)}
                             className="w-full sm:w-auto inline-block bg-transparent border-2 border-white text-white font-bold px-8 py-4 rounded-xl hover:bg-white/10 transition shadow-lg active:scale-[0.98] hover:shadow-[0_0_20px_rgba(255,255,255,0.2)]"
                         >
