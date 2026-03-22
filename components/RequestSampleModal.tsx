@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from "react";
 import { X, CheckCircle2, Loader2 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import { products } from "@/lib/products";
 
 interface RequestSampleModalProps {
   isOpen: boolean;
@@ -17,6 +18,7 @@ export default function RequestSampleModal({ isOpen, onClose, productName }: Req
     name: "",
     phone: "",
     email: "",
+    category: "",
     product: productName || "",
     packing: "",
     packets: "",
@@ -38,6 +40,7 @@ export default function RequestSampleModal({ isOpen, onClose, productName }: Req
           name: "",
           phone: "",
           email: "",
+          category: "",
           product: productName || "",
           packing: "",
           packets: "",
@@ -62,7 +65,11 @@ export default function RequestSampleModal({ isOpen, onClose, productName }: Req
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
+    if (name === "category") {
+      setFormData(prev => ({ ...prev, category: value, product: "" }));
+    } else {
+      setFormData(prev => ({ ...prev, [name]: value }));
+    }
   };
 
   return (
@@ -149,6 +156,25 @@ export default function RequestSampleModal({ isOpen, onClose, productName }: Req
                       </div>
                     </div>
 
+                    {!productName && (
+                      <div>
+                        <label className="block text-[10px] font-bold uppercase tracking-widest text-gray-400 mb-1 ml-1">Category</label>
+                        <select
+                          name="category"
+                          value={formData.category}
+                          onChange={handleInputChange}
+                          required
+                          className="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-amber-600/50 transition-colors appearance-none"
+                        >
+                          <option value="" disabled>Select a Category</option>
+                          <option value="whole-spices">Whole Spices</option>
+                          <option value="blended-masala">Blended Masala</option>
+                          <option value="grains">Grains</option>
+                          <option value="pulses">Pulses</option>
+                        </select>
+                      </div>
+                    )}
+
                     <div>
                       <label className="block text-[10px] font-bold uppercase tracking-widest text-gray-400 mb-1 ml-1">Product</label>
                       {productName ? (
@@ -164,14 +190,13 @@ export default function RequestSampleModal({ isOpen, onClose, productName }: Req
                           value={formData.product}
                           onChange={handleInputChange}
                           required
-                          className="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-amber-600/50 transition-colors appearance-none"
+                          disabled={!formData.category}
+                          className="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-amber-600/50 transition-colors appearance-none disabled:opacity-50 disabled:cursor-not-allowed"
                         >
                           <option value="" disabled>Select a Product</option>
-                          <option value="Whole Spices">Whole Spices</option>
-                          <option value="Blended Masala">Blended Masala</option>
-                          <option value="Grains">Grains</option>
-                          <option value="Pulses">Pulses</option>
-                          <option value="Not Sure Yet">Not Sure Yet</option>
+                          {products.filter(p => p.categorySlug === formData.category).map(p => (
+                            <option key={p.slug} value={p.name}>{p.name}</option>
+                          ))}
                         </select>
                       )}
                     </div>

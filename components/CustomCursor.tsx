@@ -57,11 +57,12 @@ export default function CustomCursor() {
             // Move the dot instantly using optimized quickTo
             xTo(mouseX);
             yTo(mouseY);
+        };
 
-            // Dynamic event delegation to fix links that appear after animations
+        const onMouseOver = (e: MouseEvent) => {
             const target = e.target as HTMLElement;
             if (target && target.closest) {
-                const isClickable = target.closest("a, button, input, textarea, .magnetic");
+                const isClickable = target.closest("a, button, input, textarea, .magnetic, [role='button']");
                 if (isClickable) {
                     handleHoverIn();
                 } else {
@@ -92,15 +93,17 @@ export default function CustomCursor() {
             gsap.to([cursor, follower], { scale: 1, duration: 0.2 });
         };
 
-        window.addEventListener("mousemove", onMouseMove);
-        window.addEventListener("mousedown", onMouseDown);
-        window.addEventListener("mouseup", onMouseUp);
+        window.addEventListener("mousemove", onMouseMove, { passive: true });
+        window.addEventListener("mouseover", onMouseOver, { passive: true });
+        window.addEventListener("mousedown", onMouseDown, { passive: true });
+        window.addEventListener("mouseup", onMouseUp, { passive: true });
 
         // Start animation loop
         animationFrameId = requestAnimationFrame(loop);
 
         return () => {
             window.removeEventListener("mousemove", onMouseMove);
+            window.removeEventListener("mouseover", onMouseOver);
             window.removeEventListener("mousedown", onMouseDown);
             window.removeEventListener("mouseup", onMouseUp);
             cancelAnimationFrame(animationFrameId);

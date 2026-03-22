@@ -88,10 +88,10 @@ export default async function CategoryPage({ params }: { params: Promise<{ categ
 
           {/* Change 3 & 10: Amber watermark */}
           <div className="hidden md:flex w-[40%] justify-end items-center relative h-full">
-            <div className="text-[80px] lg:text-[120px] xl:text-[150px] font-display font-bold leading-none select-none animate-[slideInRight_0.6s_ease-out_0.3s_both] opacity-20 text-right text-amber-500 drop-shadow-sm" style={{ WebkitTextStroke: '1px rgba(245,158,11,0.3)' }}>
+            <div className="text-[80px] lg:text-[120px] xl:text-[150px] font-display font-bold leading-none select-none animate-[slideInRight_0.6s_ease-out_0.3s_both] opacity-10 text-right text-black drop-shadow-sm" style={{ WebkitTextStroke: '1px rgba(0,0,0,0.3)' }}>
               {meta.name.split(' ')[0]}
             </div>
-            <div className="absolute top-1/2 -translate-y-1/2 right-0 w-[4px] bg-amber-600 animate-[growHeight_0.5s_ease-out_0.5s_both]" style={{ height: "120px" }} />
+            <div className="absolute top-1/2 -translate-y-1/2 right-0 w-[4px] bg-black/80 animate-[growHeight_0.5s_ease-out_0.5s_both]" style={{ height: "120px" }} />
           </div>
 
         </div>
