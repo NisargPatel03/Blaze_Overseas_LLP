@@ -9,7 +9,7 @@ import { cn } from "@/lib/utils";
 import { MessageCircle, ArrowRight } from "lucide-react";
 
 const categoryMeta: Record<string, { num: string; name: string; desc: string; cover: string }> = {
-  "whole-spices": { num: "01", name: "Whole Spices", desc: "Hand-selected whole spices. Bold aroma, pure form.", cover: "/Photos/Final WHOLE SPICES IMAGE.png" },
+  "whole-spices": { num: "01", name: "Whole Spices", desc: "Hand-selected whole spices. Bold aroma, pure form.", cover: "/Photos/BACKGROUND 1.png" },
   "blended-masala": { num: "02", name: "Blended Masala", desc: "Expert-blended powders. Consistent taste, every batch.", cover: "/Photos/Final BLENDED MASALA IMAGE.png" },
   "grains": { num: "03", name: "Grains", desc: "Premium Basmati & wheat. Farm-direct. Export certified.", cover: "/Photos/Final GRAINS IMAGE.png" },
   "pulses": { num: "04", name: "Pulses", desc: "Protein-rich dals & legumes. Sorted, cleaned, export-ready.", cover: "/Photos/Final PULSES IMAGE.png" },
@@ -89,7 +89,7 @@ export default async function CategoryPage({ params }: { params: Promise<{ categ
           {/* Change 3 & 10: Amber watermark */}
           <div className="hidden md:flex w-[40%] justify-end items-center relative h-full">
             <div className="text-[80px] lg:text-[120px] xl:text-[150px] font-display font-bold leading-none select-none animate-[slideInRight_0.6s_ease-out_0.3s_both] opacity-10 text-right text-black drop-shadow-sm" style={{ WebkitTextStroke: '1px rgba(0,0,0,0.3)' }}>
-              {meta.name.split(' ')[0]}
+              {meta.name}
             </div>
             <div className="absolute top-1/2 -translate-y-1/2 right-0 w-[4px] bg-black/80 animate-[growHeight_0.5s_ease-out_0.5s_both]" style={{ height: "120px" }} />
           </div>
