@@ -23,11 +23,11 @@ const getEmojis = (category: string, slug: string) => {
   if (slug.includes("chilli")) return ["🌶️", "🔥", "✨", "🌿", "⭐"];
   if (slug.includes("cumin") || slug.includes("coriander")) return ["🌿", "🍂", "✨", "⭐", "🤎"];
   if (slug.includes("garam-masala")) return ["🫙", "🍛", "✨", "⭐", "🌿"];
-  
+
   if (slug.includes("basmati-rice") || slug === "rice") return ["🌾", "🍚", "✨", "⭐", "🌿"];
   if (slug.includes("non-basmati")) return ["🌾", "🍚", "✨", "⭐", "🌱"];
   if (slug.includes("wheat")) return ["🌾", "🌽", "✨", "⭐", "🍞"];
-  
+
   if (category === "pulses") {
     if (slug.includes("rajma")) return ["🫘", "❤️", "✨", "⭐"];
     if (slug.includes("mung")) return ["🫘", "🟢", "✨", "⭐"];
@@ -54,6 +54,16 @@ export default function ProductDetailClient({ product, relatedProducts }: Props)
   const [replay, setReplay] = useState(0);
   const [isSpinning, setIsSpinning] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [formData, setFormData] = useState({
+    name: "",
+    company: "",
+    email: "",
+    phone: "",
+    quantity: "",
+    packaging: "",
+    message: ""
+  });
+  const [isLoading, setIsLoading] = useState(false);
   const waNumber = "+917777984018";
 
   // Quick extract functions for the 2x2 grid
@@ -71,13 +81,51 @@ export default function ProductDetailClient({ product, relatedProducts }: Props)
     setTimeout(() => setIsSpinning(false), 400);
   };
 
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsLoading(true);
+
+    try {
+      const enhancedFormData = {
+        firstName: formData.name,
+        lastName: formData.company ? `(${formData.company})` : '',
+        email: formData.email,
+        category: product.name,
+        message: `Phone/WhatsApp: ${formData.phone}\nQuantity: ${formData.quantity}\nPackaging: ${formData.packaging}\n\nMessage:\n${formData.message}`
+      };
+
+      await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(enhancedFormData),
+      });
+
+      alert("Inquiry sent securely to our team!");
+
+      setFormData({
+        name: "",
+        company: "",
+        email: "",
+        phone: "",
+        quantity: "",
+        packaging: "",
+        message: ""
+      });
+    } catch (error) {
+      console.error(error);
+      alert("Failed to send inquiry. Please try again.");
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
   const formRef = React.useRef<HTMLFormElement>(null);
-  
+
   useGSAP(() => {
     if (typeof window !== "undefined") {
       gsap.registerPlugin(ScrollTrigger);
     }
-    
+
     // Draw input borders and slide them up sequentially
     gsap.from(".form-animated-element", {
       scrollTrigger: {
@@ -95,15 +143,15 @@ export default function ProductDetailClient({ product, relatedProducts }: Props)
   return (
     <main className="w-full bg-white min-h-screen text-gray-900 font-sans selection:bg-[#A34E0D] selection:text-white">
       <div className="w-full max-w-[1600px] mx-auto grid grid-cols-1 lg:grid-cols-[1.618fr_1fr] relative">
-        
+
         {/* E2. Left Column — Product Photo Hero */}
         <section className="relative w-full h-[70vh] lg:h-screen lg:sticky top-0 bg-gray-50 flex flex-col items-center justify-center overflow-hidden border-b lg:border-b-0 lg:border-r border-gray-100">
-          
+
           <div className="absolute inset-0 z-0 opacity-95 transition-all duration-1000 animate-[fadeIn_1s_ease-out_both] scale-100 group">
-             <div className="relative overflow-hidden rounded-xl w-full h-full">
-               <VolumetricPhoto src={product.unsplashId.startsWith('/') || product.unsplashId.startsWith('http') ? product.unsplashId : `https://images.unsplash.com/${product.unsplashId}?auto=format&fit=crop&q=80&w=1200`} />
-               <FloatingParticles emojis={getEmojis(product.categorySlug, product.slug)} count={18} />
-             </div>
+            <div className="relative overflow-hidden rounded-xl w-full h-full">
+              <VolumetricPhoto src={product.unsplashId.startsWith('/') || product.unsplashId.startsWith('http') ? product.unsplashId : `https://images.unsplash.com/${product.unsplashId}?auto=format&fit=crop&q=80&w=1200`} />
+              <FloatingParticles emojis={getEmojis(product.categorySlug, product.slug)} count={18} />
+            </div>
           </div>
           <div className="absolute inset-0 bg-gradient-to-t from-white/40 via-transparent to-transparent pointer-events-none z-[1]" />
 
@@ -114,8 +162,8 @@ export default function ProductDetailClient({ product, relatedProducts }: Props)
           <div className="absolute inset-0 z-[3] pointer-events-none" style={{ background: 'linear-gradient(135deg, rgba(255,255,255,0.0) 0%, rgba(255,255,255,0.1) 40%, rgba(255,255,255,0.3) 70%, rgba(255,255,255,0.6) 100%)' }} />
 
           <div className="absolute top-28 left-6 md:left-12 md:top-32 z-[4] text-[11px] text-gray-600 uppercase tracking-widest bg-white/80 backdrop-blur-md px-4 py-2 rounded-full border border-gray-100 hidden sm:block shadow-sm">
-            <Link href="/products" className="hover:text-[#A34E0D] transition-colors">Products</Link> / 
-            <Link href={`/products/${product.categorySlug}`} className="hover:text-[#A34E0D] transition-colors mx-2">{product.categoryName}</Link> / 
+            <Link href="/products" className="hover:text-[#A34E0D] transition-colors">Products</Link> /
+            <Link href={`/products/${product.categorySlug}`} className="hover:text-[#A34E0D] transition-colors mx-2">{product.categoryName}</Link> /
             <span className="text-[#A34E0D] ml-2 font-medium">{product.name}</span>
           </div>
 
@@ -125,11 +173,10 @@ export default function ProductDetailClient({ product, relatedProducts }: Props)
                 <button suppressHydrationWarning
                   key={size.label}
                   onClick={() => setActiveSize(size.label)}
-                  className={`px-5 py-2 text-[12px] font-medium rounded-lg transition-all duration-300 shadow-sm ${
-                    activeSize === size.label 
-                      ? "bg-[#A34E0D] text-white shadow-[#A34E0D]/20" 
+                  className={`px-5 py-2 text-[12px] font-medium rounded-lg transition-all duration-300 shadow-sm ${activeSize === size.label
+                      ? "bg-[#A34E0D] text-white shadow-[#A34E0D]/20"
                       : "bg-transparent border border-transparent text-gray-500 hover:text-gray-900 hover:bg-gray-100"
-                  }`}
+                    }`}
                 >
                   {size.label}
                 </button>
@@ -137,7 +184,7 @@ export default function ProductDetailClient({ product, relatedProducts }: Props)
 
               {/* Replay Effects Button */}
               <button suppressHydrationWarning
-                onClick={handleReplay} 
+                onClick={handleReplay}
                 className={`ml-2 w-9 h-9 flex items-center justify-center rounded-lg bg-gray-50 border border-gray-100 text-gray-400 hover:bg-gray-100 hover:text-gray-900 transition-all shadow-sm ${isSpinning ? 'animate-[spin_0.4s_ease-out]' : ''}`}
                 title="Replay Animation"
               >
@@ -150,7 +197,7 @@ export default function ProductDetailClient({ product, relatedProducts }: Props)
         {/* E3. Right Column — Product Info Panel */}
         <section className="px-6 py-10 lg:p-12 xl:p-16 lg:pt-36 relative bg-white">
           <div className="max-w-[600px] mx-auto lg:mx-0 flex flex-col items-start gap-6">
-            
+
             <div className="inline-block bg-[#A34E0D] text-white text-[11px] font-bold uppercase tracking-widest px-3 py-1 rounded-full animate-[slideInRight_0.4s_both]">
               {product.categoryName}
             </div>
@@ -219,12 +266,12 @@ export default function ProductDetailClient({ product, relatedProducts }: Props)
               </button>
 
               {/* Change 8: Request Sample Button */}
-              <button 
-                  suppressHydrationWarning
-                  onClick={() => setIsModalOpen(true)}
-                  className="flex-1 px-8 py-4 border-2 border-amber-500 text-amber-700 font-bold rounded-xl hover:bg-amber-50 transition-colors duration-300 flex items-center justify-center gap-2 group shadow-sm active:scale-[0.98]"
+              <button
+                suppressHydrationWarning
+                onClick={() => setIsModalOpen(true)}
+                className="flex-1 px-8 py-4 border-2 border-amber-500 text-amber-700 font-bold rounded-xl hover:bg-amber-50 transition-colors duration-300 flex items-center justify-center gap-2 group shadow-sm active:scale-[0.98]"
               >
-                  Request a Free Sample <MoveRight size={20} className="group-hover:translate-x-1 transition-transform" />
+                Request a Free Sample <MoveRight size={20} className="group-hover:translate-x-1 transition-transform" />
               </button>
             </div>
 
@@ -237,13 +284,13 @@ export default function ProductDetailClient({ product, relatedProducts }: Props)
       <section className="w-full bg-white py-24 px-6 relative overflow-hidden">
         <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-amber-200 to-transparent opacity-50" />
         <div className="max-w-[1000px] mx-auto">
-          
+
           <div className="flex items-center gap-6 justify-center mb-12 animate-in fade-in slide-in-from-bottom duration-700">
             <div className="h-[2px] w-20 bg-amber-600/60" />
             <h2 className="text-3xl md:text-4xl font-display font-bold text-gray-900 text-center tracking-tight">Product Specifications</h2>
             <div className="h-[2px] w-20 bg-amber-600/60" />
           </div>
-          
+
           <div className="w-full overflow-hidden rounded-2xl border border-amber-100 bg-white shadow-xl shadow-amber-900/5">
             <table className="w-full text-left border-collapse">
               <thead>
@@ -255,8 +302,8 @@ export default function ProductDetailClient({ product, relatedProducts }: Props)
               <tbody className="text-[15px]">
                 {product.detailedSpecs ? (
                   product.detailedSpecs.map((spec, idx) => (
-                    <tr 
-                      key={idx} 
+                    <tr
+                      key={idx}
                       className={`${idx % 2 === 0 ? 'bg-white' : 'bg-amber-50/20'} border-b border-amber-100 hover:bg-amber-50 transition-colors duration-200 group`}
                     >
                       <td className="px-8 py-5 font-medium text-gray-700 border-r border-amber-50/50 w-1/3">{spec.label}</td>
@@ -280,7 +327,7 @@ export default function ProductDetailClient({ product, relatedProducts }: Props)
                     <tr className="bg-amber-50/20 border-b border-amber-100 hover:bg-amber-50 transition-colors duration-200 group">
                       <td className="px-8 py-5 font-medium text-gray-700 border-r border-amber-50/50 w-1/3">Color Designation</td>
                       <td className="px-8 py-5 text-gray-900 flex items-center gap-3 font-normal">
-                        <span className="w-4 h-4 block rounded-full shadow-inner border border-black/5" style={{ backgroundColor: product.color }} /> 
+                        <span className="w-4 h-4 block rounded-full shadow-inner border border-black/5" style={{ backgroundColor: product.color }} />
                         {product.color}
                       </td>
                     </tr>
@@ -293,7 +340,7 @@ export default function ProductDetailClient({ product, relatedProducts }: Props)
               </tbody>
             </table>
           </div>
-          
+
           {(product.ingredients || product.processingDetails) && (
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
               {product.ingredients && (
@@ -332,29 +379,29 @@ export default function ProductDetailClient({ product, relatedProducts }: Props)
             <p className="text-gray-500 text-[15px]">Our export team responds within 24 hours.</p>
           </div>
 
-          <form ref={formRef} className="w-full flex flex-col gap-5">
+          <form ref={formRef} onSubmit={handleSubmit} className="w-full flex flex-col gap-5">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 form-animated-element">
-              <input suppressHydrationWarning type="text" placeholder="Full Name" className="w-full bg-gray-50 border border-gray-200 rounded-lg px-4 py-3.5 text-gray-900 focus:outline-none focus:border-[#A34E0D]/40 transition-colors text-sm placeholder:text-gray-400" />
-              <input suppressHydrationWarning type="text" placeholder="Company Name" className="w-full bg-gray-50 border border-gray-200 rounded-lg px-4 py-3.5 text-gray-900 focus:outline-none focus:border-[#A34E0D]/40 transition-colors text-sm placeholder:text-gray-400" />
+              <input required value={formData.name} onChange={e => setFormData({ ...formData, name: e.target.value })} suppressHydrationWarning type="text" placeholder="Full Name" className="w-full bg-gray-50 border border-gray-200 rounded-lg px-4 py-3.5 text-gray-900 focus:outline-none focus:border-[#A34E0D]/40 transition-colors text-sm placeholder:text-gray-400" />
+              <input value={formData.company} onChange={e => setFormData({ ...formData, company: e.target.value })} suppressHydrationWarning type="text" placeholder="Company Name" className="w-full bg-gray-50 border border-gray-200 rounded-lg px-4 py-3.5 text-gray-900 focus:outline-none focus:border-[#A34E0D]/40 transition-colors text-sm placeholder:text-gray-400" />
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 form-animated-element">
-              <input suppressHydrationWarning type="email" placeholder="Email Address" className="w-full bg-gray-50 border border-gray-200 rounded-lg px-4 py-3.5 text-gray-900 focus:outline-none focus:border-[#A34E0D]/40 transition-colors text-sm placeholder:text-gray-400" />
-              <input suppressHydrationWarning type="tel" placeholder="Phone / WhatsApp Number" className="w-full bg-gray-50 border border-gray-200 rounded-lg px-4 py-3.5 text-gray-900 focus:outline-none focus:border-[#A34E0D]/40 transition-colors text-sm placeholder:text-gray-400" />
-            </div>
-            
-            <input suppressHydrationWarning type="text" defaultValue={product.name} placeholder="Product Interest" className="form-animated-element w-full bg-gray-50 border border-[#A34E0D]/30 text-[#A34E0D] font-bold rounded-lg px-4 py-3.5 focus:outline-none focus:border-[#A34E0D]/60 transition-colors text-sm" />
-            
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 form-animated-element">
-              <input suppressHydrationWarning type="text" placeholder="Quantity Required (e.g., 20 MT)" className="w-full bg-gray-50 border border-gray-200 rounded-lg px-4 py-3.5 text-gray-900 focus:outline-none focus:border-[#A34E0D]/40 transition-colors text-sm placeholder:text-gray-400" />
-              <input suppressHydrationWarning type="text" placeholder="Packaging Preference" className="w-full bg-gray-50 border border-gray-200 rounded-lg px-4 py-3.5 text-gray-900 focus:outline-none focus:border-[#A34E0D]/40 transition-colors text-sm placeholder:text-gray-400" />
+              <input required value={formData.email} onChange={e => setFormData({ ...formData, email: e.target.value })} suppressHydrationWarning type="email" placeholder="Email Address" className="w-full bg-gray-50 border border-gray-200 rounded-lg px-4 py-3.5 text-gray-900 focus:outline-none focus:border-[#A34E0D]/40 transition-colors text-sm placeholder:text-gray-400" />
+              <input required value={formData.phone} onChange={e => setFormData({ ...formData, phone: e.target.value })} suppressHydrationWarning type="tel" placeholder="Phone / WhatsApp Number" className="w-full bg-gray-50 border border-gray-200 rounded-lg px-4 py-3.5 text-gray-900 focus:outline-none focus:border-[#A34E0D]/40 transition-colors text-sm placeholder:text-gray-400" />
             </div>
 
-            <textarea suppressHydrationWarning rows={4} placeholder="Additional Message / Port of Destination" className="form-animated-element w-full bg-gray-50 border border-gray-200 rounded-lg px-4 py-3.5 text-gray-900 focus:outline-none focus:border-[#A34E0D]/40 transition-colors text-sm placeholder:text-gray-400 resize-y" />
+            <input suppressHydrationWarning type="text" defaultValue={product.name} disabled className="form-animated-element w-full bg-gray-50 border border-[#A34E0D]/30 text-[#A34E0D] font-bold rounded-lg px-4 py-3.5 focus:outline-none focus:border-[#A34E0D]/60 transition-colors text-sm opacity-100" />
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 form-animated-element">
+              <input value={formData.quantity} onChange={e => setFormData({ ...formData, quantity: e.target.value })} suppressHydrationWarning type="text" placeholder="Quantity Required (e.g., 20 MT)" className="w-full bg-gray-50 border border-gray-200 rounded-lg px-4 py-3.5 text-gray-900 focus:outline-none focus:border-[#A34E0D]/40 transition-colors text-sm placeholder:text-gray-400" />
+              <input value={formData.packaging} onChange={e => setFormData({ ...formData, packaging: e.target.value })} suppressHydrationWarning type="text" placeholder="Packaging Preference" className="w-full bg-gray-50 border border-gray-200 rounded-lg px-4 py-3.5 text-gray-900 focus:outline-none focus:border-[#A34E0D]/40 transition-colors text-sm placeholder:text-gray-400" />
+            </div>
+
+            <textarea required value={formData.message} onChange={e => setFormData({ ...formData, message: e.target.value })} suppressHydrationWarning rows={4} placeholder="Additional Message / Port of Destination" className="form-animated-element w-full bg-gray-50 border border-gray-200 rounded-lg px-4 py-3.5 text-gray-900 focus:outline-none focus:border-[#A34E0D]/40 transition-colors text-sm placeholder:text-gray-400 resize-y" />
 
             <div className="form-animated-element mt-2 block w-full">
               <MagneticButton className="w-full">
-                <button suppressHydrationWarning type="button" className="w-full h-[54px] bg-[#A34E0D] hover:bg-[#8B4513] text-white font-bold text-[15px] rounded-lg transition-transform active:scale-[0.98] flex items-center justify-center gap-2 shadow-lg shadow-[#A34E0D]/20">
-                  Send Inquiry <ArrowRight size={18} />
+                <button disabled={isLoading} suppressHydrationWarning type="submit" className="w-full h-[54px] bg-[#A34E0D] hover:bg-[#8B4513] text-white font-bold text-[15px] rounded-lg transition-transform active:scale-[0.98] flex items-center justify-center gap-2 shadow-lg shadow-[#A34E0D]/20">
+                  {isLoading ? <RefreshCcw size={18} className="animate-spin" /> : <>Send Inquiry <ArrowRight size={18} /></>}
                 </button>
               </MagneticButton>
             </div>
@@ -366,7 +413,7 @@ export default function ProductDetailClient({ product, relatedProducts }: Props)
       <section className="w-full py-20 px-6 bg-gray-50/50">
         <div className="max-w-[1240px] mx-auto">
           <h3 className="text-xl font-display font-medium text-gray-900 mb-8 border-b border-gray-200 pb-4 inline-block">You may also be interested in</h3>
-          
+
           <div className="flex overflow-x-auto pb-8 gap-4 snap-x hide-scrollbar" style={{ scrollbarWidth: 'none' }}>
             {relatedProducts.map(rel => (
               <Link key={rel.id} href={`/products/${rel.categorySlug}/${rel.slug}`} className="snap-start shrink-0">
@@ -386,17 +433,18 @@ export default function ProductDetailClient({ product, relatedProducts }: Props)
         </div>
       </section>
 
-      <style dangerouslySetInnerHTML={{__html:`
+      <style dangerouslySetInnerHTML={{
+        __html: `
         .hide-scrollbar::-webkit-scrollbar { display: none; }
         @keyframes fadeSlideUp {
           from { opacity: 0; transform: translateY(8px); }
           to { opacity: 1; transform: translateY(0); }
         }
       `}} />
-      <RequestSampleModal 
-        isOpen={isModalOpen} 
-        onClose={() => setIsModalOpen(false)} 
-        productName={product.name} 
+      <RequestSampleModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        productName={product.name}
       />
     </main>
   );

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>New Message Received</title>
+</head>
+<body style="margin: 0; padding: 0; font-family: 'Jost', Arial, sans-serif; background-color: #f4f4f5; -webkit-text-size-adjust: 100%;">
+  <div style="max-width: 640px; margin: 0 auto; background-color: #ffffff; padding: 0;">
+    <!-- 1. GOLD TOP BAR -->
+    <div style="height: 4px; background: linear-gradient(90deg, #c8a96e, #e8d095, #c8a96e); width: 100%;"></div>
+
+    <!-- 2. HEADER -->
+    <div style="background-color: #0e0c09; padding: 30px 20px; text-align: center;">
+      <div style="display: inline-block; background-color: rgba(200, 169, 110, 0.15); color: #c8a96e; font-size: 11px; text-transform: uppercase; letter-spacing: 1px; padding: 6px 16px; border-radius: 50px; margin-bottom: 20px;">New Message Received</div>
+      <h1 style="font-family: 'Cormorant Garamond', Georgia, serif; font-size: 32px; color: #ffffff; margin: 0; font-weight: 500;">Blazze <span style="color: #c8a96e;">Overseas</span></h1>
+      <p style="color: #c8a96e; font-size: 13px; letter-spacing: 3px; margin: 8px 0 0 0; text-transform: uppercase;">Taste of Purity</p>
+    </div>
+
+    <!-- 3. HERO SECTION -->
+    <div style="background-color: #1a1714; padding: 40px 30px; text-align: center;">
+      <span style="color: #c8a96e; font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 12px; display: block;">Contact Form Submission</span>
+      <h2 style="font-family: 'Cormorant Garamond', Georgia, serif; font-size: 28px; color: #ffffff; margin: 0 0 16px 0; font-weight: 400;">A new contact form has arrived</h2>
+      <p style="color: #a09d98; font-size: 15px; line-height: 1.6; margin: 0;">A visitor has submitted a contact form via the website. Please review their details below and respond promptly.</p>
+    </div>
+
+    <!-- 5. ORNAMENT DIVIDER -->
+    <div style="text-align: center; padding: 30px 0; position: relative;">
+      <div style="height: 1px; background-color: #e5e7eb; width: 60%; margin: 0 auto; position: absolute; top: 50%; left: 20%; z-index: 1;"></div>
+      <div style="display: inline-block; width: 6px; height: 6px; background-color: #c8a96e; border-radius: 50%; position: relative; z-index: 2; border: 10px solid #ffffff;"></div>
+    </div>
+
+    <!-- 6. SENDER / BUYER DETAILS TABLE -->
+    <div style="padding: 0 30px;">
+      <div style="color: #c8a96e; font-size: 13px; text-transform: uppercase; letter-spacing: 1.5px; margin: 0 0 20px 0; font-weight: 600;">Sender / Buyer Details</div>
+      <div style="padding: 14px 0; border-bottom: 1px solid #f3f4f6;">
+        <div style="color: #6b7280; font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px;">Full Name</div>
+        <div style="color: #111827; font-size: 15px; font-weight: 500;">{{FULL_NAME}}</div>
+      </div>
+      <div style="padding: 14px 0; border-bottom: 1px solid #f3f4f6;">
+        <div style="color: #6b7280; font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px;">Email Address</div>
+        <div style="color: #111827; font-size: 15px; font-weight: 500;"><a href="mailto:{{EMAIL}}" style="color: #c8a96e; text-decoration: none;">{{EMAIL}}</a></div>
+      </div>
+      <div style="padding: 14px 0; border-bottom: 1px solid #f3f4f6;">
+        <div style="color: #6b7280; font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px;">Phone Number</div>
+        <div style="color: #111827; font-size: 15px; font-weight: 500;">{{PHONE}}</div>
+      </div>
+      <div style="padding: 14px 0; border-bottom: 1px solid #f3f4f6;">
+        <div style="color: #6b7280; font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px;">Country</div>
+        <div style="color: #111827; font-size: 15px; font-weight: 500;">{{COUNTRY}}</div>
+      </div>
+      <div style="padding: 14px 0; border-bottom: 1px solid #f3f4f6;">
+        <div style="color: #6b7280; font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px;">Subject</div>
+        <div style="color: #111827; font-size: 15px; font-weight: 500;">{{SUBJECT}}</div>
+      </div>
+      <div style="padding: 14px 0; ">
+        <div style="color: #6b7280; font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px;">Timestamp</div>
+        <div style="color: #111827; font-size: 15px; font-weight: 500;">{{TIMESTAMP}}</div>
+      </div>
+    </div>
+
+    <!-- 7. MESSAGE / NOTES BLOCK -->
+    <div style="margin: 30px; background-color: #fbf9f6; border-left: 3px solid #c8a96e; padding: 24px;">
+<p style="font-family: 'Cormorant Garamond', Georgia, serif; font-size: 18px; color: #4b5563; font-style: italic; line-height: 1.6; margin: 0;">"{{MESSAGE}}"</p>
+    </div>
+
+    <!-- 8. CTA BLOCK -->
+    <div style="background-color: #0e0c09; padding: 40px 30px; text-align: center;">
+      <div style="margin-bottom: 20px;">
+        <span style="color: #c8a96e; font-size: 12px; text-transform: uppercase; letter-spacing: 1px; display: block; margin-bottom: 8px;">Action Required</span>
+        <div style="font-family: 'Cormorant Garamond', Georgia, serif; color: #ffffff; font-size: 22px; margin: 0; font-weight: 400;">Reply within 1 business hour</div>
+      </div>
+      <a href="mailto:{{EMAIL}}" style="display: inline-block; background: linear-gradient(135deg, #d4bb8a, #c8a96e, #b39356); color: #0e0c09; text-decoration: none; padding: 14px 32px; font-size: 14px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; border-radius: 4px;">Reply to Sender</a>
+    </div>
+
+    <!-- 9. TRUST STRIP -->
+    <div style="background-color: #fbf9f6; padding: 20px; text-align: center; border-top: 1px solid #e5e7eb; border-bottom: 1px solid #e5e7eb;">
+
+      <div style="display: inline-block; margin: 8px 12px; font-family: 'Jost', Arial, sans-serif;">
+        <span style="color: #c8a96e; font-size: 14px; margin-right: 6px;">✦</span>
+        <span style="font-size: 11px; color: #6b7280; font-weight: 600; text-transform: uppercase; letter-spacing: 1px;">ISO 9001:2015</span>
+      </div>
+      <div style="display: inline-block; margin: 8px 12px; font-family: 'Jost', Arial, sans-serif;">
+        <span style="color: #c8a96e; font-size: 14px; margin-right: 6px;">✦</span>
+        <span style="font-size: 11px; color: #6b7280; font-weight: 600; text-transform: uppercase; letter-spacing: 1px;">FSSAI</span>
+      </div>
+      <div style="display: inline-block; margin: 8px 12px; font-family: 'Jost', Arial, sans-serif;">
+        <span style="color: #c8a96e; font-size: 14px; margin-right: 6px;">✦</span>
+        <span style="font-size: 11px; color: #6b7280; font-weight: 600; text-transform: uppercase; letter-spacing: 1px;">APEDA</span>
+      </div>
+      <div style="display: inline-block; margin: 8px 12px; font-family: 'Jost', Arial, sans-serif;">
+        <span style="color: #c8a96e; font-size: 14px; margin-right: 6px;">✦</span>
+        <span style="font-size: 11px; color: #6b7280; font-weight: 600; text-transform: uppercase; letter-spacing: 1px;">Spice Board</span>
+      </div>
+    </div>
+
+    <!-- 10. FOOTER -->
+    <div style="background-color: #0e0c09; padding: 40px 30px 30px; text-align: center;">
+      <div style="font-family: 'Cormorant Garamond', Georgia, serif; font-size: 24px; color: #ffffff; margin: 0 0 6px 0; font-weight: 400;">Blazze <span style="color: #c8a96e;">Overseas</span></div>
+      <p style="color: #c8a96e; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; margin: 0 0 30px 0;">Taste of Purity</p>
+      
+      <div style="margin-bottom: 30px;">
+        <a href="https://wa.me/917777984018" style="color: #a09d98; font-size: 13px; text-decoration: none; margin: 0 10px; display: inline-block;">WhatsApp</a>
+        <span style="color: #333; margin: 0 5px; display: inline-block;">|</span>
+        <span style="color: #a09d98; font-size: 13px; margin: 0 10px; display: inline-block;">+91 77779 84018 / 83019</span>
+        <span style="color: #333; margin: 0 5px; display: inline-block;">|</span>
+        <a href="mailto:blazzeoverseasllp@gmail.com" style="color: #a09d98; font-size: 13px; text-decoration: none; margin: 0 10px; display: inline-block;">Email Us</a>
+        <span style="color: #333; margin: 0 5px; display: inline-block;">|</span>
+        <a href="https://www.blazze.world" style="color: #a09d98; font-size: 13px; text-decoration: none; margin: 0 10px; display: inline-block;">www.blazze.world</a>
+      </div>
+      
+      <div style="margin-bottom: 30px;">
+        <span style="border: 1px solid rgba(200, 169, 110, 0.3); color: #a09d98; font-size: 10px; padding: 4px 10px; border-radius: 50px; text-transform: uppercase; letter-spacing: 0.5px; margin: 4px; display: inline-block;">ISO 9001:2015</span>
+        <span style="border: 1px solid rgba(200, 169, 110, 0.3); color: #a09d98; font-size: 10px; padding: 4px 10px; border-radius: 50px; text-transform: uppercase; letter-spacing: 0.5px; margin: 4px; display: inline-block;">FSSAI</span>
+        <span style="border: 1px solid rgba(200, 169, 110, 0.3); color: #a09d98; font-size: 10px; padding: 4px 10px; border-radius: 50px; text-transform: uppercase; letter-spacing: 0.5px; margin: 4px; display: inline-block;">APEDA</span>
+        <span style="border: 1px solid rgba(200, 169, 110, 0.3); color: #a09d98; font-size: 10px; padding: 4px 10px; border-radius: 50px; text-transform: uppercase; letter-spacing: 0.5px; margin: 4px; display: inline-block;">Spice Board</span>
+      </div>
+      
+      <p style="color: #4b5563; font-size: 11px; margin: 0; line-height: 1.6;">This is an automated notification from Blazze Overseas website.<br>&copy; 2026 Blazze Overseas LLP, Gujarat, India. All rights reserved.</p>
+    </div>
+    
+    <!-- 1. BOTTOM BAR AGAIN -->
+    <div style="height: 4px; background: linear-gradient(90deg, #c8a96e, #e8d095, #c8a96e); width: 100%;"></div>
+  </div>
+</body>
+</html>
