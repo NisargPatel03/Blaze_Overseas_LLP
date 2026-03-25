@@ -50,17 +50,28 @@ export default function RequestSampleModal({ isOpen, onClose, productName }: Req
     }
   }, [isOpen, productName]);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsLoading(true);
-    // Simulate API call
-    setTimeout(() => {
-      setIsLoading(false);
+    try {
+      const response = await fetch('/api/sample', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+
+      if (!response.ok) throw new Error('Failed to send request');
+
       setIsSubmitted(true);
       setTimeout(() => {
         onClose();
       }, 3000);
-    }, 1500);
+    } catch (error) {
+      console.error(error);
+      alert('Failed to send sample request. Please try again.');
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
