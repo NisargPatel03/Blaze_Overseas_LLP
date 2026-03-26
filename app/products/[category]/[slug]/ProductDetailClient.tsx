@@ -291,49 +291,49 @@ export default function ProductDetailClient({ product, relatedProducts }: Props)
             <div className="h-[2px] w-20 bg-amber-600/60" />
           </div>
 
-          <div className="w-full overflow-hidden rounded-2xl border border-amber-100 bg-white shadow-xl shadow-amber-900/5">
-            <table className="w-full text-left border-collapse">
+          <div className="w-full overflow-x-auto rounded-2xl border border-amber-100 bg-white shadow-xl shadow-amber-900/5">
+            <table className="w-full text-left border-collapse min-w-[400px] md:min-w-full">
               <thead>
                 <tr className="bg-amber-700 text-white">
-                  <th className="px-8 py-5 font-semibold text-[14px] uppercase tracking-[0.2em] border-b border-amber-800/10">Parameter</th>
-                  <th className="px-8 py-5 font-semibold text-[14px] uppercase tracking-[0.2em] border-b border-amber-800/10">Specification</th>
+                  <th className="px-4 md:px-8 py-4 md:py-5 font-semibold text-[13px] md:text-[14px] uppercase tracking-wide md:tracking-[0.2em] border-b border-amber-800/10">Parameter</th>
+                  <th className="px-4 md:px-8 py-4 md:py-5 font-semibold text-[13px] md:text-[14px] uppercase tracking-wide md:tracking-[0.2em] border-b border-amber-800/10">Specification</th>
                 </tr>
               </thead>
-              <tbody className="text-[15px]">
+              <tbody className="text-[14px] md:text-[15px]">
                 {product.detailedSpecs ? (
                   product.detailedSpecs.map((spec, idx) => (
                     <tr
                       key={idx}
                       className={`${idx % 2 === 0 ? 'bg-white' : 'bg-amber-50/20'} border-b border-amber-100 hover:bg-amber-50 transition-colors duration-200 group`}
                     >
-                      <td className="px-8 py-5 font-medium text-gray-700 border-r border-amber-50/50 w-1/3">{spec.label}</td>
-                      <td className="px-8 py-5 text-gray-900 leading-relaxed font-normal" dangerouslySetInnerHTML={{ __html: spec.value }} />
+                      <td className="px-4 md:px-8 py-4 md:py-5 font-medium text-gray-700 border-r border-amber-50/50 w-[40%] md:w-1/3 align-top">{spec.label}</td>
+                      <td className="px-4 md:px-8 py-4 md:py-5 text-gray-900 leading-relaxed font-normal break-words whitespace-normal align-top" dangerouslySetInnerHTML={{ __html: spec.value }} />
                     </tr>
                   ))
                 ) : (
                   <>
                     <tr className="bg-white border-b border-amber-100 hover:bg-amber-50 transition-colors duration-200 group">
-                      <td className="px-8 py-5 font-medium text-gray-700 border-r border-amber-50/50 w-1/3">Shelf Life</td>
-                      <td className="px-8 py-5 text-gray-900 font-normal">{product.shelfLife}</td>
+                      <td className="px-4 md:px-8 py-4 md:py-5 font-medium text-gray-700 border-r border-amber-50/50 w-[40%] md:w-1/3 align-top">Shelf Life</td>
+                      <td className="px-4 md:px-8 py-4 md:py-5 text-gray-900 font-normal break-words whitespace-normal align-top">{product.shelfLife}</td>
                     </tr>
                     <tr className="bg-amber-50/20 border-b border-amber-100 hover:bg-amber-50 transition-colors duration-200 group">
-                      <td className="px-8 py-5 font-medium text-gray-700 border-r border-amber-50/50 w-1/3">Moisture Content</td>
-                      <td className="px-8 py-5 text-gray-900 font-normal">{product.moisture}</td>
+                      <td className="px-4 md:px-8 py-4 md:py-5 font-medium text-gray-700 border-r border-amber-50/50 w-[40%] md:w-1/3 align-top">Moisture Content</td>
+                      <td className="px-4 md:px-8 py-4 md:py-5 text-gray-900 font-normal break-words whitespace-normal align-top">{product.moisture}</td>
                     </tr>
                     <tr className="bg-white border-b border-amber-100 hover:bg-amber-50 transition-colors duration-200 group">
-                      <td className="px-8 py-5 font-medium text-gray-700 border-r border-amber-50/50 w-1/3">Purity (Min)</td>
-                      <td className="px-8 py-5 text-gray-900 font-normal">{product.purity}</td>
+                      <td className="px-4 md:px-8 py-4 md:py-5 font-medium text-gray-700 border-r border-amber-50/50 w-[40%] md:w-1/3 align-top">Purity (Min)</td>
+                      <td className="px-4 md:px-8 py-4 md:py-5 text-gray-900 font-normal break-words whitespace-normal align-top">{product.purity}</td>
                     </tr>
                     <tr className="bg-amber-50/20 border-b border-amber-100 hover:bg-amber-50 transition-colors duration-200 group">
-                      <td className="px-8 py-5 font-medium text-gray-700 border-r border-amber-50/50 w-1/3">Color Designation</td>
-                      <td className="px-8 py-5 text-gray-900 flex items-center gap-3 font-normal">
-                        <span className="w-4 h-4 block rounded-full shadow-inner border border-black/5" style={{ backgroundColor: product.color }} />
+                      <td className="px-4 md:px-8 py-4 md:py-5 font-medium text-gray-700 border-r border-amber-50/50 w-[40%] md:w-1/3 align-top">Color Designation</td>
+                      <td className="px-4 md:px-8 py-4 md:py-5 text-gray-900 flex items-center gap-3 font-normal break-words whitespace-normal align-top">
+                        <span className="w-4 h-4 block shrink-0 rounded-full shadow-inner border border-black/5" style={{ backgroundColor: product.color }} />
                         {product.color}
                       </td>
                     </tr>
                     <tr className="bg-white hover:bg-amber-50 transition-colors duration-200 group">
-                      <td className="px-8 py-5 font-medium text-gray-700 border-r border-amber-50/50 w-1/3">HS Code</td>
-                      <td className="px-8 py-5 font-semibold text-amber-600 tracking-wide">{product.hsCode}</td>
+                      <td className="px-4 md:px-8 py-4 md:py-5 font-medium text-gray-700 border-r border-amber-50/50 w-[40%] md:w-1/3 align-top">HS Code</td>
+                      <td className="px-4 md:px-8 py-4 md:py-5 font-semibold text-amber-600 tracking-wide break-words whitespace-normal align-top">{product.hsCode}</td>
                     </tr>
                   </>
                 )}
