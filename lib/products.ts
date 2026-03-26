@@ -50,7 +50,7 @@ export const products: Product[] = [
     "moisture": "≤ 10%",
     "purity": "100% Pure",
     "hsCode": "09042211",
-    "unsplashId": "/Photos/Red Chilli Powder.jpeg",
+    "unsplashId": "/Photos/Red Chilli Powder.webp",
     "whatsappText": "Hi Blazze, I am interested in Red Chilli Powder.",
     "ingredients": "100% Dried Red Chillies (No additives)",
     "processingDetails": [
@@ -119,7 +119,7 @@ export const products: Product[] = [
     "moisture": "≤ 10%",
     "purity": "100% Pure",
     "hsCode": "09103030",
-    "unsplashId": "/Photos/Turmeric Powder.jpeg",
+    "unsplashId": "/Photos/Turmeric Powder.webp",
     "whatsappText": "Hi Blazze, I am interested in Turmeric Powder.",
     "ingredients": "100% Dried Turmeric Fingers (No additives)",
     "processingDetails": [
@@ -193,7 +193,7 @@ export const products: Product[] = [
     "moisture": "Max 10%",
     "purity": "99% Min",
     "hsCode": "09042211",
-    "unsplashId": "/Photos/Kashmiri Red Chilli Powder.jpeg",
+    "unsplashId": "/Photos/Kashmiri Red Chilli Powder.webp",
     "whatsappText": "Hi Blazze, I am interested in Kashmiri Red Chilli Powder."
   },
   {
@@ -222,7 +222,7 @@ export const products: Product[] = [
     "moisture": "≤ 10%",
     "purity": "100% Pure",
     "hsCode": "09093200",
-    "unsplashId": "/Photos/Cumin Powder.jpeg",
+    "unsplashId": "/Photos/Cumin Powder.webp",
     "whatsappText": "Hi Blazze, I am interested in Cumin Powder.",
     "ingredients": "100% Premium Cumin Seeds (Jeera)",
     "processingDetails": [
@@ -296,7 +296,7 @@ export const products: Product[] = [
     "moisture": "≤ 10%",
     "purity": "100% Pure",
     "hsCode": "09109100",
-    "unsplashId": "/Photos/Garam Masala.jpeg",
+    "unsplashId": "/Photos/Garam Masala.webp",
     "whatsappText": "Hi Blazze, I am interested in bulk Garam Masala.",
     "ingredients": "Coriander, Cumin, Black Pepper, Cloves, Cardamom, Cinnamon, Bay Leaf (Customizable)",
     "processingDetails": [
@@ -370,7 +370,7 @@ export const products: Product[] = [
     "moisture": "≤ 10%",
     "purity": "100% Pure",
     "hsCode": "09092200",
-    "unsplashId": "/Photos/Coriander Powder.jpeg",
+    "unsplashId": "/Photos/Coriander Powder.webp",
     "whatsappText": "Hi Blazze, I am interested in Coriander Powder.",
     "ingredients": "100% Premium Coriander Seeds",
     "processingDetails": [
@@ -444,7 +444,7 @@ export const products: Product[] = [
     "moisture": "≤ 10%",
     "purity": "100% Pure",
     "hsCode": "09109100",
-    "unsplashId": "/Photos/Cumin Coriander Powder.jpeg",
+    "unsplashId": "/Photos/Cumin Coriander Powder.webp",
     "whatsappText": "Hi Blazze, I am interested in Cumin Coriander Powder.",
     "ingredients": "Coriander Seeds (60% – 70%), Cumin Seeds: (30% – 40%) (Customizable)",
     "processingDetails": [
@@ -519,7 +519,7 @@ export const products: Product[] = [
     "moisture": "≤ 6%",
     "purity": "100% Pure",
     "hsCode": "07129030",
-    "unsplashId": "/Photos/Garlic Powder.jpeg",
+    "unsplashId": "/Photos/Garlic Powder.webp",
     "whatsappText": "Hi Blazze, I am interested in Garlic Powder.",
     "ingredients": "100% Dehydrated Garlic",
     "processingDetails": [
@@ -593,7 +593,7 @@ export const products: Product[] = [
     "moisture": "≤ 8%",
     "purity": "100% Pure",
     "hsCode": "09101210",
-    "unsplashId": "/Photos/Ginger Powder.jpeg",
+    "unsplashId": "/Photos/Ginger Powder.webp",
     "whatsappText": "Hi Blazze, I am interested in Ginger Powder.",
     "ingredients": "100% Dried Ginger",
     "processingDetails": [
@@ -667,7 +667,7 @@ export const products: Product[] = [
     "moisture": "≤ 6%",
     "purity": "100% Pure",
     "hsCode": "07122000",
-    "unsplashId": "/Photos/Onion Powder.jpeg",
+    "unsplashId": "/Photos/Onion Powder.webp",
     "whatsappText": "Hi Blazze, I am interested in Onion Powder.",
     "ingredients": "100% Dehydrated Onion",
     "processingDetails": [
@@ -741,7 +741,7 @@ export const products: Product[] = [
     "moisture": "≤ 6%",
     "purity": "100% Pure",
     "hsCode": "07122000",
-    "unsplashId": "/Photos/Onion Flakes.jpeg",
+    "unsplashId": "/Photos/Onion Flakes.webp",
     "whatsappText": "Hi Blazze, I am interested in Onion Flakes.",
     "ingredients": "100% Dehydrated Onion",
     "processingDetails": [
@@ -816,7 +816,7 @@ export const products: Product[] = [
     "moisture": "Max 10–12%",
     "purity": "99% Min",
     "hsCode": "09042110",
-    "unsplashId": "/Photos/RED CHILLI.jpg",
+    "unsplashId": "/Photos/RED CHILLI.webp",
     "whatsappText": "Hi Blazze, I am interested in Whole Red Chilli.",
     "ingredients": "100% Whole Red Chilli",
     "processingDetails": [
@@ -897,7 +897,7 @@ export const products: Product[] = [
     "moisture": "Max 10%",
     "purity": "100% Pure",
     "hsCode": "09042110",
-    "unsplashId": "/Photos/KASHMIRI RED.JPEG",
+    "unsplashId": "/Photos/KASHMIRI RED.webp",
     "whatsappText": "Hi Blazze, I am interested in Whole Kashmiri Chillies.",
     "ingredients": "100% Premium Kashmiri Whole Red Chilli",
     "processingDetails": [
@@ -982,7 +982,7 @@ export const products: Product[] = [
     "moisture": "Max 10%",
     "purity": "100% Pure",
     "hsCode": "09103020",
-    "unsplashId": "/Photos/TURMERIC.jpg",
+    "unsplashId": "/Photos/TURMERIC.webp",
     "whatsappText": "Hi Blazze, I am interested in Turmeric Fingers.",
     "ingredients": "100% Premium Whole Turmeric Fingers",
     "processingDetails": [
@@ -1076,7 +1076,7 @@ export const products: Product[] = [
     "moisture": "≤ 12–14%",
     "purity": "Sortex Cleaned",
     "hsCode": "10063020",
-    "unsplashId": "/Photos/RICE.jpg",
+    "unsplashId": "/Photos/RICE.webp",
     "whatsappText": "Hi Blazze, I am interested in Basmati / Non-Basmati Rice imports.",
     "ingredients": "100% Natural Rice Grain (Raw / Steam / Parboiled) — No additives or preservatives",
     "processingDetails": [
@@ -1137,7 +1137,7 @@ export const products: Product[] = [
     "moisture": "≤ 12%",
     "purity": "99% Min",
     "hsCode": "10019910",
-    "unsplashId": "/Photos/WHEAT IMAGE.jpg",
+    "unsplashId": "/Photos/WHEAT IMAGE.webp",
     "whatsappText": "Hi Blazze, I am interested in bulk Wheat imports.",
     "ingredients": "100% Natural Wheat Grain — Machine cleaned, no additives or chemicals",
     "processingDetails": [
@@ -1188,7 +1188,7 @@ export const products: Product[] = [
     "moisture": "≤ 12%",
     "purity": "≥ 99%",
     "hsCode": "07132000",
-    "unsplashId": "/Photos/Chana Dal.jpeg",
+    "unsplashId": "/Photos/Chana Dal.webp",
     "whatsappText": "Hi Blazze, I am interested in Chana Dal.",
     "ingredients": "100% Split Bengal Gram (Chana Dal)",
     "processingDetails": [
@@ -1234,7 +1234,7 @@ export const products: Product[] = [
     "moisture": "≤ 12%",
     "purity": "≥ 99%",
     "hsCode": "07133100",
-    "unsplashId": "/Photos/mung dal.jpeg",
+    "unsplashId": "/Photos/mung dal.webp",
     "whatsappText": "Hi Blazze, I am interested in Mung Dal.",
     "ingredients": "100% Split Green Gram (Moong Dal)",
     "processingDetails": [
@@ -1280,7 +1280,7 @@ export const products: Product[] = [
     "moisture": "≤ 12%",
     "purity": "≥ 99%",
     "hsCode": "07132000",
-    "unsplashId": "/Photos/Kabuli chana.jpeg",
+    "unsplashId": "/Photos/Kabuli chana.webp",
     "whatsappText": "Hi Blazze, I am interested in Kabuli Chana (Chickpeas).",
     "ingredients": "100% Whole White Chickpeas",
     "processingDetails": [
@@ -1325,7 +1325,7 @@ export const products: Product[] = [
     "moisture": "≤ 12%",
     "purity": "≥ 99%",
     "hsCode": "07133100",
-    "unsplashId": "/Photos/Urad dal.jpeg",
+    "unsplashId": "/Photos/Urad dal.webp",
     "whatsappText": "Hi Blazze, I am interested in Urad Dal.",
     "ingredients": "100% Split Black Gram (Urad Dal)",
     "processingDetails": [
@@ -1370,7 +1370,7 @@ export const products: Product[] = [
     "moisture": "≤ 12%",
     "purity": "≥ 99%",
     "hsCode": "07133300",
-    "unsplashId": "/Photos/RedWhite Rajma.jpeg",
+    "unsplashId": "/Photos/RedWhite Rajma.webp",
     "whatsappText": "Hi Blazze, I am interested in Rajma (Kidney Beans).",
     "ingredients": "100% Whole Kidney Beans",
     "processingDetails": [
@@ -1416,7 +1416,7 @@ export const products: Product[] = [
     "moisture": "≤ 12%",
     "purity": "≥ 99%",
     "hsCode": "07134000",
-    "unsplashId": "/Photos/Masoor Dal.jpeg",
+    "unsplashId": "/Photos/Masoor Dal.webp",
     "whatsappText": "Hi Blazze, I am interested in Masoor Dal.",
     "ingredients": "100% Red Lentils",
     "processingDetails": [
@@ -1460,7 +1460,7 @@ export const products: Product[] = [
     "moisture": "≤ 12%",
     "purity": "≥ 99%",
     "hsCode": "12019000",
-    "unsplashId": "/Photos/Soyabean.jpeg",
+    "unsplashId": "/Photos/Soyabean.webp",
     "whatsappText": "Hi Blazze, I am interested in Non-GMO Soyabean.",
     "ingredients": "100% Whole Soybeans",
     "processingDetails": [
@@ -1505,7 +1505,7 @@ export const products: Product[] = [
     "moisture": "≤ 12%",
     "purity": "≥ 99%",
     "hsCode": "07136000",
-    "unsplashId": "/Photos/Toor Dal.jpeg",
+    "unsplashId": "/Photos/Toor Dal.webp",
     "whatsappText": "Hi Blazze, I am interested in Toor Dal.",
     "ingredients": "100% Split Pigeon Peas (Arhar Dal)",
     "processingDetails": [

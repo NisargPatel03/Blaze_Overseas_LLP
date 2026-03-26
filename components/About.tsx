@@ -95,7 +95,7 @@ export default function About() {
                 >
                     <div className="about-image-inner w-full h-full relative" style={{ transformStyle: "preserve-3d" }}>
                         <img
-                            src="/Photos/HOMESCREEN IMAGE.png"
+                            src="/Photos/HOMESCREEN IMAGE.webp"
                             alt="Blazze Overseas Legacy"
                             className="about-image absolute top-[-10%] w-full h-[120%] object-cover object-center translate-z-[50px] transition-transform duration-700 group-hover:scale-110"
                         />

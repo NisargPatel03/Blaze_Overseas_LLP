@@ -4,28 +4,28 @@ export const categories = [
         slug: "whole-spices",
         desc: "Authentic whole spices sourced from the finest origins.",
         tagline: "Unadulterated Purity & Aroma",
-        img: "/Photos/Final WHOLE SPICES IMAGE.png",
+        img: "/Photos/Final WHOLE SPICES IMAGE.webp",
     },
     {
         name: "Blended Masala",
         slug: "blended-masala",
         desc: "Perfectly balanced spice blends for global cuisines.",
         tagline: "The Perfect Balance of Flavors",
-        img: "/Photos/Final BLENDED MASALA IMAGE.png",
+        img: "/Photos/Final BLENDED MASALA IMAGE.webp",
     },
     {
         name: "Grains",
         slug: "grains",
         desc: "Premium quality basmati and non-basmati rice, and wheat.",
         tagline: "Nourishing the World",
-        img: "/Photos/Final GRAINS IMAGE.png",
+        img: "/Photos/Final GRAINS IMAGE.webp",
     },
     {
         name: "Pulses",
         slug: "pulses",
         desc: "Protein-rich, export-quality pulses and lentils.",
         tagline: "Wholesome & Nutritious",
-        img: "/Photos/Final PULSES IMAGE.png",
+        img: "/Photos/Final PULSES IMAGE.webp",
     }
 ];
 
@@ -168,7 +168,7 @@ export const products = [
         desc: "We export premium quality Basmati and Non-Basmati rice varieties sourced from the finest rice-growing regions of India. Our Basmati rice (1121, 1509, 1401, 1718) is known for its extra-long grains (6.5–8.5mm+), natural aroma, 2x elongation on cooking, and fluffy non-sticky texture. Non-Basmati varieties include IR64, Sona Masoori, PR11, and Swarna Rice, catering to diverse global markets.",
         packaging: "1kg / 5kg / 10kg retail packs | 20kg / 25kg / 50kg export bags (PP / Non-Woven / BOPP)",
         origin: "Punjab, Haryana & Andhra Pradesh, India",
-        img: "/Photos/RICE.jpg"
+        img: "/Photos/RICE.webp"
     },
     {
         name: "Wheat",
@@ -177,7 +177,7 @@ export const products = [
         desc: "Our export-grade wheat is sourced from premium wheat-growing belts of India. We supply Hard and Soft wheat varieties (Sharbati, Lokwan, MP Wheat, Durum) suited for flour milling, semolina production, and industrial food processing. Protein content 10–13%, moisture ≤12%, with consistent quality and zero weevilled grains guaranteed.",
         packaging: "5kg / 10kg / 25kg retail packs | 25kg / 50kg bulk bags (PP / Jute / Export-grade)",
         origin: "Madhya Pradesh, Punjab & Rajasthan, India",
-        img: "/Photos/WHEAT IMAGE.jpg"
+        img: "/Photos/WHEAT IMAGE.webp"
     },
 
     // PULSES

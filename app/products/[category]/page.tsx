@@ -9,10 +9,10 @@ import { cn } from "@/lib/utils";
 import { MessageCircle, ArrowRight } from "lucide-react";
 
 const categoryMeta: Record<string, { num: string; name: string; desc: string; cover: string }> = {
-  "whole-spices": { num: "01", name: "Whole Spices", desc: "Hand-selected whole spices. Bold aroma, pure form.", cover: "/Photos/BACKGROUND 1.png" },
-  "blended-masala": { num: "02", name: "Blended Masala", desc: "Expert-blended powders. Consistent taste, every batch.", cover: "/Photos/Final BLENDED MASALA IMAGE.png" },
-  "grains": { num: "03", name: "Grains", desc: "Premium Basmati & wheat. Farm-direct. Export certified.", cover: "/Photos/Final GRAINS IMAGE.png" },
-  "pulses": { num: "04", name: "Pulses", desc: "Protein-rich dals & legumes. Sorted, cleaned, export-ready.", cover: "/Photos/Final PULSES IMAGE.png" },
+  "whole-spices": { num: "01", name: "Whole Spices", desc: "Hand-selected whole spices. Bold aroma, pure form.", cover: "/Photos/BACKGROUND 1.webp" },
+  "blended-masala": { num: "02", name: "Blended Masala", desc: "Expert-blended powders. Consistent taste, every batch.", cover: "/Photos/Final BLENDED MASALA IMAGE.webp" },
+  "grains": { num: "03", name: "Grains", desc: "Premium Basmati & wheat. Farm-direct. Export certified.", cover: "/Photos/Final GRAINS IMAGE.webp" },
+  "pulses": { num: "04", name: "Pulses", desc: "Protein-rich dals & legumes. Sorted, cleaned, export-ready.", cover: "/Photos/Final PULSES IMAGE.webp" },
 };
 
 export function generateStaticParams() {
