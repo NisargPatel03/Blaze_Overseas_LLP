@@ -46,6 +46,10 @@ export default function CustomCursor() {
             });
         };
 
+        // Centre both elements so GSAP x/y == exact mouse position
+        gsap.set(cursor,   { xPercent: -50, yPercent: -50 });
+        gsap.set(follower, { xPercent: -50, yPercent: -50 });
+
         const xTo = gsap.quickTo(cursor, "x", { duration: 0, ease: "none" });
         const yTo = gsap.quickTo(cursor, "y", { duration: 0, ease: "none" });
 
@@ -77,8 +81,8 @@ export default function CustomCursor() {
             followerY += (mouseY - followerY) * 0.15;
 
             gsap.set(follower, {
-                x: followerX - 20, // offset half size (40px)
-                y: followerY - 20,
+                x: followerX,
+                y: followerY,
             });
 
             animationFrameId = requestAnimationFrame(loop);
@@ -114,7 +118,6 @@ export default function CustomCursor() {
             <div
                 ref={cursorRef}
                 className="fixed top-0 left-0 w-2 h-2 rounded-full bg-[var(--color-accent)] pointer-events-none z-[9999] mix-blend-difference"
-                style={{ transform: "translate(-50%, -50%)" }}
             />
             <div
                 ref={followerRef}

@@ -1,48 +1,17 @@
 "use client";
 import React, { useState } from "react";
 import Link from "next/link";
-import dynamic from "next/dynamic";
 import { SplitReveal } from "@/components/ui/SplitReveal";
 import { TiltCard } from "@/components/ui/TiltCard";
 import { Product } from "@/lib/products";
-import { MessageCircle, CheckCircle2, ChevronRight, ArrowRight, RefreshCcw, MoveRight } from "lucide-react";
-import { VolumetricPhoto } from "@/components/ui/VolumetricPhoto";
+import { MessageCircle, CheckCircle2, ChevronRight, ArrowRight, MoveRight } from "lucide-react";
+import { ZoomableImage } from "@/components/ui/ZoomableImage";
 import { MagneticButton } from "@/components/ui/MagneticButton";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import FloatingParticles from "@/components/FloatingParticles";
 import RequestSampleModal from "@/components/RequestSampleModal";
 
-const getEmojis = (category: string, slug: string) => {
-  if (slug.includes("garlic")) return ["🧄", "✨", "⭐", "🤍"];
-  if (slug.includes("onion")) return ["🧅", "✨", "⭐", "🤍"];
-  if (slug.includes("ginger")) return ["🫚", "✨", "⭐", "💛"];
-  if (slug.includes("turmeric")) return ["🟡", "✨", "🌿", "💛", "⭐"];
-  if (slug.includes("chilli") && slug.includes("kashmiri")) return ["🌶️", "❄️", "✨", "🌸", "⭐"];
-  if (slug.includes("chilli")) return ["🌶️", "🔥", "✨", "🌿", "⭐"];
-  if (slug.includes("cumin") || slug.includes("coriander")) return ["🌿", "🍂", "✨", "⭐", "🤎"];
-  if (slug.includes("garam-masala")) return ["🫙", "🍛", "✨", "⭐", "🌿"];
-
-  if (slug.includes("basmati-rice") || slug === "rice") return ["🌾", "🍚", "✨", "⭐", "🌿"];
-  if (slug.includes("non-basmati")) return ["🌾", "🍚", "✨", "⭐", "🌱"];
-  if (slug.includes("wheat")) return ["🌾", "🌽", "✨", "⭐", "🍞"];
-
-  if (category === "pulses") {
-    if (slug.includes("rajma")) return ["🫘", "❤️", "✨", "⭐"];
-    if (slug.includes("mung")) return ["🫘", "🟢", "✨", "⭐"];
-    if (slug.includes("chana")) return ["🫘", "🟡", "✨", "⭐"];
-    if (slug.includes("kabuli")) return ["🫘", "🤍", "✨", "⭐"];
-    if (slug.includes("masoor")) return ["🫘", "🟠", "✨", "⭐"];
-    return ["🫘", "🌱", "✨", "⭐", "🌿", "💚"];
-  }
-
-  if (category === "whole-spices") return ["🌿", "✨", "⭐", "🍂", "🪵"];
-  if (category === "blended-masala") return ["🫙", "🌶️", "🌿", "✨", "🍛", "⭐"];
-  return ["✨", "⭐"];
-};
-
-const ProductSplash = dynamic(() => import('@/components/effects/ProductSplash'), { ssr: false });
 
 interface Props {
   product: Product;
@@ -51,8 +20,6 @@ interface Props {
 
 export default function ProductDetailClient({ product, relatedProducts }: Props) {
   const [activeSize, setActiveSize] = useState(product.packagingSizes[0]?.label || "1kg");
-  const [replay, setReplay] = useState(0);
-  const [isSpinning, setIsSpinning] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
@@ -75,11 +42,6 @@ export default function ProductDetailClient({ product, relatedProducts }: Props)
     document.getElementById("inquiry-form")?.scrollIntoView({ behavior: "smooth" });
   };
 
-  const handleReplay = () => {
-    setReplay(prev => prev + 1);
-    setIsSpinning(true);
-    setTimeout(() => setIsSpinning(false), 400);
-  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -144,52 +106,43 @@ export default function ProductDetailClient({ product, relatedProducts }: Props)
     <main className="w-full bg-white min-h-screen text-gray-900 font-sans selection:bg-[#A34E0D] selection:text-white">
       <div className="w-full max-w-[1600px] mx-auto grid grid-cols-1 lg:grid-cols-[1.618fr_1fr] relative">
 
-        {/* E2. Left Column — Product Photo Hero */}
-        <section className="relative w-full h-[70vh] lg:h-screen lg:sticky top-0 bg-gray-50 flex flex-col items-center justify-center overflow-hidden border-b lg:border-b-0 lg:border-r border-gray-100">
+        {/* E2. Left Column — Product Photo Hero with Zoom */}
+        <section className="relative w-full h-[70vh] lg:h-screen lg:sticky top-0 bg-gray-50 flex flex-col overflow-hidden border-b lg:border-b-0 lg:border-r border-gray-100">
 
-          <div className="absolute inset-0 z-0 opacity-95 transition-all duration-1000 animate-[fadeIn_1s_ease-out_both] scale-100 group">
-            <div className="relative overflow-hidden rounded-xl w-full h-full">
-              <VolumetricPhoto src={product.unsplashId.startsWith('/') || product.unsplashId.startsWith('http') ? product.unsplashId : `https://images.unsplash.com/${product.unsplashId}?auto=format&fit=crop&q=80&w=1200`} />
-              <FloatingParticles emojis={getEmojis(product.categorySlug, product.slug)} count={18} />
-            </div>
-          </div>
-          <div className="absolute inset-0 bg-gradient-to-t from-white/40 via-transparent to-transparent pointer-events-none z-[1]" />
-
-          {/* SPLASH CANVAS ENGINE OVERLAY */}
-          <div className="absolute inset-0 z-[2] pointer-events-none">
-            <ProductSplash productSlug={product.slug} replay={replay} />
-          </div>
-          <div className="absolute inset-0 z-[3] pointer-events-none" style={{ background: 'linear-gradient(135deg, rgba(255,255,255,0.0) 0%, rgba(255,255,255,0.1) 40%, rgba(255,255,255,0.3) 70%, rgba(255,255,255,0.6) 100%)' }} />
-
-          <div className="absolute top-28 left-6 md:left-12 md:top-32 z-[4] text-[11px] text-gray-600 uppercase tracking-widest bg-white/80 backdrop-blur-md px-4 py-2 rounded-full border border-gray-100 hidden sm:block shadow-sm">
-            <Link href="/products" className="hover:text-[#A34E0D] transition-colors">Products</Link> /
-            <Link href={`/products/${product.categorySlug}`} className="hover:text-[#A34E0D] transition-colors mx-2">{product.categoryName}</Link> /
-            <span className="text-[#A34E0D] ml-2 font-medium">{product.name}</span>
+          {/* Breadcrumb */}
+          <div className="absolute top-4 left-4 z-10 text-[11px] text-gray-600 uppercase tracking-widest bg-white/80 backdrop-blur-md px-3 py-1.5 rounded-full border border-gray-100 hidden sm:flex items-center gap-1 shadow-sm">
+            <Link href="/products" className="hover:text-[#A34E0D] transition-colors">Products</Link>
+            <span className="mx-1">/</span>
+            <Link href={`/products/${product.categorySlug}`} className="hover:text-[#A34E0D] transition-colors">{product.categoryName}</Link>
+            <span className="mx-1">/</span>
+            <span className="text-[#A34E0D] font-medium">{product.name}</span>
           </div>
 
-          <div className="absolute bottom-6 inset-x-4 md:inset-x-8 z-[4] flex flex-col items-center lg:items-start text-center lg:text-left">
-            <div className="flex flex-wrap shadow-xl items-center justify-center lg:justify-start gap-2 animate-[fadeSlideUp_0.5s_ease-out_0.5s_both] bg-white/90 backdrop-blur-xl p-2 rounded-xl border border-gray-100 max-w-full overflow-x-auto">
+          {/* Zoomable Image fills full column, thumbnail strip at bottom */}
+          <div className="flex flex-col w-full h-full p-4 pt-12 sm:pt-16 gap-3">
+            <ZoomableImage
+              src={product.unsplashId.startsWith('/') || product.unsplashId.startsWith('http')
+                ? product.unsplashId
+                : `https://images.unsplash.com/${product.unsplashId}?auto=format&fit=crop&q=80&w=1200`}
+              alt={product.name}
+              className="flex-1"
+            />
+
+            {/* Packaging size selector */}
+            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-2 bg-white/90 backdrop-blur-xl p-2 rounded-xl border border-gray-100 shadow-sm max-w-full overflow-x-auto">
               {product.packagingSizes.map((size) => (
                 <button suppressHydrationWarning
                   key={size.label}
                   onClick={() => setActiveSize(size.label)}
-                  className={`px-5 py-2 text-[12px] font-medium rounded-lg transition-all duration-300 shadow-sm ${activeSize === size.label
+                  className={`px-5 py-2 text-[12px] font-medium rounded-lg transition-all duration-300 shadow-sm ${
+                    activeSize === size.label
                       ? "bg-[#A34E0D] text-white shadow-[#A34E0D]/20"
                       : "bg-transparent border border-transparent text-gray-500 hover:text-gray-900 hover:bg-gray-100"
-                    }`}
+                  }`}
                 >
                   {size.label}
                 </button>
               ))}
-
-              {/* Replay Effects Button */}
-              <button suppressHydrationWarning
-                onClick={handleReplay}
-                className={`ml-2 w-9 h-9 flex items-center justify-center rounded-lg bg-gray-50 border border-gray-100 text-gray-400 hover:bg-gray-100 hover:text-gray-900 transition-all shadow-sm ${isSpinning ? 'animate-[spin_0.4s_ease-out]' : ''}`}
-                title="Replay Animation"
-              >
-                <RefreshCcw size={14} />
-              </button>
             </div>
           </div>
         </section>
@@ -401,7 +354,7 @@ export default function ProductDetailClient({ product, relatedProducts }: Props)
             <div className="form-animated-element mt-2 block w-full">
               <MagneticButton className="w-full">
                 <button disabled={isLoading} suppressHydrationWarning type="submit" className="w-full h-[54px] bg-[#A34E0D] hover:bg-[#8B4513] text-white font-bold text-[15px] rounded-lg transition-transform active:scale-[0.98] flex items-center justify-center gap-2 shadow-lg shadow-[#A34E0D]/20">
-                  {isLoading ? <RefreshCcw size={18} className="animate-spin" /> : <>Send Inquiry <ArrowRight size={18} /></>}
+                  {isLoading ? <span className="w-[18px] h-[18px] border-2 border-white/30 border-t-white rounded-full animate-spin inline-block" /> : <>Send Inquiry <ArrowRight size={18} /></>}
                 </button>
               </MagneticButton>
             </div>

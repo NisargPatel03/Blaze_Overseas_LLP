@@ -234,10 +234,21 @@ export default function SpiceNinjaCanvas() {
       lastMouseTime = now;
     };
 
-    const mouseMove = (e: MouseEvent) => handlePointerAction(e.clientX, e.clientY);
+    // Convert viewport coords → canvas-local coords so the trail
+    // always aligns with the visible cursor/finger, regardless of scroll or offset.
+    const toLocal = (clientX: number, clientY: number) => {
+      const rect = canvas.getBoundingClientRect();
+      return { x: clientX - rect.left, y: clientY - rect.top };
+    };
+
+    const mouseMove = (e: MouseEvent) => {
+      const { x, y } = toLocal(e.clientX, e.clientY);
+      handlePointerAction(x, y);
+    };
     const touchMove = (e: TouchEvent) => {
       if (e.touches.length > 0) {
-        handlePointerAction(e.touches[0].clientX, e.touches[0].clientY);
+        const { x, y } = toLocal(e.touches[0].clientX, e.touches[0].clientY);
+        handlePointerAction(x, y);
       }
     };
 
